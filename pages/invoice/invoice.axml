@@ -1,0 +1,62 @@
+
+<view class="page">
+  <view class="m-header">
+    <view class="{{userType=='PERSONAL'?'m-tab s-sel':'m-tab'}}" onTap="choosePer">
+      <image src="/image/person.png" mode="aspectFit" />
+      <text>个人卡</text>
+    </view>
+    <view class="{{userType=='COMPANY'?'m-tab s-sel':'m-tab'}}" onTap="chooseCom">
+      <image src="/image/company.png" mode="aspectFit" />
+      <text>单位卡</text>
+    </view>
+  </view>
+  <!-- <view class="m-header">
+    <view class="{{userType=='PERSONAL'?'m-tab s-sel':'m-tab'}}" onTap="choosePer">
+      <image src="/image/person.png" mode="aspectFit" />
+      <text>个人卡(4)                  
+      </text>
+    </view>
+    <view class="{{userType=='COMPANY'?'m-tab s-sel':'m-tab'}}" onTap="chooseCom">
+      <image src="/image/company.png" mode="aspectFit" />
+      <text>单位卡(0)                  
+      </text>
+    </view>
+  </view> -->
+  <view a:if="{{items.length > 0}}" class="card-wrap">
+    <list class="list">
+      <view class="head">
+        
+        内蒙古ETC
+        
+      </view>
+      <block a:for="{{items}}">
+        <list-item thumb="{{item.thumb}}" arrow="{{item.arrow}}" onClick="onItemClick" index="{{item.licensePlate}}" key="{{item.licensePlate}}" last="{{index === (items2.length - 1)}}">
+          <view>{{item.number}}                                       
+          </view>
+          <view class="font-gray">{{item.type}} <view class="inline">|</view> {{item.licensePlate}}                                      
+          </view>
+        </list-item>
+        <view class="bottom font-gray">
+          <view class="inline" a:if="{{item.rise}}">关联抬头：{{item.rise}}                                      
+          </view>
+          <view class="inline" a:else>关联抬头：未关联抬头                                      
+          </view>
+          <view class="botton" a:if="{{!item.rise}}" type="default" onTap="onItemButton">去关联                                      
+          </view>
+        </view>
+      </block>
+    </list>
+  </view>
+  <view a:if="{{noData == 1}}" class="m-none">
+    <!--没有获取数据-->
+    <view>
+      <image src="/image/noetc.png" mode="aspectFit" />
+    </view>
+    <view>
+      <text>您还没有绑定ETC卡哦~                  
+      </text>
+    </view>
+    <button type="primary" size="defaultSize" onTap="toAddEtc"> 马上添加卡片             
+    </button>
+  </view>
+</view>

@@ -1,0 +1,84 @@
+.page{
+    font-size: 21rpx;;
+}
+
+.m-header{
+    height: 90rpx;
+    display: flex;
+    align-items: stretch;
+    background: #ffffff;
+    border-bottom: solid 1px #ededed;
+    margin-bottom: 10rpx;
+    justify-content: space-around;
+    font-size: 30rpx;
+}
+.m-tab{
+    flex: 0 1 auto;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.m-tab:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5rpx;
+    width: 100%;
+    background: #0f9aff;
+}
+
+.m-main{
+    padding: 0 40rpx 40rpx;
+    background: #fff;
+}
+.m-info{
+    padding: 20rpx 0;
+    display: flex;
+    /* justify-content: space-between; */
+    line-height: 43rpx;
+}
+.m-item1{
+    width: 450rpx;
+    flex: 0 1 auto;
+}
+.m-item2{
+    flex: 1 0 auto;
+}
+.u-key{
+    margin-right: 15rpx;
+    color: #999;
+}
+
+.m-table{
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px #84b1d4;
+    font-size: 20rpx;
+    line-height: 56rpx;
+}
+.m-tr{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.m-td{
+    flex: 1 0 auto;
+    align-items: stretch;
+    text-align: center;
+}
+.m-td + .m-td{
+    border-top: solid 1px #84b1d4;
+}
+.m-td.c-trans{
+    color: transparent;
+}
+.c-2e{
+    color: #2e76ad;
+    background: #ebf7ff;
+}

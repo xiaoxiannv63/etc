@@ -1,0 +1,21 @@
+.image{text-align: center; padding-top: 60rpx;  padding-bottom: 30rpx; display: block; width: 100%}
+.image image{width: 340rpx; height: 190rpx; background-position: center center; text-align: center}
+.bigFont{text-align: center; font-size: 16px; font-weight: bold; padding-bottom: 60rpx;}
+.am-list-item {
+    border-bottom: 1rpx solid #dadada;
+    background:transparent;
+    padding-left: 0px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: rgb(51, 51, 51);
+}
+.am-list-content{  font-size: 13px;}
+
+.listItemDiv{ border-radius: 20rpx; background-color: #fff; box-shadow:3rpx 3rpx 3rpx #c1c1c1; margin-top:30rpx; margin:30rpx 10rpx; padding:20rpx;}
+.listItemDiv_title{ border-bottom:solid 1rpx #d9d9d9; display: flex; justify-content: space-between; padding-bottom:20rpx;}
+.listItemDiv_title .left{font-size: 14px; font-weight: bold}
+.listItemDiv_title .right{color: #0f9aff;}
+.listItemDiv_content{padding-top: 20rpx; line-height: 40rpx;}
+.listItemDiv_contentGrayFont{color: #ababab;}
+.listItemDiv_contentGrayFont .btn{border: solid 1rpx #d4d4d4; display: inline-block; border-radius: 12rpx; padding-left: 20rpx; padding-right: 20rpx; color: #7b7b7b;}
+.padding{padding:32rpx; line-height: 48rpx}

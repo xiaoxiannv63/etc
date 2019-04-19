@@ -1,0 +1,94 @@
+.m-items{
+    padding: 0 40rpx;
+    background: #fff;
+}
+.u-item{
+    display: flex;
+    height: 90rpx;
+    font-size: 30rpx;
+    align-items: center;
+}
+.u-item + .u-item{
+    border-top: solid 1px #e9eaec;
+}
+.m-unitinfo{
+    border-top: solid 1px #e9eaec;
+}
+.u-dt{
+    flex: 0 0 auto;
+    width: 215rpx;
+    letter-spacing: 5rpx;
+}
+.s-larg-int{
+    letter-spacing: 10rpx;
+}
+.u-gerenkuan{
+    width: 15rpx;
+}
+.u-db{
+    display: flex;
+}
+.u-double{
+    width: 2em;
+    padding: 0 5rpx;
+}
+
+.m-wxts{
+    padding: 40rpx 40rpx 0;
+    font-size: 24rpx;
+    line-height: 38rpx;
+}
+.m-wxts .u-tit{
+    font-size: 28rpx;
+    margin-bottom: 16rpx;
+}
+
+/* 类型选择 */
+.my-radio{
+    display: flex;
+    padding-left: 5px;
+}
+.u-sel{
+    min-width: 74rpx;
+    padding: 0 6rpx;
+    font-size: 28rpx;
+    line-height: 42rpx;
+    height: 42rpx;
+    border: solid 1px #999;
+    border-radius: 4rpx;
+    text-align: center;
+    margin-right: 37rpx;
+}
+.selected{
+    color: #118ee8;
+    border: solid 1px #118ee8;
+}
+
+.m-guanlian{
+    position: relative;
+    height: 90rpx;
+    padding: 0 40rpx;
+    background: #fff;
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.u-num{
+    padding: 0 10rpx;
+}
+.guanlian-num:after{
+    content: "";
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 22rpx;
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg width="16" height="26" viewBox="0 0 16 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="UI-KIT_基础元件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="9.9基础元件" transform="translate(-5809.000000, -8482.000000)" fill="#C7C7CC"><polygon id="Disclosure-Indicator" points="5811 8482 5809 8484 5820.5 8495 5809 8506 5811 8508 5825 8495"></polygon></g></g></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    visibility: hidden;
+    transition: transform 0.3s;
+    visibility: visible;
+    vertical-align: bottom;
+}

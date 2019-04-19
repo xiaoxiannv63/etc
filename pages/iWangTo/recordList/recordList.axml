@@ -1,0 +1,97 @@
+<view class="page">
+
+  <view class="m-header"  a:if="{{type=='记账卡'}}">
+    <view class="m-tab s-sel">
+      <text>消费发票</text>
+    </view>
+  </view>
+  <view class="m-header"  a:if="{{type=='储值卡'}}">
+    <view class="{{invType == 'xf'?'m-tab s-sel':'m-tab'}}" onTap="chooseXF">
+      <text>消费发票</text>
+    </view>
+     <view class="{{invType == 'cz'?'m-tab s-sel':'m-tab'}}" onTap="chooseCZ">
+      <text>充值发票</text>
+    </view>
+  </view>
+  <view class="m-header3">
+    <!-- <view class="u-tips">
+      <image src="/assets/images/tip.png" mode="aspectFit" />
+      暂时只支持消费发票开具，充值发票开具后续上线</view> -->
+    <view a:if="{{type=='储值卡'}}" class="m-yuer">
+      <view>可开票余额</view>
+      <view>￥{{(amount/100).toFixed(2)}}</view>
+    </view>
+  </view>
+  <view class="m-header2">
+    <view class="u-header b-bot-e9">
+      <view>请选择开票行程</view>
+      <view class="c-0f" onTap="noCurrentList">找不到通行记录？</view>
+    </view>
+
+    <view class="s-date b-bot-e9" onTap="selDate">
+      <text>{{month}}</text>
+      <image src="/image/data.png" mode="aspectFit" />
+    </view>
+
+    <view class="inv-tit b-bot-e9">
+      <text>（发票抬头）{{titleName}}</text>
+    </view>
+  </view>
+
+  <view class="m-main" style="top:{{top}};">
+    <view class="check-wrap">
+      <scroll-view scroll-y="{{true}}"
+                   class="m-scr"
+                   onScrollToLower="lower">
+      <checkbox-group onChange="listChange" class="m-check">
+        <label class="checkbox" a:for="{{Items}}">
+          <checkbox value="{{item.tradeId}}" checked="{{selAllOnOff}}"  />
+          <view class="u-info" a:if={{invType=='xf'}}>
+            <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
+            <view>
+              <text class="c-0f u-sym">入</text>
+              <text class="c-99 u-add">{{item.enStationName}}</text>
+            </view>
+            <view>
+              <text class="c-0f u-sym">出</text>
+              <text class="c-99 u-add">{{item.exStationName}}</text>
+              <text class="c-99">{{item.exTime}}</text>
+            </view>
+          </view>
+          <view class="u-info"  a:if={{invType=='cz'}}>
+            <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
+            <view>
+              <text class="">充值方式：</text>
+              <text class="c-99 u-add">{{item.channelType}}</text>
+            </view>
+            <view>
+              <text class="">充值时间：</text>
+              <text class="c-99 u-add">{{item.time}}</text>
+              <text class="c-99">{{item.exTime}}</text>
+            </view>
+          </view>
+          <view class="u-pro"><text class="c-99" a:if={{invType=='xf'}}>{{item.provinceType}}通行交易</text></view>
+        </label>
+      </checkbox-group>
+
+      <view class="m-none c-99" a:if="{{Items.length == 0}}">
+        <text>所选月份没有可开票的通行记录</text>
+      </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="m-footer">
+    <label class="checkbox sel-all">
+      <checkbox value="{{selAllList}}" checked="{{checked}}" onChange="selAll" />
+      <text class="checkbox-text u-qx">当前全选</text>
+    </label>
+
+    <view>
+      <!-- <text>开票金额：</text> -->
+      <text class="c-e7 u-tot">￥{{(total/100).toFixed(2)}}</text>
+      <button type="primary" onTap="settle"> 去开票 </button>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,5 @@
+
+.am-flexbox{padding:24rpx;}
+.padding-right{padding-right: 24rpx}
+.padding-bottom{padding-bottom:48rpx}
+.ul .li image{width: 40rpx; height: 40rpx; vertical-align: middle; margin-right: 10rpx;}

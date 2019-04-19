@@ -1,0 +1,98 @@
+.page{
+    font-size: 28rpx;;
+}
+
+.m-header{
+    height: 90rpx;
+    display: flex;
+    align-items: stretch;
+    background: #ffffff;
+    border-bottom: solid 1px #ededed;
+    margin-bottom: 10rpx;
+    justify-content: space-around;
+}
+.m-tab{
+    flex: 0 1 auto;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.s-sel:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5rpx;
+    width: 100%;
+    background: #0f9aff;
+}
+.m-main{
+    position: absolute;
+    top: 100rpx;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.s-date{    
+    padding: 4rpx 40rpx;
+    background: #fff;
+    height: 86rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.s-date image{
+    width: 32rpx;
+    height: 30rpx;
+}
+.scr-wrap{
+    position: absolute;
+    top: 96rpx;
+    left: 0rpx;
+    right: 0rpx;
+    bottom: 0;
+}
+.m-scr{
+    height: 100%;
+}
+.item{
+    padding: 4rpx 40rpx;
+    background: #fff;
+}
+.item + .item{
+    margin-top: 20rpx;
+}
+.i-v1{
+    position: relative;
+    padding: 23rpx 0;
+    line-height: 45rpx;
+}
+.i-v1 .u-key{
+
+}
+.u-stu{
+    position: absolute;
+    bottom: 23rpx;
+    right: 0;
+}
+.i-v2{
+    padding: 23rpx 0;
+    font-size: 26rpx;
+    line-height: 40rpx;
+}
+.let-spa025{
+    letter-spacing: 2.5rpx;
+}
+
+.m-nomore{
+    font-size: 34rpx;
+    padding: 42rpx 40rpx;
+    text-align: center;
+    letter-spacing: 3rpx;
+}

@@ -1,0 +1,122 @@
+.m-header{
+    height: 90rpx;
+    display: flex;
+    align-items: stretch;
+    background: #ffffff;
+    border-bottom: solid 1px #ededed;
+    margin-bottom: 10rpx;
+    justify-content: space-around;
+}
+.m-tab{
+    flex: 0 1 auto;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.m-tab.s-sel:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5rpx;
+    width: 100%;
+    background: #0f9aff;
+}
+.m-tab image{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.m-main{
+    position: absolute;
+    top: 103rpx;
+    left: 0;
+    right: 0;
+    bottom: 160rpx;
+    overflow: scroll;
+}
+.m-items{
+    padding: 0 40rpx;
+    background: #fff;
+}
+
+.u-add{
+    display: flex;
+    justify-content: space-between;
+    font-size: 30rpx;
+    line-height: 78rpx;
+}
+.u-add view{
+    position: relative;
+}
+.u-add view:nth-of-type(1):before{
+    content: "";
+    display: inline-block;
+    width: 5rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+    background: #0f9aff;
+    vertical-align: middle;
+}
+
+label{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20rpx 0;
+}
+checkbox{
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.m-items + .m-items{
+    margin-top: 20rpx;
+}
+.m-card{
+    font-size: 28rpx;
+    line-height: 48rpx;
+}
+.u-apart{
+    margin: 0 12rpx;
+}
+
+.m-other{
+    position: absolute;
+    right: 0;
+    top: 20rpx;
+    font-size: 0.28rem;
+    line-height: 0.48rem;
+}
+.m-other .img-wrap{
+    text-align: right;
+}
+.m-other image{
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+
+.m-none{
+    padding: 0 40rpx;
+    font-size: 35rpx;
+    text-align: center;
+    color: #494949;
+}
+.m-none image{
+    width: 315rpx;
+    height: 315rpx;
+    margin-top: 129rpx;
+    margin-bottom: 45rpx;
+}
+.m-none button{
+    margin-top: 145rpx;
+}

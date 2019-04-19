@@ -1,0 +1,46 @@
+<view class="page">
+  <view class="m-main">
+    <view class="m-items">
+      <view class="u-item">
+        <view class="u-dt s-larg-int">抬头类型：</view>
+        <text class="p-l5">{{titType =='单位'?'企业':'个人/非企业单位'}}</text>
+      </view>
+      <view class="u-item">
+        <view class="u-dt"><text class="c-e7">*</text>抬头名称：</view>
+        <input class="u-dd" value="{{name}}" onInput="setInvName" />
+      </view>
+
+        <view class="u-item">
+          <view class="u-dt u-db">
+            <text a:if="{{titType == '单位'}}" class="c-e7">*</text>
+            <text a:else class="u-gerenkuan"></text>
+            税<text class="u-double"></text>号：
+          </view>
+          <input class="u-dd" placeholder="请输入税号" value="{{tax}}" onInput="setInvTax" />
+        </view>
+        <view class="u-item">
+          <view class="u-dt s-larg-int">单位地址：</view>
+          <input class="u-dd" placeholder="请输入单位地址" value="{{add}}" onInput="setInvAdd" />
+        </view>
+        <view class="u-item">
+          <view class="u-dt s-larg-int">电话号码：</view>
+          <input class="u-dd" placeholder="请输入电话号码" value="{{tel}}" onInput="setInvTel" />
+        </view>
+        <view class="u-item">
+          <view class="u-dt s-larg-int">开户银行：</view>
+          <input class="u-dd" placeholder="请输入开户银行" value="{{bank}}" onInput="setInvBank" />
+        </view>
+        <view class="u-item">
+          <view class="u-dt s-larg-int">银行账号：</view>
+          <input type="number" class="u-dd" placeholder="请输入银行账号" value="{{acc}}" onInput="setInvAcc" />
+        </view>
+
+    </view>
+
+    <view class="m-wxts c-a8">
+      <view class="u-tit">温馨提示：</view>
+      <view>请您填写办理ETC卡时预留的用户信息，若信息不一致则无法绑定成功。如有疑问，请向发卡方核实。</view>
+    </view>
+  </view>
+  <button type="primary" class="usua-btn" size="defaultSize" onTap="modi"> 修改 </button>
+</view>

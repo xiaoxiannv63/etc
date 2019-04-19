@@ -1,0 +1,5 @@
+<view class="page">
+  <web-view src="https://kp.txffp.com/openInvoice/invoice/previewInvoicetxf.html?param=ZnBkbT0wNDQwMDE3MDAxMTImZnBobT0zNDEwNzMyNg==
+↵" onMessage="test"></web-view> -->
+  <!-- <web-view src="alipays://platformapi/startapp?appId=20000920&startMultApp=YES&appClearTop=false&url=%2Fwww%2Fdetail.htm%3Fcode%3D{invoiceId}%26__webview_options__%3Dttb%253Dautoalipays://platformapi/startapp?appId=20000920&startMultApp=YES&appClearTop=false&url=%2Fwww%2Fdetail.htm%3Fcode%3D{invoiceId}%26__webview_options__%3Dttb%253Dauto" onMessage="test"></web-view>
+</view>

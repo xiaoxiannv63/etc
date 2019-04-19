@@ -1,0 +1,78 @@
+<view class="page">
+  <view class="m-info">
+    <view class="u-tit">
+      <text>卡片信息</text>
+    </view>
+    <view class="info-wrap">
+      <view>
+        <view class="u-key u-double">省<text></text>市：</view>
+        <text class="u-val">{{card.issuerName}}</text>
+      </view>
+      <view>
+        <text class="u-key">ETC卡号：</text>
+        <text class="u-val">{{card.cardId?card.cardId.substring(0,6)+"**********"+card.cardId.substr(-4):''}}</text>
+      </view>
+      <view>
+        <text class="u-key">车牌号码：</text>
+        <text class="u-val">{{card.plateNum}}</text>
+      </view>
+      <view>
+        <text class="u-key">车牌颜色：</text>
+        <text class="u-val">{{card.plateColor}}</text>
+      </view>
+      <view>
+        <text class="u-key">卡片类型：</text>
+        <text class="u-val">{{card.cardType}}</text>
+      </view>
+      <view>
+        <text class="u-key">绑定时间：</text>
+        <text class="u-val">{{card.bindingTime}}</text>
+      </view>
+    </view>
+
+    <button type="primary" size="defaultSize" onTap="unbind"> 解绑卡片 </button>
+  </view>
+
+  <view a:if="{{card.titleId}}" class="m-taitou">
+    <view class="u-tit" onTap="toGuanLian">
+      <text>已关联抬头</text>
+      <text class="c-0f" onTap="bindTaitou">关联新抬头</text>
+    </view>
+    <view class="info-wrap">
+      <view a:if="{{card.titleName}}">
+        <text class="u-key">抬头名称：</text>
+        <text class="u-val">{{card.titleName}}</text>
+      </view>
+      <view a:if="{{card.taxNum}}">
+        <view class="u-key u-double">税<text></text>号：</view>
+        <text class="u-val">{{card.taxNum}}</text>
+      </view>
+      <view a:if="{{card.address}}">
+        <text class="u-key">单位地址：</text>
+        <text class="u-val">{{card.address}}</text>
+      </view>
+      <view a:if="{{card.tel}}">
+        <text class="u-key">电话号码：</text>
+        <text class="u-val">{{card.tel}}</text>
+      </view>
+      <view a:if="{{card.bank}}">
+        <text class="u-key">开户银行：</text>
+        <text class="u-val">{{card.bank}}</text>
+      </view>
+      <view a:if="{{card.bankAccount}}">
+        <text class="u-key">银行账号：</text>
+        <text class="u-val">{{card.bankAccount?card.bankAccount.substring(0,6)+"**********"+card.bankAccount.substr(-4):''}}</text>
+      </view>
+    </view>
+  </view>
+  <view a:else class="m-notaitou">
+    <view class="u-tit" onTap="toGuanLian">
+      <text>未关联抬头</text>
+      <text class="c-0f" onTap="bindTaitou">去关联抬头</text>
+    </view>
+    <view class="u-nonetip">
+      暂未关联抬头，去关联吧
+    </view>
+  </view>
+  
+</view>

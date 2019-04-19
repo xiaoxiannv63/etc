@@ -1,0 +1,35 @@
+.page{
+    padding: 0 40rpx;
+    background: #fff;
+
+}
+
+.icon-wrap{
+    text-align: center;
+    margin-top: 200rpx;
+    margin-bottom: 40rpx;
+}
+
+.m-text{
+    padding: 0 110rpx;
+    text-align: center;
+}
+.m-text .u-tit{
+    font-size: 34rpx;
+    margin-bottom: 22rpx;
+}
+.m-text .u-des{
+    font-size: 26rpx;
+    line-height: 42rpx;
+    color: #999;
+}
+
+.btn-wrap{
+    position: absolute;
+    bottom: 58rpx;
+    left: 40rpx;
+    right: 40rpx;
+}
+.btn-wrap button + button{
+    margin-top: 32rpx;
+}

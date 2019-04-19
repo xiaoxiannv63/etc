@@ -1,0 +1,57 @@
+.m-main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 160rpx;
+}
+
+.m-items{
+    padding: 0 40rpx;
+    background: #fff;
+}
+.u-item{
+    display: flex;
+    height: 90rpx;
+    font-size: 30rpx;
+    align-items: center;
+}
+.u-item + .u-item{
+    border-top: solid 1px #e9eaec;
+}
+.m-qiyeinfo{
+    border-top: solid 1px #e9eaec;
+}
+
+.u-dt{
+    flex: 0 0 auto;
+    width: 215rpx;
+    letter-spacing: 5rpx;
+}
+.s-larg-int{
+    letter-spacing: 10rpx;
+}
+.u-gerenkuan{
+    width: 15rpx;
+}
+.u-db{
+    display: flex;
+}
+.u-double{
+    width: 2em;
+    padding: 0 5rpx;
+}
+
+.m-wxts{
+    padding: 40rpx 40rpx 0;
+    font-size: 24rpx;
+    line-height: 38rpx;
+}
+.m-wxts .u-tit{
+    font-size: 28rpx;
+    margin-bottom: 16rpx;
+}
+
+.p-l5{
+    padding-left: 5px;
+}

@@ -1,0 +1,574 @@
+<view class="page" style="padding: 20px">
+  <view>
+        <view class="m-h1" style="margin: 5pt 0pt; text-align: center;color: #428bca;">
+            <text style="font-size: 24pt; font-weight: normal">用户使用协议</text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>特别提示1：</text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>感谢您选择票根服务，您在使用票根提供的各项服务之前，请您务必审慎阅读、充分理解本协议各条款内容，特别是免除或限制责任、法律适用和争议解决等关系或可能关系用户重大利益的条款，票根已采用粗体字进行标注，提请用户注意。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>
+                本协议所称“票根”，是指行云数聚（北京）科技有限公司（以下称“行云数聚”）创建并运营的用于提供收费公路通行费电子发票（以下称“电子发票”或“发票”）服务的平台，该平台包括“票根”APP （即移动设备客户端）、“票根”网（网址：www.txffp.com），或行云数聚未来可能运营的提供上述服务的其他渠道。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>
+                本协议所称“用户”，是指票根平台各项服务的使用者，包括个人用户和单位用户。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>
+                本协议所称“票根”服务，是指“票根”发票服务平台提供的收费公路通行费电子发票相关服务，具体服务内容见本协议第2.1条。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>
+                “票根”会在必要时修改服务条款，如制订、修改本协议和/或各类规则向用户提供基于互联网以及移动网络的相关服务，并通过“票根”APP、“票根”网的消息公告等相关页面或方式发布通告或发送通知，用户应定期查看“票根”APP、“票根”网的相关页面，查看本协议。变更后的协议一经公布则有效替代原有协议。如用户不同意相关变更，应立即停止访问
+                “票根”APP或“票根”网，如用户在本协议生效后继续访问 “票根”APP或“票根”网，继续使用“票根”服务的，表示用户接受变更后的协议，也将遵循变更后的协议使用“票根”服务。
+            </text>
+        </view>
+
+        <view class="m-h2">
+            <text class='spanclass'>
+                1. 确认和接纳
+            </text>
+        </view>
+
+        <view class="pclass">
+            <text class='spanclass'>1.1用户同意本协议以及 “票根”的注册要求，并完成注册程序，才能成为“票根”的正式注册用户，享受“票根”完整的服务。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>1.2 用户勾选“我已阅读《用户使用协议》、《隐私条款》”同意本协议并注册的，即视为用户确认自己具有使用“票根”服务相应的权利能力和行为能力，能够独立承担法律责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>1.3 用户成功完成注册，或用户访问“票根”APP、“票根”网，或用户使用“票根”提供的任一服务时，即视为用户接受了本协议，本协议在用户和“票根”之间发生法律效力，双方将同时受本协议条款的约束。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>1.4 如用户为无民事行为能力人或限制民事行为能力人，请告知用户的监护人，并在取得用户监护人同意的前提下阅读本协议和使用“票根”服务或向“票根”提供信息。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>1.5 如果用户是中国大陆地区以外的用户，用户还需同时遵守用户所属国家或地区的法律，且用户确认，订立并履行本协议不受用户所属、所居住或开展经营活动或其他业务的国家或地区法律法规的限制。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>1.6 用户在使用“票根”某一特定服务时，该服务可能会另有单独的协议、相关业务规则等（以下称“单独协议”）。单独协议内容一经正式发布，即为本协议不可分割的组成部分，用户同样应当遵守。用户对前述任何业务规则、单独协议的接受，即视为对本协议全部的接受。
+            </text>
+          </view>
+        <view class="pclass">
+            <text class='spanclass'>1.7 同意将发票自动放入支付宝发票管家。
+            </text>
+        </view>
+
+        <view class="m-h2">
+            <text class='spanclass'>
+                2. 服务内容
+            </text>
+        </view>
+        </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.1 “票根”发票服务平台提供收费公路通行费电子发票相关服务，包括在“票根”APP、“票根”网上注册、登录、绑定ETC卡或用户卡、开具通行费电子发票、查看通行费电子发票等（以下称“票根服务”或“本服务”）。除非本协议另有明确约定，“票根”所推出的新产品、新功能、新服务或产品、服务的升级，均受到本协议约束。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>“票根”将依据交通及税务主管部门的相关要求，提供电子发票服务。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.2 “票根”仅提供相关的网络服务，除此之外，与相关网络服务有关的设备（如个人电脑、手机及其他与接入互联网或移动网络有关的装置）及所需的费用（如接入互联网而支付的电话费或上网费、为使用移动网络支付的手机费）由用户自行负担。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.3账户管理
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.3.1账号禁止赠与、借用、租用、转让或售卖。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.3.2 用户可以更改“票根”账户上的个人资料、注册信息等，但需注意，个人资料、注册信息中的身份信息、手机号码、车牌号、车型等信息，用户须到ETC卡或用户卡发行机构变更后，方可更改“票根”账户上的相关信息。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.3.3 “票根”用户的账户由其自行设置并保管，用户有义务妥善保管注册账号信息及账号密码的安全，确保用户信息不被第三方获得。用户对利用该账号和密码所进行的一切活动负全部责任，包括但不限于因用户保管不善导致遭受盗号或密码失窃，或是用户未能保持信息安全和保密而在用户账户下发生的任何行为。用户同意在任何情况下不得转让账户、授权他人使用本人账户，以及与他人交易账户。请用户理解并知悉，因网络服务的特殊性，“票根”无义务审核是否用户本人使用该组账号和密码，而仅审核账号和密码与“票根”保存的登录信息的一致性，因此任何人只要输入的账号和密码与“票根”保存的用户信息一致，即可登录该账户并使用该账户下“票根”提供的相关服务。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>用户一旦怀疑他人使用其账号或密码时，建议用户立即通知“票根”。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.3.4账户回收
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>如用户的账户符合以下条件，且不存在未到期的有效业务，则“票根”可回收用户的账户，账户将不能再登录“票根”，相应服务同时终止：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（1）对恶意注册“票根”账号或利用“票根”账号进行违法活动、骚扰、欺骗其他用户；（2）其他违反本协议的行为。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.4用户注册
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.4.1用户在使用“票根”服务前需要注册一个“票根”账号。“票根”账号应当使用手机号码注册，“票根”可以根据用户需求或产品需要对账号注册和绑定的方式进行变更，而无须事先通知用户。如果已注册用户不接受变更后的方式，请立即停止使用“票根”服务，用户继续使用“票根”提供的服务将被视为接受变更后的方式。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.4.2在用户注册及使用本服务时，“票根”需要收集能识别用户身份的个人信息，以便“票根”提供本协议约定的服务，或在必要时联系用户，或为用户提供更好的使用体验。用户提供的个人信息以及“票根”对这些信息的使用，请查看《隐私条款》，以了解“票根”的原则和做法，该政策将同时构成本协议的补充协议。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.4.3用户注册成为“票根”用户并接受“票根”服务时，应填写真实有效的开具电子发票相关的用户和车辆基础信息。“票根”有权通过用户本人或其他相关第三方获取用户开具发票所需的各类信息，包括但不限于：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>(1)ETC客户信息：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>①个人：包括但不限于开户人姓名、开户人证件类型、证件号码、开户人电话等。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>②单位：包括但不限于开户人名称、开户人证件类型、开户人证件号、指定经办人电话等。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>(2)ETC客户车辆信息：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>包括但不限于车牌号码、车牌颜色等。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.5用户绑卡
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>用户注册成功后，如果需要开具电子发票，则需要绑定本人（本单位）的ETC卡，用户信息与第三方机构提供的数据匹配，方可成功绑卡，进而获取用户办理ETC卡或用户卡时留存的ETC相关信息、车辆信息及通行记录等。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.6发票开具
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.6.1用户理解，“票根”提供的电子发票服务的具体内容，由“票根”按照从第三方机构所能获取用户信息的实际情况提供，包括个人及单位用户办理ETC卡或用户卡时预留的相关信息、车辆信息及通行记录等。用户通行记录及缴费情况等数据来源于收费公路相关管理机构，用户对于通行记录、行驶路段、缴费等情况有任何异议，应与收费公路相关管理机构、ETC卡或用户卡发行方联系，按照其要求对于信息或记录进行更正。上述数据错误导致的用户损失，“票根”不承担责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>“票根”显示的交易记录不作为官方ETC通行和充值交易的查询记录，或其他证明。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.6.2用户不能以任何形式虚开发票，一旦“票根”监测发现并验证将立即冻结用户账户，同时，向税务机关举报用户行为。用户造成国家或他人利益受损的，“票根”不承担任何责任，由用户承担赔偿责任，如用户的行为构成犯罪的，将被追究刑事责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.6.3用户需提供真实有效的发票信息，如在发票开具时，用户因没有填写真实开票信息而导致的损失，开票方、“票根”均不承担任何责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.7 信息服务
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.7.1“票根”可能包含第三方网站或资源的链接（以下简称“链接网站”），链接网站仅为方便用户使用而提供。“票根”无法控制这些网站及资源，亦未评估这些链接网站，因此不对这些网站或其内容的可用性、有效性、安全性等予以负责和管理。用户了解并同意，“票根”不对此类网站或资源的可利用性、存在或源于此类网站或资源的任何内容、广告、产品、服务或其他资料，进行认可、保证。用户需自行独立判断与该等网站或链接的互动。因使用或依赖任何此类网站或资源发布的或经由此类网站或资源获得的任何内容、商品或服务所产生的任何损害或损失，“票根”不承担任何责任。如果用户决定访问与本网站链接的任何第三方网站，则完全由用户自行承担风险。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>当用户使用第三方链接网站的服务时，适用第三方的条款和政策。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.7.2“票根”提供的服务中可能包括广告，用户同意在享受“票根”提供的服务过程中接受“票根”和/或第三方供应商、合作伙伴发送的广告或商业信息，包括但不限于产品信息、促销信息等，该类信息的提供方式包括但不限于电子邮件、短信。除法律法规明确规定外，对于第三方供应商、合作伙伴发布的广告信息，用户应自行对依该广告信息进行的交易负责，“票根”不对这些主体提供的服务做出核实、评估或担保（除非得到书面同意），对用户因依该广告信息进行的交易或前述广告商提供的内容而遭受的损失或损害，“票根”不承担任何责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2.7.3用户理解并同意，“票根”及其内容按现有技术和条件所能达到的现状提供。尽管“票根”将尽最大努力向用户提供服务，确保“票根”APP和“票根”网正常、连续使用，但不承诺“票根”APP、“票根”网或前述平台的任何内容、服务或功能无任何错误或不中断，不承诺任何瑕疵将在一定时限内纠正。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>
+                2.7.4尽管“票根”会努力使“票根”APP、“票根”网和资料不包含或发布任何病毒或其他恶意代码，但“票根”不能确保用户从各渠道下载或浏览的任何信息或数据无病毒、无污染或不具破坏性。出于自我保护目的，建议用户采取必要安全措施，对所有资料进行病毒检查，并定期检查是否存在病毒和其他恶意代码。
+            </text>
+        </view>
+
+        <view class="m-h2">
+            <text class='spanclass'>
+                3. 使用规则
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>3.1用户在本服务中或通过本服务所传送、发布的任何内容并不反映或代表行云数聚或其产品“票根”的观点、立场或政策，行云数聚或“票根”对此不承担任何责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>3.2用户须对利用“票根”账号或本服务传送信息的真实性、合法性、无害性、准确性、有效性等负责，与用户所传播的信息相关的任何法律责任由用户自行承担，与“票根”无关。如因此给“票根”或第三方造成损害的，用户应当依法予以赔偿。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>3.3用户行为要求
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>3.3.1用户在使用“票根”服务时，必须遵守中华人民共和国相关法律法规的规定，用户不得利用“票根”账号或本服务进行任何违法或不当的活动，此类活动包括但不限于：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（1） 提交、发布虚假信息，或盗用他人头像或资料，冒充、利用他人名义的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（2） 利用技术手段批量建立虚假账号的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（3） 利用“票根”账号或本服务从事任何违法犯罪活动的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（4） 制作、复制、发布、传播及使用敏感词汇或以其他方式传送含有下列内容之一的信息：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>①危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>②损害国家荣誉和利益的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>③煽动民族仇恨、民族歧视，破坏民族团结、破坏国家宗教政策，宣扬邪教和封建迷信的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>④散布谣言，扰乱社会秩序，破坏社会稳定的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>⑤散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>⑥侮辱或者诽谤他人，侵害他人合法权益的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>⑦ 煽动非法集会、结社、游行、示威、聚众扰乱社会秩序的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>⑧ 以非法民间组织名义活动的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>⑨含有虚假、有害、胁迫、侵害他人隐私、骚扰、侵害、中伤、粗俗、猥亵或其他道德上令人反感的内容；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>⑩ 其他中国法律、法规、规章、条例及任何法律规范所限制或禁止的其他内容。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（5）制作、发布与以上行为相关的方法、工具，或对此类方法、工具进行运营或传播，无论这些行为是否为商业目的。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>3.3.2用户不得为任何非法目的而使用网络服务系统，用户应遵守所有与网络服务有关的网络协议、规定和程序，不得利用“票根”网络服务系统进行任何可能对互联网正常运转造成不利影响的行为，此类行为包括但不限于：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（1）通过或试图通过非法侵入、“破解”密码或任何其他非法方式，未经授权访问“票根”的任何部分或功能，或者链接至“票根”或行云数聚服务器的任何其他系统或网络，或者未经授权取得“票根”提供的任何服务；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（2）探查、扫描或测试“票根”或链接至“票根”任何网络弱点，违反“票根”任何网络的安全或认证措施；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（3）故意制作、传播计算机病毒等恶意软件或破坏性程序；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（4）使用任何设备、软件、程序等方式，干扰或试图干扰“票根”的正常运行或于“票根”进行的任何交易，或干扰或试图干扰他人使用“票根”；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（5）伪造信头或以其他方式操控识别功能，以伪造用户通过“票根”提交的任何信息或传输内容的来源，或者伪造“票根”提供的任何服务的来源。假冒他人、或假冒代表他人，或模仿任何其他个人或实体。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>（6）利用网络服务进行任何不利于“票根”的行为。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>3.3.3用户不得进行任何未经“票根”许可的商业广告行为，不得将广告函件、促销信息、垃圾邮件等，通过张贴、发送或以其他方式传送；不得利用“票根”上的任何数据作为商业性利用。
+            </text>
+        </view>
+
+        <view class="m-h2">
+            <text class='spanclass'>
+                4. 数据储存
+            </text>
+        </view>
+
+        <view class="pclass">
+            <text class='spanclass'>4.1.“票根”为用户提供通行费电子发票相关的数据存储服务，并根据相关政策要求和实际情况决定用户在本服务中数据的最长储存期限，及在服务器上为其分配数据最大存储空间等。“票根”可根据用户行为判定是否符合本协议约定或具有合理性，如果违反本协议或不具有合理性，“票根”可中止服务、冻结用户账号。用户可根据自己的需要自行备份本服务中的相关数据。对于重要的文字、图片、信息或数据，“票根”建议用户及时保存和备份。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>4.2.“票根”不对用户在本服务中相关数据的删除或储存失败负责。
+            </text>
+        </view>
+
+        <view class="m-h2">
+            <text class='spanclass'>
+                5. 风险承担
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>5.1用户理解并同意，“票根”仅是为用户提供通行费电子发票开具、查看的平台，用户须为自己注册账号下的一切行为负责，包括用户所传送的任何内容以及由此产生的任何后果。用户应对“票根”及本服务中的内容自行加以判断，并承担因使用内容而引起的所有风险，包括对内容的正确性、完整性或实用性的依赖而产生的风险。“票根”无法且不会对因用户行为而导致的任何损失或损害承担责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>如果用户发现任何人违反本协议约定或以其他不当的方式使用本服务，请立即向“票根”举报或投诉，“票根”将依本协议约定进行处理。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>5.2.用户理解并同意，因业务发展需要，“票根”保留单方面对本服务的全部或部分服务内容变更、终止或撤销的权利。</text>
+        </view>
+
+        <view class="m-h2">
+            <text class='spanclass'>
+                6. 知识产权声明
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>6.1.除本服务中涉及广告的知识产权由相应广告商享有外，“票根”在本服务中包含的内容（包括但不限于网页、文字、图片、商标、音频、视频、图表、软件著作权及专利等）的知识产权均归“票根”及其许可人所有，受其控制或者许可其使用，但用户在使用本服务前对自己发布的内容已合法取得知识产权的除外。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>6.2.除另有特别声明外，“票根”提供本服务时所依托软件的著作权、专利权及其他知识产权均归“票根”或其许可人所有。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>6.3.“票根”在本服务中所涉及的图形、文字或其组成，以及其他“票根”标志及产品、服务名称（以下统称“票根标识”），其著作权或商标权归“票根”所有。未经“票根”事先书面同意，用户不得将“票根”标识以任何方式展示、使用或作其他处理，也不得向他人表明用户有权展示、使用或其他有权处理“票根”标识的行为。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>6.4.上述及其他任何“票根”或相关广告商依法拥有的知识产权均受到法律保护，未经“票根”或相关广告商书面许可，用户不得以任何形式进行使用或创造相关衍生作品。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>6.5.除用户与“票根”另有事先书面约定外，用户同意对本网站内容、资料、信息、数据的查看、浏览、下载、保存仅为个人非商业性质的使用。未经“票根”和/或其他权利人事先明确书面同意，用户不得为出版、发行或为任何其他商业目的以任何方式（包括“镜像”）将本服务的任何部分及任何内容复制、再制、重印、修改、上传、发布、公开展示、编码、翻译、传输或散布至任何其他计算机、服务器、网站或其他媒介。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>6.6.用户使用的“票根”或行云数聚提供的其他软件的著作权均归行云数聚所有。用户对软件的使用将受伴随或包含在许可协议中相应条款的约束，用户同意此类许可协议后，方可使用软件。对于这些软件，“票根”授予用户不可转授权及非排他性的许可，用户仅可为访问或使用“票根”及其服务的目的而使用这些软件。用户不得自行且不得允许任何第三方，复制、修改、创作衍生软件、进行还原工程、反向组译，或以其他方式破译或试图破译源代码，或出售、转让软件或对软件进行再授权，或以其他方式移转软件之任何权利。用户同意不以任何方式修改软件，或使用修改后的软件。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>6.7.“票根”有权在所有由“票根”提供的功能界面标注“此功能（内容）由行云数聚提供”或“此功能（内容）由‘票根’提供”等相关版权信息声明。用户不得从“票根”提供的资料中删除版权信息声明。
+            </text>
+        </view>
+
+        <view class="m-h2">
+            <text class='spanclass'>
+                7. 协议终止
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.1用户有权通过以下任一方式终止本协议：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.1.1变更事项生效前用户停止使用并明示不愿接受变更事项的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.1.2用户明示不愿继续使用“票根”服务，且符合“票根”终止条件的。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.2出现以下情况时，“票根”可以本协议所列的方式通知用户终止本协议：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.2.1用户违反本协议中的使用规则，“票根”终止本协议的；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.2.2用户的账户被“票根”依据本协议回收的；
+
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.2.3用户有其他违法违约行为的；
+
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.2.4其它应当终止服务的情况。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.3 协议终止后的处理
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.3.1本协议终止后，“票根”不再向用户提供本协议相关的所有服务，且没有义务向用户返还或向用户/用户指定的第三方披露任何数据。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>7.3.2用户账号及相关信息或文件被关闭或删除的，“票根”对用户或任何第三方均不承担任何责任。
+            </text>
+        </view>
+        <view class="m-h2">
+            <text class='spanclass'>
+                8.通知和送达
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>8.1 用户在注册“票根”账号时提供的用于接收站内信、系统消息等的联系方式（包括电子邮箱、手机号码），应真实、准确、有效。如用户联系方式发生变更请及时更新，并保持可被联系的状态，联系方式未被更新前，“票根”的各类通知将按原方式发送。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>8.2 以电子的方式发出的书面通知，“票根”可采用下述方式的其中之一或其中若干向用户送达：包括但不限于在“票根”公告，向用户提供的手机号码发送短信，向用户提供的电子邮件地址发送电子邮件，在发送成功后即视为送达。该类信息与用户的权利义务密切相关，请用户务必注意查看。
+            </text>
+        </view>
+        <view class="m-h2">
+            <text class='spanclass'>
+                9.用户责任
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>9.1.如果“票根”发现、收到他人举报/投诉用户违反有关法律法规或本协议约定的，“票根”有权根据用户行为的性质、严重性、紧迫性，并依其合理判断，可不经通知对相关内容和行为进行处理，处理方式包括但不限于以下：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>删除用户发布信息内容、中止服务、限制使用、冻结账号、回收账号、终止服务、追究法律责任等措施。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>9.2.用户理解并同意，“票根”会视法律法规规定、司法部门的要求，依法协助调查及履行其他法律义务，并依据法律法规保存有关信息向有关部门报告等，用户应承担由此而产生的一切法律责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>9.3 赔偿
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>用户违反本协议或相关的服务条款的规定，导致行云数聚和/或其关联公司、合作伙伴和/或其关联公司遭受损失（包括自身的直接经济损失、对外支付的赔偿金、和解款、诉讼费、律师费等合理开支以及商誉损失）或行政处罚，用户应赔偿行云数聚和/或其关联公司、合作伙伴和/或其关联公司。如用户的行为使行云数聚和/或其关联公司、合作伙伴和/或其关联公司遭受第三人主张权利，行云数聚和/或其关联公司、合作伙伴和/或其关联公司可在对第三人承担金钱给付等义务后就全部损失向用户追偿。
+            </text>
+        </view>
+        <view class="m-h2">
+            <text class='spanclass'>
+                10.不可抗力及其他免责事由
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.1.用户理解并确认，在使用本服务的过程中，可能会遇到不可抗力等风险因素，使本服务发生中断。不可抗力是指不能预见、不能克服并不能避免且对一方或双方造成重大影响的客观事件，包括但不限于自然灾害如洪水、地震、瘟疫流行和风暴等，以及社会事件如战争、动乱、政府行为、黑客攻击、网络病毒、电信部门技术管制等。出现上述情况时，“票根”将尽最大努力在第一时间与相关单位配合，及时进行修复。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.2.用户理解并确认，本服务存在因不可抗力、计算机病毒或黑客攻击、系统不稳定、用户所在位置、用户关机以及其他任何技术、互联网络、通信线路原因等造成的服务中断、取消、终止或不能满足用户要求的风险，因此导致的用户或其他第三方的任何损失，“票根”不承担任何责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.3.用户理解并确认，在使用本服务过程中存在来自任何他人的包括误导性的、欺骗性的、威胁性的、诽谤性的、令人反感的或非法的信息，或侵犯他人权利的匿名或冒名的信息，以及伴随该等信息的行为，因此导致的用户或第三方的任何损失，“票根”不承担任何责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.4.用户理解并确认，“票根”需要定期或不定期地对其应用平台或相关的设备进行检修或者维护，如因此类情况而造成服务在合理时间内的中断，“票根”无需为此承担任何责任，但“票根”将尽可能事先进行通知。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.5 除本协议另有规定外，鉴于网络服务的特殊性，“票根”有可能变更、中断或终止部分或全部的网络服务，“票根”无需为此承担任何责任，但“票根”将尽可能事先进行通知，并尽可能给用户预留时间以便处理相关权益。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.6“票根”依据法律法规、本协议约定获得处理违法违规或违约内容的权利，该权利不构成“票根”的义务或承诺，“票根”不能保证及时发现违法违规或违约行为或进行相应处理，用户理解“票根”对用户的任何请求进行响应或者对前述行为采取行动均需要合理时间，且“票根”应用户请求或者采取的行动可能无法避免或阻止侵害后果的形成或扩大，除“票根”存在法定过错外，“票根”不承担责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.7用户理解并确认，“票根”依据用户提供的信息和第三方机构核验的信息向用户提供服务，因信息有误而导致用户在使用“票根”服务出现的瑕疵等问题，“票根”并不承担责任。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.8 本协议其他条款约定的“票根”免责的情形。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.9在任何情况下，“票根”均不对任何间接性、后果性、惩罚性、偶然性、特殊性或刑罚性的损害，包括因用户使用“票根”或本服务而遭受的利润损失承担责任。尽管本协议中可能含有相悖的规定，“票根”对用户承担的全部责任，无论因何原因或何种行为方式，始终不超过用户因使用“票根”提供的服务而支付给“票根”的费用(如有)。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.10“票根”将尽最大可能通知用户，但仍保留在任何时候不经通知进行以下行为的权利：
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.10.1基于任何原因，修改、中止或终止本服务或其任何部分的运行或访问；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.10.2修改或变更本服务或其任何部分及任何适用政策或条款；
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>10.10.3在进行定期或非定期维护、错误纠正或其他变更所必须时，中断本服务或其任何部分的运行。
+            </text>
+        </view>
+
+        <view class="m-h2">
+            <text class='spanclass'>
+                11.法律适用、管辖及其他
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>11.1本协议的订立、生效、解释、修订、补充、终止及争议解决，适用于中华人民共和国大陆地区法律；如法律无相关规定，参照商业惯例和/或行业惯例。如用户和“票根”之间发生任何纠纷或争议，首先应友好协商解决，协商不成的，用户同意将纠纷或争议提交行云数聚住所地有管辖权的人民法院管辖。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>11.2本协议具有合同法上的法律效力。“票根”未行使或执行本协议任何权利或规定，不构成对前述权利或权利的放弃。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>11.3本协议会根据国家法律政策和/或“票根”服务内容、用户的使用情况等变化，及时更新版协议。
+
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>11.4本协议的标题仅供阅读方便而设置，不具有任何法律的效果。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>11.5 本协议的最终解释权归行云数聚所有。本协议的任何条款无论因何种原因无效或不具可执行性，其余条款仍有效，对双方具有约束力。
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>本协议版本于2017年12月25日发布
+            </text>
+        </view>
+        <view class="pclass">
+            <text class='spanclass'>2017年12月25日生效
+            </text>
+        </view>
+
+    </view>
+</view>

@@ -1,0 +1,52 @@
+<view class="page">
+  <view class="m-header">
+    <view class="{{userType=='PERSONAL'?'m-tab s-sel':'m-tab'}}" onTap="choosePer">
+      <image src="/image/person.png" mode="aspectFit" />
+      <text>个人卡</text>
+    </view>
+    <view class="{{userType=='COMPANY'?'m-tab s-sel':'m-tab'}}" onTap="chooseCom">
+      <image src="/image/company.png" mode="aspectFit" />
+      <text>单位卡</text>
+    </view>
+  </view>
+
+  <view class="m-main">
+    <!-- <view class="m-search"></view> -->
+    <view a:if="{{items.length > 0}}" class="card-wrap">
+      <view class="m-cards">
+        <view class="m-area" a:for="{{items}}">
+          <view class="u-add">
+            <view>{{item.issuerName}}</view>
+            <view><text class="c-e7">{{item.cardNum}}</text>张</view>
+          </view>
+          <view class="m-card"
+                a:for="{{item.cards}}" 
+                a:for-index="ind"
+                a:for-item="card" 
+                data-card="{{card.cardId}}"
+                data-plate-num="{{card.plateNum}}"
+                onTap="toInvoice">
+            <view class="u-chepai u-info">{{card.plateNum}}</view>
+            <view class="u-info"><text>{{card.cardType}} :</text><text>{{card.cardId?card.cardId.substring(0,6)+"**********"+card.cardId.substr(-4):''}}</text></view>
+            <view class="u-info"><text>关联抬头 :</text><text a:if="{{card.titleId}}">{{card.titleName}}</text></view>
+            <view class="u-card-arrow " />
+          </view>
+        </view>
+      </view>
+
+    </view>
+      
+    <view a:if="{{noData == 1}}" class="m-none">
+      <view>
+        <image src="/image/noetc.png" mode="aspectFit" />
+      </view>
+      <view>
+        <text>您还没有绑定ETC卡哦~</text>
+      </view>
+      <button type="primary" size="defaultSize" onTap="toAddEtc"> 马上添加卡片 </button>
+    </view>
+
+  </view>
+
+
+</view>

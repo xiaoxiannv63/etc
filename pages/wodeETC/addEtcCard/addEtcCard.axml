@@ -1,0 +1,118 @@
+<view class="page">
+  <steps steps="{{steps}}" curentStep="{{curStep}}" />
+  <view a:if="{{curStep == 0}}" class="m-tab tab1">
+    <picker onChange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker u-item">
+        <view class="u-dt">省<text class="w-e2"></text>份</view><text>|</text>
+        <view class="u-dd">
+          {{array[index]}}
+        </view>
+        <view class="btn-sel c-0f">选择</view>
+      </view>
+    </picker>
+    <!-- 判断是添加什么类型的卡片 -->
+    <!-- 个人卡预留信息验证 -->
+    <view a:if="{{userType == 'PERSONAL'}}">
+      <view class="u-item">
+        <view class="u-dt">姓<text class="w-e2"></text>名</view><text>|</text>
+        <input class="u-dd" placeholder="请输入姓名" onInput="setName" />
+      </view>
+      <!-- <view class="u-item"> -->
+        <picker onChange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+          <view class="picker u-item">
+            <view class="u-dt">证件类型</view><text>|</text>
+            <view class="u-dd">{{array2[index2]}}</view>
+            <view class="btn-sel c-0f">选择</view>
+          </view>
+        </picker>
+      <!-- </view> -->
+      <view class="u-item">
+        <view class="u-dt">证件号码</view><text>|</text>
+        <input class="u-dd" placeholder="请输入对应证件号码" onInput="setDocuNum" />
+      </view>
+      <button type="primary" disabled="{{nextDisable0}}"  class="usua-btn" size="defaultSize" onTap="next"> 下一步 </button>
+    </view>
+    <!-- 单位卡预留信息验证 -->
+    <view a:else>
+      <view class="u-item">
+        <view class="u-dt">单位名称</view><text>|</text>
+        <input class="u-dd" placeholder="请输入单位名称" onInput="setName" />
+      </view>
+      <view class="u-item">
+        <view class="u-dt">分支机构</view><text>|</text>
+        <input class="u-dd" placeholder="请输入分支机构" onInput="setDepart" />
+      </view>
+      <!-- <view class="u-item"> -->
+        <picker onChange="bindPickerChange3" value="{{index3}}" range="{{array3}}">
+          <view class="picker u-item">
+            <view class="u-dt">证件类型</view><text>|</text>
+            <view class="u-dd">{{array3[index3]}}</view>
+            <view class="btn-sel c-0f">选择</view>
+          </view>
+        </picker>
+      <!-- </view> -->
+      <view class="u-item">
+        <view class="u-dt">证件号码</view><text>|</text>
+        <input class="u-dd" placeholder="请输入对应证件号码" onInput="setDocuNum" />
+      </view>
+      <button type="primary" disabled="{{nextDisable0}}"  class="usua-btn" size="defaultSize" onTap="next"> 下一步 </button>
+    </view>
+    
+  </view>
+  <view a:elif="{{curStep == 1}}" class="m-tab tab2">
+    <view>
+      <view class="u-item">
+        <view class="u-dt">手机号</view><text>|</text>
+        <input type="number" class="u-dd u-telnum" placeholder="请输入手机号码" onInput="setMobNum" />
+        <view class="{{time>0?'btn-code':'c-0f btn-code'}}" onTap="getCode">
+          <text a:if="{{time>0}}">({{time}})</text>
+          <text>{{getCodeBtnText}}</text>
+        </view>
+      </view>
+      <view class="u-item">
+        <view class="u-dt">验证码</view><text>|</text>
+        <input type="number" class="u-dd" placeholder="请输入验证码" onInput="setCheckNum" />
+      </view>
+    </view>
+
+    <button type="primary" disabled="{{nextDisable1}}" class="usua-btn" size="defaultSize" onTap="next"> 下一步 </button>
+  </view>
+
+  <view a:elif="{{curStep == 2}}" class="m-tab tab3">
+    <view class="m-tab-cont">
+      <view class="u-tit">
+        <view>省市：{{array[index]}}</view><view>共<text class="c-e7">{{totalNum}}</text>张</view>
+      </view>
+      <checkbox-group onChange="selAll">
+        <label class="checkbox sel-all">
+          <checkbox value="{{selAllList}}" />
+          <text class="checkbox-text u-qx">全选</text>
+          <view>已选<text class="c-e7">{{bindCardList.length}}</text>张</view>
+        </label>
+      </checkbox-group>
+      <checkbox-group onChange="listChange">
+        <label class="checkbox" a:for="{{cardList}}">
+          <checkbox value="{{item.cardId}}" checked="{{selAllOnOff}}" />
+          <view class="u-plate">
+            <view>
+              <text>车牌：</text>
+              <text class="u-val">{{item.plateNum}}</text>
+            </view>
+            <view>
+              <text>卡号：</text>
+              <text class="u-val">{{item.cardId?item.cardId.substring(0,6)+"**********"+item.cardId.substr(-4):''}}</text>
+            </view>
+          </view>
+          <view><text class="c-e7">{{item.cardType}}</text></view>
+        </label>
+      </checkbox-group>
+    </view>
+
+    <button type="primary" class="usua-btn" disabled="{{bindCardList.length == 0}}" size="defaultSize" onTap="bindHandle"> 绑定 </button>
+  </view>
+
+  <view a:if="{{curStep != 2}}" class="m-wxts c-a8">
+    <view class="u-tit">温馨提示：</view>
+    <view>请您填写办理ETC卡时预留的用户信息，若信息不一致则无法绑定成功。如有疑问，请向发卡方核实。</view>
+  </view>
+</view>

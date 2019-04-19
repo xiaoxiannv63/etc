@@ -1,0 +1,51 @@
+<view class="page">
+  
+  <view class="header">
+    <view class="avatar">
+      <image class="avatar" src="{{user.avatar}}" background-size="cover"></image>
+    </view>
+    <view class="nickname">{{user.nickName}}</view>
+    <view class="font-gray padding">当前登录票根账号</view>
+    <view class="nickmobile">{{mobile?mobile:""}}</view>
+  </view>
+
+  <view class="mylist">
+    <view class="cell_box" data-url="/pages/wodeETC/myetc/myetc" onTap="toView">
+      <view class="cell_box_hd">
+        <image src="../../assets/images/user/etc.png" mode="aspectFit" />
+      </view>
+        <view class="cell_box_bd">我的ETC</view>
+      <view class="cell_box_ft"></view>
+    </view>
+    
+      <view class="cell_box" data-url="/pages/myInvoice/invoiceList/invoiceList" onTap="toView">
+        <view class="cell_box_hd">
+          <image src="../../assets/images/user/piao.png" mode="aspectFit" />
+        </view>
+        <view class="cell_box_bd">我的发票</view>
+        <view class="cell_box_ft"></view>
+      </view>
+      <view class="cell_box" data-url="/pages/invoiceTit/index/index" onTap="toView">
+        <view class="cell_box_hd">
+          <image src="../../assets/images/user/title.png" mode="aspectFit" />
+        </view>
+        <view class="cell_box_bd">我的抬头</view>
+        <view class="cell_box_ft"></view>
+      </view>
+      <!-- <view class="cell_box" data-tel="400 1111 8888" onTap="toPhone">
+        <view class="cell_box_hd">
+          <image src="../../assets/images/user/title.png" mode="aspectFit" />
+        </view>
+        <view class="cell_box_bd">联系客服</view>
+        <view class="cell_box_ft"></view>
+      </view> -->
+    
+    </view>
+    
+    <view class="m-link usua-btn">
+      <button type="warn" size="defaultSize" onTap="unregister">
+        <text> 退出登录 </text>
+      </button>
+    </view>
+
+</view>

@@ -1,0 +1,41 @@
+<view class="page">
+  <view class="invoice-wrap">
+    <view class="m-info" a:for="{{items}}" data-ind="{{index}}">
+    <!-- <view class="m-info" a:for="{{items}}" data-ind="{{index}}" onTap="toDZFP" onTap="fphc"> -->
+      <view class="u-tit">
+        <view>{{item.buyerName}}</view>
+      </view>
+
+      <view class="info-wrap">
+        <view>
+          <view class="u-key u-double">税<text></text>号：</view>
+          <text class="u-val">{{item.sellerTaxNum}}</text>
+        </view>
+        <view>
+          <text class="u-key">开票单位：</text>
+          <text class="u-val">{{item.sellerName}}</text>
+        </view>
+        <view>
+          <text class="u-key">发票代码：</text>
+          <text class="u-val">{{item.invoiceCode}}</text>
+        </view>
+        <view>
+          <text class="u-key">发票号码：</text>
+          <text class="u-val">{{item.invoiceNum}}</text>
+        </view>
+        <view>
+          <text class="u-key">发票金额：</text>
+          <text class="u-val">￥{{(item.totalAmount/100).toFixed(2)}}</text>
+        </view>
+        <view>
+          <text class="u-key">开票时间：</text>
+          <text class="u-val">{{item.invoiceTime}}</text>
+        </view>
+        <view class="u-card-arrow " />
+      </view>
+    </view>
+
+  </view>
+
+  <button type="primary" class="usua-btn" size="defaultSize" onTap="toMingxi"> 查看发票明细 </button>
+</view>

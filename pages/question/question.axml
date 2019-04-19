@@ -1,0 +1,21 @@
+<view class="page">
+  <view a:for="{{items}}">
+    <view class="listTitle">
+        {{item.name}}
+    </view>
+    <view a:for={{item.content}} class="margin">
+      <view
+        class="a-collapse-title"
+        onTap="handleTitleTap"
+        data-index="{{item.id}}"
+        data-status="{{item.expanded}}"
+      >
+        {{item.question}}
+        <view class="{{item.expanded ? 'a-collapse-title-arrow a-collapse-title-arrow-up' : 'a-collapse-title-arrow'}}" />
+      </view>
+      <view class="a-collapse-content" a:if="{{item.expanded}}">
+        <text>{{item.answer}}</text>
+      </view>
+    </view>
+  </view>
+</view>

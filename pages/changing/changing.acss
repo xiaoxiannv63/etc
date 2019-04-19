@@ -1,0 +1,9 @@
+
+.padding-auto{padding-right:40rpx; padding-left:40rpx;}
+.padding-right{padding-right:40rpx;}
+.tip{padding:20rpx;}    
+.padding{ padding:20rpx}
+.default-zdy button{ width: 80%; margin:20rpx 10% 10rpx}
+.positon .ul .li{position: relative; }
+.radio{ padding-left:20rpx;}
+.radio radio{ padding-top: 20rpx; vertical-align: 70%}

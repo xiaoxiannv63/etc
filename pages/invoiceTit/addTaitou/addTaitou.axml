@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="m-items">
+    <view class="u-item">
+      <view class="u-dt s-larg-int">抬头类型：</view>
+      <view a:if="{{titleType=='UNIT'}}" class="my-radio">
+        <view class="u-sel selected">企业</view>
+        <view class="u-sel" onTap="selPer">个人/非企业单位</view>
+      </view>
+      <view a:else class="my-radio">
+        <view class="u-sel" onTap="selComp">企业</view>
+        <view class="u-sel selected">个人/非企业单位</view>
+      </view>
+    </view>
+    <view class="u-item">
+      <view class="u-dt"><text class="c-e7">*</text>抬头名称：</view>
+      <input class="u-dd" placeholder="请输入抬头名称" value="{{name}}" onInput="setInvName" controlled="true"/>
+    </view>
+
+      <view class="u-item">
+        <view class="u-dt u-db">
+          <text a:if="{{titleType == 'UNIT'}}" class="c-e7">*</text>
+          <text a:else class="u-gerenkuan"></text>
+          税<text class="u-double"></text>号：
+        </view>
+        <input class="u-dd" placeholder="请输入税号" value="{{tax}}" onInput="setInvTax" />
+      </view>
+      <view class="u-item">
+        <view class="u-dt s-larg-int">单位地址：</view>
+        <input class="u-dd" placeholder="请输入单位地址" value="{{add}}" onInput="setInvAdd" />
+      </view>
+      <view class="u-item">
+        <view class="u-dt s-larg-int">电话号码：</view>
+        <input class="u-dd" placeholder="请输入电话号码" value="{{tel}}" onInput="setInvTel" />
+      </view>
+      <view class="u-item">
+        <view class="u-dt s-larg-int">开户银行：</view>
+        <input class="u-dd" placeholder="请输入开户银行" value="{{bank}}" onInput="setInvBank" />
+      </view>
+      <view class="u-item">
+        <view class="u-dt s-larg-int">银行账号：</view>
+        <input type="number" class="u-dd" placeholder="请输入银行账号" value="{{acc}}" onInput="setInvAcc" />
+      </view>
+
+  </view>
+
+  <view class="m-guanlian" onTap="bindEtc">
+    <view>请选择关联ETC卡</view>
+    <view class="guanlian-num">已关联<text class="c-e7 u-num">{{etcList.length}}</text>张</view>
+  </view>
+
+  <view class="m-wxts c-a8">
+    <view class="u-tit">温馨提示：</view>
+    <view>您需在每次通行或充值前确认发票抬头，该抬头将成为您下次开票的发票抬头，一旦交易完成，本次发票抬头不能更改。</view>
+  </view>
+  <button type="primary" class="usua-btn" size="defaultSize" onTap="addEtc"> 添加 </button>
+</view>

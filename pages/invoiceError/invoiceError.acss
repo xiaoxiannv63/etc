@@ -1,0 +1,6 @@
+
+.divImg{ text-align: center; padding-top: 40rpx}
+.divImg image{width: 160rpx; height: 160rpx;}
+.ul{padding-top:20rpx; text-align: left; padding-top:0px; line-height: 40rpx; padding:36rpx;}
+.inline{display: inline}
+.border-bottom{border-bottom:solid 1rpx #e2e2e2}

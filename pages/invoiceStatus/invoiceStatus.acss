@@ -1,0 +1,28 @@
+
+.page{background-color: #fff; padding-bottom:140rpx; position: relative}
+.positionBottom{position:fixed; bottom:0rpx; width: 100%}
+.statusHead{background-color: #f7f7f7; padding:12rpx; position: relative}
+.statusOrang{background-color: #f99a34; color: #fff}
+.statusRed{background-color: #ef3939; color: #fff}
+.statusHead .li{color: #787878; padding:6rpx 10rpx;}
+.statusHead .amount{ position: absolute; right:20rpx; top:65rpx; text-align: center}
+.statusHead .amount .money{font-size: 32px; color: #ff9a2b;text-align: center}
+.statusHead .amount .font{color: #787878;text-align: center}
+.statusOrang .li,.statusRed .li{color: #fff}
+.statusOrang .amount .money,.statusRed .amount .money{  color: #ffdf2b;}
+.statusOrang .amount .font,.statusRed .amount .font{color: #fff;text-align: center}
+.bgColorWhite{background-color: #fff}
+.statusHead2{border-top:solid 12rpx #f7f7f7; position: relative}
+.statusHead2 .ul{margin-top:16rpx; border-bottom:solid 2rpx #f7f7f7; padding-bottom:16rpx;}
+.statusHead2 .li{color: #787878; padding:6rpx 20rpx;}
+.statusHead2 .amount{ position: absolute; right:20rpx; top:140rpx; text-align: center}
+.statusHead2 .amount .money{font-size: 32px; color: #ff9a2b;text-align: center}
+.statusHead2 .amount .font{color: #787878;text-align: center}
+.flexItem{padding:0rpx 20rpx 20rpx}
+.primary{width: 100%; height: 90rpx; font-weight: bold; border-radius: 12rpx; color: #fff; font-size: 16px; text-align: center; line-height: 90rpx; background-color:#0f9aff }
+.flexItem .w70{width: 70%; display: inline-block;}
+.flexItem .w30{width: 20%; padding-left: 5%; display: inline-block; text-align: center; line-height: 38rpx; margin-top: -18px;}
+.flexItem image{ width: 46rpx; height: 46rpx; vertical-align:middle}
+.w70Border{width: 70%; border-top:solid 1px #cbcbcb; text-align: center; border-right:solid 1px #cbcbcb; height: 82rpx; line-height: 82rpx}
+.w30Border{width: 30%; border-top:solid 1px #cbcbcb;  text-align: center; height: 82rpx; line-height: 82rpx}
+.w70Border image,.w30Border image{ width:50rpx; height: 50rpx; vertical-align: middle}

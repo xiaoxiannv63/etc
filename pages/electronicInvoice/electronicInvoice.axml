@@ -1,0 +1,103 @@
+
+<view class="page">
+  <view a:if="{{index!=3 && index!=4 }}" class="bgWhiteColor">
+    <view class="title">
+      <view class="span">          个人            
+      </view>
+    </view>
+    <view class="ul">
+      <view class="li">
+        <view class="inline font-gray">税 号：        
+        </view>
+        <view class="inline">911203045SDEDEEWWW001111        
+        </view>
+      </view>
+      <view class="li">
+        <view class="inline font-gray">开票单位：        
+        </view>
+        <view class="inline">内蒙古高等级公路建设开发有限责任公司        
+        </view>
+      </view>
+      <view class="li">
+        <view class="inline font-gray">发票代码：        
+        </view>
+        <view class="inline">0150001700012        
+        </view>
+      </view>
+      <view class="li">
+        <view class="inline font-gray">发票号码：        
+        </view>
+        <view class="inline">04*****43        
+        </view>
+      </view>
+      <view class="li">
+        <view class="inline font-gray">发票金额：        
+        </view>
+        <view class="inline font-orange">￥50.00        
+        </view>
+      </view>
+      <view class="li">
+        <view class="inline font-gray">开票时间：        
+        </view>
+        <view class="inline">2018-06-30  17:19:15        
+        </view>
+      </view>
+      <view class="text-right  font-orange" onTap="addHead" data-type="look"> 展开更多抬头信息 >>
+      </view>
+    </view>
+  </view>
+  <view a:else>
+    <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange" onPlusClick="handlePlusClick" activeTab="{{activeTab}}">
+      <block a:for="{{tabs}}">
+        <tab-content key="{{index}}">
+          <view class="tab-content">
+            <view class="title">
+              <view class="span">个人            
+              </view>
+            </view>
+            <view class="ul">
+              <view class="li">
+                <view class="inline font-gray">税 号：        
+                </view>
+                <view class="inline">911203045SDEDEEWWW001111        
+                </view>
+              </view>
+              <view class="li">
+                <view class="inline font-gray">开票单位：        
+                </view>
+                <view class="inline">内蒙古高等级公路建设开发有限责任公司        
+                </view>
+              </view>
+              <view class="li">
+                <view class="inline font-gray">发票代码：        
+                </view>
+                <view class="inline">0150001700012        
+                </view>
+              </view>
+              <view class="li">
+                <view class="inline font-gray">发票号码：        
+                </view>
+                <view class="inline">04*****43        
+                </view>
+              </view>
+              <view class="li">
+                <view class="inline font-gray">发票金额：        
+                </view>
+                <view class="inline font-orange">￥50.00        
+                </view>
+              </view>
+              <view class="li">
+                <view class="inline font-gray">开票时间：        
+                </view>
+                <view class="inline">2018-06-30  17:19:15        
+                </view>
+              </view>
+              <view class="text-right  font-orange" onTap="addHead" data-type="look"> 展开更多抬头信息 >>
+              </view>
+            </view>
+          </view>
+        </tab-content>
+      </block>
+    </tabs>
+  </view>
+</view>

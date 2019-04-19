@@ -1,0 +1,76 @@
+
+<view class="page">
+  <view class="statusHead">
+    <view class="ul">
+      <view class="li">申请类型： {{itemContent.applyType}}
+      </view>
+      <view class="li">发票内容： 通行费
+      </view>
+      <view class="li">发票张数： {{itemContent.sumInvoice}}张
+      </view>
+      <view class="li">行程总数： {{itemContent.countRecord}}个
+      </view>
+      <view class="li">申请时间： {{itemContent.applyTime}}
+      </view>
+      <view class="li">申请邮箱： {{itemContent.invoiceMail}}
+      </view>
+      <view class="amount">
+        <view class="money">￥{{(itemContent.sumAmount/100).toFixed(2)}}
+        </view>
+        <view class="font">发票总金额
+        </view>
+      </view>
+    </view> 
+  </view>
+  <view class="statusHead bgColorWhite">
+    <view class="li">{{itemContent.buyerName}}</view>
+    <view class="li">税号：{{itemContent.buyerTaxpayerCode}}</view>
+  </view>
+  <!-- <view>
+    <view class="statusHead2" a:if="{{urlQuery.applyType=='3'||urlQuery.applyType=='4'}}">
+      <view class="title">
+          <view class="span">原开票记录</view>
+      </view>
+    <view class="ul">
+      <view class="li">申请类型： 消费发票申请
+      </view>
+      <view class="li">发票内容：123462122XXX4222
+      </view>
+      <view class="li">发票张数： {{itemContent.sumInvoice}}张
+      </view>
+      <view class="li">行程总数： {{itemContent.countRecord}}个
+      </view>
+      <view class="li">申请时间： {{itemContent.applyTime}}
+      </view>
+      <view class="li">申请邮箱： {{itemContent.invoiceMail}}
+      </view>
+      <view class="amount">
+        <view class="money">￥{{itemContent.sumAmount}}
+        </view>
+        <view class="font">发票总金额
+        </view>
+      </view>
+    </view> 
+  </view>
+    <view class="statusHead bgColorWhite">
+    <view class="li">个人</view>
+    <view class="li">税号：12342343221AED331122 </view>
+  </view>
+  </view> -->
+  <view class="positionBottom">
+    <view>
+      <flex justify="between">
+        <view class="w70Border inline" onTap="invoiceError">发票信息有误？请点击</view>
+        <view class="w30Border inline" onTap="lookQuotation">查看行程</view>
+      </flex>
+    </view>
+    <view  class="flex-container">  
+        <flex class="flexItem">
+          <flex-item>
+            <view class="placeholder w30" > <image src="../../assets/images/fxCion.png"/> 分享</view>
+            <view class="placeholder w70"><view class="primary" onTap="lookElectronicInvoice">查看电子发票</view></view>
+          </flex-item>
+        </flex>
+    </view>
+  </view>
+</view>

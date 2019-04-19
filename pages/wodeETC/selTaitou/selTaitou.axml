@@ -1,0 +1,69 @@
+<view class="page">
+  <view a:if="{{items.length > 0}}">
+    <view class="box">
+      <view class="add-img" onTap="addTaitou"></view>
+      <view class="add-msg">添加发票抬头</view>
+    </view>
+    <radio-group class="radio-group" onChange="radioChange">
+      <label class="radio" a:for="{{items}}">
+        <radio value="{{index}}" disabled="{{item.hasBind}}"/>
+        <image a:if="{{item.titleType == '个人'}}" src="/image/geren.png" mode="aspectFit" />
+        <image a:else src="/image/qiye.png" mode="aspectFit" />
+        <view class="u-info">
+          <text>{{item.name}}</text>
+          <text a:if="{{item.titleType != '个人'}}" class="c-a8">税号:{{item.taxNum}}</text>
+          <!-- <text class="c-a8">展开更多企业信息>></text> -->
+        </view>
+        <view a:if="{{item.hasBind}}" class="u-cur c-e7">当前抬头</view>
+      </label>
+    </radio-group>
+    <button type="primary" disabled="{{select==null}}" class="usua-btn" onTap="btnSure"> 确定 </button>
+  </view>
+  <view a:else class="m-notit">
+    <image src="/image/notit.png" mode="aspectFit" />
+    <view>
+      <text>暂无抬头信息，请添加发票抬头</text>
+    </view>
+    <button class="m-btn" type="primary" size="defaultSize" onTap="addTaitou"> 添加发票抬头 </button>
+  </view>
+
+  <view class="m-confirm-wrap" a:if="{{showMyConf}}">
+    <view class="m-confirm">
+      <view class="m-main">
+        <view class="u-tit">请您确认</view>
+        <view class="u-desc">以下信息为您新发票将要显示的信息，请您核对是否正确。</view>
+        <view class="m-tab">
+          <view class="u-item">
+            <view class="u-key">名称：</view>
+            <view class="u-value">{{selection.name}}</view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">纳税人识别号：</view>
+            <view class="u-value">{{selection.taxNum}}</view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">地址：</view>
+            <view class="u-value"><text>{{selection.address}}</text></view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">电话：</view>
+            <view class="u-value"><text>{{selection.tel}}</text></view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">开户行：</view>
+            <view class="u-value"><text>{{selection.bank}}</text></view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">开户账号：</view>
+            <view class="u-value"><text>{{selection.bankAccount}}</text></view>
+          </view>
+        </view>
+      </view>
+
+      <view class="m-footer">
+        <view class="u-btn btn-cancel" onTap="cancelHandle">取消</view>
+        <view class="u-btn btn-cancel c-0f" onTap="sureHandle">确认</view>
+      </view>
+    </view>
+  </view>
+</view>

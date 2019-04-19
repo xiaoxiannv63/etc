@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="m-info">
+    <view class="u-tit">
+      <text class="b-shuxian">抬头信息</text>
+      <text class="c-0f" onTap="redact">编辑</text>
+    </view>
+    <view class="info-wrap">
+      <view>
+        <text class="u-key">发票抬头：</text>
+        <text class="u-val">{{invoice.name}}</text>
+      </view>
+      <view a:if="{{invoice.tax}}">
+        <view class="u-key u-double">税<text></text>号：</view>
+        <text class="u-val">{{invoice.tax}}</text>
+      </view>
+      <view a:if="{{invoice.add}}">
+        <text class="u-key">单位地址：</text>
+        <text class="u-val">{{invoice.add}}</text>
+      </view>
+      <view a:if="{{invoice.tel}}">
+        <text class="u-key">电话号码：</text>
+        <text class="u-val">{{invoice.tel}}</text>
+      </view>
+      <view a:if="{{invoice.bank}}">
+        <text class="u-key">开户银行：</text>
+        <text class="u-val">{{invoice.bank}}</text>
+      </view>
+      <view a:if="{{invoice.acc}}">
+        <text class="u-key">银行账号：</text>
+        <text class="u-val">{{invoice.acc?invoice.acc.substring(0,6)+"**********"+invoice.acc.substr(-4):''}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="m-etc">
+    <view class="u-tit" onTap="toGuanLian">
+      <view class="b-shuxian">已关联ETC卡<text class="c-e7 u-num">{{cardnum}}</text>张</view>
+      <text a:if="{{cardnum<=0}}" class="c-0f" onTap="toSelEtc">去关联ETC卡</text>
+      <text a:else class="c-0f" onTap="toSelEtc">关联其他卡片</text>
+    </view>
+    <view a:if="{{cardnum>0}}" class="items-wrap">
+      <view class="m-items" a:for="{{items}}">
+        <view>{{item.plateNum}}</view>
+        <view class="u-v2">
+          <text>{{item.cardType}}</text>|
+          <text>{{item.cardId?item.cardId.substring(0,6)+"**********"+item.cardId.substr(-4):''}}</text>
+        </view>
+      </view>
+    </view>
+    <view a:else class="m-noetc">
+      暂无关联任何ETC卡~
+    </view>
+  </view>
+  
+  <button type="primary" class="usua-btn" size="defaultSize" onTap="delTaitou"> 删除抬头 </button>
+</view>

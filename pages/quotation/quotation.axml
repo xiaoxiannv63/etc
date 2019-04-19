@@ -1,0 +1,18 @@
+
+<view class="page">
+   <view class="bgWhiteColor line">
+     <flex justify="between">
+        <view class="inline">通行记录</view>
+        <view class="inline font-orange">个人</view>
+     </flex>
+   </view>
+   <view class="bgWhiteColor ul" a:for="{{list}}">
+      <view class="li"> <image src="../../assets/images/inCion.png"/> <view class="inline padding-right">{{item.enStationName}}</view><view class="inline font-gray">{{item.enTime}}</view></view>
+      <view class="li"> <image src="../../assets/images/outCion.png"/> <view class="inline padding-right">{{item.exStationName}} </view><view class="inline font-gray">{{item.exTime}}</view></view>
+      <view class="li font-gray padding-bottom">{{item.provinceType}} {{item.consumerTransType}}</view>
+      <view class="right">
+        <view class="money">¥{{(item.fee/100).toFixed(2)}}</view>
+        <view class="button" data-item="{{item.tradeId}}" onTap="lookRouteInvoice">查看对应发票</view>
+      </view>
+   </view>
+</view>

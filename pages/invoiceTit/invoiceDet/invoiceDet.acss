@@ -1,0 +1,74 @@
+.m-info, .m-etc{
+    padding: 0 40rpx;
+    background: #fff;
+}
+.u-tit{
+    padding: 30rpx 0;
+    font-size: 28rpx;
+    border-bottom: solid 1px #e9eaec;
+    display: flex;
+    justify-content: space-between;
+}
+.u-tit text{
+    position: relative;
+}
+.u-tit .b-shuxian:before{
+    content: "";
+    display: inline-block;
+    width: 5rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+    background: #0f9aff;
+    vertical-align: middle;
+}
+
+.info-wrap{
+    padding: 14rpx 0;
+    margin-bottom: 20rpx;
+}
+.info-wrap view{
+    display: flex;
+    font-size: 28rpx;
+    line-height: 52rpx;
+
+}
+.u-key{
+    flex: 0 0 auto;
+    width: 170rpx;
+    color: #a8a8a8;
+}
+.u-val{
+    word-break: break-all;
+}
+.u-double text{
+    width: 2em;
+}
+.u-num{
+    padding: 0 10rpx;
+}
+.m-noetc{
+    padding-bottom: 10rpx;
+    line-height: 116rpx;
+    font-size: 32rpx;
+    color: #999;
+    text-align: center;
+}
+.m-items{
+    display: flex;
+    flex-direction: column;
+    padding: 23rpx 0;
+    line-height: 40rpx;
+    font-size: 28rpx;
+}
+.m-items + .m-items{
+    border-top: solid 1px #e9eaec;
+}
+.m-items .u-v2{
+    color: #999;
+}
+.m-items .u-v2 text:nth-of-type(1){
+    margin-right: 12rpx
+}
+.m-items .u-v2 text:nth-of-type(2){
+    margin-left: 12rpx
+}

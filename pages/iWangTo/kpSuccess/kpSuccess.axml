@@ -1,0 +1,15 @@
+<view class="page">
+  <view class="icon-wrap">
+    <icon type="success" size="80" />
+  </view>
+  <view class="m-text">
+    <view class="u-tit">开具申请提交成功</view>
+    <view class="u-des">发票开具申请已受理，进入<text>[我的发票]</text>查看</view>
+  </view>
+
+
+  <view class="btn-wrap">
+    <button type="primary" onTap="continue"> 继续开票 </button>
+    <button type="primary" onTap="backToFirst"> 返回首页 </button>
+  </view>
+</view>

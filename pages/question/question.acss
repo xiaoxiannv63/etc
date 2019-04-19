@@ -1,0 +1,53 @@
+.page{
+  background: #fff;
+  position: relative
+}
+.a-collapse {
+  border-top: 1rpx solid #f5f5f5;
+  background-color: #fff;
+  color: #000;
+}
+
+.a-collapse-title,
+.a-collapse-content {
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.a-collapse-title {
+  position: relative;
+  /* height: 88rpx; */
+  /* line-height: 88rpx; */
+  padding: 30rpx 60rpx 30rpx 20rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.a-collapse-content{
+  font-size: 26rpx;
+  line-height: 48rpx;
+  padding: 23rpx 0;
+  color: #999999;
+}
+.a-collapse-content text{
+  line-height: 48rpx;
+}
+.a-collapse-title-arrow {
+  position: absolute;
+  top: 30rpx;
+  right: 0rpx;
+  width: 30rpx;
+  height: 30rpx;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg width='16' height='26' viewBox='0 0 16 26' xmlns='http://www.w3.org/2000/svg'><path d='M2 0L0 2l11.5 11L0 24l2 2 14-13z' fill='%23C7C7CC' fill-rule='evenodd'/></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.a-collapse-title-arrow-up {
+  transform: rotate(90deg);
+}
+
+.a-collapse-content {
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+.listTitle{height: 98rpx; line-height: 98rpx; background-color: #f5f5f5; font-size: 30rpx; padding:0rpx 40rpx;}
+.margin{margin:0rpx 40rpx;}

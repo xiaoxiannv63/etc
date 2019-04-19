@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "steps": "/components/steps/steps"
+    },
+    "defaultTitle": "我的ETC"
+}

@@ -1,0 +1,38 @@
+<view class="page">
+  <!-- <view class="m-header">
+    <view><text>添加发票抬头</text></view>
+  </view> -->
+  <view a:if="{{noData == 1}}" class="m-nonetit">
+    <image src="/image/notit.png" mode="aspectFit" />
+    <view>
+      <text>您还没有添加发票抬头</text>
+    </view>
+    <button class="m-btn" type="primary" size="defaultSize" onTap="addTaitou"> 添加发票抬头 </button>
+  </view>
+  <view class="m-main" a:else>
+    <view class="m-items">
+      <view class="m-item" a:for="{{items}}" data-index="{{index}}" onTap="toInvDet">
+        <view  class="u-item">
+          <text>名称:</text>
+          <text>{{item.name}}</text>
+        </view>
+        <view  class="u-item">
+          <text>类型:</text>
+          <text>{{item.titleType=='单位'?'企业':'个人/非企业单位'}}</text>
+        </view>
+        <view  class="u-item" a:if="{{item.titleType == '单位'}}">
+          <text>税号:</text>
+          <text>{{item.taxNum}}</text>
+        </view>
+        <view  class="u-item">
+          <text>关联ETC卡:</text>
+          <text class="u-num c-e7">{{item.bindCardNum}}</text>张
+        </view>
+
+        <view class="u-card-arrow " />
+      </view>
+    </view>
+    <button class="usua-btn" type="primary" size="defaultSize" onTap="addTaitou"> 添加发票抬头 </button>
+  </view>
+  
+</view>

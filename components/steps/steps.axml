@@ -1,0 +1,12 @@
+<view class="steps-wrap">
+  <view class="step-ht"></view>
+  <view a:for="{{steps}}" class="{{index>curentStep?'step-item step-null setp-item'+index : 'step-item setp-item'+index}}">
+    <view>
+      <!-- <icon a:if="{{index<curentStep}}" class="strp-icon" type="success" size="15" /> -->
+      <image a:if="{{index<curentStep}}" class="strp-icon" src="/components/images/step_03.png" mode="aspectFit" />
+      <view a:elif="{{index>curentStep}}" class="strp-icon icon-null" ></view>
+      <view a:else class="strp-icon icon-cir"><view class="cir-son"></view></view>
+    </view>
+    <text class="{{index>curentStep ? 'strp-desc':'strp-desc c-blue'}}">{{item.desc}}</text>
+  </view>
+</view>

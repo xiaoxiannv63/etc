@@ -1,0 +1,9 @@
+{
+    "defaultTitle": "绑卡成功",
+    "usingComponents": {
+      "flex": "mini-antui/es/flex/index",
+      "flex-item": "mini-antui/es/flex/flex-item/index",
+      "list": "mini-antui/es/list/index",
+      "list-item": "mini-antui/es/list/list-item/index"
+    }
+}

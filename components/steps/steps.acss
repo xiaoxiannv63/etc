@@ -1,0 +1,77 @@
+.steps-wrap{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    background: #fff;
+}
+.step-ht{
+    display: none;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: #000;
+    left: 0;
+    top: 50%;
+}
+.step-item{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 33%;
+}
+
+.step-item:before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #118ee8;
+    position: absolute;
+    top: 35rpx;
+    left: -50%;
+}
+.step-null:before{
+    background: #e9eaec;
+}
+.setp-item0:before{
+    display: none;
+}
+.strp-icon{
+    margin-top: 20rpx;
+    width: 33rpx;
+    height: 33rpx;
+    position: relative;
+    z-index: 10;
+}
+
+.icon-null{
+    width: 33rpx;
+    height: 33rpx;
+    border-radius: 50%;
+    background: #e9eaec;
+}
+.icon-cir{
+    width: 33rpx;
+    height: 33rpx;
+    border-radius: 50%;
+    background: #118ee8;
+    position: relative;
+}
+.icon-cir .cir-son{
+    width: 9rpx;
+    height: 9rpx;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: solid 6rpx #fff;
+}
+
+.strp-desc{
+    font-size: 28rpx;
+    line-height: 64rpx;
+}
+.c-blue{
+    color: #118eea;
+}

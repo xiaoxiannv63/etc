@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/startup/startup",
+    "pages/invoiceStatus/invoiceStatus",
+    "pages/iWangTo/kpSuccess/kpSuccess",
+    "pages/electronicInvoice/electronicInvoice",
+    "pages/web/index",
+    "pages/invoice/invoice",
+    "pages/wodeETC/etcDetail/etcDetail",
+    "pages/quotation/quotation",
+    "pages/login/protocols/protocols",
+    "pages/login/personal/personal",
+    "pages/help/help",
+    "pages/myInvoice/invoiceList/invoiceList",
+    "pages/changing/changing",
+    "pages/invoiceError/invoiceError",
+    "pages/bindSuccessful/bindSuccessful",
+    "pages/user/user",
+    "pages/login/bind/index",
+    "pages/wodeETC/myetc/myetc",
+    "pages/question/question",
+    "pages/wodeETC/addEtcCard/addEtcCard",
+    "pages/index/index",
+    "pages/invoiceRecord/invoiceRecord",
+    "pages/wodeETC/selTaitou/selTaitou",
+    "pages/invoiceTit/index/index",
+    "pages/invoiceTit/invoiceDet/invoiceDet",
+    "pages/invoiceTit/redact/redact",
+    "pages/invoiceTit/addTaitou/addTaitou",
+    "pages/invoiceTit/selEtc/selEtc",
+    "pages/myInvoice/serInvList/serInvList",
+    "pages/myInvoice/invApplication/invApplication",
+    "pages/myInvoice/viewInvoice/viewInvoice",
+    "pages/myInvoice/invImg/invImg",
+    "pages/myInvoice/invDetail/invDetail",
+    "pages/iWangTo/cardList/cardList",
+    "pages/iWangTo/recordList/recordList",
+    "pages/iWangTo/invAccept/invAccept",
+    "pages/routeInvoice/routeInvoice"
+  ],
+  "window": {
+    "defaultTitle": "票根"
+  },
+  "tabBar": {
+    "textColor": "#333333",
+    "selectedColor": "#118ee8",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "icon": "/assets/images/index.png",
+        "activeIcon": "/assets/images/index_act.png",
+        "name": "首页"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "icon": "/assets/images/user.png",
+        "activeIcon": "/assets/images/user_act.png",
+        "name": "个人中心"
+      }
+    ]
+  }
+}

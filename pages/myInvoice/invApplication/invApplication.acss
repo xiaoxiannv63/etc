@@ -1,0 +1,57 @@
+.page, .invoice-wrap{
+    height: 100%;
+}
+
+.m-info, .m-etc{
+    padding: 0 40rpx;
+    background: #fff;
+}
+.info-wrap{
+    padding: 14rpx 0;
+    margin-bottom: 20rpx;
+    position: relative;
+}
+.info-wrap + .info-wrap{
+    border-top: solid 1px #e9eaec;
+}
+.info-wrap view{
+    display: flex;
+    font-size: 26rpx;
+    line-height: 52rpx;
+
+}
+.u-key{
+    flex: 0 0 auto;
+    width: 200rpx;
+    color: #a8a8a8;
+    letter-spacing: 12rpx;
+}
+.u-val{
+    word-break: break-all;
+}
+.u-simple text{
+    width: 1em;
+}
+.u-num{
+    padding: 0 10rpx;
+}
+.info2 .u-key{
+    width: 140rpx;
+}
+
+/**/
+.m-whole{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 14rpx;
+    right: 0;
+    align-items: flex-end;
+}
+.m-whole view:nth-of-type(1){
+    font-size: 20rpx;
+}
+.m-whole view:nth-of-type(2){
+    font-size: 28rpx;
+    letter-spacing: 4rpx;
+}

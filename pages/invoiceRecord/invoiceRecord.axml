@@ -1,0 +1,75 @@
+
+<view class="page">
+    <view class="changeTime">
+       <view a:for="{{monthList}}">
+         <view class="{{item==currentMonth?'item itemChoose':'item'}}" onTap="chageMonth" data-month="{{item}}">{{item}}</view>
+       </view>
+       <view>
+          <view class="span" onTap="getTime">
+             <image class="img" src="../../assets/images/dataCion.png"/>
+          </view>
+       </view>
+       
+    </view>
+    
+     <view class="bgGrayColor mid-fontSize invoiceTitle">
+        <view class="inline padding-right">2019-4
+        </view>
+        <view class="inline font-gray">开票金额： 
+        </view>
+        <view class="inline font-orange">￥500.00  
+        </view>
+      </view>
+
+
+    <view class="body">
+      <!--2019-4月份加载-->
+      <view class="inviceUl">
+        <list class="list">
+          <block a:for="{{items}}">
+            <list-item thumb="{{item.thumb}}" arrow="{{item.arrow}}" onClick="onItemClick" index="{{item.applyId}}" key="{{item.licensePlate}}" last="{{index === (item.length - 1)}}">
+              <view class="head">
+                <view class="{{ item.status=='2' || item.status=='3' ?'right font-green':'right'}}">{{item.statusName}}                 
+                </view>
+                <view class="inline font-gray"> 申请时间：
+                </view>{{item.applyTime}}              
+              </view>
+              <view class="bottom">
+                <view>
+                  <view class="inline font-gray">申请类型：
+                  </view> {{item.applyName}}   
+                </view>
+                <view>
+                  <view class="inline font-gray">发票内容：
+                  </view>{{item.buyerName}}
+                </view>
+                <view>
+                  <view class="inline font-gray">发票张数：
+                  </view>{{item.sumInvoice}}张
+                </view>
+                <view>
+                  <view class="inline font-gray">开票总金额：
+                  </view>
+                  <view class="inline font-orange">￥{{item.sumAmount}}
+                  </view>
+                </view>
+                 <view a:if="{{(item.status=='2'||item.status=='1') && item.applyType == 4 }}" class="positionImg">
+                  <image src="../../assets/images/hcsq.png" />
+                </view>
+                <view a:if="{{item.status=='3' && item.applyType == 4 }}" class="positionImg">
+                  <image src="../../assets/images/ybhc.png" />
+                </view>
+                <view a:if="{{(item.status=='2'||item.status=='1') && item.applyType == 3 }}" class="positionImg">
+                  <image src="../../assets/images/hpsq.png" />
+                </view>
+                <view a:if="{{item.status=='3' && item.applyType == 3 }}" class="positionImg">
+                  <image src="../../assets/images/yjhp.png" />
+                </view>
+              </view>
+            </list-item>
+          </block>
+        </list>
+      </view>
+    </view>
+  
+</view>

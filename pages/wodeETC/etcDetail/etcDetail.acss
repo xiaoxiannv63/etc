@@ -1,0 +1,59 @@
+.m-info, .m-taitou, .m-notaitou{
+    padding: 0 40rpx;
+    background: #fff;
+}
+.u-tit{
+    padding: 30rpx 0;
+    font-size: 28rpx;
+    border-bottom: solid 1px #e9eaec;
+    display: flex;
+    justify-content: space-between;
+}
+.u-tit text{
+    position: relative;
+}
+.u-tit text:nth-of-type(1):before{
+    content: "";
+    display: inline-block;
+    width: 5rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+    background: #0f9aff;
+    vertical-align: middle;
+}
+
+.info-wrap{
+    padding: 14rpx 0;
+    margin-bottom: 20rpx;
+}
+.info-wrap view{
+    display: flex;
+    font-size: 28rpx;
+    line-height: 45rpx;
+
+}
+.u-key{
+    flex: 0 0 auto;
+    width: 170rpx;
+    color: #a8a8a8;
+}
+.u-val{
+    word-break: break-all;
+}
+.u-double text{
+    width: 2em;
+}
+
+.u-nonetip{
+    height: 260rpx;
+    line-height: 260rpx;
+    text-align: center;
+    font-size: 28rpx;
+}
+
+button{
+    position: absolute;
+    bottom: 58rpx;
+    left: 40rpx;
+    right: 40rpx;
+}

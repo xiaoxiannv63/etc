@@ -1,0 +1,50 @@
+<view class="page">
+  <view class="invoice-wrap">
+    <view class="m-info">
+      <view class="info-wrap">
+        <view>
+          <view class="u-key u-double">申请类型：</view>
+          <text class="u-val">{{applyType}}申请</text>
+        </view>
+        <view>
+          <text class="u-key">发票内容：</text>
+          <text class="u-val">通行费</text>
+        </view>
+        <view>
+          <text class="u-key">发票张数：</text>
+          <text class="u-val">{{sumInvoice}}</text>
+        </view>
+        <view>
+          <text class="u-key">行程总数：</text>
+          <text class="u-val">{{countRecord}}</text>
+        </view>
+        <view>
+          <text class="u-key">申请时间：</text>
+          <text class="u-val">{{applyTime}}</text>
+        </view>
+        <view>
+          <text class="u-key">电子邮箱：</text>
+          <text class="u-val">{{invoiceMail}}</text>
+        </view>
+
+        <view class="m-whole">
+          <view class="c-99">发票总金额</view>
+          <view class="c-e7">￥{{sumAmount}}</view>
+        </view>
+      </view>
+      <view class="info-wrap info2">
+        <view>
+          <view class="u-key u-simple">单<text></text>位：</view>
+          <text class="u-val">{{buyerName}}</text>
+        </view>
+        <view>
+          <view class="u-key u-simple">税<text></text>号：</view>
+          <text class="u-val">{{buyerTaxpayerCode}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <button type="primary" class="usua-btn" size="defaultSize" onTap="toDianZI"> 查看电子发票 </button>
+</view>

@@ -1,0 +1,14 @@
+.m-h2 {
+    font-size: 44rpx;
+    line-height: 173%;
+    margin: 34rpx 0;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-align: justify;
+    color: #428bca;
+}
+
+.pclass{
+    text-align: justify;
+    margin-bottom: 10px;
+}

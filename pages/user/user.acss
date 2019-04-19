@@ -1,0 +1,97 @@
+.page{
+    position: relative;
+}
+
+.header{
+    /* width: 100%; */
+    background: #ffffff;
+    padding: 40rpx;
+}
+.header .avatar{
+    background: #d6eeff;
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0rpx auto;
+}
+.header .avatar image{
+    padding: 0;
+}
+.header .nickname{
+    text-align: center;
+    color: #333333;
+    font-size: 32rpx;
+    margin-top: 30rpx;
+}
+.nickmobile{
+    text-align: center;
+    color: #333333;
+    font-size: 32rpx;
+    margin-top: 6rpx;
+}
+
+.mylist{
+    margin-top: 20rpx;
+    background: #ffffff;
+}
+
+.cell_box{
+    display: flex;
+    height: 100rpx;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    color: #333333;
+    padding: 0 40rpx;
+    position: relative;
+    align-items: center;
+}
+
+.cell_box::after{
+    content: " ";
+    position: absolute;
+    left: 20rpx;
+    top: 0;
+    right: 20rpx;
+    height: 1px;
+    border-top: 1px solid #e9eaec;
+    color: #e9eaec;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+}
+.cell_box_hd{
+    width: 52rpx;
+    height: 41px;
+    margin-right: 0.3rem;
+}
+.cell_box_hd image{
+    width: 100%;
+    height: 100%;
+}
+
+.cell_box_bd{
+    flex: 1;
+}
+.cell_box_ft{
+    text-align: right;
+}
+.cell_box_ft:after {
+    content: " ";
+    display: inline-block;
+    height: 26rpx;
+    width: 26rpx;
+    border-width: 1px 1px 0 0;
+    border-color: #d5d5d5;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    margin-top: -15rpx;
+    right: 30rpx;
+}
+.padding{
+  text-align: center; padding-top:20rpx; padding-bottom:20rpx;
+}

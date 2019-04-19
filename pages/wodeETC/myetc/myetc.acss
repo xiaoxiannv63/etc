@@ -1,0 +1,134 @@
+.m-header{
+    height: 90rpx;
+    display: flex;
+    align-items: stretch;
+    background: #ffffff;
+    border-bottom: solid 1px #ededed;
+    margin-bottom: 10rpx;
+    justify-content: space-around;
+}
+.m-tab{
+    flex: 0 1 auto;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.m-tab.s-sel:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5rpx;
+    width: 100%;
+    background: #0f9aff;
+}
+.m-tab image{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+
+.m-main{
+    position: absolute;
+    top: 104rpx;
+    left: 0;
+    right: 0;
+    bottom: 135rpx;
+    overflow-y: scroll;
+}
+.m-cards{
+}
+/* 发行方 */
+.m-area{
+    padding: 10rpx 40rpx 0;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+.u-add{
+    border-bottom: solid 1px #ededed;
+    overflow: hidden;
+    font-size: 28rpx;
+    line-height: 68rpx;
+}
+.u-add view:nth-of-type(1){
+    float: left;
+}
+.u-add view:nth-of-type(2){
+    float: right;
+}
+.u-add view text{
+    margin-right: 15rpx;
+}
+.c-blue{
+    color: #0f9aff;
+}
+
+.m-card {
+    position: relative;
+    padding: 26rpx 0;
+    
+}
+.m-card + .m-card{
+    border-top: solid 1px #e9eaec;
+}
+
+.m-card view{
+    line-height: 40rpx;
+    font-size: 26rpx;
+    color: #a8a8a8;
+}
+.m-card .u-chepai{
+    color: #494949;
+}
+.m-card .u-info text:nth-of-type(1){
+    margin-right: 10rpx;
+}
+
+
+.m-card .u-card-arrow {
+    display: block;
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 16rpx;
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg width="16" height="26" viewBox="0 0 16 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="UI-KIT_基础元件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="9.9基础元件" transform="translate(-5809.000000, -8482.000000)" fill="#C7C7CC"><polygon id="Disclosure-Indicator" points="5811 8482 5809 8484 5820.5 8495 5809 8506 5811 8508 5825 8495"></polygon></g></g></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    visibility: hidden;
+    transition: transform 0.3s;
+    position: absolute;
+    right: 0rpx;
+    top: 50%;
+    margin-top: -15rpx;
+    visibility: visible;
+}
+
+.m-btn{
+    position: fixed;
+    bottom: 58rpx;
+    left: 40rpx;
+    right: 40rpx;
+
+}
+
+.m-none{
+    padding: 0 40rpx;
+    font-size: 35rpx;
+    text-align: center;
+    color: #494949;
+}
+.m-none image{
+    width: 315rpx;
+    height: 315rpx;
+    margin-top: 129rpx;
+    margin-bottom: 45rpx;
+}
+.m-none button{
+    margin-top: 145rpx;
+}

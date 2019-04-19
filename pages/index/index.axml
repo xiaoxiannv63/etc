@@ -1,0 +1,107 @@
+<view class="page">
+  <view class="title bgWhiteColor">
+    <view class="span">我的ETC卡
+    </view>
+    <view class="more" onTap="moreETC" data-url="/pages/wodeETC/myetc/myetc">全部ETC卡  >    
+    </view>
+  </view>
+  <view class="scroll_box"> 
+    <scroll-view class="scroll-view_H" scroll-x="{{true}}"  >
+    <!-- <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;"> -->
+      <view class="item_list" a:for="{{etcList_PERSONAL}}">
+         <view class="listItemDiv" onTap="getCard" data-id="{{item.cardId}}" data-rise="{{item.rise}}">
+          <view class="listItemDiv_title">
+            <view class="left">{{item.issuerName}}
+            </view>
+            <view class="right">{{item.userType}}
+            </view>
+          </view>
+          <view class="listItemDiv_content">
+            <view class="listItemDiv_contentBigFont">{{item.plateNum}}                    
+            </view>
+            <view class="listItemDiv_contentGrayFont">{{item.cardIdMap}}                     
+            </view>
+            <view class="listItemDiv_contentGrayFont">
+              <view class="gray-font" a:if="{{item.titleName}}">{{item.titleName}}</view>
+              <view class="btn" a:else>没关联抬头
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+       <view class="item_list" a:for="{{etcList_COMPANY}}">
+         <view class="listItemDiv" onTap="getCard" data-id="{{item.cardId}}" data-rise="{{item.rise}}">
+          <view class="listItemDiv_title">
+            <view class="left">{{item.issuerName}}
+            </view>
+            <view class="right">{{item.userType}}
+            </view>
+          </view>
+          <view class="listItemDiv_content">
+            <view class="listItemDiv_contentBigFont">{{item.plateNum}}                    
+            </view>
+            <view class="listItemDiv_contentGrayFont">{{item.cardIdMap}}                     
+            </view>
+            <view class="listItemDiv_contentGrayFont">
+              <view class="gray-font" a:if="{{item.titleName}}">{{item.titleName}}</view>
+              <view class="btn" a:else>没关联抬头
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- <view class="listItem pageContent">
+    <flex>
+      <flex-item >
+       
+      </flex-item>
+      <flex-item >
+        
+      </flex-item>
+    </flex>
+  </view> -->
+  <view class="title bgWhiteColor">
+    <view class="span">最新开票
+    </view>
+    <view class="more" onTap="moreETC" data-url="/pages/myInvoice/invoiceList/invoiceList">        开票记录     >
+    </view>
+  </view>
+  <view class="ul">
+    <view class="listItemDiv" a:for="{{news}}">
+      <view class="listTitle">
+        <view class="image">
+          <image src="{{item.logoUrl}}"  mode="aspectFit" />{{item.title}} 
+        </view>
+        
+      </view>
+      
+      <view class="textAlign">
+        <view class="font-orange">{{item.content}}
+        </view>
+        <view class="font-gray padding-top">{{item.subTitle}}</view>
+        <view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="title bgWhiteColor position">
+    <view class="span">通行/充值发票
+    </view>
+    <view class="lxkf">
+  <contact-button size=60 tnt-inst-id="LZEYIVCN" scene="SCE00005147" icon="/assets/images/kf.png"/>
+  </view>
+  </view>
+  <view class="tab pageContent">
+    <view class="tabView">
+       <view class="tabItem" a:for="{{list3}}" onTap="onItemClick" data-index="{{index}}">
+          <view><image class="tabImage" src="{{item.icon}}" mode="aspectFit" /></view>
+          <view>{{item.text}}</view>
+       </view>
+    </view>
+  <!-- <grid onGridItemClick="onItemClick" columnNum="{{3}}" list="{{list3}}" circular="true" hasLine="false"/> -->
+  
+  </view>
+</view>

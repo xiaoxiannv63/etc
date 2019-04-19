@@ -1,0 +1,98 @@
+<view class="page">
+  <view class="m-header">
+    <view class="m-tab">
+      <text>消费发票</text>
+    </view>
+  </view>
+
+  <view class="m-main">
+    <view class="m-info">
+      <view class="m-item1">
+        <view>
+          <text class="u-key">发票抬头:</text>
+          <text class="u-val">{{buyerName}}</text>
+        </view>
+        <view>
+          <text class="u-key">ETC卡号:</text>
+          <text class="u-val">{{cardId?cardId.substring(0,6)+"**********"+cardId.substr(-4):''}}</text>
+        </view>
+        <view>
+          <text class="u-key">车牌号码:</text>
+          <text class="u-val">{{plateNum}}</text>
+        </view>
+        <view>
+          <text class="u-key">开票申请时间:</text>
+          <text class="u-val">{{applyTime}}</text>
+        </view>
+
+      </view>
+      <view class="m-item2">
+        <view>
+          <text class="u-key">通行记录:</text>
+          <text class="u-val">{{countRecord}}</text>
+        </view>
+        <view>
+          <text class="u-key">发票数量:</text>
+          <text class="u-val">{{sumInvoice}}</text>
+        </view>
+        <view>
+          <text class="u-key">开票金额:</text>
+          <text class="u-val">￥{{((totalAmount?totalAmount:0)/100).toFixed(2)}}</text>
+        </view>
+        <view>
+          <text class="u-key">车辆类型:</text>
+          <text class="u-val">{{vehicleType}}</text>
+        </view>
+      </view>
+      
+    </view>
+
+    <view class="m-table">
+      <view class="m-tr">
+        <view class="m-td c-2e">
+          <text>序号</text>
+        </view>
+        <view class="m-td" a:for="{{items}}">
+          <text>{{index+1}}</text>
+        </view>
+        <view class="m-td c-trans c-2e">
+          <text>--</text>
+        </view>
+      </view>
+      <view class="m-tr">
+        <view class="m-td c-2e">
+          <text>发票代码</text>
+        </view>
+        <view class="m-td" a:for="{{items}}">
+          <text>{{item.invoiceCode}}</text>
+        </view>
+        <view class="m-td c-trans c-2e">
+          <text>--</text>
+        </view>
+      </view>
+      <view class="m-tr">
+        <view class="m-td c-2e">
+          <text>发票号码</text>
+        </view>
+        <view class="m-td" a:for="{{items}}">
+          <text>{{item.invoiceNum}}</text>
+        </view>
+        <view class="m-td c-2e">
+          <text>合计含税金额：</text>
+        </view>
+      </view>
+      <view class="m-tr">
+        <view class="m-td c-2e">
+          <text>发票金额（含税）</text>
+        </view>
+        <view class="m-td" a:for="{{items}}">
+          <text>￥{{(item.totalAmount/100).toFixed(2)}}</text>
+        </view>
+        <view class="m-td c-2e">
+          <text>￥{{(totalAmount/100).toFixed(2)}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
