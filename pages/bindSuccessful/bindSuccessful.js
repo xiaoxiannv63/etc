@@ -2,31 +2,52 @@ const app = getApp();
 Page({
   data: {
     title: "绑定个人",
-    cards: []
+    // cards: [],
+    cards: [{
+         cardId: 'asdff',
+        issuerName: 'asdff',
+        cardType: 'asdff',
+        titleName: 'asdff',
+        plateNum: 'asdff'
+    }]
   },
   onLoad(query) {
     console.log('onload')
-    this.data.cards = []
+    let cards = []
     for(let card of JSON.parse(query.cardIds)){
       let cardId = card.cardId
       let json1 = {
         cardId: cardId,
         ticketId: app.userInfo.ticketId
       }
-      this.getCardList(json1)
+      this.getCardList(json1).then( thecard=> {
+        console.log(thecard)
+        cards.push(thecard)
+      })
     }
+    this.setData({
+      cards:cards
+    })
   },
   getCardList(json1){
-    app.ajax(json1,"CARD_DETAIL",(data)=>{
-      let item = {
-        cardId: data.cardId,
-        issuerName: data.issuerName,
-        cardType: data.cardType,
-        titleName: data.titleName,
-        plateNum: data.plateNum
-      }
+    return new Promise((resolve, reject)=>{
+      app.ajax(json1,"CARD_DETAIL",(data)=>{
+        let carditem = {
+          cardId: data.cardId,
+          issuerName: data.issuerName,
+          cardType: data.cardType,
+          titleName: data.titleName,
+          plateNum: data.plateNum
+        }
+        console.log(carditem)
+        resolve(carditem);
+      })
     })
-    this.data.cards.push(item)
+  },
+  onShow() {
+    this.setData({
+      cards: this.data.cards
+    })
   },
   onETC() {
     my.confirm({
@@ -51,7 +72,7 @@ Page({
   },
   toAddTitile(){
     my.navigateTo({
-      url: "/pages/invoiceTit/index"
+      url: "/pages/invoiceTit/index/index"
     })
   },
   toMyEtc() {
