@@ -31,8 +31,7 @@
           <text class="u-key">开票时间：</text>
           <text class="u-val">{{item.invoiceTime}}</text>
         </view>
-        <view class="u-card-arrow " />
-        <view data-url="{{item.invoiceHtmlUrl}}" onTap="lookInvoice">预览发票</view>
+        <view class="right" data-url="{{item.invoiceHtmlUrl}}" onTap="lookInvoice">预览发票</view>
       </view>
     </view>
 

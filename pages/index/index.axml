@@ -51,13 +51,8 @@
         </view>
       </view>
     </scroll-view>
-    <view a:if="{{noData}}" class="nodataView">
-      <image class="noetc" src="/image/noetc.png" mode="aspectFit" />
-      <view class="text">
-        <text>您还没有绑定ETC卡,</text><text style="color: #0f9aff;" onTap="toMyEtc">点击去绑卡>></text>
-      </view>
-    </view>
   </view>
+
   <!-- <view class="listItem pageContent">
     <flex>
       <flex-item >

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/startup/startup",
+    "pages/index/index",
     "pages/invoiceStatus/invoiceStatus",
     "pages/iWangTo/kpSuccess/kpSuccess",
     "pages/electronicInvoice/electronicInvoice",
@@ -20,7 +21,6 @@
     "pages/wodeETC/myetc/myetc",
     "pages/question/question",
     "pages/wodeETC/addEtcCard/addEtcCard",
-    "pages/index/index",
     "pages/invoiceRecord/invoiceRecord",
     "pages/wodeETC/selTaitou/selTaitou",
     "pages/invoiceTit/index/index",

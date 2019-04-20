@@ -37,7 +37,7 @@
     margin-top: 85rpx;
 }
 .agree{
-    padding-top: 28rpx;
+    padding-top: 60rpx;
     padding-bottom:40rpx;
     font-size: 24rpx;
 }
@@ -59,7 +59,7 @@
 .am-modal-header{background-color: #0f9aff; color: #fff;border-bottom:none 0px;}
 .am-modal-body { margin-top: -2px; overflow: hidden; max-width: 100%; padding: 0px;}
 .am-modal-close{ display: none}
-.bigFont{padding:40rpx; font-size: 16px; font-weight: bold; border-bottom: solid 1rpx #dadada}
+.bigFont{padding:20rpx 0rpx; font-size: 30rpx; font-weight: bold; border-bottom: solid 1rpx #dadada}
 .heightLine{line-height: 56rpx;}
-.minFont{padding:40rpx; text-align: left}
-.zfbCion{width: 130rpx; height: 130rpx;}
+.minFont{padding:28rpx; text-align: left}
+.zfbCion{width: 100rpx; height: 100rpx;}

@@ -28,6 +28,8 @@ Page({
     top: "420rpx",
     showAmount: true,
     invType: 'xf',
+    modalOpened: false ,
+    modalOpened2: false 
   },
   onLoad(query) {
     let d = new Date();
@@ -231,6 +233,11 @@ Page({
   },
   selDate() {
     let d = new Date();
+    let nowTime = d.getTime()
+    let monthTime = 1000 * 24 * 60 * 60 * 13 * 30
+    let d2 = new Date(nowTime - monthTime)
+    console.log(d2.getFullYear(), '年')
+    console.log(d2.getMonth() + 1, '月')
     let that = this;
     let searchFlog_xf = false
     let searchFlog_cz = false
@@ -242,9 +249,10 @@ Page({
       searchFlog_xf = false
       searchFlog_cz = true
     }
+
     my.datePicker({
       format: 'yyyy-MM',
-      startDate: (d.getFullYear() - 1) + "-" + (d.getMonth() + 1),
+      startDate: (d2.getFullYear()) + "-" + (d2.getMonth()),
       currentDate: this.data.month,
       endDate: d.getFullYear() + "-" + (d.getMonth() + 1),
       success: (res) => {
@@ -266,23 +274,35 @@ Page({
       }
     });
   },
-  settle() {//结算
-    if (this.data.bindCardList.length <= 0) return;
+  onModalClick() {
     if (this.data.showAmount && this.data.total > this.data.amount) {
       my.alert({ 'content': '可开票余额不足，勾选的交易总金额不可大于可开票余额，请减少勾选交易记录后重试' })
       return;
     }
-    app.inv = {
-      bindCardList: this.data.bindCardList,
-      titleId: this.data.titleId,
-      month: this.data.month.split("-").join(""),
-      tot: this.data.total,
-      cardId: this.data.cardId,
-      type: this.data.invType
-    }
-    // console.log(app.inv);
-    my.navigateTo({
-      url: '/pages/iWangTo/invAccept/invAccept'
+     app.inv = {
+            bindCardList: this.data.bindCardList,
+            titleId: this.data.titleId,
+            month: this.data.month.split("-").join(""),
+            tot: this.data.total,
+            cardId: this.data.cardId,
+            type: this.data.invType
+          }
+          my.navigateTo({
+            url: '/pages/iWangTo/invAccept/invAccept'
+          });
+    this.setData({
+      modalOpened: false,
+    });
+  },
+  onModalClose() {
+    this.setData({
+      modalOpened: false,
+    });
+  },
+  settle() {//结算
+     if (this.data.bindCardList.length <= 0) {return};
+     this.setData({
+      modalOpened: true,
     });
   },
   chooseXF() {
@@ -320,10 +340,13 @@ Page({
     }
   },
   noCurrentList() {
-    my.alert({
-      title: '关于可开票记录的说明',
-      content: ' ·  自2018年1月1日开始，充值发票可在实际充值24小时后，在平台进行申请开票；\n ·  由于全国路网信息复杂，存在地域限制，信息传输时间不一致。如果24小时内未看到充值记录，建议您耐心等待，稍后再次查看； \n · 2017年12月31日以前产生的充值记录，请您联系ETC发行方处理。',
-      buttonText: '我知道了'
-    });
+    this.setData({
+      modalOpened2: true
+    })
+  },
+  onModalClose2(){
+    this.setData({
+      modalOpened2: false
+    })
   }
 });

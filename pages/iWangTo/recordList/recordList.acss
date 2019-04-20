@@ -194,3 +194,6 @@ checkbox{
     padding: 40rpx 0;
     background: #fff;
 }
+.position{ position: relative; z-index: 100000}
+.content{text-align: left; line-height: 48rpx;}
+.content .p{margin-bottom:20rpx;}

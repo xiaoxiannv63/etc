@@ -1,5 +1,55 @@
-
+.page{
+  padding:0 26rpx;
+  background: #fff;
+}
+.head{
+  font-size:40rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:56rpx;
+}
 .am-flexbox{padding:24rpx;}
-.padding-right{padding-right: 24rpx}
+.padding-right{padding-right: 24rpx;
+    font-size:34rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    line-height:48rpx;}
 .padding-bottom{padding-bottom:48rpx}
 .ul .li image{width: 40rpx; height: 40rpx; vertical-align: middle; margin-right: 10rpx;}
+.font-gray{
+  margin-left: 60rpx;
+}
+.item{
+  position: relative;
+  padding:40rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 2rpx 10rpx 0rpx rgba(153,153,153,0.2);
+  border-radius:8rpx;
+}
+.right{
+  position: absolute;
+  right:48rpx;
+  top:100rpx;
+}
+.money{
+  margin-left: 30rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Semibold;
+  font-weight:600;
+  color:rgba(255,63,0,1);
+  line-height:48rpx;
+}
+.button{
+  padding:0 20rpx;
+  height:54rpx;
+  background:rgba(247,252,255,1);
+  border-radius:2px;
+  border:1px solid rgba(16,142,233,1);
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(16,142,233,1);
+  line-height:54rpx;
+}

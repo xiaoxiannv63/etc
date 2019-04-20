@@ -35,7 +35,7 @@ Page({
     })
   },
   lookInvoice(e){
-    let url = e.target.dataset.invoiceHtmlUrl
+    let url = e.target.dataset.url
     app.gotoH5(url)
   }
 });

@@ -107,7 +107,7 @@ Page({
   },
   addTaitou(){
     my.navigateTo({
-      url:'/pages/invoiceTit/addTaitou/addTaitou'
+      url:'/pages/invoiceTit/addTaitou/addTaitou?etcFlag=1'
     });
   }
 });
