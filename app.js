@@ -165,23 +165,136 @@ App({
   gotoH5(url){
     // console.log(url+'<<::')
     // var url = 'https://fuyuan.wang'
+    console.log(url)
     my.navigateTo({
       url: `/pages/web/index?url=${url}`
     })
   },
-  throttle(fn, gapTime) { // 防抖节流
-    console.log('000')
-    if (gapTime == null || gapTime == undefined) {
-      gapTime = 1500
-    }
-    let _lastTime = null
-    // 返回新的函数
-    return function () {
-      let _nowTime = + new Date()
-      if (_nowTime - _lastTime > gapTime || !_lastTime) {
-        fn.apply(this, arguments) //将this和参数传给原函数
-        _lastTime = _nowTime
+  globalData: {},
+  handleForward(event) {
+    let that = this;
+    const { url, openType } = event.currentTarget.dataset;
+    console.log(url)
+    let forwardObj = {
+      url: url,
+      success() {
+        let t = setTimeout(function () {
+          that.globalData.isNavigating = false;
+          clearTimeout(t);
+        }, 1000);
+      }
+    };
+    if (!that.globalData.isNavigating) {
+      that.globalData.isNavigating = true;
+      switch (openType) {
+        case 'switchTab':   // 切换tab
+          my.switchTab(forwardObj);
+          break;
+        case 'redirect':    // 重定向
+          my.redirectTo(forwardObj);
+          break;
+        default:            // 正常跳转
+          my.navigateTo(forwardObj);
+          break;
       }
     }
+  },
+  getPermision() {
+    my.getAuthCode({
+      scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
+      success: (res) => {
+        this.authCode = res.authCode;
+        this.getUserInfo().then(res => {
+          this.userInfo.nickName = res.nickName
+          this.userInfo.avatar = res.avatar
+        });
+        this.indRes()
+      }
+    });
+  },
+  indRes() {
+    let json1 = {
+      code: this.authCode,
+      channel: 'ZFBPIAOGEN'
+    }
+    this.ajax(json1, "ONLINE",  (data)=> {
+      console.log(data.userId, 'ONLINE (userId)')
+      this.userInfo.userId = data.userId;
+      console.log(this.userInfo, 'this.userInfo')
+      if (!data.ticketId) { //没有ticketId 不做跳转
+      console.log("ticket无效")
+      } else {
+        let json2 = {
+          userId: this.userInfo.userId,
+          channel: 'ZFBPIAOGEN'
+        }
+        console.log(this,'this')
+        this.ajax(json2, 'LOGIN',  (data)=> {
+          console.log(data, "支付宝启用。。")
+          this.userInfo.pssUserId = data.pssUserId;
+          this.userInfo.ticketId = data.ticketId;
+          this.userInfo.mobile = data.mobile;
+          this.userInfo.email = data.email;
+          this.userInfo.hasBindCard = data.hasBindCard;
+          console.log(this.userInfo)
+          // app.mobile = data.mobile
+          // my.navigateBack();
+          // my.reLaunch({
+          my.switchTab({
+            url: "/pages/index/index"
+          });
+        })
+      }
+    }, function (e) {
+      console.log(e, 'ONLINE获取失败。。。。')
+    })
+  },
+  phoneNumber(that){
+    my.getPhoneNumber({
+      success: (res) => {
+        that.setData({
+          modalOpened: false
+        })
+        // console.log(arr.response, 'JSON.PARSE')
+        var json1 = {
+          code: this.authCode,
+          encryptedData: res.response,
+          userId: this.userInfo.userId,
+          loginType: 'ALIPAY',
+          channel: 'ZFBPIAOGEN'
+        }
+        this.ajax(json1, "REGISTER",  (data)=> {
+          console.log("进入。。。", data)
+          if (!!data.ticketId) {
+            this.userInfo.ticketId = data.ticketId;
+            this.userInfo.pssUserId = data.pssUserId;
+            let json2 = {
+              userId: this.userInfo.userId,
+              channel: 'ZFBPIAOGEN'
+            }
+            this.ajax(json2, 'LOGIN',  (data)=> {
+          console.log(data, "支付宝启用。。")
+          this.userInfo.pssUserId = data.pssUserId;
+          this.userInfo.ticketId = data.ticketId;
+          this.userInfo.mobile = data.mobile;
+          this.userInfo.email = data.email;
+          this.userInfo.hasBindCard = data.hasBindCard;
+          console.log(this.userInfo)
+          // app.mobile = data.mobile
+          // my.navigateBack();
+          // my.reLaunch({
+          my.switchTab({
+            url: "/pages/index/index"
+          });
+        })
+          }
+        })
+
+        // console.log(res,'aaa')      
+      },
+      fail: (res) => {
+        console.log(res, 'getPhoneNumber_fail')
+      },
+    })
   }
 });

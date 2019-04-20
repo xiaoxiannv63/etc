@@ -16,6 +16,10 @@ Page({
   },
   onLoad() {
     console.log(app,'app')
+    if(!app.userInfo.userId){
+      //去获取授权
+       app.getPermision();
+    }
   },
   onUnload() {
     // 页面被关闭
@@ -176,14 +180,6 @@ Page({
       this.setData({
       modalOpened: true,
     });
-    // my.getAuthCode({
-    //   scopes: ['auth_user'],
-    //   success: (res) => {
-    //     my.alert({
-    //       content: res.authCode,
-    //     });
-    //   },
-    // });
   },
   cancel() {
     this.setData({
@@ -191,14 +187,8 @@ Page({
     });
   },
   accede(){
-    my.getAuthCode({
-      scopes: ['auth_user'],
-      success: (res) => {
-         my.reLaunch({
-          url: "/pages/user/user",
-        })
-      },
-    });  
+     let that = this
+     app.phoneNumber(that)
   },
   accountLogin(e){
     this.setData({

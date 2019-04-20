@@ -1,5 +1,7 @@
 Page({
-  data: {},
+  data: {
+    url:''
+  },
   onLoad(query){
     // this.setData({
     //   url:query.url
@@ -12,5 +14,9 @@ Page({
     //       url: query.url
     //   }
     // });
+    console.log(query.url)
+    this.setData({
+      url:query.url
+    })
   }
 });

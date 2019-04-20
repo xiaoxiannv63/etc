@@ -1,6 +1,6 @@
 <view class="page">
   <view class="m-header">
-    <view class="{{userType=='PERSONAL'?'m-tab s-sel':'m-tab'}}" onTap="choosePer">
+    <view class="{{userType=='PERSONAL'?'m-tab s-sel':'m-tab'}}" onTap="choosePer" >
       <image src="/image/person.png" mode="aspectFit" />
       <text>个人卡</text>
     </view>
@@ -12,14 +12,14 @@
 
   <view class="m-main">
     <!-- <view class="m-search"></view> -->
-    <view a:if="{{items.length == 0}}" class="m-none">
+    <view a:if="{{noData == 1}}" class="m-none">
       <view>
         <image src="/image/noetc.png" mode="aspectFit" />
       </view>
       <view>
         <text>您还没有绑定ETC卡哦~</text>
       </view>
-      <button type="primary" size="defaultSize" onTap="toAddEtc" data-type="{{userType}}"> 马上添加卡片 </button>
+      <button type="primary" size="defaultSize"  onTap="tapUrl" data-url="{{'/pages/wodeETC/addEtcCard/addEtcCard?type='+userType}}"  data-openType="navigateTo"> 马上添加卡片 </button>
     </view>
     <view a:if="{{items.length > 0}}" class="card-wrap">
       <view class="m-cards">

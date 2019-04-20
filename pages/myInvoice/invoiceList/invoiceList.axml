@@ -25,6 +25,7 @@
                 a:for-item="card" 
                 data-card="{{card.cardId}}"
                 data-plate-num="{{card.plateNum}}"
+                data-type="{{card.cardType}}"
                 onTap="toInvoice">
             <view class="u-chepai u-info">{{card.plateNum}}</view>
             <view class="u-info"><text>{{card.cardType}} :</text><text>{{card.cardId?card.cardId.substring(0,6)+"**********"+card.cardId.substr(-4):''}}</text></view>

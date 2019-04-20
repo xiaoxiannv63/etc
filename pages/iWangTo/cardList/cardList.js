@@ -13,7 +13,7 @@ Page({
     this.getCardList();
   },
   onShow(){
-    if(app.myEtcNeedRefresh){
+    if(app.myEtcNeedRefresh && app.recordListRefresh){
       // app.needRefresh = false;
       app.myEtcNeedRefresh = false;
       this.getCardList();
@@ -23,7 +23,8 @@ Page({
     if(this.data.userType == 'PERSONAL')return;
     this.setData({
       userType: 'PERSONAL',
-      items: this.data.personItems
+      items: this.data.personItems,
+      noData: this.data.personItems.length==0? 1 : 0
     })
   },
   chooseCom(){
@@ -32,12 +33,14 @@ Page({
       this.setData({
         first:false,
         userType: 'COMPANY',
+        noData: this.data.personItems.length==0? 1 : 0
       })
       this.getCardList()
     }else{
       this.setData({
         userType: 'COMPANY',
-        items: this.data.companyItems
+        items: this.data.companyItems,
+        noData: this.data.companyItems.length==0? 1 : 0
       })
     }
   },
@@ -93,7 +96,10 @@ Page({
     let str = "?cardId=" + cardid+"&titleId="+e.currentTarget.dataset.tit+"&titleName="+e.currentTarget.dataset.name+"&type="+e.currentTarget.dataset.type;
     // console.log(str);
     my.navigateTo({
-      url:"/pages/iWangTo/recordList/recordList" + str
+      url:"/pages/iWangTo/recordList/recordList" +  "?cardId=" + cardid+"&titleId="+e.currentTarget.dataset.tit+"&titleName="+e.currentTarget.dataset.name+"&type="+e.currentTarget.dataset.type
     });
+  },
+  tapUrl(e){
+    app.handleForward(e)
   }
 });

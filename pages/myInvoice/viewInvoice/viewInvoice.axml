@@ -31,11 +31,11 @@
           <text class="u-key">开票时间：</text>
           <text class="u-val">{{item.invoiceTime}}</text>
         </view>
-        <view class="u-card-arrow " />
+        <view class="right" data-url="{{item.invoiceHtmlUrl}}" onTap="lookInvoice">预览发票</view>
       </view>
     </view>
 
   </view>
 
-  <button type="primary" class="usua-btn" size="defaultSize" onTap="toMingxi"> 查看发票明细 </button>
+  <!-- <button type="primary" class="usua-btn" size="defaultSize" onTap="toMingxi"> 查看发票明细 </button> -->
 </view>

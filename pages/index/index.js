@@ -141,14 +141,12 @@ Page({
       console.log(arr, 'arr.....')
       if (type == "PERSONAL") {
       this.setData({
-      etcList_PERSONAL: arr,
-      noData: 0
+      etcList_PERSONAL: arr
       })
       }
       else if (type == "COMPANY") {
       this.setData({
-      etcList_COMPANY: arr,
-      noData: 0
+      etcList_COMPANY: arr
       })
       }
       })
@@ -293,7 +291,6 @@ Page({
   // }
   onShow(){
     if(app.needRefresh){
-      console.log(">>>>>> index",app.needRefresh)
       app.needRefresh = false
       this.etcList();
       this.getInfo();

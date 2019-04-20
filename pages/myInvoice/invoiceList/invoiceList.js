@@ -79,7 +79,13 @@ Page({
     })
   },
   toInvoice(e) {
-    let str = "?cardId=" + e.currentTarget.dataset.card+"&plateNum="+e.currentTarget.dataset.plateNum;
+    let type;
+    if(e.target.dataset.type == '储值卡'){
+      type = 0;//储值卡
+    }else{
+      type = 1;//记账卡
+    }
+    let str = "?cardId=" + e.currentTarget.dataset.card+"&plateNum="+e.currentTarget.dataset.plateNum+"&type="+type;
     // console.log(str);
     my.navigateTo({
       url:"/pages/myInvoice/serInvList/serInvList" + str

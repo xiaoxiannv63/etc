@@ -51,3 +51,18 @@
 .u-num{
     padding: 0 10rpx;
 }
+.right{
+  position: absolute;
+  right:48rpx;
+  top:150rpx;
+  padding:0 20rpx;
+  height:54rpx;
+  background:rgba(247,252,255,1);
+  border-radius:2px;
+  border:1px solid rgba(16,142,233,1);
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(16,142,233,1);
+  line-height:40rpx;
+}

@@ -1,28 +1,117 @@
 
-.page{background-color: #fff; padding-bottom:140rpx; position: relative}
-.positionBottom{position:fixed; bottom:0rpx; width: 100%}
-.statusHead{background-color: #f7f7f7; padding:12rpx; position: relative}
-.statusOrang{background-color: #f99a34; color: #fff}
-.statusRed{background-color: #ef3939; color: #fff}
-.statusHead .li{color: #787878; padding:6rpx 10rpx;}
-.statusHead .amount{ position: absolute; right:20rpx; top:65rpx; text-align: center}
-.statusHead .amount .money{font-size: 32px; color: #ff9a2b;text-align: center}
-.statusHead .amount .font{color: #787878;text-align: center}
-.statusOrang .li,.statusRed .li{color: #fff}
-.statusOrang .amount .money,.statusRed .amount .money{  color: #ffdf2b;}
-.statusOrang .amount .font,.statusRed .amount .font{color: #fff;text-align: center}
-.bgColorWhite{background-color: #fff}
-.statusHead2{border-top:solid 12rpx #f7f7f7; position: relative}
-.statusHead2 .ul{margin-top:16rpx; border-bottom:solid 2rpx #f7f7f7; padding-bottom:16rpx;}
-.statusHead2 .li{color: #787878; padding:6rpx 20rpx;}
-.statusHead2 .amount{ position: absolute; right:20rpx; top:140rpx; text-align: center}
-.statusHead2 .amount .money{font-size: 32px; color: #ff9a2b;text-align: center}
-.statusHead2 .amount .font{color: #787878;text-align: center}
-.flexItem{padding:0rpx 20rpx 20rpx}
-.primary{width: 100%; height: 90rpx; font-weight: bold; border-radius: 12rpx; color: #fff; font-size: 16px; text-align: center; line-height: 90rpx; background-color:#0f9aff }
-.flexItem .w70{width: 70%; display: inline-block;}
-.flexItem .w30{width: 20%; padding-left: 5%; display: inline-block; text-align: center; line-height: 38rpx; margin-top: -18px;}
-.flexItem image{ width: 46rpx; height: 46rpx; vertical-align:middle}
-.w70Border{width: 70%; border-top:solid 1px #cbcbcb; text-align: center; border-right:solid 1px #cbcbcb; height: 82rpx; line-height: 82rpx}
-.w30Border{width: 30%; border-top:solid 1px #cbcbcb;  text-align: center; height: 82rpx; line-height: 82rpx}
-.w70Border image,.w30Border image{ width:50rpx; height: 50rpx; vertical-align: middle}
+.page{background-color: #fff;position: relative}
+.statusHead .amount{ 
+  position: absolute; right:48rpx; top:140rpx; text-align: center;
+  }
+  .amount{
+      font-size:30rpx;
+      font-family:PingFangSC-Semibold;
+      font-weight:600;
+      color:rgba(255,63,0,1);
+  }
+.statusHead{
+  padding:30rpx;
+}
+.statusHead .ul{
+  height:390rpx;
+  padding-top:48rpx;
+  padding-left:37rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 3rpx 22rpx 0rpx rgba(0,0,0,0.07);
+  border-radius:7rpx;
+}
+.bgColorWhite{
+  margin-top:75rpx;
+}
+.li .text{
+  width:308rpx;
+  height:28rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  line-height:28rpx;
+}
+.li{
+  color: #999;
+}
+.text{
+  color: #333;
+}
+.invoiceHead{
+  margin-left:67rpx;
+}
+.name{
+  font-size:34rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:28rpx;
+}
+.num{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:#333;
+  line-height:28rpx;
+}
+.num1{
+  color:#999;
+}
+.error{
+  display: flex;
+  flex:1;
+}
+.between{
+  width:350rpx;
+  margin:0 auto;
+  margin-top: 400rpx;
+}
+.between-left{
+  color:rgba(16,142,233,1);
+}
+.between-right{
+  color:rgba(16,142,233,1);
+ }
+.bottom{
+  position: fixed;
+  padding:30rpx;
+  display: flex;
+  flex:1;
+  justify-content:space-between;
+  bottom: 0;
+  width:100%;
+  height:142rpx;
+  padding:0 38rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 0rpx 8rpx 0rpx rgba(153,153,153,0.2);
+}
+.bottom-right{
+  margin-right: 60rpx;
+}
+.primary{
+  margin-top:30rpx;
+  padding:0 20rpx;
+  height: 94rpx;
+  background:rgba(0,139,235,1);
+  border-radius:4rpx;
+  font-size:36rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:94rpx;
+}
+.img{
+  width: 53rpx;
+  height: 53rpx;
+}
+.send{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(204,204,204,1);
+  line-height:28rpx;
+}
+.bottom-left{
+  padding:30rpx 30rpx 0 0;
+  border-right: 1rpx solid #eee;
+}

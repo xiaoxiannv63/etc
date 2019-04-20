@@ -13,8 +13,17 @@ Page({
       bankAccount:"",
       ticketId:'',
       itemsNames:[],
+      etcFlag:true
   },
-  onLoad() {
+  onLoad(query) {
+    console.log(query)
+    console.log(typeof(query))
+    if(query.etcFlag){
+      this.setData({
+        etcFlag:false
+      })
+    }
+    console.log(this.data.etcFlag)
     this.getTitList()
     console.log(keysArr)
   },
@@ -71,7 +80,7 @@ Page({
           content: '抬头名称不能为空'
         });
         return false;
-      }else if(this.data.itemsNames.indexof(this.data.name)>-1){
+      }else if(this.data.itemsNames.indexOf(this.data.name)>-1){
         my.alert({
         content: '已经存在相同的抬头名称，请重新添加'
         })

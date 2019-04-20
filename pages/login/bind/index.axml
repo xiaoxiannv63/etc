@@ -22,21 +22,20 @@
           <input type="number" password="true" placeholder="请输入密码" onInput="inputPassword"/>
         </view>
     </view>
-    <view class="text-right" a:if="{{loginType=='tel'}}" onTap="accountLogin" data-loginType="account">密码登录</view>
-    <view class="text-right" a:if="{{loginType=='account'}}" onTap="accountLogin" data-loginType="tel">手机验证码登录</view>
+    <view class="text-right" a:if="{{loginType=='tel'}}"><text onTap="accountLogin" data-loginType="account">密码登录</text></view>
+    <view class="text-right" a:if="{{loginType=='account'}}"><text onTap="accountLogin" data-loginType="tel">手机验证码登录</text></view>
      <view class="agree">
       <checkbox id="agree" value="agree" onChange="agree" />
       <label for="agree" >
         我已阅读 
         <text class="nav" onTap="toH5" data-url='/pages/login/protocols/protocols'>《用户使用协议》</text>
-        、 
         <text class="nav" onTap="toH5" data-url='/pages/login/personal/personal'>《隐私政策》</text>
       </label>
      </view>
     <button  disabled="{{disabled2}}" type="primary" onTap="queding"  a:if="{{loginType=='tel'}}" data-type="VALIDCODE">登录 </button>
     <button  type="primary" onTap="queding" disabled="{{disabledAccout || disabledAccout2 || !agree}}"  a:if="{{loginType=='account'}}" data-type="PASSWORD">登录</button>
    
-     <view class="queding">
+     <!-- <view class="queding">
         <view class="padding-bottom font-gray">使用其他登录方式</view>
         <view class="textAlign"  onTap="sqLogin">
             <image class="zfbCion" src="../../../assets/images/zfbCion2.png" mode="aspectFit" />
@@ -72,6 +71,6 @@
       <flex-item><view class="inline buttonAccede" onTap="accede">确定</view></flex-item>
     </flex>
   </view>
-  </modal>
-  </view>
+  </modal> -->
+  <!-- </view> -->
 </view>

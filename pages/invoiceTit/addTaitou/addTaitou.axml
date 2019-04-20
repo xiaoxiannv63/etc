@@ -22,11 +22,11 @@
           <text a:else class="u-gerenkuan"></text>
           税<text class="u-double"></text>号：
         </view>
-        <input class="u-dd" placeholder="请输入税号" value="{{taxNum}}" onInput="setInvTax" />
+        <input class="u-dd" placeholder="请输入税号" value="{{tax}}" onInput="setInvTax" />
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">单位地址：</view>
-        <input class="u-dd" placeholder="请输入单位地址" value="{{address}}" onInput="setInvAdd" />
+        <input class="u-dd" placeholder="请输入单位地址" value="{{add}}" onInput="setInvAdd" />
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">电话号码：</view>
@@ -43,7 +43,7 @@
 
   </view>
 
-  <view class="m-guanlian" onTap="bindEtc">
+  <view class="m-guanlian" onTap="bindEtc" a:if="{{etcFlag}}">
     <view>请选择关联ETC卡</view>
     <view class="guanlian-num">已关联<text class="c-e7 u-num">{{etcList.length}}</text>张</view>
   </view>

@@ -80,7 +80,7 @@ Page({
     }
   },
   unregister(){
-    console.log(123);
+    console.log('退出登录');
     let json1 = {
       pssUserId:app.userInfo.pssUserId,
       channel: 'ZFBPIAOGEN',
@@ -100,7 +100,7 @@ Page({
           });
         }
     },function(e){
-      console.log(e)
+      console.log(e,'退出登录失败')
     })
   }
 });

@@ -1,3 +1,6 @@
 {
-    "defaultTitle": "我要开票"
+    "defaultTitle": "我要开票",
+    "usingComponents": {
+    "modal": "mini-antui/es/modal/index"
+    }
 }

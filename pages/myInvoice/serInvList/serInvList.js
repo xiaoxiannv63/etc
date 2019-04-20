@@ -4,15 +4,20 @@ Page({
   data: {
     invType: 'xf',
     items:[],
+    czArr:[],
+    xfArr:[],
     nomore:false,
     month:'',
-    pageIndex:1
+    pageIndex:1,
+    type:null
   },
   onLoad(query) {
+    console.log('---query----',query)
     let d = new Date();
     this.setData({
       cardId: query.cardId,
       plateNum: query.plateNum,
+      type: query.type,//0 储值卡 1 记账卡
       month: d.getFullYear()+"-"+num2(d.getMonth()+1)
     })
     my.setNavigationBar({
@@ -34,7 +39,8 @@ Page({
         that.setData({
           month: res.date,
           pageIndex:1,
-          items:[],
+          czArr:[],
+          xfArr:[],
           nomore:false,
         })
         that.getItems();
@@ -43,14 +49,12 @@ Page({
   },
   chooseXF(){//选择消费
     this.setData({
-      invType:'xf',
-      //items:[]  //列表请求新的
+      invType:'xf'
     })
   },
-  chooseCZ(){//选择消费
+  chooseCZ(){//选择充值
     this.setData({
-      invType:'cz',
-      //items:[]  //列表请求新的
+      invType:'cz'
     })
   },
   lower(){//滚动到底部事件
@@ -73,18 +77,27 @@ Page({
     my.showLoading({
       content:'加载中...'
     })
-    app.ajax(json1,'INVOICE_SEARCHAPPLY',function(data){
+    app.ajax(json1,'INVOICE_SEARCHAPPLY',(data) => {
       let nomore = false;
-      if(data.items.length<10)nomore = true;
+      if(data.items.length<10) nomore = true;
       for(let i in data.items){
         data.items[i].applyTime = app.format(data.items[i].applyTime);
       }
+      let czArr = [];
+      let xfArr = [];
+      data.items.forEach((item,index) => {
+        if(item.applyType == "充值发票"){
+          czArr.push(item)
+        }else{
+          xfArr.push(item)
+        }
+      })
       that.setData({
+        czArr:this.data.czArr.concat(czArr),
+        xfArr:this.data.xfArr.concat(xfArr),
         pageIndex: ++that.data.pageIndex,
-        items: that.data.items.concat(data.items),
         nomore: nomore
       })
-
     })
   },
   toInvApp(e){
