@@ -21,9 +21,9 @@ Page({
       cards:cards
     })
   },
-  getCardList(a,carIds){
+  getCardList(i,carIds){
       let json1 = {
-        cardId: carIds[a].cardId,
+        cardId: carIds[i].cardId,
         ticketId: app.userInfo.ticketId
       }
       app.ajax(json1,"CARD_DETAIL",(data)=>{
@@ -46,9 +46,9 @@ Page({
       })
   },
   onShow() {
-    this.setData({
-      cards: this.data.cards
-    })
+    // this.setData({
+    //   cards: this.data.cards
+    // })
   },
   onETC() {
     my.confirm({

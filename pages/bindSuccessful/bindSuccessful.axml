@@ -21,7 +21,7 @@
             </view>
             <view class="listItemDiv_contentGrayFont">卡号：{{item.cardId}}                   
             </view>
-            <view class="listItemDiv_contentGrayFont">抬头：{{item.titleName}}
+            <view class="listItemDiv_contentGrayFont">抬头：{{item.titleName?item.titleName:"暂无抬头"}}
               <!-- <view class="btn">
               </view> -->
             </view>
@@ -52,6 +52,6 @@
         </block>
       </list> -->
       <button class="btnt" type="primary" size="defaultSize" onTap="toAddTitile"> 关联抬头 </button>
-      <button class="btnb" type="plain" color="#d4d4d4" size="defaultSize" onTap="toMydEtc"> 查看我的ETC卡 </button>
+      <button class="btnb" type="plain" color="#d4d4d4" size="defaultSize" onTap="toMyEtc"> 查看我的ETC卡 </button>
   </view>
 </view>
