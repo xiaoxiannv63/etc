@@ -14,23 +14,18 @@ Page({
   onLoad(query) {
     console.log('onload')
     let cards = []
-    for(let card of JSON.parse(query.cardIds)){
-      let cardId = card.cardId
-      let json1 = {
-        cardId: cardId,
-        ticketId: app.userInfo.ticketId
-      }
-      this.getCardList(json1).then( thecard=> {
-        console.log(thecard)
-        cards.push(thecard)
-      })
-    }
+    let carIds = JSON.parse(query.cardIds)
+    let i = 0;
+    this.getCardList(i,carIds)
     this.setData({
       cards:cards
     })
   },
-  getCardList(json1){
-    return new Promise((resolve, reject)=>{
+  getCardList(a,carIds){
+      let json1 = {
+        cardId: carIds[a].cardId,
+        ticketId: app.userInfo.ticketId
+      }
       app.ajax(json1,"CARD_DETAIL",(data)=>{
         let carditem = {
           cardId: data.cardId,
@@ -39,10 +34,16 @@ Page({
           titleName: data.titleName,
           plateNum: data.plateNum
         }
-        console.log(carditem)
-        resolve(carditem);
+        this.data.cards.push(carditem)
+        if(carIds.length-1 == i){
+          this.setData({
+            cards: this.data.cards
+          })
+        }else{
+          this.getCardList(i,carIds)
+        }
+        i++;
       })
-    })
   },
   onShow() {
     this.setData({
