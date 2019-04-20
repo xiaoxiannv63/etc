@@ -218,8 +218,10 @@ Page({
   listChange(e){//ETC卡复选
     // console.log(typeof e.detail.value)
     this.setData({
-      bindCardList: e.detail.value
+      bindCardList: e.detail.value,
+      selAllOnOff: !this.data.selAllOnOff
     })
+    
   },
   selAll(e){
     var v = e.detail.value;
@@ -287,7 +289,9 @@ Page({
       if(data.success){
         app.needRefresh = true;
         app.myEtcNeedRefresh = true;
-        my.navigateBack();
+        my.navigateTo({
+          url: '/pages/bindSuccessful/bindSuccessful?cardIds='+JSON.stringify(json1.infos)
+        });
       }else{
         my.alert({
           content: data.msg
