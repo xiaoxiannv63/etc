@@ -66,7 +66,7 @@ Page({
             ticketId: app.userInfo.ticketId
           }
           app.ajax(json1,'CARD_UNBIND',function(){
-            app.needRefresh = true
+            app.needRefresh = true;
             app.myEtcNeedRefresh = true;
             my.navigateBack();
           })

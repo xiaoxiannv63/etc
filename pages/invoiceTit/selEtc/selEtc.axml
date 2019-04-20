@@ -18,7 +18,7 @@
             <view><text class="c-e7">{{item.cardNum}}</text>张</view>
           </view>
           <label class="checkbox" a:for="{{item.cards}}" a:for-item="card">
-            <checkbox value="{{card.cardId}}" checked="{{card.titleId && card.titleId==titleId}}" />
+            <checkbox value="{{card.cardId}}" checked="{{selPerCards.indexOf(card.cardId)>-1 || card.titleId==titleId}}" disabled="{{card.titleId==titleId}}"/>
             <view class="m-card">
               <view>{{card.plateNum}}</view>
               <view class="c-99">{{card.cardType}}<text class="u-apart">|</text>{{card.cardId?card.cardId.substring(0,6)+"**********"+card.cardId.substr(-4):''}}</view>
@@ -41,7 +41,7 @@
             <view><text class="c-e7">{{item.cardNum}}</text>张</view>
           </view>
           <label class="checkbox" a:for="{{item.cards}}" a:for-item="card">
-            <checkbox value="{{card.cardId}}" checked="{{card.titleId && card.titleId==titleId}}" />
+            <checkbox value="{{card.cardId}}" checked="{{selPerCards.indexOf(card.cardId)>-1 || card.titleId==titleId}}" disabled="{{card.titleId==titleId}}"/>
             <view class="m-card">
               <view>{{card.plateNum}}</view>
               <view class="c-99">{{card.cardType}}<text class="u-apart">|</text>{{card.cardId?card.cardId.substring(0,6)+"**********"+card.cardId.substr(-4):''}}</view>

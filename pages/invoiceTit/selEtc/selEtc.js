@@ -38,13 +38,13 @@ Page({
     this.getEtcList();
   },
   selChange(e) {
-    // console.log(e.detail.value)
+    console.log("selChange",e.detail.value)
     this.setData({
       selPerCards: e.detail.value
     })
   },
   selCompChange(e) {
-    // console.log(e.detail.value)
+    console.log(e.detail.value)
     this.setData({
       selComCards: e.detail.value
     })
@@ -84,6 +84,7 @@ Page({
         cardId: selCards[i]
       })
     }
+    console.log(sel)
     if(sel.length>0){
       if(!!titleId){//判断是否是否已有发票抬头
         json1 = {

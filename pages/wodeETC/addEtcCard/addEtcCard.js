@@ -285,6 +285,7 @@ Page({
     app.ajax(json1,'CARD_BIND',(data)=>{
       my.hideLoading();
       if(data.success){
+        app.needRefresh = true;
         app.myEtcNeedRefresh = true;
         my.navigateBack();
       }else{
