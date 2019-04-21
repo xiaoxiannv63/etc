@@ -22,11 +22,11 @@
           <text a:else class="u-gerenkuan"></text>
           税<text class="u-double"></text>号：
         </view>
-        <input class="u-dd" placeholder="请输入税号" value="{{tax}}" onInput="setInvTax" />
+        <input class="u-dd" placeholder="请输入税号" value="{{taxNum}}" onInput="setInvTax" />
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">单位地址：</view>
-        <input class="u-dd" placeholder="请输入单位地址" value="{{add}}" onInput="setInvAdd" />
+        <input class="u-dd" placeholder="请输入单位地址" value="{{address}}" onInput="setInvAdd" />
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">电话号码：</view>

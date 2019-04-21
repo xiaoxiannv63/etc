@@ -141,12 +141,14 @@ Page({
       console.log(arr, 'arr.....')
       if (type == "PERSONAL") {
       this.setData({
-      etcList_PERSONAL: arr
+      etcList_PERSONAL: arr,
+      noData: 0
       })
       }
       else if (type == "COMPANY") {
       this.setData({
-      etcList_COMPANY: arr
+      etcList_COMPANY: arr,
+      noData: 0
       })
       }
       })
