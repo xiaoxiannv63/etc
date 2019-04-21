@@ -85,7 +85,7 @@
       </view>
       <checkbox-group onChange="selAll">
         <label class="checkbox sel-all">
-          <checkbox value="{{selAllList}}" />
+          <checkbox value="{{selAllList}}" checked="{{selAllOnOff}}"/>
           <text class="checkbox-text u-qx">全选</text>
           <view>已选<text class="c-e7">{{bindCardList.length}}</text>张</view>
         </label>
