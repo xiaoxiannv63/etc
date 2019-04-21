@@ -1,49 +1,57 @@
 <view class="page">
   <view class="image">
-    <image src="../../assets/images/bcCion.png" mode="aspectFit" />
+    <!-- <image src="../../assets/images/bcCion.png" mode="aspectFit" /> -->
+    <am-icon type="success" color="#118eea" size="{{72}}" color="#333" />
   </view>
   <view class="bigFont line">恭喜你，绑卡成功
   </view>
   <view class="dashedLine">
-  <flex>
-    <flex-item>
+  <!-- <flex> -->
+    <!-- <flex-item> -->
+    <view a:for="{{cards}}" >  
       <view class="listItemDiv">
           <view class="listItemDiv_title">
-            <view class="left">蒙通卡
+            <view class="left">{{item.issuerName}}
             </view>
-            <view class="right">个人卡
+            <view class="right">{{item.cardType}}
             </view>
           </view>
           <view class="listItemDiv_content">
-            <view class="listItemDiv_contentBigFont">蒙BHN106                     
+            <view class="listItemDiv_contentBigFont">{{item.plateNum}}                     
             </view>
-            <view class="listItemDiv_contentGrayFont">1034516******3421                     
+            <view class="listItemDiv_contentGrayFont">卡号：{{item.cardId}}                   
             </view>
-            <view class="listItemDiv_contentGrayFont">
-              <view class="btn">没关联抬头
-              </view>
+            <view class="listItemDiv_contentGrayFont">抬头：{{item.titleName?item.titleName:"暂无抬头"}}
+              <!-- <view class="btn">
+              </view> -->
             </view>
           </view>
-        </view>
-    </flex-item>
-    <flex-item>
-      <view class="positionBottm">
-        <list>
-          <block>
-            <list-item  arrow="true"  index="1" onClick="onETC" key="1">
-              查看我的ETC卡
-            </list-item>
-            <list-item  arrow="true"  index="2" onClick="onRise" key="2">
-              <view class="font-blue">关联抬头<view>
-            </list-item>
-          </block>
-        </list>
       </view>
-    </flex-item>
-  </flex>
+    </view>
+    <!-- </flex-item> -->
+    <!-- <flex-item> -->
+    
+    <!-- </flex-item> -->
+  <!-- </flex> -->
   </view>
   <view class="padding">
      <view>温馨提示：</view>
-     <view class="font-gray">ETC卡没关联抬头，不能开出发票。</view>
+     <view class="font-gray">若ETC卡未关联抬头，则无法进行开票哦～</view>
+  </view>
+    
+  <view class="positionBottm">
+      <!-- <list>
+        <block>
+          <button></button>
+          <list-item  arrow="true"  index="2" onClick="onRise" key="2">
+            <view class="font-blue">关联抬头<view>
+          </list-item>
+          <list-item  arrow="true"  index="1" onClick="onETC" key="1">
+            查看我的ETC卡
+          </list-item>
+        </block>
+      </list> -->
+      <button class="btnt" type="primary" size="defaultSize" onTap="toAddTitile"> 关联抬头 </button>
+      <button class="btnb" type="plain" color="#d4d4d4" size="defaultSize" onTap="toMyEtc"> 查看我的ETC卡 </button>
   </view>
 </view>
