@@ -219,7 +219,7 @@ Page({
     // console.log(typeof e.detail.value)
     this.setData({
       bindCardList: e.detail.value,
-      selAllOnOff: !this.data.selAllOnOff
+      selAllOnOff: this.data.selAllOnOff?false:false
     })
     
   },

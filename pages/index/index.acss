@@ -19,7 +19,7 @@ page {
 .listItemDiv_title .right{color: #0f9aff;}
 .listItemDiv_content{padding-top: 20rpx; line-height: 40rpx;}
 .listItemDiv_contentGrayFont{color: #ababab;}
-.listItemDiv_contentGrayFont .btn{border: solid 1rpx #d4d4d4; display: inline-block; border-radius: 12rpx; padding-left: 20rpx; padding-right: 20rpx; color: #7b7b7b;}
+.listItemDiv_contentGrayFont .btn{display: inline-block; padding-left: 10rpx; padding-right: 20rpx; color: #7b7b7b;}
 .ul{ padding:20rpx}
 .li{border-bottom:solid 1rpx #e0e0e0; padding-bottom:20rpx; text-align: left}
 .image{ color: #6c6c6c; font-weight: bold;text-align: left;}
@@ -30,18 +30,48 @@ page {
 contact-button{ right: 10rpx; bottom:80rpx;  text-align: center;}
 .am-grid-3 .am-grid-border{ border:none;}
 
+.box{
+  padding:36rpx 28rpx;
+}
+.nonew{
+  height:109rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 3rpx 22rpx 3rpx rgba(0,0,0,0.07),0rpx 3rpx 9rpx 0rpx rgba(0,0,0,0);
+  border-radius:10rpx;
+  font-size:34rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:109rpx;
+  padding-left:20rpx;
+}
+.img{
+  width:27rpx;
+  height:27rpx;
+}
 .scroll_box{
-height: 250rpx;
+height: 260rpx;
 padding: 20rpx;
 background: #fff;
 white-space: nowrap;
 }
+.padding-top{padding-top: 20rpx;}
+.nodataView{ width:100%;height:100% }
+.noetc{width:100%;height:220rpx}
+.nodataView>.text{ text-align: center }
 .item_list{
 
 width: 75%;
 height: auto;
 margin-right: 23rpx;
 display: inline-block;
+}
+.listItemDiv_contentGrayFont  .gotitle{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(16,142,233,1);
+  line-height:28rpx;
 }
 .listTitle{ display: flex;  justify-content: space-between;}
 .textAlign{text-align: left; padding-top:20rpx; padding-bottom:20rpx; padding-left: 60rpx;}

@@ -92,7 +92,7 @@
       </checkbox-group>
       <checkbox-group onChange="listChange">
         <label class="checkbox" a:for="{{cardList}}">
-          <checkbox value="{{item.cardId}}" checked="{{selAllOnOff}}"/>
+          <checkbox value="{{item.cardId}}" checked="{{bindCardList.indexOf(item.cardId)>-1}}"/>
           <view class="u-plate">
             <view>
               <text>车牌：</text>

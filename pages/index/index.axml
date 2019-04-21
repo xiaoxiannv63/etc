@@ -44,7 +44,7 @@
             </view>
             <view class="listItemDiv_contentGrayFont">
               <view class="gray-font" a:if="{{item.titleName}}">{{item.titleName}}</view>
-              <view class="btn" a:else>没关联抬头
+              <view class="btn gotitle" a:else>关联抬头
               </view>
             </view>
           </view>
@@ -75,7 +75,7 @@
     <view class="more" onTap="moreETC" data-url="/pages/myInvoice/invoiceList/invoiceList">        开票记录     >
     </view>
   </view>
-  <view class="ul">
+  <view class="ul" a:if="{{news.length > 0}}">
     <view class="listItemDiv" a:for="{{news}}">
       <view class="listTitle">
         <view class="image">
@@ -92,6 +92,9 @@
         </view>
       </view>
     </view>
+  </view>
+  <view class="box" a:else>
+    <view class="nonew">暂无开票信息</view>
   </view>
   <view class="title bgWhiteColor position">
     <view class="span">通行/充值发票
