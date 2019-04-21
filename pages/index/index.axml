@@ -23,7 +23,7 @@
             </view>
             <view class="listItemDiv_contentGrayFont">
               <view class="gray-font" a:if="{{item.titleName}}">{{item.titleName}}</view>
-              <view class="btn" a:else>没关联抬头
+              <view class="btn gotitle" a:else>关联抬头
               </view>
             </view>
           </view>

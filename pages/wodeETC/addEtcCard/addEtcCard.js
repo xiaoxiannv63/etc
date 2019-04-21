@@ -218,8 +218,7 @@ Page({
   listChange(e){//ETC卡复选
     // console.log(typeof e.detail.value)
     this.setData({
-      bindCardList: e.detail.value,
-      selAllOnOff: this.data.selAllOnOff?false:false
+      bindCardList: e.detail.value
     })
     
   },
