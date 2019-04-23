@@ -44,6 +44,6 @@
       </view>
 
     </view>
-      <button a:if="{{items.length>0}}" class="m-btn" type="primary" size="defaultSize"  onTap="toAddEtc" data-openType="navigateTo" data-url="{{'/pages/wodeETC/addEtcCard/addEtcCard?type='+userType}}"> 添加ETC卡 </button>
+      <button a:if="{{noData !== 1}}" class="m-btn" type="primary" size="defaultSize"  onTap="toAddEtc" data-openType="navigateTo" data-url="{{'/pages/wodeETC/addEtcCard/addEtcCard?type='+userType}}"> 添加ETC卡 </button>
   </view>
 </view>

@@ -24,34 +24,10 @@ Page({
           items: data.items,
           personItems: data.items
         })
-        if(this.data.items.cards){
-          this.data.items.forEach((item,index) => {
-            item.cards.forEach((a,index) => {
-              if(a.titleId == this.data.titleId){
-                console.log(a.titleId)
-                this.setData({//存在已有关联
-                  flag: true
-                })
-              }
-            })
-          })
-        }
       }else{
         this.setData({
           items: data.items,
           companyItems: data.items
-        })
-        console.log(this.data.items)
-        this.data.items.forEach((item,index) => {
-          item.cards.forEach((a,index) => {
-            console.log(a.titleId)
-            console.log(this.data.titleId)
-            if(a.titleId == this.data.titleId){
-              this.setData({//存在已有关联
-                  flag: true
-              })
-            }
-          })
         })
       }
     })
