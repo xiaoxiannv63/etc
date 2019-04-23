@@ -48,6 +48,9 @@ Page({
     nextDisable0: true,
     nextDisable1: true
   },
+  onShow() {
+    app.canNext = true
+  },
   bindPickerChange(e) {
     // console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
@@ -120,9 +123,10 @@ Page({
       });
     })
   },
-  next(){
+  nextPer(){
     let json1,type,curStep = this.data.curStep,that = this;
-    if(curStep == 0){
+    if(curStep == 0 && app.canNext){
+      app.canNext = false
       json1 = {
         province:this.data.arrayStr[this.data.index],
         userType:this.data.userType,
@@ -135,7 +139,29 @@ Page({
       app.ajax(json1,'CARD_CHECKCUSTOMER',function(data){
         that.nextStep();
       })
-    }else if(curStep == 1){
+    }
+  },
+  nextCom(){
+    let json1,type,curStep = this.data.curStep,that = this;
+    if(curStep == 0 && app.canNext){
+      app.canNext = false
+      json1 = {
+        province:this.data.arrayStr[this.data.index],
+        userType:this.data.userType,
+        name:this.data.name,
+        idType:this.data.userType=='PERSONAL'?this.data.array2Type[this.data.index2]:this.data.array3Type[this.data.index3],
+        idCode:this.data.docuNum,
+        department:this.data.department,
+        ticketId: app.userInfo.ticketId
+      }
+      app.ajax(json1,'CARD_CHECKCUSTOMER',function(data){
+        that.nextStep();
+      })
+    }
+  },
+  next(){
+    if(curStep == 1 && app.canNext){
+      app.canNext = false
       let momB = this.data.mobNum, checkNum = this.data.checkNum;
       if(momB &&momB.length==11  &&checkNum ){
         json1 = {
@@ -154,11 +180,12 @@ Page({
     }
   },
   nextStep(){
+    console.log("app.canNext",app.canNext)
+    app.canNext = true
     this.setData({
       curStep: (this.data.curStep<this.data.steps.length)?++this.data.curStep:this.data.steps.length
     })
     // console.log(this.data.curStep);
-
   },
   onLoad(query) {
     let tit = query.type == 'PERSONAL'?'绑定个人卡':'绑定单位卡';
@@ -289,7 +316,7 @@ Page({
       if(data.success){
         app.needRefresh = true;
         app.myEtcNeedRefresh = true;
-        my.navigateTo({
+        my.redirectTo({
           url: '/pages/bindSuccessful/bindSuccessful?cardIds='+JSON.stringify(json1.infos)
         });
       }else{

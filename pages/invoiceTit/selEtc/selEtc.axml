@@ -67,5 +67,5 @@
       <!-- <button type="primary" size="defaultSize" onTap="toAddEtc"> 马上添加卡片 </button> -->
     </view>
   </view>
-  <button a:if="{{items.length>0}}" type="primary" disabled="{{selCards.length <= 0}}" class="usua-btn" size="defaultSize" onTap="bind"> 关联 </button>
+  <button a:if="{{items.length>0}}" type="primary" disabled="{{selCards.length <= 0 || flag}}" class="usua-btn" size="defaultSize" onTap="bind"> 关联 </button>
 </view>

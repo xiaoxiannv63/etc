@@ -8,7 +8,8 @@ Page({
     selPerCards:[],
     selComCards:[],
     userType:'PERSONAL',
-    first: true
+    first: true,
+    flag: true
   },
   getEtcList(){
     let js1 = {
@@ -38,13 +39,23 @@ Page({
     this.getEtcList();
   },
   selChange(e) {
-    // console.log(e.detail.value)
+    console.log(e.detail.value)
+    if(e.detail.value.length != 0){
+      this.setData({
+        flag: false
+      })
+    }
     this.setData({
       selPerCards: e.detail.value
     })
   },
   selCompChange(e) {
     // console.log(e.detail.value)
+    if(e.detail.value.length != 0){
+      this.setData({
+        flag: false
+      })
+    }
     this.setData({
       selComCards: e.detail.value
     })

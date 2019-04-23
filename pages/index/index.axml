@@ -2,14 +2,14 @@
   <view class="title bgWhiteColor">
     <view class="span">我的ETC卡
     </view>
-    <view class="more" onTap="moreETC" data-url="/pages/wodeETC/myetc/myetc">全部ETC卡  >    
+    <view class="more" onTap="tapUrl" data-url="/pages/wodeETC/myetc/myetc" data-openType="navigateTo">全部ETC卡  >        
     </view>
   </view>
   <view class="scroll_box"> 
     <scroll-view class="scroll-view_H" scroll-x="{{true}}"  >
     <!-- <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;"> -->
       <view class="item_list" a:for="{{etcList_PERSONAL}}">
-         <view class="listItemDiv" onTap="getCard" data-id="{{item.cardId}}" data-rise="{{item.rise}}">
+         <view class="listItemDiv" onTap="tapUrl" data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+item.cardId}}"  data-openType="navigateTo">
           <view class="listItemDiv_title">
             <view class="left">{{item.issuerName}}
             </view>
@@ -30,7 +30,7 @@
         </view>
       </view>
        <view class="item_list" a:for="{{etcList_COMPANY}}">
-         <view class="listItemDiv" onTap="getCard" data-id="{{item.cardId}}" data-rise="{{item.rise}}">
+         <view class="listItemDiv" onTap="tapUrl" data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+item.cardId}}"  data-openType="navigateTo">
           <view class="listItemDiv_title">
             <view class="left">{{item.issuerName}}
             </view>
@@ -54,7 +54,7 @@
     <view a:if="{{noData}}" class="nodataView">
       <image class="noetc" src="/image/noetc.png" mode="aspectFit" />
       <view class="text">
-        <text>您还没有绑定ETC卡,</text><text style="color: #0f9aff;" onTap="toMyEtc">点击去绑卡>></text>
+        <text>您还没有绑定ETC卡,</text><text style="color: #0f9aff;" onTap="tapUrl" data-url="/pages/wodeETC/myetc/myetc" data-openType="navigateTo">点击去绑卡>></text>
       </view>
     </view>
   </view>
@@ -72,7 +72,7 @@
   <view class="title bgWhiteColor">
     <view class="span">最新开票
     </view>
-    <view class="more" onTap="moreETC" data-url="/pages/myInvoice/invoiceList/invoiceList">        开票记录     >
+    <view class="more" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/myInvoice/invoiceList/invoiceList">        开票记录     >
     </view>
   </view>
   <view class="ul" a:if="{{news.length > 0}}">
@@ -105,9 +105,21 @@
   </view>
   <view class="tab pageContent">
     <view class="tabView">
-       <view class="tabItem" a:for="{{list3}}" onTap="onItemClick" data-index="{{index}}">
-          <view><image class="tabImage" src="{{item.icon}}" mode="aspectFit" /></view>
-          <view>{{item.text}}</view>
+        <view class="tabItem" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/iWangTo/cardList/cardList">
+          <view><image class="tabImage" src="../../assets/images/indexCion1.png" mode="aspectFit" /></view>
+          <view>我要开票</view>
+       </view>
+       <view class="tabItem" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/myInvoice/invoiceList/invoiceList">
+          <view><image class="tabImage" src="../../assets/images/indexCion2.png" mode="aspectFit" /></view>
+          <view>我的发票</view>
+       </view>
+       <view class="tabItem" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/question/question">
+          <view><image class="tabImage" src="../../assets/images/indexCion3.png" mode="aspectFit" /></view>
+          <view>常见问题</view>
+       </view>
+       <view class="tabItem" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/invoiceTit/index/index">
+          <view><image class="tabImage" src="../../assets/images/indexCion4.png" mode="aspectFit" /></view>
+          <view>抬头管理</view>
        </view>
     </view>
   <!-- <grid onGridItemClick="onItemClick" columnNum="{{3}}" list="{{list3}}" circular="true" hasLine="false"/> -->

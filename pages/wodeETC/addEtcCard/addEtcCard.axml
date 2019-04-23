@@ -30,7 +30,7 @@
         <view class="u-dt">证件号码</view><text>|</text>
         <input class="u-dd" placeholder="请输入对应证件号码" onInput="setDocuNum" />
       </view>
-      <button type="primary" disabled="{{nextDisable0}}"  class="usua-btn" size="defaultSize" onTap="next"> 下一步 </button>
+      <button type="primary" disabled="{{nextDisable0}}"  class="usua-btn" size="defaultSize" onTap="nextPer"> 下一步 </button>
     </view>
     <!-- 单位卡预留信息验证 -->
     <view a:else>
@@ -55,7 +55,7 @@
         <view class="u-dt">证件号码</view><text>|</text>
         <input class="u-dd" placeholder="请输入对应证件号码" onInput="setDocuNum" />
       </view>
-      <button type="primary" disabled="{{nextDisable0}}"  class="usua-btn" size="defaultSize" onTap="next"> 下一步 </button>
+      <button type="primary" disabled="{{nextDisable0}}"  class="usua-btn" size="defaultSize" onTap="nextCom"> 下一步 </button>
     </view>
     
   </view>

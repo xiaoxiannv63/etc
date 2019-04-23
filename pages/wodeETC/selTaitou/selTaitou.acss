@@ -2,6 +2,7 @@
   padding: 30rpx;
 }
 .box {
+    position: relative;
     width: 100%;
     box-sizing: border-box;
     background-color: #fff;
@@ -23,6 +24,15 @@
     color: #666666;
     margin-top: 18rpx
 }
+.TitList{
+    position: absolute;
+    margin-top: 10rpx;
+    left:0;
+    right: 0;
+    top: 420rpx;
+    bottom: 20rpx;
+    /* overflow-y: scroll; */
+}
 /* .radio-group{
     position: absolute;
     top: 0;
@@ -31,6 +41,15 @@
     bottom: 160rpx;
     overflow-y: scroll;
 } */
+.radio-group{
+    position: absolute;
+    bottom: 100px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    overflow: scroll;
+}
+ 
 label{
     position: relative;
     display: flex;

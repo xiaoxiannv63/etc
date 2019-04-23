@@ -34,7 +34,7 @@
   </view>
 
   <view a:if="{{card.titleId}}" class="m-taitou">
-    <view class="u-tit" onTap="toGuanLian">
+    <view class="u-tit">
       <text>已关联抬头</text>
       <text class="c-0f" onTap="bindTaitou">关联新抬头</text>
     </view>
@@ -66,7 +66,7 @@
     </view>
   </view>
   <view a:else class="m-notaitou">
-    <view class="u-tit" onTap="toGuanLian">
+    <view class="u-tit">
       <text>未关联抬头</text>
       <text class="c-0f" onTap="bindTaitou">去关联抬头</text>
     </view>

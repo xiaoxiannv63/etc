@@ -13,7 +13,7 @@
     </view>
     <view class="u-item">
       <view class="u-dt"><text class="c-e7">*</text>抬头名称：</view>
-      <input class="u-dd" placeholder="请输入抬头名称" value="{{name}}" onInput="setInvName" controlled="true"/>
+      <input class="u-dd" placeholder="请输入抬头名称" value="{{name}}" onBlur="setInvName"/>
     </view>
 
       <view class="u-item">
@@ -22,23 +22,23 @@
           <text a:else class="u-gerenkuan"></text>
           税<text class="u-double"></text>号：
         </view>
-        <input class="u-dd" placeholder="请输入税号" value="{{taxNum}}" onInput="setInvTax" />
+        <input class="u-dd" placeholder="请输入税号" value="{{taxNum}}" onBlur="setInvTax" />
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">单位地址：</view>
-        <input class="u-dd" placeholder="请输入单位地址" value="{{address}}" onInput="setInvAdd" />
+        <input class="u-dd" placeholder="请输入单位地址" value="{{address}}" onBlur="setInvAdd" />
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">电话号码：</view>
-        <input class="u-dd" placeholder="请输入电话号码" value="{{tel}}" onInput="setInvTel" />
+        <input class="u-dd" placeholder="请输入电话号码" value="{{tel}}" onBlur="setInvTel" />
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">开户银行：</view>
-        <input class="u-dd" placeholder="请输入开户银行" value="{{bank}}" onInput="setInvBank" />
+        <input class="u-dd" placeholder="请输入开户银行" value="{{bank}}" onBlur="setInvBank" />
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">银行账号：</view>
-        <input type="number" class="u-dd" placeholder="请输入银行账号" value="{{acc}}" onInput="setInvAcc" />
+        <input type="number" class="u-dd" placeholder="请输入银行账号" value="{{acc}}" onBlur="setInvAcc" />
       </view>
 
   </view>

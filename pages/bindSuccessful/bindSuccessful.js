@@ -68,17 +68,30 @@ Page({
   },
   onRise() {
      my.alert({
-            title: '跳转到关联抬头页面' 
+            title: '跳转到关联抬头页面'
           });
   },
-  toAddTitile(){
-    my.navigateTo({
-      url: "/pages/invoiceTit/index/index"
-    })
+  tapUrl(e) {
+    app.handleForward(e)
   },
-  toMyEtc() {
-    my.navigateTo({
-      url: "/pages/wodeETC/myetc/myetc"
-    });
+  toAddTitile(){
+    let url = "/pages/wodeETC/myetc/myetc"
+    if(this.data.cards.length>1){
+      url = "/pages/wodeETC/myetc/myetc"
+    }else{
+      url = "/pages/wodeETC/selTaitou/selTaitou?cardid="+this.data.cards[0].cardId+"&needRedirect=yes&type="+this.data.cards[0].cardType
+    }
+    let data = {
+      currentTarget:{
+        dataset:{
+          url: url,
+          openType: 'redirectTo'
+        }
+      }
+    }
+    app.handleForward(data)
+  },
+  toMyEtc(e){
+    app.handleForward(e)
   }
 });

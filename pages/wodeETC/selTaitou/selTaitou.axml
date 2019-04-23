@@ -1,9 +1,10 @@
 <view class="page">
-  <view a:if="{{items.length > 0}}">
     <view class="box">
       <view class="add-img" onTap="addTaitou"></view>
       <view class="add-msg">添加发票抬头</view>
     </view>
+  <view class="TitList" a:if="{{items.length > 0}}">
+
     <radio-group class="radio-group" onChange="radioChange">
       <label class="radio" a:for="{{items}}">
         <radio value="{{index}}" disabled="{{item.hasBind}}"/>

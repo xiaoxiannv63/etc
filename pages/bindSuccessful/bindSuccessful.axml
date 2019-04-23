@@ -52,6 +52,6 @@
         </block>
       </list> -->
       <button class="btnt" type="primary" size="defaultSize" onTap="toAddTitile"> 关联抬头 </button>
-      <button class="btnb" type="plain" color="#d4d4d4" size="defaultSize" onTap="toMyEtc"> 查看我的ETC卡 </button>
+      <button class="btnb" type="plain" color="#d4d4d4" size="defaultSize" onTap="toMyEtc" data-openType="redirectTo" data-url="/pages/wodeETC/myetc/myetc"> 查看我的ETC卡 </button>
   </view>
 </view>

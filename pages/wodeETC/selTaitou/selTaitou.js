@@ -25,9 +25,15 @@ Page({
       hasBind: ''
     }*/],
     select: null,
-    selection: {}
+    selection: {},
+    cardType:''
   },
   onLoad(query) {
+    if(query.type){
+      this.setData({
+        cardType:query.type
+      })
+    }
     this.setData({
       cardid: query.cardid,
       needRedirect: query.needRedirect
@@ -81,6 +87,7 @@ Page({
       that.setData({
         showMyConf: false
       })
+      console.log('---',data)
       my.alert({
         title: '关联成功',
         content: '',
@@ -89,7 +96,7 @@ Page({
           app.needRefresh = true;
           app.myEtcNeedRefresh = true;
           if(that.data.needRedirect && that.data.needRedirect == 'yes'){
-            let str = "?cardId=" + that.data.cardid+"&titleId="+that.data.selection.titleId+"&titleName="+that.data.selection.name;
+            let str = "?cardId=" + that.data.cardid+"&titleId="+that.data.selection.titleId+"&titleName="+that.data.selection.name+"&type="+that.data.cardType;
             my.redirectTo({
               url:"/pages/iWangTo/recordList/recordList" + str
             });
@@ -106,8 +113,17 @@ Page({
     })
   },
   addTaitou(){
-    my.navigateTo({
-      url:'/pages/invoiceTit/addTaitou/addTaitou?etcFlag=1'
-    });
+    let data = {
+      currentTarget:{
+        dataset:{
+          url:'/pages/invoiceTit/addTaitou/addTaitou?etcFlag=1',
+          openType: 'redirectTo'
+        }
+      }
+    }
+    app.handleForward(data)
+    // my.navigateTo({
+    //   url:'/pages/invoiceTit/addTaitou/addTaitou?etcFlag=1'
+    // });
   }
 });

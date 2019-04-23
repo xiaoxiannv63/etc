@@ -68,15 +68,23 @@ Page({
           app.ajax(json1,'CARD_UNBIND',function(){
             app.needRefresh = true
             app.myEtcNeedRefresh = true;
-            my.navigateBack();
+            my.switchTab({
+              url: '/pages/index/index'
+            });
           })
         }
       },
     });
   },
   bindTaitou(){//去关联抬头
-    my.navigateTo({
-      url: '/pages/wodeETC/selTaitou/selTaitou?cardid='+this.data.card.cardId
-    });
+    let data = {
+      currentTarget: {
+        dataset:{
+          url: '/pages/wodeETC/selTaitou/selTaitou?cardid='+this.data.card.cardId,
+          openType: 'navigateTo'
+        }
+      }
+    }
+    app.handleForward(data)
   }
 });

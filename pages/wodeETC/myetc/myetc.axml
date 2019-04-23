@@ -18,7 +18,7 @@
       <view>
         <text>您还没有绑定ETC卡哦~</text>
       </view>
-      <button type="primary" size="defaultSize" onTap="toAddEtc"> 马上添加卡片 </button>
+      <button type="primary" size="defaultSize" onTap="toAddEtc" data-openType="navigateTo" data-url="{{'/pages/wodeETC/addEtcCard/addEtcCard?type='+userType}}"> 马上添加卡片 </button>
     </view>
     <view a:else class="card-wrap">
       <view class="m-cards">
@@ -30,9 +30,11 @@
           <view class="m-card"
                 a:for="{{item.cards}}" 
                 a:for-index="ind"
-                a:for-item="card" 
+                a:for-item="card"
+                onTap="toDet"
                 data-card="{{card.cardId}}"
-                onTap="toDet">
+                data-openType="navigateTo"
+                data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+card.cardId}}">
             <view class="u-chepai u-info">{{card.plateNum}}</view>
             <view class="u-info"><text>{{card.cardType}} :</text><text>{{card.cardId?card.cardId.substring(0,6)+"**********"+card.cardId.substr(-4):''}}</text></view>
             <view class="u-info"><text>关联抬头 :</text><text a:if="{{card.titleId}}">{{card.titleName}}</text></view>
@@ -42,8 +44,6 @@
       </view>
 
     </view>
-    
-
-      <button a:if="{{items.length > 0}}" class="m-btn" type="primary" size="defaultSize" onTap="toAddEtc"> 添加ETC卡 </button>
+      <button a:if="{{items.length > 0}}" class="m-btn" type="primary" size="defaultSize"  onTap="toAddEtc" data-openType="navigateTo" data-url="{{'/pages/wodeETC/addEtcCard/addEtcCard?type='+userType}}"> 添加ETC卡 </button>
   </view>
 </view>

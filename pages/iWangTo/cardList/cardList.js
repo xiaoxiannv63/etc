@@ -67,11 +67,14 @@ Page({
       }
     })
   },
-  toAddEtc(e){//添加卡片
-    my.navigateTo({
-      url: `/pages/wodeETC/addEtcCard/addEtcCard?type=${e.target.dataset.type}`
-    })
+  tapUrl(e){
+    app.handleForward(e)
   },
+  // toAddEtc(e){//添加卡片
+  //   my.navigateTo({
+  //     url: `/pages/wodeETC/addEtcCard/addEtcCard?type=${e.target.dataset.type}`
+  //   })
+  // },
   toInvoice(e) {
     let cardid = e.currentTarget.dataset.card;
     if(!e.currentTarget.dataset.tit){

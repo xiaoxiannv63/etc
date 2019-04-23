@@ -88,16 +88,18 @@ Page({
     app.myEtcRefreshUserType = 'COMPANY'
   },
   toDet(e){//进入详情
-    let cardid = e.currentTarget.dataset.card;
+    // let cardid = e.currentTarget.dataset.card;
     // console.log(cardid)
-    my.navigateTo({
-      url: '/pages/wodeETC/etcDetail/etcDetail?cardid='+cardid
-    })
+    // my.navigateTo({
+    //   url: '/pages/wodeETC/etcDetail/etcDetail?cardid='+cardid
+    // }
+    app.handleForward(e)
   },
-  toAddEtc(){//添加卡片
-    let str = this.data.userType == 'PERSONAL'?'?type=PERSONAL':'?type=COMPANY';
-    my.navigateTo({
-      url: '/pages/wodeETC/addEtcCard/addEtcCard'+str
-    })
+  toAddEtc(e){//添加卡片
+    // let str = this.data.userType == 'PERSONAL'?'?type=PERSONAL':'?type=COMPANY';
+    // my.navigateTo({
+    //   url: '/pages/wodeETC/addEtcCard/addEtcCard'+str
+    // })
+    app.handleForward(e)
   }
 });

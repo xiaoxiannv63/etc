@@ -6,8 +6,10 @@ Page({
     canIUseAuthButton: my.canIUse('button.open-type.getAuthorize')
   },
   onLoad(query) {
-    var that = this;
-    app.getPermision(that);
+    if(!query.unregister){
+      var that = this;
+      app.getPermision(that);
+    }
     // 页面加载
   },
   pgTelLogin() {
@@ -15,6 +17,10 @@ Page({
       url: "../login/bind/index"
     });
   },
+    // my.redirectTo({
+    //   url: "../login/bind/index"
+    // });
+  // },
   cancel() {
     this.setData({
       modalOpened: false,
