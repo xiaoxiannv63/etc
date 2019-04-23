@@ -1,13 +1,14 @@
 
 .page{background-color: #fff;position: relative}
-.statusHead .amount{ 
-  position: absolute; right:48rpx; top:140rpx; text-align: center;
-  }
-  .amount{
-      font-size:30rpx;
-      font-family:PingFangSC-Semibold;
-      font-weight:600;
-      color:rgba(255,63,0,1);
+  .amount .money{
+    position: absolute; 
+    right:40rpx; 
+    top:140rpx; 
+    text-align: center;
+    font-size:30rpx;
+    font-family:PingFangSC-Semibold;
+    font-weight:600;
+    color:rgba(255,63,0,1);
   }
 .statusHead{
   padding:30rpx;
@@ -74,14 +75,13 @@
  }
 .bottom{
   position: fixed;
-  padding:30rpx;
+  padding:0 30rpx 0 30rpx;
   display: flex;
   flex:1;
   justify-content:space-between;
   bottom: 0;
   width:100%;
   height:142rpx;
-  padding:0 38rpx;
   background:rgba(255,255,255,1);
   box-shadow:0rpx 0rpx 8rpx 0rpx rgba(153,153,153,0.2);
 }
@@ -105,13 +105,12 @@
   height: 53rpx;
 }
 .send{
+  padding:30rpx 0;
   font-size:28rpx;
   font-family:PingFangSC-Regular;
   font-weight:400;
   color:rgba(204,204,204,1);
   line-height:28rpx;
-}
-.bottom-left{
-  padding:30rpx 30rpx 0 0;
-  border-right: 1rpx solid #eee;
+  width:142rpx;
+  height:142rpx;
 }

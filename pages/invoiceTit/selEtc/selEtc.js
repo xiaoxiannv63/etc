@@ -82,6 +82,9 @@ Page({
       })
     }
   },
+  toAddEtc(e){
+    app.handleForward(e)
+  },
   chooseCom(){//选择单位卡
     if(this.data.userType == 'COMPANY')return;
     if(this.data.first){

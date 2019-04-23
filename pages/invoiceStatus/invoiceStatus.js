@@ -26,6 +26,13 @@ Page({
   onItemClick(e) {
 
   },
+  onShareAppMessage() {
+    return {
+      title: '票根',
+      desc: '简单快捷获取通行费电子发票',
+      path: 'pages/startup/startup'
+    };
+  },
   getCardId(){
     let json1 = {
       applyId: this.data.applyId,

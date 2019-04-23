@@ -61,6 +61,9 @@ Page({
   choosePer(){
     let noData = this.data.personItems.length == 0?1:0;
     this.setData({
+      items: []
+    })
+    this.setData({
       userType: 'PERSONAL',
       items: this.data.personItems,
       noData: noData
@@ -70,6 +73,9 @@ Page({
   },
   chooseCom(){
     let noData = this.data.companyItems.length == 0?1:0;
+    this.setData({
+      items: []
+    })
     if(this.data.first){
       this.setData({
         first:false,
