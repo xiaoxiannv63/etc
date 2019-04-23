@@ -103,10 +103,15 @@ Page({
   toInvApp(e){
     if(e.target.dataset.status == '开票完成'){
       let str = "?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum;
-      my.navigateTo({
-        // url: '/pages/myInvoice/invApplication/invApplication'+str
-        url: '/pages/invoiceStatus/invoiceStatus'+str
-      });
+      let var1 = {
+        currentTarget: {
+          dataset: {
+            url: "/pages/invoiceStatus/invoiceStatus" + str,
+            openType: "navigateTo"
+          }
+        }
+      }
+      app.handleForward(var1)
     }else{
       my.alert({
         content: e.target.dataset.status

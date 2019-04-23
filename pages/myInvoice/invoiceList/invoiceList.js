@@ -6,7 +6,8 @@ Page({
     personItems: [],
     companyItems: [],
     first: true,
-    noData: 0
+    noData: 0,
+    toAddEtcF:true
   },
   onLoad() {
     this.getCardList();
@@ -87,19 +88,37 @@ Page({
     }
     let str = "?cardId=" + e.currentTarget.dataset.card+"&plateNum="+e.currentTarget.dataset.plateNum+"&type="+type;
     // console.log(str);
-    my.navigateTo({
-      url:"/pages/myInvoice/serInvList/serInvList" + str
-    });
+      let var1 = {
+        currentTarget: {
+          dataset: {
+            url: "/pages/myInvoice/serInvList/serInvList" + str,
+            openType: "navigateTo"
+          }
+        }
+      }
+      app.handleForward(var1)
   },
   toAddEtc(){//添加卡片
     if(this.data.userType == 'PERSONAL'){
-      my.navigateTo({
-        url: '/pages/wodeETC/addEtcCard/addEtcCard?type=PERSONAL'
-      })
+      let var1 = {
+        currentTarget: {
+          dataset: {
+            url: "/pages/wodeETC/addEtcCard/addEtcCard?type=PERSONAL",
+            openType: "navigateTo"
+          }
+        }
+      }
+      app.handleForward(var1)
     }else{
-        my.navigateTo({
-          url: '/pages/wodeETC/addEtcCard/addEtcCard'
-        })
+      let var1 = {
+        currentTarget: {
+          dataset: {
+            url: "/pages/wodeETC/addEtcCard/addEtcCard",
+            openType: "navigateTo"
+          }
+        }
+      }
+      app.handleForward(var1)
     }
   }
 });

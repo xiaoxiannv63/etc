@@ -34,8 +34,14 @@ Page({
   },
   lookRouteInvoice(e){
     let item = e.target.dataset.item
-    my.navigateTo({
-      url:`../routeInvoice/routeInvoice?cardId=${this.data.cardId}&tradeId=${item}&applyId=${this.data.applyId}`
-    });
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: `/pages/routeInvoice/routeInvoice?cardId=${this.data.cardId}&tradeId=${item}&applyId=${this.data.applyId}`,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   }
 });

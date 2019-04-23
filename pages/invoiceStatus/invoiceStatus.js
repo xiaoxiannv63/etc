@@ -43,10 +43,15 @@ Page({
   },
   lookElectronicInvoice(){
       let str = "?applyId="+this.data.applyId + '&plateNum='+this.data.plateNum;
-      my.navigateTo({
-        // url: '/pages/myInvoice/invApplication/invApplication'+str
-        url: '/pages/myInvoice/viewInvoice/viewInvoice'+str
-      });
+      let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '/pages/myInvoice/viewInvoice/viewInvoice'+str,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
   invoiceError(){ //开票有误 
     my.alert({
@@ -60,9 +65,14 @@ Page({
   },
   lookQuotation(){ //查看行程
     let str = "applyId="+this.data.applyId + '&cardId='+this.data.itemContent.cardId;
-    my.navigateTo({
-      url: `../quotation/quotation?${str}`
-    })
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: `/pages/quotation/quotation?${str}`,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   }
-
 })

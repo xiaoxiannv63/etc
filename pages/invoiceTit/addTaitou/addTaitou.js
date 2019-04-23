@@ -127,9 +127,15 @@ Page({
     })
   },
   bindEtc(){
-    my.navigateTo({
-      url:"/pages/invoiceTit/selEtc/selEtc"
-    });
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: "/pages/invoiceTit/selEtc/selEtc",
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
   setInvName(e){
     let v = e.detail.value;

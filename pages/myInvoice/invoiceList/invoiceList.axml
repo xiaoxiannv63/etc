@@ -44,7 +44,7 @@
       <view>
         <text>您还没有绑定ETC卡哦~</text>
       </view>
-      <button type="primary" size="defaultSize" onTap="toAddEtc" data-openType="navigateTo" data-url="{{'/pages/wodeEtc/addEtcCard/addEtcCard?type='+userType}}"> 马上添加卡片 </button>
+      <button type="primary" size="defaultSize" onTap="toAddEtc"> 马上添加卡片 </button>
     </view>
 
   </view>

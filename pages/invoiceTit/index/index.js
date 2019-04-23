@@ -17,14 +17,27 @@ Page({
               "&tel="+(!d[ind].tel?'':d[ind].tel)+
               "&bank="+(!d[ind].bank?'':d[ind].bank)+
               "&acc="+(!d[ind].bankAccount?'':d[ind].bankAccount);
-    my.navigateTo({
-      url:'/pages/invoiceTit/invoiceDet/invoiceDet'+str
-    });
+
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '/pages/invoiceTit/invoiceDet/invoiceDet' + str,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
   addTaitou(){
-    my.navigateTo({
-      url:'/pages/invoiceTit/addTaitou/addTaitou'
-    });
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '/pages/invoiceTit/addTaitou/addTaitou',
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
   onLoad() {
     this.getTitList();
