@@ -20,9 +20,6 @@ Page({
   },
   //个人卡
   choosePer(){
-    this.setData({
-      noData:0
-    })
     if(this.data.userType == 'PERSONAL') return;
     this.setData({
       userType: 'PERSONAL',

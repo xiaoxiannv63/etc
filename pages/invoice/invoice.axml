@@ -22,6 +22,18 @@
       </text>
     </view>
   </view> -->
+  <view a:if="{{noData == 1}}" class="m-none">
+    <!--没有获取数据-->
+    <view>
+      <image src="/image/noetc.png" mode="aspectFit" />
+    </view>
+    <view>
+      <text>您还没有绑定ETC卡哦~                  
+      </text>
+    </view>
+    <button type="primary" size="defaultSize" onTap="toAddEtc"> 马上添加卡片             
+    </button>
+  </view>
   <view a:if="{{items.length > 0}}" class="card-wrap">
     <list class="list">
       <view class="head">
@@ -47,16 +59,5 @@
       </block>
     </list>
   </view>
-  <view a:if="{{noData == 1}}" class="m-none">
-    <!--没有获取数据-->
-    <view>
-      <image src="/image/noetc.png" mode="aspectFit" />
-    </view>
-    <view>
-      <text>您还没有绑定ETC卡哦~                  
-      </text>
-    </view>
-    <button type="primary" size="defaultSize" onTap="toAddEtc"> 马上添加卡片             
-    </button>
-  </view>
+
 </view>
