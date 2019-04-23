@@ -79,7 +79,7 @@ Page({
     if(this.data.cards.length>1){
       url = "/pages/wodeETC/myetc/myetc"
     }else{
-      url = "/pages/wodeETC/selTaitou/selTaitou?cardid="+this.data.cards[0].cardId+"&needRedirect=yes&type="+this.data.cards[0].cardType
+      url = "/pages/wodeETC/selTaitou/selTaitou?cardid="+this.data.cards[0].cardId+"&needRedirect=yes"
     }
     let data = {
       currentTarget:{

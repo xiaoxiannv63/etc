@@ -26,14 +26,8 @@ Page({
     }*/],
     select: null,
     selection: {},
-    cardType:''
   },
   onLoad(query) {
-    if(query.type){
-      this.setData({
-        cardType:query.type
-      })
-    }
     this.setData({
       cardid: query.cardid,
       needRedirect: query.needRedirect
@@ -98,7 +92,7 @@ Page({
           if(that.data.needRedirect && that.data.needRedirect == 'yes'){
             let str = "?cardId=" + that.data.cardid+"&titleId="+that.data.selection.titleId+"&titleName="+that.data.selection.name+"&type="+that.data.cardType;
             my.redirectTo({
-              url:"/pages/iWangTo/recordList/recordList" + str
+              url:"/pages/wodeETC/myetc/myetc"
             });
           }else{
             my.navigateBack();
