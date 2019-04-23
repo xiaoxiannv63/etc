@@ -25,7 +25,7 @@
     <view>
       <text>暂无抬头信息，请添加发票抬头</text>
     </view>
-    <button class="m-btn" a:if="{{items.length == 0}}" type="primary" size="defaultSize" onTap="addTaitou"> 添加发票抬头 </button>
+    <button class="m-btn" type="primary" size="defaultSize" onTap="addTaitou"> 添加发票抬头 </button>
   </view>
 
   <view class="m-confirm-wrap" a:if="{{showMyConf}}">

@@ -125,6 +125,7 @@ Page({
   },
   nextPer(){
     let json1,type,curStep = this.data.curStep,that = this;
+        console.warn(curStep,this.data.userType,app.canNext)
     if(curStep == 0 && app.canNext){
       app.canNext = false
       json1 = {
@@ -138,11 +139,17 @@ Page({
       }
       app.ajax(json1,'CARD_CHECKCUSTOMER',function(data){
         that.nextStep();
-      })
+      },function(data){
+          my.alert({
+            content: data.msg
+          })
+        },function(){app.canNext = true})
     }
   },
   nextCom(){
     let json1,type,curStep = this.data.curStep,that = this;
+        console.warn(curStep,this.data.userType,app.canNext)
+
     if(curStep == 0 && app.canNext){
       app.canNext = false
       json1 = {
@@ -156,11 +163,17 @@ Page({
       }
       app.ajax(json1,'CARD_CHECKCUSTOMER',function(data){
         that.nextStep();
-      })
+      },function(data){
+          my.alert({
+            content: data.msg
+          })
+        },function(){app.canNext = true})
     }
   },
   next(){
     let json1,type,curStep = this.data.curStep,that = this;
+        console.warn(curStep,this.data.userType,app.canNext)
+
     if(curStep == 1 && app.canNext){
       app.canNext = false
       let momB = this.data.mobNum, checkNum = this.data.checkNum;
@@ -176,13 +189,16 @@ Page({
             cardList: data.items,
           })
           that.nextStep();
-        })
+        },function(data){
+          my.alert({
+            content: data.msg
+          })
+        },function(){app.canNext = true})
       }
     }
   },
   nextStep(){
     console.log("app.canNext",app.canNext)
-    app.canNext = true
     this.setData({
       curStep: (this.data.curStep<this.data.steps.length)?++this.data.curStep:this.data.steps.length
     })
