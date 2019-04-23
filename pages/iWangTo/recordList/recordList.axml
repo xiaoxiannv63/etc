@@ -106,7 +106,7 @@
       <view class="p">• <text>更换抬头前产生的通行交易仍根据原抬头开具发票，如有需要请申请换票；更换抬头后产生的通行交易将根据新抬头开具发票</text></view>
       <view class="p">• <text>通行费用发票获取时间：实际发生通行费用后10个自然日起；充值发票获取时间：实时</text></view>
     </view>
-    <view slot="footer">确定</view>
+    <view slot="footer">继续开票</view>
   </modal>
   <modal
     show="{{modalOpened2}}"

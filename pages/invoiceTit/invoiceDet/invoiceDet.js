@@ -6,7 +6,7 @@ Page({
     curPage: 1,
     pageSize: 10,
     items:[],
-    hasmore: true  //是否有更多ETC卡绑定
+    hasmore: true,  //是否有更多ETC卡绑定
   },
   onLoad(query) {
     // console.log(query);
@@ -43,34 +43,42 @@ Page({
   },
   delTaitou(){//删除抬头
     let that = this;
-    if(this.data.cardnum > 0){
-      my.alert({
-        title: '温馨提示',
-        content: '该发票抬头存在已关联的ETC卡，只有先解除抬头与卡片的关联关系后才可能删除发票抬头。(若要解除当前抬头与ETC卡的关联关系，请将ETC卡与其他抬头关联)',
-        buttonText: '我知道了',
-        success: (res) => {
-          
-        },
-      });
-    }else{
-      my.confirm({
-        title: '温馨提示',
-        content: '确认删除抬头信息吗？',
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        success: (result) => {
-          if(result.confirm){
-            let json1 = {
-              titleId: that.data.invoice.tit,
-              ticketId: app.userInfo.ticketId
-            };
-            app.ajax(json1,'TITLE_DELETE',function(){
-              app.invTitIndNeedRefresh = true;
-              my.navigateBack();
-            })
+    console.log(app.deleteFlag)
+    if(app.deleteFlag){
+      app.deleteFlag = false
+      if(this.data.cardnum > 0){
+        my.alert({
+          title: '温馨提示',
+          content: '该发票抬头存在已关联的ETC卡，只有先解除抬头与卡片的关联关系后才可能删除发票抬头。(若要解除当前抬头与ETC卡的关联关系，请将ETC卡与其他抬头关联)',
+          buttonText: '我知道了',
+          complete: () => {
+            app.deleteFlag = true
+          },
+        });
+      }else{
+        my.confirm({
+          title: '温馨提示',
+          content: '确认删除抬头信息吗？',
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          success: (result) => {
+            app.deleteFlag = true
+            if(result.confirm){
+              let json1 = {
+                titleId: that.data.invoice.tit,
+                ticketId: app.userInfo.ticketId
+              };
+              app.ajax(json1,'TITLE_DELETE',function(){
+                app.invTitIndNeedRefresh = true;
+                my.navigateBack();
+              })
+            }
+          },
+          fail:() => {
+            app.deleteFlag = true
           }
-        },
-      });
+        });
+      }
     }
   },
   toSelEtc(){//去关联ETC卡

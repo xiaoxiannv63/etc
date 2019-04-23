@@ -2,6 +2,7 @@ import CryptoJS  from './util/crypto/crypto-js';
 
 App({
   addTaitouEtcList:[],
+  deleteFlag:true,
   todos: [
     { text: 'Learning Javascript', completed: true },
     { text: 'Learning ES2016', completed: true },

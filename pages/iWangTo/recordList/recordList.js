@@ -287,9 +287,16 @@ Page({
             cardId: this.data.cardId,
             type: this.data.invType
           }
-          my.navigateTo({
-            url: '/pages/iWangTo/invAccept/invAccept'
-          });
+
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '/pages/iWangTo/invAccept/invAccept',
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
     this.setData({
       modalOpened: false,
     });
