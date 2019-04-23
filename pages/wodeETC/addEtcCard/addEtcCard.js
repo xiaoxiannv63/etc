@@ -160,6 +160,7 @@ Page({
     }
   },
   next(){
+    let json1,type,curStep = this.data.curStep,that = this;
     if(curStep == 1 && app.canNext){
       app.canNext = false
       let momB = this.data.mobNum, checkNum = this.data.checkNum;

@@ -161,10 +161,15 @@ Page({
           app.mobile = data.mobile
           //  my.reLaunch({
           //     url: "/pages/index/index", // 页面路径。如果页面不为 tabbar 页面则路径后可以带参数。参数规则如下：路径与参数之间使用
-          //  });
-          my.switchTab({
-            url: '/pages/index/index', // 跳转的 tabBar 页面的路径（需在 app.json 的 tabBar 字段定义的页面）。注意：路径后不能带参数
-          });
+          let var1 = {
+          currentTarget: {
+            dataset: {
+              url: '/pages/index/index',
+              openType: "switchTab"
+            }
+          }
+        }
+        app.handleForward(var1)
         })
       }
     })

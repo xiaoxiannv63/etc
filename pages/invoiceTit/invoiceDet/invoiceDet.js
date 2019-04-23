@@ -75,9 +75,15 @@ Page({
   },
   toSelEtc(){//去关联ETC卡
     let str = '?tit='+this.data.invoice.tit;
-    my.navigateTo({
-      url:'/pages/invoiceTit/selEtc/selEtc'+str
-    });
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '/pages/invoiceTit/selEtc/selEtc'+str,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
   redact(){//编辑抬头
     let str = '?';
@@ -85,9 +91,14 @@ Page({
     for(let i in inv){
       str += i + "=" + inv[i] + "&"
     }
-    // console.log(str);
-    my.navigateTo({
-      url:'/pages/invoiceTit/redact/redact'+str
-    });
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '/pages/invoiceTit/redact/redact'+str,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)// console.log(str);
   }
 });

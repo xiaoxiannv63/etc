@@ -13,9 +13,15 @@ Page({
     // 页面加载
   },
   pgTelLogin() {
-    my.redirectTo({
-      url: "../login/bind/index"
-    });
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '../login/bind/index',
+          openType: "redirectTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
     // my.redirectTo({
     //   url: "../login/bind/index"
