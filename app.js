@@ -31,26 +31,7 @@ App({
     // return  encryptedBase64Str;
     return encryptedData
   },
-  // --method--
-  // AES解密
-  // AESdecrypt (encryptedBase64Str) {
-  //   // AES解密，用于解析服务端返回的data数据
-  //   // key 秘钥
-  //   // return 解密后数据
-  //   var key = CryptoJS.enc.Utf8.parse("QkiUtbsd1zBwDHgN");
-  //   var decryptedData = CryptoJS.AES.decrypt(encryptedBase64Str, key, {
-  //     mode: CryptoJS.mode.ECB,
-  //     padding: CryptoJS.pad.Pkcs7
-  //   });
-    
-  //   var decryptedStr = decryptedData.toString(CryptoJS.enc.Utf8);
-    
-  //   return JSON.parse(decryptedStr);
-  // },
   md5Code (str) {
-    // AES加密，用于ajax参数上传
-    // key 秘钥
-    // return 加密后数据
     var key = CryptoJS.MD5(str).toString();
 
     return  key;
@@ -84,6 +65,7 @@ App({
       'VALIDCODE': 1
     };
     if(!this.userInfo.ticketId && !noNeedLoginTypeArr[type] ){
+      console.log("-0-0-0-0-0-")
       my.hideLoading();
       my.redirectTo({
         url:"/pages/login/bind/index",
@@ -114,6 +96,7 @@ App({
           succ(data)
         }else{
           if(data.code == '702'){
+            console.log(702)
             my.navigateTo({
               url:"/pages/login/bind/index",
             })
@@ -143,14 +126,23 @@ App({
       if (this.userInfo) resolve(this.userInfo);
 
       my.getAuthCode({
-        scopes: ['auth_base'],
+        scopes: ['auth_user'],
         success: authcode => {
           console.info('---authcode---',authcode);
 
           my.getAuthUserInfo({
             success: res => {
+              console.log(res)
               this.userInfo = res;
-              resolve(this.userInfo);
+              let var1 = {
+              currentTarget: {
+                dataset: {
+                  url: '../login/bind/index',
+                  openType: "redirectTo"
+                }
+              }
+            }
+            this.handleForward(var1)
             },
             fail: () => {
               reject({});
@@ -205,10 +197,7 @@ App({
       scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
       success: (res) => {
         this.authCode = res.authCode;
-        this.getUserInfo().then(res => {
-          this.userInfo.nickName = res.nickName
-          this.userInfo.avatar = res.avatar
-        });
+
         this.indRes()
       }
     });
@@ -225,6 +214,7 @@ App({
       if (!data.ticketId) { //没有ticketId 不做跳转
       console.log("ticket无效")
       } else {
+        console.log("ticket 有效  ")
         let json2 = {
           userId: this.userInfo.userId,
           channel: 'ZFBPIAOGEN'

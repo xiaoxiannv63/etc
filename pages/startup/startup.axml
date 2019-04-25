@@ -72,34 +72,4 @@
       
     </view>
   </view>
-      <modal
-    show="{{modalOpened}}"
-    onModalClose="onModalClick" >
-    <view slot="header">服务授权</view>
-    <view class="imgageDiv">
-      <image src="../../../assets/images/zfbCion.png" mode="aspectFit" />
-    </view>
-    <view class="bigFont">
-      <view class="heightLine">
-        该服务由票根应用提供
-      </view>
-      <view class="heightLine">
-        向其提供以下授权即可继续操作
-      </view>
-    </view>
-    <view class="minFont">
-    <view class="font-gray">
-      使用支付宝账号登录服务窗
-    </view>
-    <view class="font-gray">
-      使用身份信息办理业务（姓名、手机号、生日等）
-    </view>
-    </view>
-    <view>
-    <flex class="foot">
-      <flex-item><view class="inline buttonCancel" onTap="cancel">取消</view ></flex-item>
-      <flex-item><view class="inline buttonAccede" onTap="accede">确定</view></flex-item>
-    </flex>
-  </view>
-  </modal>
 </view>

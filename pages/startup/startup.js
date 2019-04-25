@@ -13,15 +13,14 @@ Page({
     // 页面加载
   },
   pgTelLogin() {
-    let var1 = {
-      currentTarget: {
-        dataset: {
-          url: '../login/bind/index',
-          openType: "redirectTo"
-        }
-      }
-    }
-    app.handleForward(var1)
+    app.getUserInfo()
+    // app.getUserInfo().then((res)=>{
+    //   console.log(1111111111)
+    //   // app.userInfo = res
+
+    // }).catch((e)=>{
+  
+    // })
   },
     // my.redirectTo({
     //   url: "../login/bind/index"
