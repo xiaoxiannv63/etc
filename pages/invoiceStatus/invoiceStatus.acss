@@ -54,6 +54,7 @@
   font-weight:400;
   color:#333;
   line-height:28rpx;
+  margin-top:20rpx;
 }
 .num1{
   color:#999;
