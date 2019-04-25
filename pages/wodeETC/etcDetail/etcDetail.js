@@ -49,6 +49,17 @@ Page({
       })
     })
   },
+  goInvoice(){
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: "/pages/iWangTo/cardList/cardList",
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
+  },
   toGuanLian(){//去关联抬头
     console.log("去关联抬头");
   },

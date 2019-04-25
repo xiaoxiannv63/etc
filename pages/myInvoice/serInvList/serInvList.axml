@@ -31,7 +31,7 @@
           </view>
 
           <view class="i-v1">
-            <view><text class="u-key c-99 let-spa10">申请类型：</text>{{item.applyType}}申请</view>
+            <view><text class="u-key c-99 let-spa10">申请类型：</text>{{item.applyType}}</view>
             <view>
               <text class="u-key c-99 let-spa10">发票内容：</text>
               <text a:if="{{invType == 'xf'}}">通行费</text>

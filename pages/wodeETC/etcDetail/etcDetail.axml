@@ -30,7 +30,8 @@
       </view>
     </view>
 
-    <button type="primary" size="defaultSize" onTap="unbind"> 解绑卡片 </button>
+    <button class="button1" type="primary" size="defaultSize" onTap="unbind"> 解绑卡片 </button>
+    <button class="button2" type="primary" size="defaultSize" onTap="goInvoice"> 去开票 </button>
   </view>
 
   <view a:if="{{card.titleId}}" class="m-taitou">

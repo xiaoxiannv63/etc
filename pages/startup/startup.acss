@@ -19,7 +19,7 @@ background: url(../../assets/images/startupCion02.png) no-repeat; background-siz
 .minFont{padding:40rpx; text-align: left}
 .paddint-top{padding-top:30rpx; padding-bottom:40rpx;}
 .padding-bottom{padding-bottom:60rpx;}
-.lct{display: flex; justify-content: space-between; text-align: center; padding-bottom:200rpx; color: #333333; }
+.lct{display: flex; justify-content: space-between; text-align: center; padding-bottom:200rpx; color: #333333;font-size:28rpx }
 .lct image{ width: 60rpx; height: 60rpx;}
 .lineImage image{ width: 35rpx;}
 .lctSpan{padding-top:16rpx;}

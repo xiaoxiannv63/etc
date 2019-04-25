@@ -51,7 +51,13 @@
     font-size: 28rpx;
 }
 
-button{
+.button1{
+    position: absolute;
+    bottom:180rpx;
+    left: 40rpx;
+    right: 40rpx;
+}
+.button2{
     position: absolute;
     bottom: 58rpx;
     left: 40rpx;

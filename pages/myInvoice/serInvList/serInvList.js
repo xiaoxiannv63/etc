@@ -86,7 +86,7 @@ Page({
       let czArr = [];
       let xfArr = [];
       data.items.forEach((item,index) => {
-        if(item.applyType == "充值发票"){
+        if(item.applyType == "充值发票申请"){
           czArr.push(item)
         }else{
           xfArr.push(item)

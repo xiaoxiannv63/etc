@@ -40,7 +40,7 @@
       </view>
       <view class="u-item">
         <view class="u-dt">分支机构</view><text>|</text>
-        <input class="u-dd" placeholder="请输入分支机构" onInput="setDepart" />
+        <input class="u-dd" placeholder="请输入分支机构（选填）" onInput="setDepart" />
       </view>
       <!-- <view class="u-item"> -->
         <picker onChange="bindPickerChange3" value="{{index3}}" range="{{array3}}">

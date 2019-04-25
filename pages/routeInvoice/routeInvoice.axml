@@ -9,7 +9,7 @@
       <view class="info-wrap">
         <view>
           <view class="u-key u-double">税<text></text>号：</view>
-          <text class="u-val">{{item.buyerTaxNum}}</text>
+          <text class="u-val">{{item.sellerTaxNum}}</text>
         </view>
         <view>
           <text class="u-key">开票单位：</text>

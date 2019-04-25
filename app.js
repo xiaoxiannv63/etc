@@ -143,7 +143,7 @@ App({
       if (this.userInfo) resolve(this.userInfo);
 
       my.getAuthCode({
-        scopes: ['auth_user'],
+        scopes: ['auth_base'],
         success: authcode => {
           console.info('---authcode---',authcode);
 

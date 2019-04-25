@@ -33,3 +33,7 @@
 .btn-wrap button + button{
     margin-top: 32rpx;
 }
+
+.myinv{
+  color: #108EE9;
+}
