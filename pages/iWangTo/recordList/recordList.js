@@ -39,7 +39,8 @@ Page({
       cardId: query.cardId,
       titleId: query.titleId,
       titleName: query.titleName,
-      type: query.type
+      type: query.type,
+      plateNum: query.plateNum
     })
     function num2(num) {
       return ('0' + num).slice(-2)
@@ -285,7 +286,9 @@ Page({
             month: this.data.month.split("-").join(""),
             tot: this.data.total,
             cardId: this.data.cardId,
-            type: this.data.invType
+            type: this.data.invType,
+            titleName: this.data.titleName,
+            plateNum: this.data.plateNum
           }
 
     let var1 = {

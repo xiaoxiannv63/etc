@@ -73,7 +73,7 @@ Page({
     let str = "?cardId=" + cardid+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType;
     // console.log(str);
     my.navigateTo({
-      url:"/pages/iWangTo/recordList/recordList" +  "?cardId=" + cardid+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType
+      url:"/pages/iWangTo/recordList/recordList" +  "?cardId=" + cardid+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType+"&plateNum="+this.data.card.plateNum
     });
   },
   toGuanLian(){//去关联抬头

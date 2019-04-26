@@ -1,7 +1,14 @@
 const app=getApp()
 Page({
   data: {},
-  onLoad() {},
+  onLoad(query) {
+    this.setData({
+      cardId: query.cardId,
+      month: query.month,
+      titleId: query.titleId,
+      plateNum: query.plateNum
+    })
+  },
   // toMyInv(){
   //   my.navigateTo({
   //     url: "/pages/myInvoice/invoiceList/invoiceList"
