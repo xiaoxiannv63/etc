@@ -58,6 +58,7 @@
     right: 40rpx;
 }
 .button2{
+  color:#d4d4d4;
     position: absolute;
     bottom: 58rpx;
     left: 40rpx;
