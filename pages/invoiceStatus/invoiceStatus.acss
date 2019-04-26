@@ -61,10 +61,11 @@
 }
 .error{
   display: flex;
+  justify-content: center;
   flex:1;
 }
 .between{
-  width:350rpx;
+  width:100%;
   margin:0 auto;
   margin-top: 400rpx;
 }

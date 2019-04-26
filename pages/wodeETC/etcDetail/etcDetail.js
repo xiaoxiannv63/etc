@@ -50,15 +50,31 @@ Page({
     })
   },
   goInvoice(){
-    let var1 = {
-      currentTarget: {
-        dataset: {
-          url: "/pages/iWangTo/cardList/cardList",
-          openType: "navigateTo"
-        }
-      }
+    let cardid = this.data.cardid;
+    if(!this.data.card.titleId){
+      my.confirm({
+        title: '提示',
+        content: '此ETC卡未关联发票抬头，不能进行开票；立即前往关联？',
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        success: (result) => {
+          
+          // console.log(result)
+          if(result.confirm){
+            let str = "?cardid="+cardid +'&needRedirect=yes'+'&etc=true';
+            my.navigateTo({
+              url:"/pages/wodeETC/selTaitou/selTaitou" + str
+            });
+          }
+        },
+      });
+      return;
     }
-    app.handleForward(var1)
+    let str = "?cardId=" + cardid+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType;
+    // console.log(str);
+    my.navigateTo({
+      url:"/pages/iWangTo/recordList/recordList" +  "?cardId=" + cardid+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType
+    });
   },
   toGuanLian(){//去关联抬头
     console.log("去关联抬头");
