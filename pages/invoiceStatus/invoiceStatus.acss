@@ -54,18 +54,16 @@
   font-weight:400;
   color:#333;
   line-height:28rpx;
-  margin-top:20rpx;
 }
 .num1{
   color:#999;
 }
 .error{
   display: flex;
-  justify-content: center;
   flex:1;
 }
 .between{
-  width:100%;
+  width:350rpx;
   margin:0 auto;
   margin-top: 400rpx;
 }

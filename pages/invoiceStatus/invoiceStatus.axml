@@ -22,8 +22,7 @@
   </view>
   <view class="invoiceHead">
     <view class="name">{{itemContent.buyerName}}</view>
-    <view class="num" a:if="{{itemContent.buyerTaxpayerCode 
-    }}"><text class="num1">税号：</text>{{itemContent.buyerTaxpayerCode}}</view>
+    <view class="num" a:if="{{itemContent.buyerTaxpayerCode}}"><text class="num1">税号：</text>{{itemContent.buyerTaxpayerCode}}</view>
   </view>
   <view class="between">
     <view class="error">

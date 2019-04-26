@@ -16,10 +16,8 @@ Page({
         month: app.inv.month,
         titleId: app.inv.titleId,
         tot: app.inv.tot,
-        cardId: app.inv.cardId,
-        type: app.inv.type,
-        plateNum: app.inv.plateNum,
-        titleName: app.inv.titleName
+        cardId:app.inv.cardId,
+        type:app.inv.type
       })
     }
   },
@@ -56,9 +54,8 @@ Page({
         my.hideLoading();
         app.recordListRefresh = true;
         app.inv = null;
-        let str = '?cardId='+that.data.cardId+'&month='+that.data.month+'&titleId='+that.data.titleId+"&plateNum="+that.data.plateNum+'&titleName='+that.data.titleName
         my.redirectTo({
-          url: '/pages/iWangTo/kpSuccess/kpSuccess'+str, 
+          url: '/pages/iWangTo/kpSuccess/kpSuccess', 
         });
       })
     }else if(type == 'cz'){
@@ -76,11 +73,12 @@ Page({
         my.hideLoading();
         app.recordListRefresh = true;
         app.inv = null;
-        let str = '?cardId='+that.data.cardId+'&month='+that.data.month+'&titleId='+that.data.titleId+"&plateNum="+that.data.plateNum+'&titleName='+that.data.titleName
         my.redirectTo({
-          url: '/pages/iWangTo/kpSuccess/kpSuccess'+str, 
+          url: '/pages/iWangTo/kpSuccess/kpSuccess', 
         });
       })
     }
+    
+  
   }
 });

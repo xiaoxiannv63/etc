@@ -35,42 +35,42 @@
     <button  disabled="{{disabled2}}" type="primary" onTap="queding"  a:if="{{loginType=='tel'}}" data-type="VALIDCODE">登录 </button>
     <button  type="primary" onTap="queding" disabled="{{disabledAccout || disabledAccout2 || !agree}}"  a:if="{{loginType=='account'}}" data-type="PASSWORD">登录</button>
    
-     <!-- <view class="queding">
+     <view class="queding">
         <view class="padding-bottom font-gray">使用其他登录方式</view>
-        <view class="textAlign"  onTap="sqLogin">
+        <view class="textAlign"  open-type="getAuthorize" onGetAuthorize="phoneNumber">
             <image class="zfbCion" src="../../../assets/images/zfbCion2.png" mode="aspectFit" />
             <view>支付宝授权登录</view>
         </view>
      </view>
-      <modal
-    show="{{modalOpened}}"
-    onModalClose="onModalClick" >
-    <view slot="header">服务授权</view>
-    <view class="imgageDiv">
-      <image src="../../../assets/images/zfbCion.png" mode="aspectFit" />
-    </view>
-    <view class="bigFont">
-      <view class="heightLine">
-        该服务由票根应用提供
+  <!-- <modal
+        show="{{modalOpened}}"
+        onModalClose="onModalClick" >
+        <view slot="header">服务授权</view>
+        <view class="imgageDiv">
+          <image src="../../../assets/images/zfbCion.png" mode="aspectFit" />
+        </view>
+        <view class="bigFont">
+          <view class="heightLine">
+            该服务由票根应用提供
+          </view>
+          <view class="heightLine">
+            向其提供以下授权即可继续操作
+          </view>
+        </view>
+        <view class="minFont">
+        <view class="font-gray">
+          使用支付宝账号登录服务窗
+        </view>
+        <view class="font-gray">
+          使用身份信息办理业务（姓名、手机号、生日等）
+        </view>
+        </view>
+        <view>
+        <flex class="foot">
+          <flex-item><view class="inline buttonCancel" onTap="cancel">取消</view ></flex-item>
+          <flex-item><view class="inline buttonAccede" onTap="accede">确定</view></flex-item>
+        </flex>
       </view>
-      <view class="heightLine">
-        向其提供以下授权即可继续操作
-      </view>
-    </view>
-    <view class="minFont">
-    <view class="font-gray">
-      使用支付宝账号登录服务窗
-    </view>
-    <view class="font-gray">
-      使用身份信息办理业务（姓名、手机号、生日等）
-    </view>
-    </view>
-    <view>
-    <flex class="foot">
-      <flex-item><view class="inline buttonCancel" onTap="cancel">取消</view ></flex-item>
-      <flex-item><view class="inline buttonAccede" onTap="accede">确定</view></flex-item>
-    </flex>
-  </view>
   </modal> -->
-  <!-- </view> -->
+  </view>
 </view>

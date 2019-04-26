@@ -195,10 +195,5 @@ checkbox{
     background: #fff;
 }
 .position{ position: relative; z-index: 100000}
-.content{
-  text-align: left; 
-  /* line-height: 48rpx; */
-  }
-.content .p{
-  font-size:26rpx;
-  }
+.content{text-align: left; line-height: 48rpx;}
+.content .p{margin-bottom:20rpx;}

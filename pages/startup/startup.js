@@ -13,14 +13,15 @@ Page({
     // 页面加载
   },
   pgTelLogin() {
-    app.getUserInfo()
-    // app.getUserInfo().then((res)=>{
-    //   console.log(1111111111)
-    //   // app.userInfo = res
-
-    // }).catch((e)=>{
-  
-    // })
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '../login/bind/index',
+          openType: "redirectTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
     // my.redirectTo({
     //   url: "../login/bind/index"
@@ -32,7 +33,7 @@ Page({
     });
   },
   sqLogin() {
-      this.setData({
+    this.setData({
       modalOpened: true,
     });
   },

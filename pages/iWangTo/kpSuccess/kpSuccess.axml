@@ -4,9 +4,7 @@
   </view>
   <view class="m-text">
     <view class="u-tit">开具申请提交成功</view>
-    <view class="u-des">发票开具申请已受理，进入
-      <text class="myinv" onTap="toMyInv" data-openType="navigateTo" data-url="{{'/pages/myInvoice/serInvList/serInvList?cardId='+cardId+'&month='+month+'&plateNum='+plateNum+'&titleId='+titleId}}">[我的发票]</text>
-      查看</view>
+    <view class="u-des">发票开具申请已受理，进入<text>[我的发票]</text>查看</view>
   </view>
 
 

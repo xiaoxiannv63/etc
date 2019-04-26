@@ -26,15 +26,8 @@ Page({
     }*/],
     select: null,
     selection: {},
-    etc:false
   },
   onLoad(query) {
-    console.log('----------',query)
-    if(query.etc){
-      this.setData({
-        etc:true
-      })
-    }
     this.setData({
       cardid: query.cardid,
       needRedirect: query.needRedirect
@@ -84,7 +77,7 @@ Page({
       }]
     }
     let that = this;
-    app.ajax(json1,'TITLE_ADDCARD',(data) => {
+    app.ajax(json1,'TITLE_ADDCARD',function(data){
       that.setData({
         showMyConf: false
       })
@@ -96,20 +89,13 @@ Page({
         success: () => {
           app.needRefresh = true;
           app.myEtcNeedRefresh = true;
-          if(!this.data.etc){
-            if(that.data.needRedirect && that.data.needRedirect == 'yes'){
-              let str = "?cardId=" + that.data.cardid+"&titleId="+that.data.selection.titleId+"&titleName="+that.data.selection.name+"&type="+that.data.cardType;
-              my.redirectTo({
-                url:"/pages/wodeETC/myetc/myetc"
-              });
-            }else{
-              my.navigateBack();
-            }
+          if(that.data.needRedirect && that.data.needRedirect == 'yes'){
+            let str = "?cardId=" + that.data.cardid+"&titleId="+that.data.selection.titleId+"&titleName="+that.data.selection.name+"&type="+that.data.cardType;
+            my.redirectTo({
+              url:"/pages/wodeETC/myetc/myetc"
+            });
           }else{
-            let str = "?cardid=" + that.data.cardid;
-              my.redirectTo({
-                url:"/pages/wodeETC/etcDetail/etcDetail" + str
-            }); 
+            my.navigateBack();
           }
         },
       });

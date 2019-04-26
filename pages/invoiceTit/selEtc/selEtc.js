@@ -9,8 +9,6 @@ Page({
     selComCards:[],
     userType:'PERSONAL',
     first: true,
-    selection:{},
-    showMyConf:false,
     flag:false//关联按钮是否可以点击
   },
   getEtcList(){
@@ -33,14 +31,6 @@ Page({
         })
       }
     })
-  },
-  titleDetail(e){
-    console.log(e)
-    this.setData({
-      selection:e.target.dataset.title,
-      showMyConf: true
-    })
-    console.log(this.data.selection)
   },
   onLoad(query) {
     this.setData({
@@ -67,11 +57,6 @@ Page({
         items: this.data.personItems,
       })
     }
-  },
-  sureHandle(){
-    this.setData({
-      showMyConf:false
-    })
   },
   toAddEtc(e){
     app.handleForward(e)

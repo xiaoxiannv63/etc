@@ -2,61 +2,95 @@
 const app = getApp();
 Page({
   data: {
-    status: {
-      tp: { name: "红冲", title: "退票/红冲" },
-      hp: { name: "变更", title: "发票变更" }
-    },
-    applyId: "",
-    list:[
-      {
-        name:"行云数聚（北京）科技有限公司",
-        type:"company",
-        checkValue:"01",
-        checked: false,
-        dutyParagraph:"911110102005MA00FHBOOD"
-      },
-      { 
-        name:"张三",
-        checkValue:"02",
-        checked: false,
-        type:"persona"
-      }
-    ]
+    applyId:'',
+    titleId:'',
+    itemContent:{},
+    items:[]
   },
-  onLoad(e) {    
-    console.log(e.statusId)
+  onLoad(query) {
+    console.log('---换票---',query)
     this.setData({
-      applyId: e.statusId
+      applyId: query.applyId,
+      cardId: query.cardId
     })
-    my.setNavigationBar({
-      title: "申请"+this.data.status[this.data.applyId].title,
-    });
+    this.getCardId()
   },
-  changeTicket(e) {
+  onShow(){
+    this.getTitList()
+  },
+  getCardId(){// 拿到基本信息
+    let json1 = {
+      applyId: this.data.applyId,
+      ticketId:app.userInfo.ticketId
+    }
+    my.showLoading({
+      content: '加载中...',
+    });
+    app.ajax(json1,'INVOICE_APPLYDETAIL',(data)=>{
+      data.applyTime = app.format(data.applyTime);
+      this.setData({
+        itemContent: data
+      })
+    })
+  },
+  getTitList(){//拿到抬头信息
+    let json1 = {
+      ticketId: app.userInfo.ticketId
+    }
+    let that = this;
+    app.ajax(json1,'TITLE_SEARCH',function(data){
+      let noData = data.items.length == 0?1:0;
+      that.setData({
+        items: data.items,
+        noData: noData
+      })
+    })
+  },
+  changeTicket(e) {//点击换票
     my.confirm({
       title: '温馨提示',
-      content: `您正在申请发票${this.data.status[this.data.applyId].name}，请您认真核对需要${this.data.status[this.data.applyId].name}的发票，申请提交后，系统将三个工作日内处理您的申请，原有发票将无法继续使用，该发票申请对应的交易记录恢复为待开票状态。`,
+      content: `您正在申请发票更换，请您认真核对需要的发票，申请提交后，系统将三个工作日内处理您的申请，原有发票将无法继续使用，该发票申请对应的交易记录恢复为待开票状态。`,
       align: 'left',
-      confirmButtonText: '知道了',
+      confirmButtonText: '确认换票',
       cancelButtonText: '取消',
       success: (result) => {
         if (result.confirm) {
-          console.log("确定了。。。")
+          let json1 = {
+            applyId: this.data.applyId,
+            titleId: this.data.titleId,
+            cardId: this.data.cardId,
+            ticketId:app.userInfo.ticketId
+          }
+          console.log(this.data.titleId)
+          app.ajax(json1,'INVOICE_CHANGETITLE',(data)=>{
+            let var1 = {
+              currentTarget: {
+                dataset: {
+                  url: '/pages/myInvoice/serInvList/serInvList',
+                  openType: "navigateTo"
+                }
+              }
+            }
+            app.handleForward(var1)
+          })
         }
       },
     });
   },
-  addHead(e){
-     let type= e.target.dataset.type
-     if(type=="new"){
-       console.log("new")
-     }
-     else if(type=="look"){
-       console.log("look")
-     }     
+  addHead(e){//添加抬头
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '/pages/invoiceTit/addTaitou/addTaitou?type=true',
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)   
   },
-  radioChange(e){
-    
-    console.log(e)
+  radioChange(e){//单选按钮  
+    this.setData({
+      titleId:e.detail.value
+    })
   }
 });
