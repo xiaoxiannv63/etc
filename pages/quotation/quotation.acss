@@ -20,6 +20,7 @@
 .ul .li image{width: 40rpx; height: 40rpx; vertical-align: middle; margin-right: 10rpx;}
 .font-gray{
   margin-left: 60rpx;
+  min-height: 30rpx;
 }
 .item{
   position: relative;
@@ -30,7 +31,7 @@
 }
 .right{
   position: absolute;
-  right:48rpx;
+  right:40rpx;
   top:100rpx;
 }
 .money{
@@ -42,14 +43,14 @@
   line-height:48rpx;
 }
 .button{
-  padding:0 20rpx;
-  height:54rpx;
+  padding:0 18rpx;
+  height:48rpx;
   background:rgba(247,252,255,1);
   border-radius:2px;
   border:1px solid rgba(16,142,233,1);
-  font-size:28rpx;
+  font-size:26rpx;
   font-family:PingFangSC-Regular;
   font-weight:400;
   color:rgba(16,142,233,1);
-  line-height:54rpx;
+  line-height:48rpx;
 }

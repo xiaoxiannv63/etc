@@ -7,7 +7,8 @@ Page({
     },
     applyId:'',
     plateNum:'',
-    itemContent:{}
+    itemContent:{},
+    routeFlag:null//红冲和充值：false  不显示查看形成按钮
   },
   onLoad(query) {
     console.log('----query----',query);
@@ -43,6 +44,16 @@ Page({
     });
     app.ajax(json1,'INVOICE_APPLYDETAIL',(data)=>{
       data.applyTime = app.format(data.applyTime);
+      if(data.applyType == "消费发票" && data.hasRed == false){
+        this.setData({
+          routeFlag: true
+        })
+      }else{
+        this.setData({
+          routeFlag: false
+        })
+      }
+      console.log(this.data.routeFlag)
       this.setData({
         itemContent: data
       })

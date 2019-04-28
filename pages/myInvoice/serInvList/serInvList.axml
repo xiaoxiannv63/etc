@@ -18,9 +18,8 @@
     <view class="scr-wrap">
       <scroll-view scroll-y="{{true}}"
                    class="m-scr"
-                   style="heihgt: 100%;"
-                   style="height: 200px;" 
                    onScrollToLower="lower">
+        <view style="height:{{nomore?'auto':'101%'}}">
         <view class="item" a:for="{{invType == 'xf'? xfArr : czArr}}" data-apply-id="{{item.applyId}}" data-status="{{item.status}}" onTap="toInvApp">
           <view class="i-v1 b-bot-e9">
             <view><text class="u-key c-99 let-spa4">开票总金额：</text>￥{{(item.sumAmount/100).toFixed(2)}}</view>
@@ -44,6 +43,10 @@
         <view a:if="{{nomore}}" class="m-nomore c-99">
           <text>已全部加载完毕</text>
         </view>
+        <view a:else class="m-nomore c-99">
+          <text>上滑加载更多</text>
+        </view>
+      </view>
       </scroll-view>
     </view>
   </view>

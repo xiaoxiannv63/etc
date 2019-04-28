@@ -24,7 +24,7 @@ Page({
       content: '加载中...',
     });
     app.ajax(json1,'INVOICE_INVOICEDETAIL',(data)=>{
-      data.items.forEach((item,index) => {
+      data.items.forEach((item,index) => {etc
         item.invoiceTime = app.format(item.invoiceTime);
       })
       this.setData({

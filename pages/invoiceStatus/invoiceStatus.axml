@@ -28,8 +28,8 @@
   <view class="between">
     <view class="error">
         <view class="between-left" onTap="invoiceError">发票信息有误</view>
-        <view class="between-b" style="margin: 0 20rpx">|</view>
-        <view class="between-right" onTap="lookQuotation">查看行程</view>
+        <view class="between-b" a:if="{{routeFlag}}" style="margin: 0 20rpx">|</view>
+        <view class="between-right" a:if="{{routeFlag}}" onTap="lookQuotation">查看行程</view>
     </view>
   </view>
   <view  class="bottom">

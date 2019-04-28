@@ -33,7 +33,7 @@ Page({
   },
   onLoad(query) {
     let d = new Date();
-    console.log(query.type, 'query.type')
+    console.log(query, 'query.type')
     this.setData({
       month: d.getFullYear() + "-" + num2(d.getMonth() + 1),
       cardId: query.cardId,
@@ -86,7 +86,10 @@ Page({
       ticketId: app.userInfo.ticketId
     }
     app.ajax(json1, 'CARD_DETAIL', (data) => {
-      console.log('记账卡', data)
+      console.log('----------',data)
+      this.setData({
+        plateNum:data.plateNum
+      })
       if (data.cardType == "记账卡") {
         this.setData({
           amount: data.amount,
@@ -118,9 +121,9 @@ Page({
       pageIndex: this.data.pageIndex_cz,
       pageSize: 10
     }
-    console.log(this.data.invType)
+    console.log('-----type----',this.data.invType)
     if (this.data.invType == 'xf') {
-      console.log('xf发情请求')
+      console.log('xf发起请求')
       app.ajax(json1, 'INVOICE_TRANSLIST', (data) => {
         let hasMore_xf = data.items.length < 10 ? false : true;
         for (let i in data.items) {
@@ -235,10 +238,16 @@ Page({
   selDate() {
     let d = new Date();
     let nowTime = d.getTime()
-    let monthTime = 1000 * 24 * 60 * 60 * 13 * 30
-    let d2 = new Date(nowTime - monthTime)
-    console.log(d2.getFullYear(), '年')
-    console.log(d2.getMonth() + 1, '月')
+    let nowYear = d.getFullYear()
+    let nowMonth = d.getMonth() + 1
+    let setMonth = 1
+    let setYear = 2018
+    
+    // if(setMonth<=0){
+    //   setMonth += 12
+    //   setYear -= 1
+    // }
+    console.log(nowYear,nowMonth,setYear,setMonth)
     let that = this;
     let searchFlog_xf = false
     let searchFlog_cz = false
@@ -250,12 +259,12 @@ Page({
       searchFlog_xf = false
       searchFlog_cz = true
     }
-
+    
     my.datePicker({
       format: 'yyyy-MM',
-      startDate: (d2.getFullYear()) + "-" + (d2.getMonth()),
+      startDate: setYear + "-" + setMonth,
       currentDate: this.data.month,
-      endDate: d.getFullYear() + "-" + (d.getMonth() + 1),
+      endDate: nowYear + "-" + nowMonth,
       success: (res) => {
         // console.log(res);
         that.setData({
@@ -288,7 +297,8 @@ Page({
             cardId: this.data.cardId,
             type: this.data.invType,
             titleName: this.data.titleName,
-            plateNum: this.data.plateNum
+            plateNum: this.data.plateNum,
+            cardType:this.data.type
           }
 
     let var1 = {

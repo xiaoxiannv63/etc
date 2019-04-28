@@ -29,7 +29,7 @@
         </view>
         <view>
           <text class="u-key">开票时间：</text>
-          <text class="u-val">{{item.invoiceTime}}</text>
+          <text class="u-val">{{item.invoiceMakeTime}}</text>
         </view>
         <view class="right" data-url="{{item.invoiceHtmlUrl}}" onTap="lookInvoice">预览发票</view>
       </view>

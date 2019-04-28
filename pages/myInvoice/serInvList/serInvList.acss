@@ -91,7 +91,7 @@
 }
 
 .m-nomore{
-    font-size: 34rpx;
+    font-size: 28rpx;
     padding: 42rpx 40rpx;
     text-align: center;
     letter-spacing: 3rpx;
