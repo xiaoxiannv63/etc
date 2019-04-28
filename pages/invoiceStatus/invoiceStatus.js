@@ -71,15 +71,17 @@ Page({
     }
     app.handleForward(var1)
   },
-  invoiceError(){ //开票有误 
-    my.alert({
-      title: '开票信息有误？',
-      content: '若需修改开票信息或退票，请搜索下载“票根”APP，使用您当前账户的手机号进行登录。',
-      buttonText: '确定',
-      success: () => {
-
-      },
-    });
+  invoiceError(){ //开票有误
+    let str = "applyId="+this.data.applyId + '&cardId='+this.data.itemContent.cardId;
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: `/pages/invoiceError/invoiceError?${str}`,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
   lookQuotation(){ //查看行程
     let str = "applyId="+this.data.applyId + '&cardId='+this.data.itemContent.cardId;

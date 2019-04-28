@@ -56,11 +56,10 @@
         </view>
       </view>
       <view class="buttomDiv">
-        <!-- <button type="primary" onTap="sqLogin"
-          scope='phoneNumber'>
+        <button type="primary" onTap="sqLogin" open-type="getAuthorize" onGetAuthorize="phoneNumber">
               支付宝授权登录
-          </button> -->
-        <!-- <button type="primary" onTap="zfbLogin">支付宝授权登录          
+          </button>
+        <!-- <button type="primary" onTap="zfbLogin"  scope='phoneNumber'>支付宝授权登录          
           </button> -->
         <view class="paddint-top">
           <button type="primary" onTap="pgTelLogin">登录                

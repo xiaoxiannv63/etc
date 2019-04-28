@@ -1,0 +1,39 @@
+<view class="redChangeStatus">
+  <view class="head">
+    <view a:for="{{tabs}}" class="tab" a:for-index="idx">
+      <view class="tab-item {{tab == idx ? 'clicktab' : '' }}" data-index="{{idx}}" onTap="changeTab">{{item}}</view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="main" a:for="{{change ? (tab == 0 ? invoices : tab == 1 ? redInvoices : originInvoices) : (tab == 0 ? redInvoices : originInvoices)}}">
+      <view class="u-main">
+        <view class="u-double">{{item.buyerName}}</view>
+      </view>
+      <view class="u-main">
+        <text class="u-key">税号：</text>
+        <text class="u-val">{{item.sellerTaxNum}}</text>
+      </view>
+      <view class="u-main">
+        <text class="u-key">开票单位：</text>
+        <text class="u-val">{{item.sellerName}}</text>
+      </view>
+      <view class="u-main">
+        <text class="u-key">发票代码：</text>
+        <text class="u-val">{{item.invoiceCode}}</text>
+      </view>
+      <view class="u-main">
+        <text class="u-key">发票号码：</text>
+        <text class="u-val">{{item.invoiceNum}}</text>
+      </view>
+      <view class="u-main">
+        <text class="u-key">发票金额：</text>
+        <text class="u-val">￥{{(item.totalAmount/100).toFixed(2)}}</text>
+      </view>
+      <view class="u-main">
+        <text class="u-key">开票时间：</text>
+        <text class="u-val">{{item.invoiceMakeTime}}</text>
+      </view>
+      <view class="right" data-url="{{item.invoiceHtmlUrl}}" onTap="lookInvoice">预览发票</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,72 @@
+.redChangeStatus{
+  width:100%;
+  background: #fff;
+}
+.head{
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  height:87rpx;
+}
+.tab{
+    align-items: center;
+    line-height: 87rpx;
+    justify-content: center;
+}
+.clicktab{
+  color:rgba(16,142,233,1);
+  border-bottom: 3rpx solid #0f9aff;
+}
+.content{
+  padding:0 30rpx;
+  position: relative;
+}
+.main{
+  margin-top: 45rpx;
+  height:435rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 2rpx 10rpx 0rpx rgba(153,153,153,0.2);
+  border-radius:8rpx;
+}
+.u-main{
+  margin:20rpx 0 15rpx 34rpx;
+}
+.u-main .u-double{
+  font-size:34rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  padding-top: 44rpx;
+}
+.u-main .u-key{
+  font-size:26rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.u-main .u-val{
+  font-size:26rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.right{
+  position: absolute;
+  right:46rpx;
+  top:190rpx;
+  height:54rpx;
+  background:rgba(247,252,255,1);
+  border-radius:2rpx;
+  border:1rpx solid rgba(16,142,233,1);
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(16,142,233,1);
+  line-height:54rpx;
+  padding:0 8rpx;
+}

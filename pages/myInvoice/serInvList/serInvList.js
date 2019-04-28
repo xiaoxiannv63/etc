@@ -96,9 +96,21 @@ Page({
     app.ajax(json1,'INVOICE_SEARCHAPPLY',(data) => {
       let nomore = false;
       if(data.items.length<10) nomore = true;
-      for(let i in data.items){
-        data.items[i].applyTime = app.format(data.items[i].applyTime);
-      }
+      data.items.forEach((item,index) => {
+        if(item.applyType == "红冲申请"){
+          if(item.status == "开票中"){
+            item.status = "红冲中"
+          }else if(item.status == "开票完成"){
+            item.status = "红冲完成"
+          }
+        }else if(item.applyType == "换票申请"){
+          if(item.status == "开票中"){
+            item.status = "换票中"
+          }else if(item.status == "开票完成"){
+            item.status = "换票完成"
+          }
+        }
+      })
       let czArr = [];
       let xfArr = [];
       data.items.forEach((item,index) => {
@@ -118,16 +130,25 @@ Page({
   },
   toInvApp(e){
     if(e.target.dataset.status == '开票完成'){
-      let str = "?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum;
       let var1 = {
         currentTarget: {
           dataset: {
-            url: "/pages/invoiceStatus/invoiceStatus" + str,
+            url: `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}`,
             openType: "navigateTo"
           }
         }
       }
       app.handleForward(var1)
+    }else if(e.target.dataset.status == '换票完成'){//换票完成
+      let var2 = {
+        currentTarget: {
+          dataset: {
+            url: `/pages/redChangeStatus/redChangeStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&change=1`,
+            openType: "navigateTo"
+          }
+        }
+      }
+      app.handleForward(var2)
     }else{
       my.alert({
         content: e.target.dataset.status

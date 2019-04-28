@@ -120,9 +120,9 @@ Page({
   queding(e) {
     let type = e.target.dataset.type
     let json1 = {}
-    if(type=='VALIDCODE'){ //账号，验证码登录 
+  if(type=='VALIDCODE'){ //账号，验证码登录 
     console.log('VALIDCODE')
- json1 = {
+      json1 = {
       mobile:this.data.mobile,
       validCode:this.data.code,
 
@@ -131,8 +131,8 @@ Page({
       channel:'ZFBPIAOGEN'
     }
     }
-    else if(type =='PASSWORD'){  //PASSWORD 密码
- json1 = {
+  else if(type =='PASSWORD'){  //PASSWORD 密码
+      json1 = {
       mobile:this.data.mobile,
       password:this.data.password,
 
@@ -142,7 +142,7 @@ Page({
     }
     }
     console.log(json1)  
-    app.ajax(json1,"REGISTER",function(data){
+  app.ajax(json1,"REGISTER",function(data){
       if(!!data.ticketId){
         app.userInfo.ticketId = data.ticketId;
         app.userInfo.pssUserId = data.pssUserId;
@@ -182,9 +182,9 @@ Page({
     });
   },
   sqLogin() {
-      this.setData({
-      modalOpened: true,
-    });
+    //   this.setData({
+    //   modalOpened: true,
+    // });
   },
   cancel() {
     this.setData({

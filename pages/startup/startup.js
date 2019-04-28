@@ -32,7 +32,7 @@ Page({
     });
   },
   sqLogin() {
-      this.setData({
+    this.setData({
       modalOpened: true,
     });
   },

@@ -8,8 +8,8 @@ App({
     { text: 'Learning ES2016', completed: true },
     { text: 'Learning 支付宝小程序', completed: false },
   ],
-  ajaxRoot: 'https://pss.txffp.com/pss/app/common/zfbapi',//正式
-  // ajaxRoot:'https://testpss.txffp.com/pss/app/common/zfbapi',
+  // ajaxRoot: 'https://pss.txffp.com/pss/app/common/zfbapi',//正式
+  ajaxRoot:'https://testpss.txffp.com/pss/app/common/zfbapi',
   ajaxRoot2:'http://172.30.5.13:8080/nuonuo/invoice/client/returnEncryptKpInfoToSource.action',
   // ajaxRoot2:'https://piaogen.jss.com.cn/nuonuo/invoice/client/returnEncryptKpInfoToSource.action',
   AESencrypt (plaintText) {
@@ -194,7 +194,7 @@ App({
   },
   getPermision() {
     my.getAuthCode({
-      scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
+      scopes: 'auth_user', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
       success: (res) => {
         this.authCode = res.authCode;
 
@@ -246,10 +246,12 @@ App({
         that.setData({
           modalOpened: false
         })
+        let resp = JSON.parse(res.response)
+        // console.log('---res----',JSON.parse(res.response))
         // console.log(arr.response, 'JSON.PARSE')
         var json1 = {
-          code: this.authCode,
-          encryptedData: res.response,
+          response: resp.response,
+          sign: resp.sign,
           userId: this.userInfo.userId,
           loginType: 'ALIPAY',
           channel: 'ZFBPIAOGEN'
@@ -263,7 +265,7 @@ App({
               userId: this.userInfo.userId,
               channel: 'ZFBPIAOGEN'
             }
-            this.ajax(json2, 'LOGIN',  (data)=> {
+          this.ajax(json2, 'LOGIN',  (data)=> {
           console.log(data, "支付宝启用。。")
           this.userInfo.pssUserId = data.pssUserId;
           this.userInfo.ticketId = data.ticketId;

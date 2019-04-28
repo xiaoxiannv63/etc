@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/startup/startup",
+    "pages/invoiceError/invoiceError",
+    "pages/invoiceRecord/invoiceRecord",
+    "pages/changing/changing",
     "pages/index/index",
     "pages/invoiceStatus/invoiceStatus",
     "pages/iWangTo/kpSuccess/kpSuccess",
@@ -13,15 +16,12 @@
     "pages/login/personal/personal",
     "pages/help/help",
     "pages/myInvoice/invoiceList/invoiceList",
-    "pages/changing/changing",
-    "pages/invoiceError/invoiceError",
     "pages/bindSuccessful/bindSuccessful",
     "pages/user/user",
     "pages/login/bind/index",
     "pages/wodeETC/myetc/myetc",
     "pages/question/question",
     "pages/wodeETC/addEtcCard/addEtcCard",
-    "pages/invoiceRecord/invoiceRecord",
     "pages/wodeETC/selTaitou/selTaitou",
     "pages/invoiceTit/index/index",
     "pages/invoiceTit/invoiceDet/invoiceDet",
@@ -36,7 +36,8 @@
     "pages/iWangTo/cardList/cardList",
     "pages/iWangTo/recordList/recordList",
     "pages/iWangTo/invAccept/invAccept",
-    "pages/routeInvoice/routeInvoice"
+    "pages/routeInvoice/routeInvoice",
+    "pages/redChangeStatus/redChangeStatus"
   ],
   "window": {
     "defaultTitle": "票根"
