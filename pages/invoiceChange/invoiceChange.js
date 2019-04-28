@@ -1,4 +1,4 @@
-const app = getApp();
+// const app = getApp();
 Page({
   data: {
     urlQuery: {
@@ -8,13 +8,14 @@ Page({
     applyId:'',
     plateNum:'',
     itemContent:{},
-    routeFlag:null//红冲和充值：false  不显示查看形成按钮
+    status: 'hp'
   },
   onLoad(query) {
     console.log('----query----',query);
     this.setData({
       applyId:query.applyId,
-      plateNum:query.plateNum
+      plateNum:query.plateNum,
+      status: query.status
     })
     this.setData({ 
       urlQuery: query
@@ -44,16 +45,6 @@ Page({
     });
     app.ajax(json1,'INVOICE_APPLYDETAIL',(data)=>{
       data.applyTime = app.format(data.applyTime);
-      if(data.applyType == "消费发票" && data.hasRed == false){
-        this.setData({
-          routeFlag: true
-        })
-      }else{
-        this.setData({
-          routeFlag: false
-        })
-      }
-      console.log(this.data.routeFlag)
       this.setData({
         itemContent: data
       })
@@ -72,7 +63,7 @@ Page({
     app.handleForward(var1)
   },
   invoiceError(){ //开票有误
-    let str = "applyId="+this.data.applyId + '&cardId='+this.data.itemContent.cardId + '&plateNum=' +this.data.plateNum;
+    let str = "applyId="+this.data.applyId + '&cardId='+this.data.itemContent.cardId;
     let var1 = {
       currentTarget: {
         dataset: {

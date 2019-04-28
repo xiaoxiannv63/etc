@@ -1,0 +1,76 @@
+
+<view class="page">
+  <view class="statusHead">
+    <view class="ul {{ status=='hp' ? 'yellow' : 'red' }}">
+      <view class="li">申请类型： <text class="text">{{itemContent.applyType}}</text>
+      </view>
+      <view class="li">发票内容： <text class="text">通行费</text>
+      </view>
+      <view class="li">发票张数： <text class="text">{{itemContent.sumInvoice}}张</text>
+      </view>
+      <view class="li">行程总数： <text class="text">{{itemContent.countRecord}}个</text>
+      </view>
+      <view class="li">申请时间： <text class="text">{{itemContent.applyTime}}</text>
+      </view>
+      <view class="li">申请邮箱： <text class="text">{{itemContent.invoiceMail}}</text>
+      </view>
+      <view class="amount">
+        <view class="money">￥{{(itemContent.sumAmount/100).toFixed(2)}}
+        </view>
+      </view>
+    </view> 
+    <view class="invoiceHead">
+      <view class="name">{{itemContent.buyerName}}</view>
+      <view class="num" a:if="{{itemContent.buyerTaxpayerCode}}">
+        <text class="num1">税号：</text>{{itemContent.buyerTaxpayerCode}}
+      </view>
+    </view>
+  </view>
+  <view class="origin">
+    <view class="b-shuxian">原开票记录
+    </view>
+    <view class="ul">
+      <view class="li">申请类型： <text class="text">{{itemContent.applyType}}</text>
+      </view>
+      <view class="li">发票内容： <text class="text">通行费</text>
+      </view>
+      <view class="li">发票张数： <text class="text">{{itemContent.sumInvoice}}张</text>
+      </view>
+      <view class="li">行程总数： <text class="text">{{itemContent.countRecord}}个</text>
+      </view>
+      <view class="li">申请时间： <text class="text">{{itemContent.applyTime}}</text>
+      </view>
+      <view class="li">申请邮箱： <text class="text">{{itemContent.invoiceMail}}</text>
+      </view>
+      <view class="amount">
+        <view class="money">￥{{(itemContent.sumAmount/100).toFixed(2)}}
+        </view>
+      </view>
+    </view>
+    <view class="invoiceHead">
+      <view class="name">{{itemContent.buyerName}}</view>
+      <view class="num" a:if="{{itemContent.buyerTaxpayerCode}}">
+        <text class="num1">税号：</text>{{itemContent.buyerTaxpayerCode}}
+      </view>
+    </view>
+  </view>
+    
+  <!-- </view> -->
+  <!-- </view> -->
+  <!-- <view class="invoiceHead">
+    <view class="name">{{itemContent.buyerName}}</view>
+    <view class="num" a:if="{{itemContent.buyerTaxpayerCode 
+    }}"><text class="num1">税号：</text>{{itemContent.buyerTaxpayerCode}}</view>
+  </view> -->
+  <view class="between">
+    <view class="error">
+        <view class="between-right" onTap="lookQuotation">查看行程</view>
+        <!-- <view class="between-b" style="margin: 0 20rpx">|</view> -->
+        <view class="between-left">发票信息有误?请点击上方查看行程</view>
+    </view>
+  </view>
+  <view  class="bottom">
+    <view class="bottom-left"><button class="send default" open-type="share"><image class="img" src="../../image/send.png"/><view>分享</view></button></view>
+    <view class="bottom-right"><view class="primary" onTap="lookElectronicInvoice">查看电子发票</view></view>
+  </view>
+</view>

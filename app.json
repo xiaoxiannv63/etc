@@ -6,6 +6,7 @@
     "pages/changing/changing",
     "pages/index/index",
     "pages/invoiceStatus/invoiceStatus",
+    "pages/invoiceChange/invoiceChange",
     "pages/iWangTo/kpSuccess/kpSuccess",
     "pages/electronicInvoice/electronicInvoice",
     "pages/web/index",

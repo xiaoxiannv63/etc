@@ -21,6 +21,7 @@ require('../../pages/invoiceRecord/invoiceRecord');
 require('../../pages/changing/changing');
 require('../../pages/index/index');
 require('../../pages/invoiceStatus/invoiceStatus');
+require('../../pages/invoiceChange/invoiceChange');
 require('../../pages/iWangTo/kpSuccess/kpSuccess');
 require('../../pages/electronicInvoice/electronicInvoice');
 require('../../pages/web/index');

@@ -20,7 +20,7 @@
                    class="m-scr"
                    onScrollToLower="lower">
         <view style="height:{{nomore?'auto':'101%'}}">
-        <view class="item" a:for="{{invType == 'xf'? xfArr : czArr}}" data-apply-id="{{item.applyId}}" data-status="{{item.status}}" onTap="toInvApp">
+        <view class="item" a:for="{{invType == 'xf'? xfArr : czArr}}" data-apply-id="{{item.applyId}}" data-status="{{item.status}}" data-applyType="{{item.applyType}}" data-hasRed="{{item.hasRed}}" onTap="toInvApp">
           <view class="i-v1 b-bot-e9">
             <view><text class="u-key c-99 let-spa4">开票总金额：</text>￥{{(item.sumAmount/100).toFixed(2)}}</view>
             <view><text class="u-key c-99 let-spa12">申请时间：</text>{{item.applyTime}}</view>

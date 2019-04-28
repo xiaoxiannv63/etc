@@ -14,12 +14,28 @@ Page({
   onLoad(query) {
     console.log('---query----',query)
     let d = new Date();
-    this.setData({
-      cardId: query.cardId,
-      plateNum: query.plateNum,
-      type: query.type,//0 储值卡 1 记账卡
-      month: d.getFullYear()+"-"+num2(d.getMonth()+1)
-    })
+    if(!query.type){
+      let json1 = {
+        cardId: query.cardId,
+        ticketId: app.userInfo.ticketId
+      }
+      app.ajax(json1,"CARD_DETAIL",(data)=>{
+        this.setData({
+          cardId: query.cardId,
+          plateNum: query.plateNum,
+          type: data.cardType,//0 储值卡 1 记账卡
+          month: d.getFullYear()+"-"+num2(d.getMonth()+1)
+        })
+      })
+    }else{
+      this.setData({
+        cardId: query.cardId,
+        plateNum: query.plateNum,
+        type: query.type,//0 储值卡 1 记账卡
+        month: d.getFullYear()+"-"+num2(d.getMonth()+1)
+      })
+    }
+
     my.setNavigationBar({
       title: query.plateNum
     })
@@ -129,21 +145,34 @@ Page({
     })
   },
   toInvApp(e){
-    if(e.target.dataset.status == '开票完成'){
-      let var1 = {
+    let var1={
         currentTarget: {
           dataset: {
-            url: `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}`,
+            url: "",
             openType: "navigateTo"
           }
         }
-      }
+    }
+    let cur_applyType = e.target.dataset.applyType,cur_status=e.target.dataset.status,cur_hasRed = e.target.dataset.hasRed;
+    let url = "/pages/invoiceChange/invoiceChange?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum
+    if(cur_applyType == "换票申请" && cur_status == "换票完成"){
+      var1.currentTarget.dataset.url = url + '&status=hp';
       app.handleForward(var1)
-    }else if(e.target.dataset.status == '换票完成'){//换票完成
+    }else if(cur_hasRed && cur_status == "红冲完成"){
+      var1.currentTarget.dataset.url = url + '&status=tp';
+      app.handleForward(var1)
+    }else if(!cur_hasRed && cur_status == "红冲完成"){
+      var1.currentTarget.dataset.url = "/pages/invoiceStatus/invoiceStatus?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum;
+      app.handleForward(var1) 
+    }else if(cur_status == "开票完成"){
+      var1.currentTarget.dataset.url = "/pages/invoiceStatus/invoiceStatus?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum;
+      app.handleForward(var1)
+    }else if(cur_status == '换票完成'){//换票完成
       let var2 = {
         currentTarget: {
           dataset: {
-            url: `/pages/redChangeStatus/redChangeStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&change=1`,
+            // url: `/pages/redChangeStatus/redChangeStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&change=1`,
+            url: "/pages/invoiceStatus/invoiceStatus?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum,
             openType: "navigateTo"
           }
         }
