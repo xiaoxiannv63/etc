@@ -92,3 +92,4 @@ button{
 .titleBig{padding:15rpx; color: #333333;  display: flex; justify-content: space-between; font-size: 40rpx;}
 .titleBig .span{text-align: left}
 .titleBig .more{color: #999999; font-size: 30rpx;}
+.open-right{text-align: right; padding-right: 20rpx; padding-bottom:2rpx;}

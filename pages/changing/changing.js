@@ -5,7 +5,8 @@ Page({
     applyId:'',
     titleId:'',
     itemContent:{},
-    items:[]
+    items:[],
+    downFlag:false
   },
   onLoad(query) {
     console.log('---换票---',query)
@@ -17,6 +18,11 @@ Page({
   },
   onShow(){
     this.getTitList()
+  },
+  openHandle(){
+    this.setData({
+      openFlag : !this.data.openFlag
+    })
   },
   getCardId(){// 拿到基本信息
     let json1 = {
@@ -47,6 +53,8 @@ Page({
     })
   },
   changeTicket(e) {//点击换票
+  console.log(this.data.titleId)
+  if(!this.data.titleId){return;}
     my.confirm({
       title: '温馨提示',
       content: `您正在申请发票更换，请您认真核对需要的发票，申请提交后，系统将三个工作日内处理您的申请，原有发票将无法继续使用，该发票申请对应的交易记录恢复为待开票状态。`,
@@ -77,7 +85,7 @@ Page({
       },
     });
   },
-  addHead(e){//添加抬头
+  addTaitou(e){//添加抬头
     let var1 = {
       currentTarget: {
         dataset: {
@@ -88,7 +96,13 @@ Page({
     }
     app.handleForward(var1)   
   },
-  radioChange(e){//单选按钮  
+  looktit(e){
+    this.data.items[e.target.dataset.index].flag = !this.data.items[e.target.dataset.index].flag
+    this.setData({
+      items:this.data.items
+    })
+  },
+  radioChange(e){//单选按钮
     this.setData({
       titleId:e.detail.value
     })

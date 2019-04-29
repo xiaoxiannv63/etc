@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/startup/startup",
+    "pages/changing/changing",
     "pages/invoiceError/invoiceError",
     "pages/invoiceRecord/invoiceRecord",
-    "pages/changing/changing",
     "pages/index/index",
     "pages/invoiceStatus/invoiceStatus",
     "pages/invoiceChange/invoiceChange",

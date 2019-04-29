@@ -1,9 +1,64 @@
-
 .padding-auto{padding-right:40rpx; padding-left:40rpx;}
 .padding-right{padding-right:40rpx;}
 .tip{padding:20rpx;}    
 .padding{ padding:20rpx}
-.default-zdy button{ width: 80%; margin:20rpx 10% 10rpx}
 .positon .ul .li{position: relative; }
 .radio{ padding-left:20rpx;}
 .radio radio{ padding-top: 20rpx; vertical-align: 70%}
+.change-header{
+
+}
+.change-header .ul{
+  width:100%;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 2rpx 10rpx 0rpx rgba(153,153,153,0.2);
+  border-radius:8rpx;
+  margin: 15rpx 0;
+}
+.open-right{
+  display: inline-block;
+  padding-right:300rpx;
+}
+.change-header .ul .li{
+  padding:15rpx 0;
+}
+.box {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding: 32rpx 30rpx;
+}
+.add-img {
+    width: 90rpx;
+    height: 90rpx;
+    margin: 0 auto;
+    background: url('../../image/add.png') no-repeat;
+    background-size: contain;
+}
+.add-msg {
+    width: 100%;
+    text-align: center;
+    font-size: 26rpx;
+    color: #666666;
+    margin-top: 18rpx
+}
+.line{
+  background:rgba(255,255,255,1);
+  box-shadow:5rpx 5rpx 13rpx 5rpx rgba(0,0,0,0.05);
+  border-radius:10rpx; 
+}
+.change-tit{
+  margin-bottom:10rpx;
+}
+.open-info{
+  margin-left: 87rpx;
+  padding:10rpx 0;
+}
+.line{
+  margin-top:10rpx;
+}
+.ul{
+  margin-top:10rpx;
+}

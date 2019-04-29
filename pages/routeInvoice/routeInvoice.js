@@ -25,10 +25,10 @@ Page({
     });
     app.ajax(json1,'INVOICE_INVOICEDETAIL',(data)=>{
       data.invoices.forEach((item,index) => {
-        item.invoiceTime = app.format(item.invoiceTime);
+        item.invoiceMakeTime = app.format(item.invoiceMakeTime);
       })
       this.setData({
-        items: data.items
+        items: data.invoices
       })
       console.log(this.data.items)
       // this.getDZFPList();

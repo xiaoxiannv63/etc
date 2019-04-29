@@ -1,81 +1,96 @@
 
 <view class="page">
   <view class="bgWhiteColor">
-    <view class="title">
-      <view class="span">          原开票申请信息      
+    <view class="change-header">
+      <view class="title">
+        <view class="span">          原开票申请信息      
+        </view>
+      </view>
+      <view class="ul">
+        <view class="li">
+          <view class="inline font-gray padding-auto">申请时间
+          </view>
+          <view class="inline">{{itemContent.applyTime}}
+          </view>
+        </view>
+        <view class="li">
+          <view class="inline font-gray padding-auto">发票类型
+          </view>
+          <view class="inline">{{itemContent.applyType}}
+          </view>
+        </view>
+        <view class="li">
+          <view class="inline font-gray padding-auto">行程总数
+          </view>
+          <view class="inline">{{itemContent.countRecord}}个
+          </view>
+        </view>
+        <view class="li">
+          <view class="inline font-gray padding-auto">发票张数
+          </view>
+          <view class="inline">{{itemContent.sumInvoice}}张
+          </view>
+        </view>
+        <view class="li">
+          <view class="inline font-gray padding-auto">发票金额
+          </view>
+          <view class="inline font-orange">￥{{(itemContent.sumAmount/100).toFixed(2)}}
+          </view>
+        </view>
+        <view class="li">
+          <view class="inline font-gray  padding-auto">抬头名称
+          </view>
+          <view class="inline">{{itemContent.buyerName}}
+          </view>
+          <view class="font-orange inline text-right" a:if="{{!openFlag}}" onTap="openHandle">展开 >></view>
+          <view class="font-orange inline text-right" a:else  onTap="openHandle">收起 <<</view>
+        </view>
+        <view class="li" a:if="{{openFlag}}">
+          <view class="font-gray padding-auto">税号
+          </view>
+          <view class="inline font-orange">{{itemContent.buyerTaxpayerCode}}
+          </view>
+        </view>
       </view>
     </view>
-    <view class="ul">
-      <view class="li">
-        <view class="inline font-gray padding-auto">申请时间
-        </view>
-        <view class="inline">{{itemContent.applyTime}}
+    <view class="change-tit">
+      <view class="title">
+        <view class="span">          选择需要更换的抬头      
         </view>
       </view>
-      <view class="li">
-        <view class="inline font-gray padding-auto">发票类型
-        </view>
-        <view class="inline">{{itemContent.applyType}}
-        </view>
-      </view>
-      <view class="li">
-        <view class="inline font-gray padding-auto">行程总数
-        </view>
-        <view class="inline">{{itemContent.countRecord}}个
-        </view>
-      </view>
-      <view class="li">
-        <view class="inline font-gray padding-auto">发票张数
-        </view>
-        <view class="inline">{{itemContent.sumInvoice}}张
-        </view>
-      </view>
-      <view class="li">
-        <view class="inline font-gray padding-auto">发票金额
-        </view>
-        <view class="inline font-orange">￥{{(itemContent.sumAmount/100).toFixed(2)}}
-        </view>
-      </view>
-      <view class="li">
-        <view class="inline font-gray  padding-auto">抬头名称
-        </view>
-        <view class="inline">{{itemContent.buyerName}}
-        </view>
-      </view>
-      <view class="text-right line font-orange">          展开 >
-      </view>
-    </view>
-    <view class="line padding">
-      <view>请选择本次需要更换的抬头
-      </view>
-      <view class="default-zdy">
-        <button type="default" onTap="addHead" size="mini">添加发票抬头
-        </button>
+      <view class="box">
+        <view class="add-img" onTap="addTaitou"></view>
+        <view class="add-msg">添加发票抬头</view>
       </view>
     </view>
     <view class="ul">
       <radio-group class="radio-group" onChange="radioChange">
-        <view class="line" a:for={{items}}>
+        <view class="line {{item.titleType == 'UNIT' ? 'aa' : 'bb'}}" a:for="{{items}}" a:for-index="idx">
           <label class="radio">
             <radio value="{{item.titleId}}" checked="{{item.checked}}"/>
-            <view class="inline li ">
+            <view class="inline li">
               <view> <view class="inline font-gray padding-right">名称</view><view class="inline">{{item.name}}</view></view>
-              <view> <view class="inline font-gray padding-right">类型</view><view class="inline">{{item.titleType}}</view></view>
-              <view a:if="{{item.titleType=='单位'}}"> <view class="inline font-gray padding-right">税号</view><view class="inline">{{item.taxNum}}</view></view>
+              <view> <view class="inline font-gray padding-right">类型</view><view class="inline">{{item.titleType == 'UNIT' ? '单位' : '个人'}}</view></view>
+              <view a:if="{{item.titleType=='UNIT'}}"> <view class="inline font-gray padding-right">税号</view><view class="inline">{{item.taxNum}}</view></view>
+              <view a:if="{{item.flag}}"><view> <view class="inline font-gray padding-right">单位地址</view><view class="inline">{{item.address}}</view></view>
+              <view> <view class="inline font-gray padding-right">单位电话</view><view class="inline">{{item.tel}}</view></view>
+              <view> <view class="inline font-gray padding-right">开户行名称</view><view class="inline">{{item.bank}}</view></view>
+              <view> <view class="inline font-gray padding-right">开户行帐号</view><view class="inline">{{item.bankAccount}}</view></view>
+              </view>
             </view>
           </label>
-           <view class="text-right  font-orange" onTap="addHead" data-type="look" a:if="{{item.type=='company'}}"> 展开更多抬头信息 >> </view>
+          <view class="open-info" data-index="{{idx}}" onTap="looktit" a:if="{{item.titleType == 'UNIT'}}"> {{item.flag ? "收起" : "展开"}}更多抬头信息>></view>
         </view>
-        </radio-group>
-        </view>
-        <view>
-          <button type="primary" onTap="changeTicket">确定</button>
-        </view>
-        <view class="font-gray tip">
-          <view>温馨提示：
-          </view>
-          <view>换票申请提交后，系统将在三个工作日内处理您的申请，原有发票将作废无法继续使用，系统将开出红字发票作为原发票的作废凭证，并以本次选择更换的抬头开具新发票。      
-          </view>
-        </view>
-        </view>
-        </view>
+      </radio-group>
+    </view>
+    <view class="font-gray tip">
+      <view>温馨提示：
+      </view>
+      <view>换票申请提交后，系统将在三个工作日内处理您的申请，原有发票将作废无法继续使用，系统将开出红字发票作为原发票的作废凭证，并以本次选择更换的抬头开具新发票。      
+      </view>
+    </view>
+    <view>
+      <button type="primary" onTap="changeTicket">确认换票</button>
+    </view>
+  </view>
+</view>
