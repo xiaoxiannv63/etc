@@ -45,6 +45,7 @@ Page({
     });
     app.ajax(json1,'INVOICE_APPLYDETAIL',(data)=>{
       data.applyTime = app.format(data.applyTime);
+      data.originApply.applyTime = app.format(data.originApply.applyTime)
       this.setData({
         itemContent: data
       })

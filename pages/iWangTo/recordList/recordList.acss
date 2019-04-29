@@ -133,9 +133,9 @@
   justify-content: space-between;
   font-size: 26rpx;
   height: 46rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
   text-align: start;
-  border-bottom:1px solid #e9eaec;
+  /* border-bottom:1px solid #e9eaec; */
 }
 label + label{
     border-top: solid 1px #e9eaec;

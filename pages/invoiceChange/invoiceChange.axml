@@ -30,27 +30,27 @@
     <view class="b-shuxian">原开票记录
     </view>
     <view class="ul">
-      <view class="li">申请类型： <text class="text">{{itemContent.applyType}}</text>
+      <view class="li">申请类型： <text class="text">{{itemContent.originApply.applyType}}</text>
       </view>
       <view class="li">发票内容： <text class="text">通行费</text>
       </view>
-      <view class="li">发票张数： <text class="text">{{itemContent.sumInvoice}}张</text>
+      <view class="li">发票张数： <text class="text">{{itemContent.originApply.sumInvoice}}张</text>
       </view>
-      <view class="li">行程总数： <text class="text">{{itemContent.countRecord}}个</text>
+      <view class="li">行程总数： <text class="text">{{itemContent.originApply.countRecord}}个</text>
       </view>
-      <view class="li">申请时间： <text class="text">{{itemContent.applyTime}}</text>
+      <view class="li">申请时间： <text class="text">{{itemContent.originApply.applyTime}}</text>
       </view>
-      <view class="li">申请邮箱： <text class="text">{{itemContent.invoiceMail}}</text>
+      <view class="li">申请邮箱： <text class="text">{{itemContent.originApply.invoiceMail}}</text>
       </view>
       <view class="amount">
-        <view class="money">￥{{(itemContent.sumAmount/100).toFixed(2)}}
+        <view class="money">￥{{(itemContent.originApply.sumAmount/100).toFixed(2)}}
         </view>
       </view>
     </view>
     <view class="invoiceHead">
-      <view class="name">{{itemContent.buyerName}}</view>
-      <view class="num" a:if="{{itemContent.buyerTaxpayerCode}}">
-        <text class="num1">税号：</text>{{itemContent.buyerTaxpayerCode}}
+      <view class="name">{{itemContent.originApply.buyerName}}</view>
+      <view class="num" a:if="{{itemContent.originApply.buyerTaxpayerCode}}">
+        <text class="num1">税号：</text>{{itemContent.originApply.buyerTaxpayerCode}}
       </view>
     </view>
   </view>
@@ -69,7 +69,7 @@
         <view class="between-left">发票信息有误?请点击上方查看行程</view>
     </view>
   </view>
-  <view  class="bottom">
+  <view  class="c_bottom">
     <view class="bottom-left"><button class="send default" open-type="share"><image class="img" src="../../image/send.png"/><view>分享</view></button></view>
     <view class="bottom-right"><view class="primary" onTap="lookElectronicInvoice">查看电子发票</view></view>
   </view>

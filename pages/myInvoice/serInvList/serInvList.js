@@ -2,10 +2,7 @@ const app = getApp();
 
 Page({
   data: {
-    invType: 'xf',
     items:[],
-    czArr:[],
-    xfArr:[],
     nomore:false,
     month:'',
     pageIndex:1,
@@ -68,26 +65,14 @@ Page({
         that.setData({
           month: res.date,
           pageIndex:1,
-          czArr:[],
-          xfArr:[],
+          items:[],
+          // czArr:[],
+          // xfArr:[],
           nomore:false,
         })
         that.getItems();
       }
     });
-  },
-  chooseXF(){//选择消费
-    this.setData({
-      invType:'xf'
-    })
-  },
-  chooseCZ(){//选择充值
-    this.setData({
-      invType:'cz'
-    })
-    if(this.data.czArr.length < 10){
-      this.getItems()
-    }
   },
   lower(){//滚动到底部事件
     console.log("到底了")
@@ -142,18 +127,8 @@ Page({
           }
         }
       })
-      let czArr = [];
-      let xfArr = [];
-      data.items.forEach((item,index) => {
-        if(item.applyType == "充值发票申请"){
-          czArr.push(item)
-        }else{
-          xfArr.push(item)
-        }
-      })
       that.setData({
-        czArr:this.data.czArr.concat(czArr),
-        xfArr:this.data.xfArr.concat(xfArr),
+        items: that.data.items.concat(data.items),
         pageIndex: ++that.data.pageIndex,
         nomore: nomore
       })
