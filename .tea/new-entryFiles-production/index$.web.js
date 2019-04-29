@@ -18,6 +18,7 @@ require('../../pages/invoiceRecord/invoiceRecord.js');
 require('../../pages/changing/changing.js');
 require('../../pages/index/index.js');
 require('../../pages/invoiceStatus/invoiceStatus.js');
+require('../../pages/invoiceChange/invoiceChange.js');
 require('../../pages/iWangTo/kpSuccess/kpSuccess.js');
 require('../../pages/electronicInvoice/electronicInvoice.js');
 require('../../pages/web/index.js');

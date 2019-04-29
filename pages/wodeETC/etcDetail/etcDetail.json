@@ -1,3 +1,6 @@
 {
-    "defaultTitle": "我的ETC"
+    "defaultTitle": "我的ETC",
+    "usingComponents": {
+      "modal": "mini-antui/es/modal/index"
+    }
 }

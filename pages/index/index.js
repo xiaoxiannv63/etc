@@ -10,11 +10,31 @@ Page({
     etcList_COMPANY: [],
     news:[],
     noData: 1,
+    modalOpened:false
   },
   onLoad(query) {
     // 页面加载
     this.etcList();
     this.getInfo();
+  },
+  onModalClick() {
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '/pages/iWangTo/cardList/cardList',
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
+    this.setData({
+      modalOpened: false,
+    });
+  },
+  onModalClose() {
+    this.setData({
+      modalOpened: false,
+    });
   },
   etcList(){ //全部获取ETC
     my.showLoading({
@@ -203,7 +223,13 @@ Page({
   },
   tapUrl(e) {
     console.log(e)
-    app.handleForward(e)
+    if(e.target.dataset.flag){
+      this.setData({
+        modalOpened: true,
+      });
+    }else{
+      app.handleForward(e)
+    }
   },
   onShow(){
     // console.log(app.needRefresh)

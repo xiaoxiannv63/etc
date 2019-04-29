@@ -64,3 +64,11 @@
     left: 40rpx;
     right: 40rpx;
 }
+.modal{ position: relative; z-index: 100000}
+.modal-content{
+  text-align: left; 
+  /* line-height: 48rpx; */
+  }
+.modal-content .modal-p{
+  font-size:26rpx;
+  }

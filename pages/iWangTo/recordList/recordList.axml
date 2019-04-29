@@ -95,7 +95,7 @@
 
   </view>
   <view class="position">
-   <modal
+   <!-- <modal
     show="{{modalOpened}}"
     advice="true"
     onModalClick="onModalClick"
@@ -114,7 +114,7 @@
       <view class="p">• <text>记账卡：可开具消费发票，不可开具充值发票；储值卡：可实时取得充值发票，或选择在实际通行后根据交易记录开具消费发票</text></view>
     </view>
     <view slot="footer">继续开票</view>
-  </modal>
+  </modal> -->
   <modal
     show="{{modalOpened2}}"
     onModalClick="onModalClose2"

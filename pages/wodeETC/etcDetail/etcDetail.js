@@ -21,7 +21,8 @@ Page({
       bank:'',
       bankAccount:'',
       titleBindingTime:'',
-      bindingTime:''
+      bindingTime:'',
+      modalOpened: false
     }
   },
   onLoad(query) {
@@ -35,6 +36,26 @@ Page({
     if(app.needRefresh){
       this.getDet()
     }
+  },
+  onModalClick() {
+    let str = "?cardId=" + this.data.cardid+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType+"&plateNum="+this.data.card.plateNum;
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: '/pages/iWangTo/recordList/recordList' + str,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
+    this.setData({
+      modalOpened: false,
+    });
+  },
+  onModalClose() {
+    this.setData({
+      modalOpened: false,
+    });
   },
   getDet(){
     let json1 = {
@@ -69,12 +90,11 @@ Page({
         },
       });
       return;
+    }else{
+      this.setData({
+        modalOpened: true
+      })
     }
-    let str = "?cardId=" + cardid+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType;
-    // console.log(str);
-    my.navigateTo({
-      url:"/pages/iWangTo/recordList/recordList" +  "?cardId=" + cardid+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType+"&plateNum="+this.data.card.plateNum
-    });
   },
   toGuanLian(){//去关联抬头
     console.log("去关联抬头");

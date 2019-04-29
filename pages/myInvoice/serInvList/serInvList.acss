@@ -64,6 +64,7 @@
 .item{
     padding: 4rpx 40rpx;
     background: #fff;
+    position: relative;
 }
 .item + .item{
     margin-top: 20rpx;
@@ -95,4 +96,11 @@
     padding: 42rpx 40rpx;
     text-align: center;
     letter-spacing: 3rpx;
+}
+.img-position{
+  position: absolute;
+  width:200rpx;
+  height:200rpx;
+  top: 130rpx;
+  right: 100rpx;
 }

@@ -113,13 +113,27 @@ Page({
       let nomore = false;
       if(data.items.length<10) nomore = true;
       data.items.forEach((item,index) => {
-        if(item.applyType == "红冲申请"){
+        item.applyTime = app.format(item.applyTime)
+        if(item.applyType == "变更抬头申请"){
+          if(item.status == "开票中"){
+            item.imgSrc = "../../../assets/myInvoice/hpsq.png"
+          }else{
+            item.imgSrc = item.hasRed ? "../../../assets/myInvoice/ybhc.png" : "../../../assets/myInvoice/hpsq.png"
+          }
+        }else if(item.applyType == "发票红冲申请"){
+          if(item.status == "开票中"){
+            item.imgSrc = "../../../assets/myInvoice/hcsq.png"
+          }else{
+            item.imgSrc = item.hasRed ? "../../../assets/myInvoice/ybhc.png" : "../../../assets/myInvoice/hcsq.png"
+          }
+        }
+        if(item.applyType == "发票红冲申请"){
           if(item.status == "开票中"){
             item.status = "红冲中"
           }else if(item.status == "开票完成"){
             item.status = "红冲完成"
           }
-        }else if(item.applyType == "换票申请"){
+        }else if(item.applyType == "变更抬头申请"){
           if(item.status == "开票中"){
             item.status = "换票中"
           }else if(item.status == "开票完成"){
@@ -132,7 +146,7 @@ Page({
       data.items.forEach((item,index) => {
         if(item.applyType == "充值发票申请"){
           czArr.push(item)
-        }else if(item.applyType == "消费发票申请"){
+        }else{
           xfArr.push(item)
         }
       })
@@ -145,43 +159,29 @@ Page({
     })
   },
   toInvApp(e){
-    let var1={
-        currentTarget: {
-          dataset: {
-            url: "",
-            openType: "navigateTo"
-          }
-        }
-    }
-    let cur_applyType = e.target.dataset.applyType,cur_status=e.target.dataset.status,cur_hasRed = e.target.dataset.hasRed;
-    let url = "/pages/invoiceChange/invoiceChange?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum
-    if(cur_applyType == "换票申请" && cur_status == "换票完成"){
-      var1.currentTarget.dataset.url = url + '&status=hp';
-      app.handleForward(var1)
-    }else if(cur_hasRed && cur_status == "红冲完成"){
-      var1.currentTarget.dataset.url = url + '&status=tp';
-      app.handleForward(var1)
-    }else if(!cur_hasRed && cur_status == "红冲完成"){
-      var1.currentTarget.dataset.url = "/pages/invoiceStatus/invoiceStatus?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum;
-      app.handleForward(var1) 
+    console.log(e)
+
+    let cur_applyType = e.target.dataset.applyType,cur_status=e.target.dataset.status,cur_hasRed = e.target.dataset.hasRed,url;
+    if(cur_status == "红冲完成"){
+      url = cur_hasRed ? `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}`
+    }else if(cur_status == "换票完成"){
+      url = cur_hasRed ? `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}`
     }else if(cur_status == "开票完成"){
-      var1.currentTarget.dataset.url = "/pages/invoiceStatus/invoiceStatus?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum;
-      app.handleForward(var1)
-    }else if(cur_status == '换票完成'){//换票完成
-      let var2 = {
-        currentTarget: {
-          dataset: {
-            // url: `/pages/redChangeStatus/redChangeStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&change=1`,
-            url: "/pages/invoiceStatus/invoiceStatus?applyId="+e.target.dataset.applyId + '&plateNum='+this.data.plateNum,
-            openType: "navigateTo"
-          }
-        }
-      }
-      app.handleForward(var2)
+      url = `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}`
     }else{
       my.alert({
         content: e.target.dataset.status
       })
+      return;
     }
+    let var1={
+      currentTarget: {
+        dataset: {
+          url: url,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   }
 });

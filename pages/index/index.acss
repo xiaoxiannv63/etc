@@ -81,3 +81,11 @@ display: inline-block;
 .position{position: relative}
 .lxkf{ position: absolute; right: 20rpx; top: -8rpx;}
 .padding-top{padding-top: 20rpx;}
+.modal{ position: relative; z-index: 10000000000}
+.modal-content{
+  text-align: left; 
+  /* line-height: 48rpx; */
+  }
+.modal-content .modal-p{
+  font-size:26rpx;
+  }

@@ -1,4 +1,4 @@
-// const app = getApp();
+const app = getApp();
 Page({
   data: {
     urlQuery: {
@@ -8,7 +8,7 @@ Page({
     applyId:'',
     plateNum:'',
     itemContent:{},
-    status: 'hp'
+    status: 'hp'//换票  tp
   },
   onLoad(query) {
     console.log('----query----',query);
@@ -51,11 +51,16 @@ Page({
     })
   },
   lookElectronicInvoice(){
-      let str = "?applyId="+this.data.applyId + '&plateNum='+this.data.plateNum;
-      let var1 = {
+    let url;
+    if(this.data.status == 'hp'){//换票
+      url = `/pages/redChangeStatus/redChangeStatus?applyId=${this.data.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.itemContent.cardId}&change=true`
+    }else{
+      url = `/pages/redChangeStatus/redChangeStatus?applyId=${this.data.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.itemContent.cardId}&change=false`
+    }
+    let var1 = {
       currentTarget: {
         dataset: {
-          url: '/pages/myInvoice/viewInvoice/viewInvoice'+str,
+          url: url,
           openType: "navigateTo"
         }
       }

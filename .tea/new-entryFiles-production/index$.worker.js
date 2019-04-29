@@ -36,6 +36,7 @@ require('../../pages/invoiceRecord/invoiceRecord.js?appxworker=1');
 require('../../pages/changing/changing.js?appxworker=1');
 require('../../pages/index/index.js?appxworker=1');
 require('../../pages/invoiceStatus/invoiceStatus.js?appxworker=1');
+require('../../pages/invoiceChange/invoiceChange.js?appxworker=1');
 require('../../pages/iWangTo/kpSuccess/kpSuccess.js?appxworker=1');
 require('../../pages/electronicInvoice/electronicInvoice.js?appxworker=1');
 require('../../pages/web/index.js?appxworker=1');

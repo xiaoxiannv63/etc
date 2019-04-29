@@ -105,24 +105,44 @@
   </view>
   <view class="tab pageContent">
     <view class="tabView">
-        <view class="tabItem" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/iWangTo/cardList/cardList">
+        <view class="tabItem" onTap="tapUrl" data-flag="{{true}}" data-openType="navigateTo" data-url="/pages/iWangTo/cardList/cardList">
           <view><image class="tabImage" src="../../assets/images/indexCion1.png" mode="aspectFit" /></view>
           <view>我要开票</view>
        </view>
-       <view class="tabItem" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/myInvoice/invoiceList/invoiceList">
+       <view class="tabItem" onTap="tapUrl" data-flag="{{false}}" data-openType="navigateTo" data-url="/pages/myInvoice/invoiceList/invoiceList">
           <view><image class="tabImage" src="../../assets/images/indexCion2.png" mode="aspectFit" /></view>
           <view>我的发票</view>
        </view>
-       <view class="tabItem" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/question/question">
+       <view class="tabItem" onTap="tapUrl" data-flag="{{false}}" data-openType="navigateTo" data-url="/pages/question/question">
           <view><image class="tabImage" src="../../assets/images/indexCion3.png" mode="aspectFit" /></view>
           <view>常见问题</view>
        </view>
-       <view class="tabItem" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/invoiceTit/index/index">
+       <view class="tabItem" onTap="tapUrl" data-flag="{{false}}" data-openType="navigateTo" data-url="/pages/invoiceTit/index/index">
           <view><image class="tabImage" src="../../assets/images/indexCion4.png" mode="aspectFit" /></view>
           <view>抬头管理</view>
        </view>
     </view>
-  <!-- <grid onGridItemClick="onItemClick" columnNum="{{3}}" list="{{list3}}" circular="true" hasLine="false"/> -->
-  
+  </view>
+  <view class="modal">
+    <modal
+      show="{{modalOpened}}"
+      advice="true"
+      onModalClick="onModalClick"
+      onModalClose="onModalClose"
+    >
+      <view slot="header">开票须知</view>
+      <view class="modal-content">
+        <view class="modal-p">• <text>根据国税要求，通行或充值前需预设抬头，一旦交易完成，本次发票抬头不可更改。故建议您在每次通行或充值前确认发票抬头，以免发生错误发票</text></view>
+        <view class="modal-p">• <text>更换抬头前产生的通行交易仍根据原抬头开具发票，如有需要请申请换票；更换抬头后产生的通行交易将根据新抬头开具发票</text></view>
+        <view class="modal-p">• <text>通行费用发票获取时间：实际发生通行费用后10个自然日起；充值发票获取时间：实时</text></view>
+        <view class="modal-p">• <text>关于批量开票：</text></view>
+        <view class="modal-p"><text>1）用户可通过选择多条交易进行合并开票；</text></view>
+        <view class="modal-p"><text>2）不支持跨卡开票</text></view>
+        <view class="modal-p"><text>3）开票方为同一税号的，将合并成一张电子发票</text></view>
+        <view class="modal-p"><text>4）充值发票不可合并为一张电子发票</text></view>
+        <view class="modal-p">• <text>记账卡：可开具消费发票，不可开具充值发票；储值卡：可实时取得充值发票，或选择在实际通行后根据交易记录开具消费发票</text></view>
+      </view>
+      <view slot="footer">继续开票</view>
+    </modal>
   </view>
 </view>

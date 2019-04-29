@@ -284,7 +284,8 @@ Page({
       }
     });
   },
-  onModalClick() {
+  settle(){
+    if (this.data.bindCardList.length <= 0) {return};
     if (this.data.showAmount && this.data.total > this.data.amount) {
       my.alert({ 'content': '可开票余额不足，勾选的交易总金额不可大于可开票余额，请减少勾选交易记录后重试' })
       return;
@@ -310,21 +311,12 @@ Page({
       }
     }
     app.handleForward(var1)
-    this.setData({
-      modalOpened: false,
-    });
   },
-  onModalClose() {
-    this.setData({
-      modalOpened: false,
-    });
-  },
-  settle() {//结算
-     if (this.data.bindCardList.length <= 0) {return};
-     this.setData({
-      modalOpened: true,
-    });
-  },
+
+    //  this.setData({
+    //   modalOpened: true,
+    // });
+  // },
   chooseXF() {
     this.setData({
       total: 0,
