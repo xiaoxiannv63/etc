@@ -33,9 +33,9 @@
       <image src="/image/data.png" mode="aspectFit" />
     </view>
 
-    <view class="inv-tit b-bot-e9">
+    <!-- <view class="inv-tit b-bot-e9">
       <text>（发票抬头）{{titleName}}</text>
-    </view>
+    </view> -->
   </view>
 
   <view class="m-main" style="top:{{top}};">
@@ -46,31 +46,37 @@
       <checkbox-group onChange="listChange" class="m-check">
         <label class="checkbox" a:for="{{Items}}">
           <checkbox value="{{item.tradeId}}" checked="{{selAllOnOff}}"  />
-          <view class="u-info" a:if={{invType=='xf'}}>
-            <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
-            <view>
-              <text class="c-0f u-sym">入</text>
-              <text class="c-99 u-add">{{item.enStationName}}</text>
+          <view class="checklist">
+            <view class="selfTitle" data-title="{{item}}" onTap="titleDetail">
+              <text>{{item.titleName}}</text>
+              <text>></text>
             </view>
-            <view>
-              <text class="c-0f u-sym">出</text>
-              <text class="c-99 u-add">{{item.exStationName}}</text>
-              <text class="c-99">{{item.exTime}}</text>
+            <view class="u-info" a:if={{invType=='xf'}}>
+              <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
+              <view>
+                <text class="c-0f u-sym">入</text>
+                <text class="c-99 u-add">{{item.enStationName}}</text>
+              </view>
+              <view>
+                <text class="c-0f u-sym">出</text>
+                <text class="c-99 u-add">{{item.exStationName}}</text>
+                <text class="c-99">{{item.exTime}}</text>
+              </view>
             </view>
+            <view class="u-info"  a:if={{invType=='cz'}}>
+              <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
+              <view>
+                <text class="">充值方式：</text>
+                <text class="c-99 u-add">{{item.channelType}}</text>
+              </view>
+              <view>
+                <text class="">充值时间：</text>
+                <text class="c-99 u-add">{{item.time}}</text>
+                <text class="c-99">{{item.exTime}}</text>
+              </view>
+            </view>
+            <view class="u-pro"><text class="c-99" a:if={{invType=='xf'}}>{{item.provinceType}} 通行费</text></view>
           </view>
-          <view class="u-info"  a:if={{invType=='cz'}}>
-            <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
-            <view>
-              <text class="">充值方式：</text>
-              <text class="c-99 u-add">{{item.channelType}}</text>
-            </view>
-            <view>
-              <text class="">充值时间：</text>
-              <text class="c-99 u-add">{{item.time}}</text>
-              <text class="c-99">{{item.exTime}}</text>
-            </view>
-          </view>
-          <view class="u-pro"><text class="c-99" a:if={{invType=='xf'}}>{{item.provinceType}}通行交易</text></view>
         </label>
       </checkbox-group>
 
@@ -128,5 +134,45 @@
     </view>
     <view slot="footer">确定</view>
   </modal>
+    <!-- 弹窗 -->
+  <view class="m-confirm-wrap" a:if="{{showMyConf}}">
+    <view class="m-confirm">
+      <view class="main">
+        <view class="u-tit"></view>
+        <view class="u-desc"></view>
+        <view class="tab">
+          <view class="item">
+            <view class="key">名称：</view>
+            <view class="u-value">{{selection.titleName}}</view>
+          </view>
+          <view class="item">
+            <view class="key">纳税人识别号：</view>
+            <view class="u-value">{{selection.taxNum}}</view>
+          </view>
+          <view class="item">
+            <view class="key">地址：</view>
+            <view class="u-value"><text>{{selection.address}}</text></view>
+          </view>
+          <view class="item">
+            <view class="key">电话：</view>
+            <view class="u-value"><text>{{selection.tel}}</text></view>
+          </view>
+          <view class="item">
+            <view class="key">开户行：</view>
+            <view class="u-value"><text>{{selection.bank}}</text></view>
+          </view>
+          <view class="item">
+            <view class="key">开户账号：</view>
+            <view class="u-value"><text>{{selection.bankAccount}}</text></view>
+          </view>
+        </view>
+      </view>
+
+      <view class="sure-footer">
+        <view class="u-btn btn-cancel c-0f" onTap="sureHandle">确认</view>
+      </view>
+    </view>
+  </view>
+<!-- 完事 -->
   </view>
 </view>

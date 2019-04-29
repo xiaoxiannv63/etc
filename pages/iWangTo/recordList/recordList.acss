@@ -121,6 +121,21 @@
     font-size: 26rpx;
     line-height: 30rpx;
     padding: 52rpx 0 62rpx 0;
+    align-items: center;
+}
+.checklist{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+}
+.selfTitle{
+  display:flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  height: 46rpx;
+  margin-bottom: 20rpx;
+  text-align: start;
+  border-bottom:1px solid #e9eaec;
 }
 label + label{
     border-top: solid 1px #e9eaec;
@@ -131,7 +146,7 @@ label + label{
 
 checkbox{
     border-radius: 50%;
-    margin-right: 50rpx;
+    margin-right: 30rpx;
 }
 .check-wrap label .u-price{
     font-size: 30rpx;
@@ -185,7 +200,7 @@ checkbox{
 }
 .u-pro{
     position: absolute;
-    top: 52rpx;
+    top:120rpx;
     right: 0rpx;
 }
 
@@ -202,3 +217,65 @@ checkbox{
 .content .p{
   font-size:26rpx;
   }
+
+/* 确认 */
+.m-confirm-wrap{
+    /* display: none; */
+    position: fixed;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.m-confirm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 10rpx;
+    width: 540rpx;
+}
+.m-confirm .main{
+    padding: 22rpx 38rpx 34rpx;
+}
+.m-confirm .main .u-tit{
+    font-size: 34rpx;
+    line-height: 78rpx;
+    font-weight: bold;
+    text-align: center;
+}
+.m-confirm .main .u-desc{
+    font-size: 26rpx;
+    line-height: 38rpx;
+    margin-bottom: 28rpx;
+}
+.m-confirm .main .item{
+    font-size: 26rpx;
+    line-height: 40rpx;
+}
+.m-confirm .main .item + .item{
+    margin-top: 5rpx;
+}
+.m-confirm .main .item .key{
+    color: #999;
+}
+.sure-footer{
+    height: 80rpx;
+    display: flex;
+    border-top: solid 1px #e9eaec;
+}
+.sure-footer view{
+    flex: 1 0 auto;
+    text-align: center;
+    line-height: 80rpx;
+}
+.sure-footer view:nth-of-type(1){
+    border-right: solid 1px #e9eaec;
+}
+
+.u-btn:active{
+    background: #ddd;
+} 

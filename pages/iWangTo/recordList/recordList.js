@@ -25,7 +25,7 @@ Page({
     total_xf: '0',
     total_cz: '0',
     total: '0',
-    top: "420rpx",
+    top: "300rpx",
     showAmount: true,
     invType: 'xf',
     modalOpened: false ,
@@ -93,13 +93,13 @@ Page({
       if (data.cardType == "记账卡") {
         this.setData({
           amount: data.amount,
-          top: "420rpx",
+          top: "300rpx",
           showAmount: false
         })
       } else {
         this.setData({
           amount: data.amount,
-          top: "580rpx",
+          top: "460rpx",
           showAmount: true
         })
       }
@@ -359,6 +359,19 @@ Page({
   onModalClose2(){
     this.setData({
       modalOpened2: false
+    })
+  },
+  titleDetail(e){
+    console.log(e)
+    this.setData({
+      selection:e.target.dataset.title,
+      showMyConf: true
+    })
+    console.log(this.data.selection)
+  },
+  sureHandle(){
+    this.setData({
+      showMyConf: false
     })
   }
 });

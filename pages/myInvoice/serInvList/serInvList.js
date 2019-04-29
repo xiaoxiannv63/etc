@@ -109,37 +109,86 @@ Page({
     my.showLoading({
       content:'加载中...'
     })
+    let invoiceObj={
+      "消费发票申请":{
+        "开票中":{
+            "text":"开票中",
+            "img":{
+              "false":""
+            } 
+        },
+        "开票完成":{
+            "text":"开票完成",
+            "img":{
+              "false":""
+            } 
+        }
+      },
+      "变更抬头申请":{
+        "开票中":{
+            "text":"换票中",
+            "img":{
+              "false":"../../../assets/myInvoice/hpsq.png"
+            }
+          },
+        "开票完成":{
+            "text":"换票完成",
+            "img":{
+              "true":"../../../assets/myInvoice/ybhc.png",
+              "false":"../../../assets/myInvoice/hpsq.png"
+            }
+        }
+      },
+      "发票红冲申请":{
+          "开票中":{
+              "text":"红冲中",
+              "img":{
+                "false":"../../../assets/myInvoice/hcsq.png"
+              }
+          },
+          "开票完成":{
+              "text":"红冲完成",
+              "img":{
+                "true":"../../../assets/myInvoice/ybhc.png",
+                "false":"../../../assets/myInvoice/hcsq.png"
+              }
+          }
+      }
+    }
     app.ajax(json1,'INVOICE_SEARCHAPPLY',(data) => {
       let nomore = false;
+      console.log("====",nomore)
       if(data.items.length<10) nomore = true;
       data.items.forEach((item,index) => {
         item.applyTime = app.format(item.applyTime)
-        if(item.applyType == "变更抬头申请"){
-          if(item.status == "开票中"){
-            item.imgSrc = "../../../assets/myInvoice/hpsq.png"
-          }else{
-            item.imgSrc = item.hasRed ? "../../../assets/myInvoice/ybhc.png" : "../../../assets/myInvoice/hpsq.png"
-          }
-        }else if(item.applyType == "发票红冲申请"){
-          if(item.status == "开票中"){
-            item.imgSrc = "../../../assets/myInvoice/hcsq.png"
-          }else{
-            item.imgSrc = item.hasRed ? "../../../assets/myInvoice/ybhc.png" : "../../../assets/myInvoice/hcsq.png"
-          }
-        }
-        if(item.applyType == "发票红冲申请"){
-          if(item.status == "开票中"){
-            item.status = "红冲中"
-          }else if(item.status == "开票完成"){
-            item.status = "红冲完成"
-          }
-        }else if(item.applyType == "变更抬头申请"){
-          if(item.status == "开票中"){
-            item.status = "换票中"
-          }else if(item.status == "开票完成"){
-            item.status = "换票完成"
-          }
-        }
+        // if(item.applyType == "变更抬头申请"){
+        //   if(item.status == "开票中"){
+        //     item.imgSrc = "../../../assets/myInvoice/hpsq.png"
+        //   }else{
+        //     item.imgSrc = item.hasRed ? "../../../assets/myInvoice/ybhc.png" : "../../../assets/myInvoice/hpsq.png"
+        //   }
+        // }else if(item.applyType == "发票红冲申请"){
+        //   if(item.status == "开票中"){
+        //     item.imgSrc = "../../../assets/myInvoice/hcsq.png"
+        //   }else{
+        //     item.imgSrc = item.hasRed ? "../../../assets/myInvoice/ybhc.png" : "../../../assets/myInvoice/hcsq.png"
+        //   }
+        // }
+        // if(item.applyType == "发票红冲申请"){
+        //   if(item.status == "开票中"){
+        //     item.status = "红冲中"
+        //   }else if(item.status == "开票完成"){
+        //     item.status = "红冲完成"
+        //   }
+        // }else if(item.applyType == "变更抬头申请"){
+        //   if(item.status == "开票中"){
+        //     item.status = "换票中"
+        //   }else if(item.status == "开票完成"){
+        //     item.status = "换票完成"
+        //   }
+        // }
+        item.status = invoiceObj[item.applyType][item.status].text
+        item.imgSrc = invoiceObj[item.applyType][item.status]['img'][item.hasRed]
       })
       let czArr = [];
       let xfArr = [];
@@ -160,7 +209,6 @@ Page({
   },
   toInvApp(e){
     console.log(e)
-
     let cur_applyType = e.target.dataset.applyType,cur_status=e.target.dataset.status,cur_hasRed = e.target.dataset.hasRed,url;
     if(cur_status == "红冲完成"){
       url = cur_hasRed ? `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}`

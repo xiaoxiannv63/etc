@@ -39,7 +39,7 @@
             <view><text class="u-key c-99 let-spa10">发票张数：</text>{{item.sumInvoice}}</view>
             <!-- <view><text class="u-key c-99 let-spa025">开票总金额：</text><text class="c-e7">￥{{item.sumAmount}}</text></view> -->
           </view>
-          <image mode="scaleToFill" class="img-position" src="{{item.imgSrc}}"/>
+          <image mode="scaleToFill" class="img-position" a:if="{{item.imgSrc}}" src="{{item.imgSrc}}"/>
         </view>
         <view a:if="{{nomore}}" class="m-nomore c-99">
           <text>已全部加载完毕</text>
