@@ -18,7 +18,7 @@ Page({
           user,
           mobile: app.userInfo.mobile
         })
-        //console.log("user",user, user.nickName, user.avatar )
+        console.log("user",user, user.nickName, user.avatar )
       }
     });
   },

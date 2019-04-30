@@ -1,6 +1,6 @@
 <view class="page">
   <view class="demo-item">
-    <notice mode="closable" onClick="closableClick" show="{{closeShow}}">
+    <notice mode="closable" onClick="closableClick" show="{{showTip}}">
       票根助你轻松获取通行费电子发票
     </notice>
   </view>

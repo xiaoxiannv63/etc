@@ -12,7 +12,8 @@ Page({
     currentTime: 60,
     interval: null,
     modalOpened: false,
-    loginType:"tel"
+    loginType:"tel",
+    showTip:true
   },
   onLoad() {
     console.log(app,'app')
@@ -198,6 +199,11 @@ Page({
   accountLogin(e){
     this.setData({
       loginType:e.target.dataset.loginType
+    })
+  },
+  closableClick(){
+    this.setData({
+      showTip:false
     })
   }
 });

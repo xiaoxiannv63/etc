@@ -24,8 +24,9 @@
             <view><text class="u-key c-99 let-spa10">申请类型：</text>{{item.applyType}}</view>
             <view>
               <text class="u-key c-99 let-spa10">发票内容：</text>
+              <!-- <text a:if="{{invType == 'xf'}}">通行费</text>
+              <text a:else>通行费</text> -->
               <text>通行费</text>
-              <!-- <text a:else>充值</text> -->
             </view>
             <view><text class="u-key c-99 let-spa10">发票张数：</text>{{item.sumInvoice}}</view>
           </view>
