@@ -87,7 +87,7 @@
       <view class="textAlign">
         <view class="font-orange">{{item.content}}
         </view>
-        <view class="font-gray padding-top">{{item.subTitle}}</view>
+        <!-- <view class="font-gray padding-top">{{item.subTitle}}</view> -->
         <view>
         </view>
       </view>

@@ -29,7 +29,11 @@ page {
 .tab{position: relative}
 contact-button{ right: 10rpx; bottom:80rpx;  text-align: center;}
 .am-grid-3 .am-grid-border{ border:none;}
-
+.listItemDiv_contentGrayFont .gray-font{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
 .box{
   padding:36rpx 28rpx;
 }

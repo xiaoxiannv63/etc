@@ -56,9 +56,11 @@
   </view>
   <view class="between">
     <view class="error">
-        <view class="between-left" onTap="invoiceError">发票信息有误</view>
-        <view class="between-b" a:if="{{routeFlag}}" style="margin: 0 20rpx">|</view>
-        <view class="between-right" a:if="{{routeFlag}}" onTap="lookQuotation">查看行程</view>
+      <!-- 红票 不显示 发票信息有误 -->
+        <view class="between-left" onTap="invoiceError" a:if="{{status !== 'tp'}}">发票信息有误</view> 
+        <!-- 红票 和 充值 不显示 -->
+        <view class="between-b" a:if="{{status !== 'tp' || itemContent.originApply.applyType == '充值发票申请'}}" style="margin: 0 20rpx">|</view>
+        <view class="between-right" a:if="{{status !== 'tp' || itemContent.originApply.applyType == '充值发票申请'}}" onTap="lookQuotation">查看行程</view>
     </view>
   </view>
   <view  class="c_bottom">
