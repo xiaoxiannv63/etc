@@ -3,10 +3,15 @@
 .tip{padding:20rpx;}    
 .padding{ padding:20rpx}
 .positon .ul .li{position: relative; }
-.radio{ padding-left:20rpx;}
-.radio radio{ padding-top: 20rpx; vertical-align: 70%}
-.change-header{
-
+.radio{ 
+  padding:20rpx 20rpx 0;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.changingPage{
+  padding:20rpx;
+  background-color:rgb(255, 255, 255); 
 }
 .change-header .ul{
   width:100%;
@@ -46,18 +51,14 @@
 }
 .line{
   background:rgba(255,255,255,1);
-  box-shadow:5rpx 5rpx 13rpx 5rpx rgba(0,0,0,0.05);
+  box-shadow:0rpx 3rpx 22rpx 0rpx rgba(0,0,0,0.07);
   border-radius:10rpx; 
 }
 .change-tit{
   margin-bottom:10rpx;
 }
-.open-info{
-  margin-left: 87rpx;
-  padding:10rpx 0;
-}
 .line{
-  margin-top:10rpx;
+  margin-top:26rpx;
 }
 .ul{
   margin-top:10rpx;
@@ -67,4 +68,7 @@
   font-family:PingFangSC-Regular;
   font-weight:400;
   color:rgba(16,142,233,1);
+}
+.open-info{
+  padding:0 0 20rpx 40rpx;
 }

@@ -1,6 +1,6 @@
 
 <view class="page">
-  <view class="bgWhiteColor">
+  <view class="changingPage">
     <view class="change-header">
       <view class="title">
         <view class="span">          原开票申请信息      
@@ -46,9 +46,9 @@
           <view class="font-blue inline text-right" a:else  onTap="openHandle">收起 <<</view>
         </view>
         <view class="li" a:if="{{openFlag}}">
-          <view class="font-gray padding-auto">税号
+          <view class="inline font-gray padding-auto">税号
           </view>
-          <view class="inline font-orange">{{itemContent.buyerTaxpayerCode}}
+          <view class="inline">{{itemContent.buyerTaxpayerCode}}
           </view>
         </view>
       </view>
@@ -67,7 +67,6 @@
       <radio-group class="radio-group" onChange="radioChange">
         <view class="line {{item.titleType == 'UNIT' ? 'aa' : 'bb'}}" a:for="{{items}}" a:for-index="idx">
           <label class="radio">
-            <radio value="{{item.titleId}}" checked="{{item.checked}}"/>
             <view class="inline li">
               <view> <view class="inline font-gray padding-right">名称</view><view class="inline">{{item.name}}</view></view>
               <view> <view class="inline font-gray padding-right">类型</view><view class="inline">{{item.titleType == 'UNIT' ? '单位' : '个人'}}</view></view>
@@ -78,8 +77,9 @@
               <view> <view class="inline font-gray padding-right">开户行帐号</view><view class="inline">{{item.bankAccount}}</view></view>
               </view>
             </view>
+            <radio value="{{item.titleId}}" checked="{{item.checked}}"/>
           </label>
-          <view class="open-info font-blue" data-index="{{idx}}" onTap="looktit" a:if="{{item.titleType == 'UNIT'}}"> {{item.flag ? "收起 >>" : "展开更多抬头信息 >>"}}</view>
+          <view class="open-info font-gray" data-index="{{idx}}" onTap="looktit" a:if="{{item.titleType == 'UNIT'}}"> {{item.flag ? "收起 >>" : "展开更多抬头信息 >>"}}</view>
         </view>
       </radio-group>
     </view>
