@@ -100,6 +100,7 @@ Page({
       if(data.items.length<10) nomore = true;
       data.items.forEach((item,index) => {
         item.applyTime = app.format(item.applyTime)
+      // -------------------加戳部分--------------------
         if(item.applyType == "变更抬头申请"){
           if(item.status == "开票中"){
             item.imgSrc = "../../../assets/myInvoice/hpsq.png"
@@ -113,6 +114,7 @@ Page({
             item.imgSrc = item.hasRed ? "../../../assets/myInvoice/ybhc.png" : "../../../assets/myInvoice/hcsq.png"
           }
         }
+      // -------------------加戳部分--------------------
         if(item.applyType == "发票红冲申请"){
           if(item.status == "开票中"){
             item.status = "红冲中"
