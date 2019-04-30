@@ -113,19 +113,20 @@
 }
 .m-check{
     background: #fff;
-    padding: 0 40rpx;
+    padding: 0 20rpx;
 }
 .check-wrap label{
     position: relative;
     display: flex;
     font-size: 26rpx;
     line-height: 30rpx;
-    padding: 52rpx 0 62rpx 0;
+    padding: 10rpx 0 30rpx 0;
     align-items: center;
 }
 .checklist{
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   width:100%;
 }
 .selfTitle{
@@ -133,9 +134,9 @@
   justify-content: space-between;
   font-size: 26rpx;
   height: 46rpx;
-  margin-bottom: 10rpx;
+  padding: 20rpx 0rpx 0 30rpx;
   text-align: start;
-  /* border-bottom:1px solid #e9eaec; */
+  border-bottom:1px solid #e9eaec;
 }
 label + label{
     border-top: solid 1px #e9eaec;
@@ -146,12 +147,11 @@ label + label{
 
 checkbox{
     border-radius: 50%;
-    margin-right: 30rpx;
+    margin:50rpx 20rpx 0 20rpx;
 }
 .check-wrap label .u-price{
     font-size: 30rpx;
     line-height: 30rpx;
-    margin-bottom: 30rpx;
 }
 .u-info view:nth-of-type(2){
     margin-bottom: 20rpx;
@@ -197,11 +197,6 @@ checkbox{
     width: 233rpx;
     border-radius: 0;
     margin-left: 36rpx;
-}
-.u-pro{
-    position: absolute;
-    top:120rpx;
-    right: 0rpx;
 }
 
 .m-none{
@@ -279,3 +274,14 @@ checkbox{
 .u-btn:active{
     background: #ddd;
 } 
+.for-item{
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 3rpx 22rpx 0rpx rgba(0,0,0,0.07);
+  border-radius:7rpx;
+  margin-top:10rpx;
+  padding:0 10rpx;
+}
+.price-pro{
+  display: flex;
+  justify-content: space-between;
+}

@@ -44,7 +44,7 @@ Page({
     });
     app.ajax(json1,'INVOICE_APPLYDETAIL',(data)=>{
       data.applyTime = app.format(data.applyTime);
-      if(data.applyType == "消费发票" && data.hasRed == false){
+      if(data.applyType == "消费发票申请" && data.hasRed == false){
         this.setData({
           routeFlag: true
         })

@@ -44,15 +44,19 @@
                    class="m-scr"
                    onScrollToLower="lower">
       <checkbox-group onChange="listChange" class="m-check">
-        <label class="checkbox" a:for="{{Items}}">
+        <view class="for-item" a:for="{{Items}}">
+        <view class="selfTitle" data-title="{{item}}" onTap="titleDetail">
+          <text>{{item.titleName}}</text>
+          <text>></text>
+        </view>
+        <label class="checkbox" >
           <checkbox value="{{item.tradeId}}" checked="{{selAllOnOff}}"  />
           <view class="checklist">
-            <view class="selfTitle" data-title="{{item}}" onTap="titleDetail">
-              <text>{{item.titleName}}</text>
-              <text>></text>
-            </view>
             <view class="u-info" a:if={{invType=='xf'}}>
-              <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
+              <view class="price-pro">
+                <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
+                <view class="u-pro"><text class="c-99" a:if={{invType=='xf'}}>{{item.provinceType}} 通行费</text></view>
+              </view>
               <view>
                 <text class="c-0f u-sym">入</text>
                 <text class="c-99 u-add">{{item.enStationName}}</text>
@@ -75,9 +79,9 @@
                 <text class="c-99">{{item.exTime}}</text>
               </view>
             </view>
-            <view class="u-pro"><text class="c-99" a:if={{invType=='xf'}}>{{item.provinceType}} 通行费</text></view>
           </view>
         </label>
+        </view>
       </checkbox-group>
 
       <view class="m-none c-99" a:if="{{Items.length == 0}}">
