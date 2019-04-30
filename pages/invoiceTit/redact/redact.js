@@ -49,7 +49,7 @@ Page({
         content:'请填写抬头名称！'
       });
       return false;
-    }else if(this.data.titType=='单位' && this.data.tax.length<=0){
+    }else if(this.data.titType=='UNIT' && this.data.tax.length<=0){
       my.alert({
         content:'请填写税号！'
       });

@@ -3,7 +3,7 @@
     <view class="m-items">
       <view class="u-item">
         <view class="u-dt s-larg-int">抬头类型：</view>
-        <text class="p-l5">{{titType =='单位'?'企业':'个人/非企业单位'}}</text>
+        <text class="p-l5">{{titType =='UNIT'?'企业':'个人/非企业单位'}}</text>
       </view>
       <view class="u-item">
         <view class="u-dt"><text class="c-e7">*</text>抬头名称：</view>
@@ -12,11 +12,11 @@
 
         <view class="u-item">
           <view class="u-dt u-db">
-            <text a:if="{{titType == '单位'}}" class="c-e7">*</text>
+            <text a:if="{{titType == 'UNIT'}}" class="c-e7">*</text>
             <text a:else class="u-gerenkuan"></text>
             税<text class="u-double"></text>号：
           </view>
-          <input class="u-dd" placeholder="请输入税号" disabled="{{titType == '单位' ? true : false}}" value="{{tax}}" onInput="setInvTax" />
+          <input class="u-dd" placeholder="请输入税号" disabled="{{titType == 'UNIT' ? true : false}}" value="{{tax}}" onInput="setInvTax" />
         </view>
         <view class="u-item">
           <view class="u-dt s-larg-int">单位地址：</view>
