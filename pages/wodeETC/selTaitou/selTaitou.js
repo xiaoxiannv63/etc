@@ -3,27 +3,7 @@ Page({
   data: {
     //props  cardId
     showMyConf: false,
-    items: [/*{
-      titleId: '', //发票抬头唯一标识
-      titleType: '',//发票抬头类型
-      name:'name1',  //单位名称or姓名
-      taxNum:'1111111',//纳税人识别号
-      address: '发东莞市地方公司',//单位地址
-      tel: '123456498789',//单位电话
-      bank: '',//开户行名称
-      bankAccount: '',//开户行帐号
-      hasBind: true//是否和当前卡绑定
-    },{
-      titleId: '', //发票抬头唯一标识
-      titleType: '',//
-      name:'name2',
-      taxNum:'2222222',
-      address: '',
-      tel: '',
-      bank: '',
-      bankAccount: '',
-      hasBind: ''
-    }*/],
+    items: [],
     select: null,
     selection: {},
     etc:false

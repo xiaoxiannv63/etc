@@ -64,9 +64,10 @@
     background: #0f9aff;
     vertical-align: middle;
 }
-
-label{
+.card-box{
     position: relative;
+}
+label{
     display: flex;
     align-items: center;
     padding: 20rpx 0;
