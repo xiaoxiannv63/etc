@@ -58,29 +58,25 @@
   font-family:PingFangSC-Regular;
   font-weight:400;
   color:#333;
-  line-height:30rpx;
+  line-height:40rpx;
 }
 .num1{
   color:#999;
 }
 .error{
-  /* display: flex; */
-  /* justify-content: ; */
-  text-align: center;
-  font-size:24rpx;
+  display: flex;
+  justify-content: center;
   flex:1;
 }
 .between{
   width:100%;
   margin:0 auto;
-  margin: 30rpx 0 200rpx;
+  margin-top: 400rpx;
 }
 .between-left{
-  display: block;
-  color:rgba(204,204,204,1);
+  color:rgba(16,142,233,1);
 }
 .between-right{
-  display: block;
   color:rgba(16,142,233,1);
  }
 .c_bottom{

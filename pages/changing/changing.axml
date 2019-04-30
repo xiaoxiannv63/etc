@@ -34,7 +34,7 @@
         <view class="li">
           <view class="inline font-gray padding-auto">发票金额
           </view>
-          <view class="inline font-orange">￥{{(itemContent.sumAmount/100).toFixed(2)}}
+          <view class="inline">￥{{(itemContent.sumAmount/100).toFixed(2)}}
           </view>
         </view>
         <view class="li">
@@ -42,8 +42,8 @@
           </view>
           <view class="inline">{{itemContent.buyerName}}
           </view>
-          <view class="font-orange inline text-right" a:if="{{!openFlag}}" onTap="openHandle">展开 >></view>
-          <view class="font-orange inline text-right" a:else  onTap="openHandle">收起 <<</view>
+          <view class="font-blue inline text-right" a:if="{{!openFlag}}" onTap="openHandle">展开 >></view>
+          <view class="font-blue inline text-right" a:else  onTap="openHandle">收起 <<</view>
         </view>
         <view class="li" a:if="{{openFlag}}">
           <view class="font-gray padding-auto">税号
@@ -79,7 +79,7 @@
               </view>
             </view>
           </label>
-          <view class="open-info" data-index="{{idx}}" onTap="looktit" a:if="{{item.titleType == 'UNIT'}}"> {{item.flag ? "收起" : "展开"}}更多抬头信息>></view>
+          <view class="open-info font-blue" data-index="{{idx}}" onTap="looktit" a:if="{{item.titleType == 'UNIT'}}"> {{item.flag ? "收起 >>" : "展开更多抬头信息 >>"}}</view>
         </view>
       </radio-group>
     </view>

@@ -62,3 +62,9 @@
 .ul{
   margin-top:10rpx;
 }
+.font-blue{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(16,142,233,1);
+}

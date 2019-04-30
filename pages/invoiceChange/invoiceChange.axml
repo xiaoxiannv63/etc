@@ -54,19 +54,11 @@
       </view>
     </view>
   </view>
-    
-  <!-- </view> -->
-  <!-- </view> -->
-  <!-- <view class="invoiceHead">
-    <view class="name">{{itemContent.buyerName}}</view>
-    <view class="num" a:if="{{itemContent.buyerTaxpayerCode 
-    }}"><text class="num1">税号：</text>{{itemContent.buyerTaxpayerCode}}</view>
-  </view> -->
   <view class="between">
     <view class="error">
-        <view class="between-right" onTap="lookQuotation">查看行程</view>
-        <!-- <view class="between-b" style="margin: 0 20rpx">|</view> -->
-        <view class="between-left">发票信息有误?请点击上方查看行程</view>
+        <view class="between-left" onTap="invoiceError">发票信息有误</view>
+        <view class="between-b" a:if="{{routeFlag}}" style="margin: 0 20rpx">|</view>
+        <view class="between-right" a:if="{{routeFlag}}" onTap="lookQuotation">查看行程</view>
     </view>
   </view>
   <view  class="c_bottom">

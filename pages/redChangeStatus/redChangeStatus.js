@@ -48,5 +48,9 @@ Page({
     this.setData({
       tab:e.target.dataset.index
     })
+  },
+  lookInvoice(e){
+    let url = e.target.dataset.url
+    app.gotoH5(url)
   }
 });

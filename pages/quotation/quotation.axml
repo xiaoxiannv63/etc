@@ -2,7 +2,7 @@
 <view class="page">
    <view class="bgWhiteColor line">
      <flex justify="between">
-        <view class="inline head">通行记录</view>
+        <view class="inline">通行记录</view>
      </flex>
    </view>
    <view class="bgWhiteColor ul" a:for="{{list}}">
