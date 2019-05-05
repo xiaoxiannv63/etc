@@ -94,5 +94,28 @@ Page({
       }
     }
     app.handleForward(var1)
+  },
+  toEmail(e) {
+    console.log(e)
+    my.prompt({
+      title: '发送至邮箱',
+      message: `当前邮箱为：${e.currentTarget.dataset.email}，您可以在下方输入新的邮箱。`,
+      placeholder: '请输入邮箱（xingyun@etc.com）',
+      okButtonText: '确定',
+      cancelButtonText: '取消',
+      success: (result) => {
+        if(result.ok){
+          let json1 = {
+            applyId: this.data.applyId,
+            cardId: this.data.itemContent.cardId,
+            mail: result.inputValue?result.inputValue:e.currentTarget.dataset.email,
+            ticketId: app.userInfo.ticketId
+          }
+          app.ajax(json1,'INVOICE_APPLYSEND',(data)=>{
+            console.log(data)
+          })
+        }
+      }
+    });
   }
 })

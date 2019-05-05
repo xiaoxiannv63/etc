@@ -102,32 +102,26 @@ Page({
         item.applyTime = app.format(item.applyTime)
       // -------------------加戳部分--------------------
         if(item.applyType == "变更抬头申请"){
-          if(item.status == "开票中"){
-            item.imgSrc = "../../../assets/myInvoice/hpsq.png"
-          }else{
-            item.imgSrc = item.hasRed ? "../../../assets/myInvoice/ybhc.png" : "../../../assets/myInvoice/hpsq.png"
-          }
-        }else if(item.applyType == "发票红冲申请"){
-          if(item.status == "开票中"){
-            item.imgSrc = "../../../assets/myInvoice/hcsq.png"
-          }else{
-            item.imgSrc = item.hasRed ? "../../../assets/myInvoice/ybhc.png" : "../../../assets/myInvoice/hcsq.png"
-          }
-        }
-      // -------------------加戳部分--------------------
-        if(item.applyType == "发票红冲申请"){
-          if(item.status == "开票中"){
-            item.status = "红冲中"
-          }else if(item.status == "开票完成"){
-            item.status = "红冲完成"
-          }
-        }else if(item.applyType == "变更抬头申请"){
+          item.imgSrc = "../../../assets/myInvoice/hpsq.png"
           if(item.status == "开票中"){
             item.status = "换票中"
-          }else if(item.status == "开票完成"){
+          }else{
             item.status = "换票完成"
           }
+        }else if(item.applyType == "发票红冲申请"){
+          item.imgSrc = "../../../assets/myInvoice/hcsq.png"
+          if(item.status == "开票中"){
+            item.status = "红冲中"
+          }else{
+            item.status = "红冲完成"
+          }
         }
+        
+        if(item.hasReversal){
+          item.imgSrc = "../../../assets/myInvoice/ybhc.png"
+          // item.status = "？？"
+        }
+        
       })
       that.setData({
         items: that.data.items.concat(data.items),
@@ -138,11 +132,15 @@ Page({
   },
   toInvApp(e){
     console.log(e)
-    let cur_applyType = e.target.dataset.applyType,cur_status=e.target.dataset.status,cur_hasRed = e.target.dataset.hasRed,url;
+    let cur_applyType = e.target.dataset.applyType,
+        cur_status=e.target.dataset.status,
+        cur_hasRed = e.target.dataset.hasRed,
+        cur_hasReversal = e.target.dataset.hasReversal,
+        url;
     if(cur_status == "红冲完成"){ //true:是现票（负票）--->戳：红冲申请 跳：invoiceChange  原票：已被红冲
-      url = cur_hasRed ? `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=hp` : `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}`
+      url = cur_hasReversal ? `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=tp`
     }else if(cur_status == "换票完成"){ //true:是原票 --->戳：已被红冲 跳：invoiceStatus    false:是现票---->戳：换票申请 跳：invoiceChange
-      url = cur_hasRed ? `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=tp` 
+      url = cur_hasReversal ? `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=hp` 
     }else if(cur_status == "开票完成"){
       url = `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}`
     }else{

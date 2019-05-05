@@ -34,6 +34,7 @@
   </view>
   <view  class="bottom">
     <view class="bottom-left"><button class="send default" open-type="share"><image class="img" src="../../image/send.png"/><view>分享</view></button></view>
+    <view class="bottom-middle"><view class="primary" data-email="{{itemContent.invoiceMail}}" onTap="toEmail">发送到邮箱</view></view>
     <view class="bottom-right"><view class="primary" onTap="lookElectronicInvoice">查看电子发票</view></view>
   </view>
 </view>
