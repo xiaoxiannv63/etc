@@ -123,11 +123,7 @@ App({
   userInfo: {},
   getUserInfo() {
     return new Promise((resolve, reject) => {
-<<<<<<< HEAD
       // if (this.userInfo) resolve(this.userInfo);
-=======
-      //if (this.userInfo) resolve(this.userInfo);
->>>>>>> 登录授权-app.js
 
       my.getAuthCode({
         scopes: ['auth_user'],
