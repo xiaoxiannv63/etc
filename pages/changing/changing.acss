@@ -16,7 +16,7 @@
 .change-header .ul{
   width:100%;
   background:rgba(255,255,255,1);
-  box-shadow:0rpx 2rpx 10rpx 0rpx rgba(153,153,153,0.2);
+  /* box-shadow:0rpx 2rpx 10rpx 0rpx rgba(153,153,153,0.2); */
   border-radius:8rpx;
   margin: 15rpx 0;
 }
@@ -70,5 +70,5 @@
   color:rgba(16,142,233,1);
 }
 .open-info{
-  padding:0 0 20rpx 40rpx;
+  padding:0 0 20rpx 20rpx;
 }
