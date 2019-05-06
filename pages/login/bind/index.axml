@@ -37,12 +37,12 @@
    
     <view class="queding">
       <view class="padding-bottom font-gray">使用其他登录方式</view>
-      <button class="textAlign" open-type="getAuthorize" onGetAuthorize="sqLogin" scope='phoneNumber'>
+      <button class="textAlign" open-type="getAuthorize" onGetAuthorize="accede" scope='phoneNumber'>
           <image class="zfbCion" src="../../../assets/images/zfbCion2.png" mode="aspectFit" />
           <view>支付宝授权登录</view>
       </button>
     </view>
-    <modal
+    <!-- <modal
           show="{{modalOpened}}"
           onModalClose="onModalClick" >
           <view slot="header">服务授权</view>
@@ -71,6 +71,6 @@
             <flex-item><view class="inline buttonAccede" onTap="accede">确定</view></flex-item>
           </flex>
         </view>
-    </modal>
+    </modal> -->
   </view>
 </view>

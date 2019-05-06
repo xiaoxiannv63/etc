@@ -26,7 +26,6 @@
   // eslint-disable-next-line
   var OriginalFunction = Function;
   var OriginalFetch = self.fetch;
-  var OriginalBridgeCall = self.AlipayJSBridge && self.AlipayJSBridge.call;
 
   var callInternalAPI = function callInternalAPI(api, param) {
     var actionData = {
@@ -40,16 +39,26 @@
     var url = 'https://alipay.kylinBridge/?data=' + apiQueryString;
 
     if (OriginalFetch) {
-      // android
       OriginalFetch(url, {
         mode: 'no-cors'
       }).then(function () {}).catch(function () {});
     } else {
-      // iOS
-      OriginalBridgeCall('internalAPI', {
-        method: api,
-        param: param
-      });
+      if (self.AlipayJSBridge) {
+        AlipayJSBridge.call('internalAPI', {
+          method: api,
+          param: param
+        });
+      } else {
+        var interval = setInterval(function () {
+          if (self.AlipayJSBridge) {
+            AlipayJSBridge.call('internalAPI', {
+              method: api,
+              param: param
+            });
+            clearInterval(interval);
+          }
+        }, 60);
+      }
     }
   };
 
@@ -124,24 +133,9 @@
       });
     };
   });
-})();if(!self.__appxInited) {
-self.__appxInited = 1;
-
-
+})();
 require('./config$');
 require('./importScripts$');
-
-var AFAppX = self.AFAppX;
-self.getCurrentPages = AFAppX.getCurrentPages;
-self.getApp = AFAppX.getApp;
-self.Page = AFAppX.Page;
-self.App = AFAppX.App;
-self.my = AFAppX.bridge || AFAppX.abridge;
-self.abridge = self.my;
-self.Component = AFAppX.WorkerComponent || function(){};
-self.$global = AFAppX.$global;
-
-
 function success() {
 require('../..//app');
 require('../../node_modules/mini-antui/es/flex/index');
@@ -197,4 +191,3 @@ require('../../pages/routeInvoice/routeInvoice');
 require('../../pages/redChangeStatus/redChangeStatus');
 }
 self.bootstrapApp ? self.bootstrapApp({ success }) : success();
-}
