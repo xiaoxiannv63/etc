@@ -183,9 +183,9 @@ Page({
     });
   },
   sqLogin() {
-    //   this.setData({
-    //   modalOpened: true,
-    // });
+      this.setData({
+      modalOpened: true,
+    });
   },
   cancel() {
     this.setData({

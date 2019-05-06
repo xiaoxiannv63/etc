@@ -63,3 +63,8 @@
 .heightLine{line-height: 56rpx;}
 .minFont{padding:28rpx; text-align: left}
 .zfbCion{width: 100rpx; height: 100rpx;}
+.textAlign{
+  width:100%;
+  height:100%;
+  border:none;
+}
