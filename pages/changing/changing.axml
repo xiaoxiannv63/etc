@@ -42,8 +42,9 @@
           </view>
           <view class="inline">{{itemContent.buyerName}}
           </view>
+          <view a:if="{{itemContent.buyerTaxpayerCode}}">
           <view class="font-blue inline text-right" a:if="{{!openFlag}}" onTap="openHandle">展开 >></view>
-          <view class="font-blue inline text-right" a:else  onTap="openHandle">收起 <<</view>
+          <view class="font-blue inline text-right" a:else onTap="openHandle">收起 <<</view>
         </view>
         <view class="li" a:if="{{openFlag}}">
           <view class="inline font-gray padding-auto">税号
