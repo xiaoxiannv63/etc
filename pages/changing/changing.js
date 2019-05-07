@@ -12,7 +12,8 @@ Page({
     console.log('---换票---',query)
     this.setData({
       applyId: query.applyId,
-      cardId: query.cardId
+      cardId: query.cardId,
+      plateNum: query.plateNum
     })
     this.getCardId()
   },
@@ -74,7 +75,7 @@ Page({
             let var1 = {
               currentTarget: {
                 dataset: {
-                  url: `/pages/myInvoice/serInvList/serInvList?cardId=${this.data.cardId}`,
+                  url: `/pages/myInvoice/serInvList/serInvList?cardId=${this.data.cardId}&plateNum=${this.data.plateNum}`,
                   openType: "navigateTo"
                 }
               }

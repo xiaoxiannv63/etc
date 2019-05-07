@@ -16,7 +16,6 @@ Page({
       plateNum: query.plateNum,
       month: d.getFullYear()+"-"+num2(d.getMonth()+1)
     })
-    
     my.setNavigationBar({
       title: query.plateNum
     })
