@@ -27,8 +27,8 @@
   <view class="between">
     <view class="error">
       <!-- =======================原申请不显示==================== -->
-        <view class="between-left" a:if="{{!itemContent.orginApply.hasReversal}}" onTap="invoiceError">发票信息有误</view>
-        <view class="between-b" a:if="{{(!itemContent.orginApply.hasReversal) || routeFlag}}" style="margin: 0 20rpx">|</view>
+        <view class="between-left" onTap="invoiceError">发票信息有误</view>
+        <view class="between-b" a:if="{{routeFlag}}" style="margin: 0 20rpx">|</view>
         <view class="between-right" a:if="{{routeFlag}}" onTap="lookQuotation">查看行程</view>
     </view>
   </view>
