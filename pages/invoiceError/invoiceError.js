@@ -26,7 +26,7 @@ Page({
       let var1 = {
         currentTarget: {
           dataset: {
-            url: `/pages/changing/changing?applyId=${this.data.applyId}&cardId=${this.data.cardId}`,
+            url: `/pages/changing/changing?applyId=${this.data.applyId}&cardId=${this.data.cardId}&plateNum=${that.data.plateNum}`,
             openType: "navigateTo"
           }
         }

@@ -11,28 +11,12 @@ Page({
   onLoad(query) {
     console.log('---query----',query)
     let d = new Date();
-    if(!query.type){
-      let json1 = {
-        cardId: query.cardId,
-        ticketId: app.userInfo.ticketId
-      }
-      app.ajax(json1,"CARD_DETAIL",(data)=>{
-        this.setData({
-          cardId: query.cardId,
-          plateNum: query.plateNum,
-          type: data.cardType,//0 储值卡 1 记账卡
-          month: d.getFullYear()+"-"+num2(d.getMonth()+1)
-        })
-      })
-    }else{
-      this.setData({
-        cardId: query.cardId,
-        plateNum: query.plateNum,
-        type: query.type,//0 储值卡 1 记账卡
-        month: d.getFullYear()+"-"+num2(d.getMonth()+1)
-      })
-    }
-
+    this.setData({
+      cardId: query.cardId,
+      plateNum: query.plateNum,
+      month: d.getFullYear()+"-"+num2(d.getMonth()+1)
+    })
+    
     my.setNavigationBar({
       title: query.plateNum
     })
