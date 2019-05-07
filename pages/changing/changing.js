@@ -74,7 +74,7 @@ Page({
             let var1 = {
               currentTarget: {
                 dataset: {
-                  url: '/pages/myInvoice/serInvList/serInvList',
+                  url: `/pages/myInvoice/serInvList/serInvList?cardId=${this.data.cardId}`,
                   openType: "navigateTo"
                 }
               }
