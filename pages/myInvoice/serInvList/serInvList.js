@@ -100,10 +100,10 @@ Page({
           }
         }
         
-        if(item.hasReversal){
-          item.imgSrc = "../../../assets/myInvoice/ybhc.png"
-          // item.status = "？？"
-        }
+        // if(item.hasReversal){
+        //   item.imgSrc = "../../../assets/myInvoice/ybhc.png"
+        //   // item.status = "？？"
+        // }
         
       })
       that.setData({
@@ -118,12 +118,13 @@ Page({
     let cur_applyType = e.target.dataset.applyType,
         cur_status=e.target.dataset.status,
         cur_hasRed = e.target.dataset.hasRed,
-        cur_hasReversal = e.target.dataset.hasReversal,
         url;
     if(cur_status == "红冲完成"){ //true:是现票（负票）--->戳：红冲申请 跳：invoiceChange  原票：已被红冲
-      url = cur_hasReversal ? `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=tp`
+      // url = cur_hasReversal ? `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=tp`
+      url = `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=tp`
     }else if(cur_status == "换票完成"){ //true:是原票 --->戳：已被红冲 跳：invoiceStatus    false:是现票---->戳：换票申请 跳：invoiceChange
-      url = cur_hasReversal ? `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=hp` 
+      // url = cur_hasReversal ? `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}` : `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=hp` 
+      url = `/pages/invoiceChange/invoiceChange?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.cardId}&status=hp` 
     }else if(cur_status == "开票完成"){
       url = `/pages/invoiceStatus/invoiceStatus?applyId=${e.target.dataset.applyId}&plateNum=${this.data.plateNum}`
     }else{

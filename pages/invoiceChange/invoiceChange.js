@@ -93,7 +93,7 @@ Page({
     app.handleForward(var1)
   },
   invoiceError(){ //开票有误
-    let str = "applyId="+this.data.applyId + '&cardId='+this.data.itemContent.cardId;
+    let str = "applyId="+this.data.applyId + '&cardId='+this.data.itemContent.cardId + '&plateNum='+this.data.plateNum;
     let var1 = {
       currentTarget: {
         dataset: {
