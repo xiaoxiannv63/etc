@@ -76,6 +76,7 @@ Page({
   },
   lookElectronicInvoice(){
     let url;
+    console.log('----this.data.status-----',this.data.status)
     if(this.data.status == 'hp'){//换票
       url = `/pages/redChangeStatus/redChangeStatus?applyId=${this.data.applyId}&plateNum=${this.data.plateNum}&cardId=${this.data.itemContent.cardId}&change=true`
     }else{

@@ -4,6 +4,7 @@ Page({
     hasPower: false,
   },
   onLoad(){
+    console.log('----进来----')
     this.getPermision();
   },
   onShow() {
@@ -12,31 +13,34 @@ Page({
     }
   },
   getUserInfo(){
-    my.getAuthUserInfo({
-      success: (user) => {
-        this.setData({
-          user,
-          mobile: app.userInfo.mobile
-        })
-        console.log("user",user, user.nickName, user.avatar )
-      }
-    });
+
   },
   getPermision(){
     let that = this;
     my.getAuthCode({
       scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
       success: (res) => {
-        // console.log(res.authCode);
+        console.log('---拿code----',res.authCode);
         that.setData({
           hasPower: true
         })
-        that.getUserInfo();
+        my.getAuthUserInfo({
+          success: (user) => {
+            this.setData({
+              user,
+              mobile: app.userInfo.mobile
+            })
+            console.log("user",user, user.nickName, user.avatar )
+          }
+        });
         
         if(!app.authCode){
           that.indRes();
         }
         // app.authCode = res.authCode;
+      },
+      fail: () => {
+        console.log('---fail---')
       }
     });
   },

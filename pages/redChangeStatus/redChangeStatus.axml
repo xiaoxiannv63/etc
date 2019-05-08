@@ -5,7 +5,7 @@
     </view>
   </view>
   <view class="content">
-    <view class="main" a:for="{{change ? (tab == 0 ? invoices : tab == 1 ? redInvoices : originInvoices) : (tab == 0 ? redInvoices : originInvoices)}}">
+    <view class="main" a:for="{{change == 'true' ? (tab == 0 ? invoices : tab == 1 ? redInvoices : originInvoices) : (tab == 0 ? redInvoices : originInvoices)}}">
       <view class="u-main">
         <view class="u-double">{{item.buyerName}}</view>
       </view>

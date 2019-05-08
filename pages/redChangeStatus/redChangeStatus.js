@@ -11,14 +11,15 @@ Page({
     change:null //红冲？？true 换票？？
   },
   onLoad(query) {
-    console.log(query)
+    console.log('---query--',query)
     let arr = []
-    console.log(!query.change)
-    if(!query.change){//红冲发票
+    console.log('--红冲false----',query.change)
+    if(query.change == 'false'){//红冲发票
       arr = this.data.tabs.slice(1)
       this.setData({
         tabs:arr
       })
+      console.log(this.data.tabs)
     }
     this.setData({
       change:query.change,

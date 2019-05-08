@@ -36,14 +36,14 @@
       </view>
       <view class="li">发票张数： <text class="text">{{itemContent.originApply.sumInvoice}}张</text>
       </view>
-      <view class="li">行程总数： <text class="text">{{itemContent.originApply.countRecord}}个</text>
+      <view class="li">行程总数： <text class="text">{{itemContent.countRecord}}个</text>
       </view>
       <view class="li">申请时间： <text class="text">{{itemContent.originApply.applyTime}}</text>
       </view>
-      <view class="li">申请邮箱： <text class="text">{{itemContent.originApply.invoiceMail}}</text>
+      <view class="li">申请邮箱： <text class="text">{{itemContent.invoiceMail}}</text>
       </view>
-      <view class="amount">
-        <view class="money">￥{{(itemContent.originApply.sumAmount/100).toFixed(2)}}
+      <view class="origin-amount">
+        <view class="origin-money">￥{{(itemContent.originApply.sumAmount/100).toFixed(2)}}
         </view>
       </view>
     </view>
@@ -59,8 +59,8 @@
       <!-- 红票 不显示 发票信息有误 -->
         <view class="between-left" onTap="invoiceError" a:if="{{!itemContent.hasRed}}">发票信息有误</view> 
         <!-- 红票 和 充值 不显示 -->
-        <view class="between-b" a:if="{{!itemContent.hasRed || itemContent.originApply.applyType !== '充值发票申请'}}" style="margin: 0 20rpx">|</view>
-        <view class="between-right" a:if="{{!itemContent.hasRed || itemContent.originApply.applyType !== '充值发票申请'}}" onTap="lookQuotation">查看行程</view>
+        <view class="between-b" a:if="{{!(itemContent.hasRed || itemContent.originApply.applyType == '充值发票申请')}}" style="margin: 0 20rpx">|</view>
+        <view class="between-right" a:if="{{!(itemContent.hasRed || itemContent.originApply.applyType == '充值发票申请')}}" onTap="lookQuotation">查看行程</view>
     </view>
   </view>
   <view  class="c_bottom">

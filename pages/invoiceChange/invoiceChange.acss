@@ -10,6 +10,16 @@
   font-weight:600;
   color:rgba(255,63,0,1);
 }
+.origin-amount .origin-money{
+  position: absolute; 
+  right:60rpx; 
+  top:140rpx; 
+  text-align: center;
+  font-size:30rpx;
+  font-family:PingFangSC-Semibold;
+  font-weight:600;
+  color:rgba(255,63,0,1);
+}
 .statusHead{
   padding:30rpx;
 }
@@ -70,8 +80,7 @@
 }
 .between{
   width:100%;
-  margin:0 auto;
-  margin-top: 400rpx;
+  margin: 50rpx 0 200rpx 0;
 }
 .between-left{
   color:rgba(16,142,233,1);
@@ -124,6 +133,7 @@
 
 .origin{
   padding: 30rpx;
+  position: relative;
   /* font-size: 28rpx; */
   /* border-bottom: solid 1px #e9eaec; */
   justify-content: space-between;

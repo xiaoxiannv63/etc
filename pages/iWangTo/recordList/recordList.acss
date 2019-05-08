@@ -147,7 +147,9 @@ label + label{
 
 checkbox{
     border-radius: 50%;
-    margin:50rpx 20rpx 0 20rpx;
+}
+.checkbox{
+    margin:30rpx 20rpx;
 }
 .check-wrap label .u-price{
     font-size: 30rpx;
