@@ -98,7 +98,7 @@ Page({
       currentTarget: {
         dataset: {
           url: `/pages/invoiceError/invoiceError?${str}`,
-          openType: "navigateTo"
+          openType: "redirectTo"
         }
       }
     }

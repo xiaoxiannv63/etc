@@ -93,5 +93,78 @@
     <view>
       <button type="primary" onTap="changeTicket">确认换票</button>
     </view>
+      <!-- 弹窗 -->
+  <view class="m-confirm-wrap" a:if="{{showModal}}">
+    <view class="m-confirm">
+      <view class="main">
+        <view class="u-tit">请您确认</view>
+        <view class="u-desc"><text>以下信息为您新发票将要显示的信息，请您核对是否正确</text></view>
+        <view class="tab">
+          <view class="item">
+            <view class="key">名称：</view>
+            <view class="u-value">{{selection.name}}</view>
+          </view>
+          <view class="item">
+            <view class="key">纳税人识别号：</view>
+            <view class="u-value">{{selection.taxNum}}</view>
+          </view>
+          <view class="item">
+            <view class="key">地址：</view>
+            <view class="u-value"><text>{{selection.address}}</text></view>
+          </view>
+          <view class="item">
+            <view class="key">电话：</view>
+            <view class="u-value"><text>{{selection.tel}}</text></view>
+          </view>
+          <view class="item">
+            <view class="key">开户行：</view>
+            <view class="u-value"><text>{{selection.bank}}</text></view>
+          </view>
+          <view class="item">
+            <view class="key">开户账号：</view>
+            <view class="u-value"><text>{{selection.bankAccount}}</text></view>
+          </view>
+
+          <view style="margin-top:30rpx">
+            <view class="item">
+                <view class="key">原申请时间：
+                </view>
+                <view class="u-valie">{{itemContent.applyTime}}
+                </view>
+              </view>
+              <view class="item">
+                <view class="key">发票类型：
+                </view>
+                <view class="u-valie">{{itemContent.applyType}}
+                </view>
+              </view>
+              <view class="item">
+                <view class="key">行程总数：
+                </view>
+                <view class="u-valie">{{itemContent.countRecord}}个
+                </view>
+              </view>
+              <view class="item">
+                <view class="key">发票张数：
+                </view>
+                <view class="u-valie">{{itemContent.sumInvoice}}张
+                </view>
+              </view>
+              <view class="item">
+                <view class="key">发票金额：
+                </view>
+                <view class="u-valie">￥{{(itemContent.sumAmount/100).toFixed(2)}}
+                </view>
+              </view>
+          </view>
+        </view>
+      </view>
+      <view class="m-footer">
+        <view class="u-btn btn-cancel c-0f" onTap="cancelHandle">取消</view>
+        <view class="u-btn btn-cancel c-0f" onTap="sureHandle">确认</view>
+      </view>
+    </view>
+  </view>
+<!-- 完事 -->
   </view>
 </view>
