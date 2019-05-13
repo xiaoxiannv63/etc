@@ -20,7 +20,7 @@
     <scroll-view scroll-y="{{true}}" style="height: 100%">
 
       <!-- 通行纪录 -->
-      <view class="record-main-item" a:if="{{tab == 0}}" onTap="goMtcConfirm">
+      <view class="record-main-item" a:if="{{tab == 0 && items.length <= 0}}" onTap="goMtcConfirm">
         <view class="record-main-header">
           <view class="record-money">¥186.00</view>
           <view class="record-license blue-li">京A 88888</view>
@@ -40,7 +40,7 @@
       </view>
 
       <!-- 开票纪录 -->
-      <view class="record-main-item"  a:if="{{tab == 1}}">
+      <view class="record-main-item"  a:if="{{tab == 1 && items.length <= 0}}">
         <view class="record-main-header2">
           <view>
             <text>申请时间：</text>
@@ -69,10 +69,14 @@
       </view>
 
       <!-- 加载更多 -->
-      <view class="record-main-nomore">
+      <view class="record-main-nomore" a:if="{{items.length <= 0}}">
         <view a:if="{{nomore}}">上滑加载更多</view>
         <view a:else>已全部加载完毕</view>
       </view>
     </scroll-view>
+  </view>
+  <view class="no-data" a:if="{{false}}">
+    <view class="imagebox"><image src="../../../image/nodata.png"/></view>
+    <view class="notext">当月暂无纪录</view>
   </view>
 </view>

@@ -36,6 +36,35 @@
   <view class="header">请填写接收邮箱（用于向您发送电子发票）</view>
   <view><input type="text" class="email" placeholder="请输入邮箱地址" onInput="mailInp" auto-focus/></view>
   <view class="confirm-footer">
-    <button class="confirm-footer2" type="primary">提交开票</button>
+    <button class="confirm-footer2" onTap="onTopBtnTap" type="primary">提交开票</button>
   </view>
+  <popup show="{{showTop}}" position="bottom" onClose="onPopupClose">
+    <view class="pop-main">
+      <view class="header">核对开票类型</view>
+      <view class="confirm-main">
+        <view class="confirm-item item-top">
+          <view>抬头类型</view>
+          <view>企业</view>
+        </view>
+        <view class="confirm-item">
+          <view>名称</view>
+          <view>刘珊珊</view>
+        </view>
+        <view class="confirm-item">
+          <view>税号</view>
+          <view>1234567890</view>
+        </view>
+        <view class="confirm-item">
+          <view>邮箱</view>
+          <view>1234567890@qq.com</view>
+        </view>
+      </view>
+      <view class="pop-tips">
+        电子发票一经开出不予线上更换，请您认真核对发票信息。
+      </view>
+      <view class="pop-footer">
+        <button class="confirm-footer2" type="primary">确认提交</button>
+      </view>
+    </view>
+  </popup>
 </view>

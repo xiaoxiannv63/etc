@@ -1,1 +1,6 @@
-{}
+{
+  "defaultTitle": "开具电子发票",
+  "usingComponents": {
+    "popup": "mini-antui/es/popup/index"
+  }
+}

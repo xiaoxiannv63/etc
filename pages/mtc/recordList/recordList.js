@@ -7,7 +7,8 @@ Page({
     nowMonth:'',//当月月份
     pageIndex:1,
     statusArr:['开票中','开票完成','审核中','审核完成'],
-    status:''
+    status:'',
+    items:[]
   },
   onLoad() {
     let date = new Date();

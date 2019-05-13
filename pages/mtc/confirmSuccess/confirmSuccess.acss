@@ -73,3 +73,20 @@
   line-height:42rpx;
   padding:20rpx 30rpx;
 }
+.pop-main{
+  background: #fff;
+  padding:24rpx 0;
+}
+.pop-tips{
+  font-size:24rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  line-height:34rpx;
+  margin-top:28rpx;
+  padding: 0 30rpx;
+}
+.pop-footer{
+  margin-top: 144rpx;
+  padding:0 20rpx;
+}

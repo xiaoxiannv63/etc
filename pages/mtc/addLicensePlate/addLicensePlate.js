@@ -11,13 +11,13 @@ Page({
         idx: 0, // 控制 输入框的选中状态
         items: [
           { id: 1, value: '蓝色', selected: true },
-          { id: 1, value: '黄色' },
-          { id: 1, value: '绿色' },
-          { id: 3, value: '白色' },
-          { id: 4, value: '黑色' },
-          { id: 5, value: '其他' }
+          { id: 2, value: '黄色' },
+          { id: 3, value: '绿色' },
+          { id: 4, value: '白色' },
+          { id: 5, value: '黑色' },
+          { id: 6, value: '其他' }
         ],
-        colorIndex:null
+        colorIndex:0
     },
 
     onReady(e){

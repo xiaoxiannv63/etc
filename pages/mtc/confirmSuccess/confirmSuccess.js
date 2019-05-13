@@ -1,5 +1,7 @@
 Page({
-  data: {},
+  data: {
+    showTop: false,
+  },
   onLoad() {},
   mailInp(e){
     let isMail, mailReg=/\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/g;
@@ -8,5 +10,15 @@ Page({
       mail: e.detail.value,
       canNotKp: !isMail
     })
-  }
+  },
+  onTopBtnTap() {
+    this.setData({
+      showTop: true,
+    });
+  },
+  onPopupClose() {
+    this.setData({
+      showTop: false,
+    });
+  },
 });

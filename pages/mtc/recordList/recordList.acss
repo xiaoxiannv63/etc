@@ -146,3 +146,23 @@
 .record-main-content{
   padding-top:20rpx;
 }
+.no-data{
+  margin-top:262rpx;
+}
+.imagebox{
+  width:100rpx;
+  height: 100rpx;
+  margin:0 auto;
+}
+.imagebox image{
+  width:100rpx;
+  height: 100rpx;
+}
+.notext{
+  font-size:30rpx;
+  margin-top:20rpx;
+  text-align: center;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
