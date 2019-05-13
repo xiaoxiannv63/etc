@@ -65,9 +65,9 @@
   border:2rpx solid rgba(255,138,0,1);
 }
 .email{
+  display: block;
   height:42rpx;
   font-size:30rpx;
-  width:100%;
   font-family:PingFangSC-Regular;
   font-weight:400;
   line-height:42rpx;

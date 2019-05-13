@@ -16,6 +16,7 @@ require('../../components/steps/steps');
 require('../../components/keyboard/keyboard');
 require('../../node_modules/mini-antui/es/filter/index');
 require('../../node_modules/mini-antui/es/filter/filter-item/index');
+require('../../node_modules/mini-antui/es/popup/index');
 require('../../pages/startup/startup');
 require('../../pages/mtc/recordList/recordList');
 require('../../pages/changing/changing');
@@ -56,13 +57,14 @@ require('../../pages/iWangTo/recordList/recordList');
 require('../../pages/iWangTo/invAccept/invAccept');
 require('../../pages/routeInvoice/routeInvoice');
 require('../../pages/redChangeStatus/redChangeStatus');
-<<<<<<< HEAD
 require('../../pages/mtc/recordConfirm/recordConfirm');
 require('../../pages/mtc/addLicensePlate/addLicensePlate');
 require('../../pages/mtc/confirmSuccess/confirmSuccess');
-=======
 require('../../pages/mtc/certification/certification');
 require('../../pages/mtc/infoInput/infoInput');
 require('../../pages/mtc/invoiceDetail/invoiceDetail');
 require('../../pages/mtc/infoFail/infoFail');
->>>>>>> mtc 页面
+require('../../pages/mtc/infoSuc/infoSuc');
+require('../../pages/mtc/viewInvoice/viewInvoice');
+require('../../pages/mtc/infoConfirm/infoConfirm');
+require('../../pages/mtc/invoiceSuccess/invoiceSuccess');
