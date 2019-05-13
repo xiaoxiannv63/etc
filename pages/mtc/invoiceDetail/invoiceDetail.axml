@@ -1,12 +1,12 @@
 <view class="page">
+  <view class="title">开票信息</view>
   <view class="detail">
-    <view class="title">开票信息</view>
     <view class="space-between"><text>申请时间</text><text>{{}}</text></view>
     <view class="space-between"><text>开票状态</text><text>{{}}</text></view>
     <view class="space-between"><text>接收邮箱</text><text>{{}}</text></view>    
   </view>
+  <view class="title">行程交易信息</view>
   <view class="detail">
-    <view class="title">行程交易信息</view>
     <view class="space-between"><text>车牌号</text><text>{{}}</text></view>
     <view class="space-between"><text>车型</text><text>{{}}</text></view>
     <view class="space-between"><text>行程金额</text><text>{{}}</text></view>
@@ -19,8 +19,8 @@
       <view class="space-between"><text>出口时间</text><text>{{}}</text></view>
     </view>
   </view>
+  <view class="title">抬头信息</view>
   <view class="detail">
-    <view class="title">抬头信息</view>
     <view class="space-between"><text>抬头</text><text>{{}}</text></view>
     <view class="space-between"><text>税号</text><text>{{}}</text></view>
   </view>

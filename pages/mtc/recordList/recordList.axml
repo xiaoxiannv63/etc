@@ -9,6 +9,7 @@
       <view><text class="month-font" onTap="selDate">{{month}}</text></view>
       <view a:if="{{tab == 1}}">
         <picker-item
+          className="picker"
           data-field="status"
           placeholder="选择开票状态"
           value="{{status}}"

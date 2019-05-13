@@ -34,6 +34,10 @@
   flex-wrap: nowrap;
   border-bottom: 1rpx solid #ddd;
 }
+.picker{
+  height:44rpx;
+  line-height:44rpx;
+}
 .am-picker-content-value{
   font-size:28rpx;
   font-family:PingFangSC-Regular;

@@ -5,7 +5,7 @@ page{
     padding-bottom:146rpx;
 }
 .title{
-  margin: 22rpx 0;
+  margin: 22rpx 30rpx;
   padding:unset;
   height: 40rpx;
   line-height: 40rpx;
@@ -17,7 +17,6 @@ page{
 .detail{
   background:rgba(255,255,255,1);
   padding: 0 30rpx;
-
 }
 .detail text{
   font-size:30rpx;
