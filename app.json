@@ -48,7 +48,8 @@
     "pages/mtc/invoiceDetail/invoiceDetail",
     "pages/mtc/infoFail/infoFail",
     "pages/mtc/infoSuc/infoSuc",
-    "pages/mtc/viewInvoice/viewInvoice"
+    "pages/mtc/viewInvoice/viewInvoice",
+    "pages/mtc/infoConfirm/infoConfirm"
   ],
   "window": {
     "defaultTitle": "票根"

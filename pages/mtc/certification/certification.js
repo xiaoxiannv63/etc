@@ -24,12 +24,28 @@ Page({
     this.setData({
       modalOpened: false
     })
-    
-    console.log("0000")
+    let var1 = {
+      currentTarget:{
+        dataset:{
+          url:"/pages/mtc/infoConfirm/infoConfirm",
+          opebType:"redirectTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
   cancel(){
     this.setData({
       modalOpened: false
     })
+    let var1 = {
+      currentTarget:{
+        dataset:{
+          url:"/pages/mtc/infoFail/infoFail",
+          opebType:"redirectTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   }
 })
