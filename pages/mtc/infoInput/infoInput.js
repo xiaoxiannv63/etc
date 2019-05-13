@@ -12,12 +12,12 @@ Page({
   },
   setName(e){
     this.setData({
-      name: e.detal.value.replace(/\s+/g,"")
+      name: e.detail.value.replace(/\s+/g,"")
     })
   },
   setIdCode(e){
     this.setData({
-      idCode: e.detal.value.replace(/\s+/g,"")
+      idCode: e.detail.value.replace(/\s+/g,"")
     })
   },
   sureInfo() {
