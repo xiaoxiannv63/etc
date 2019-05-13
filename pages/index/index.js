@@ -12,11 +12,6 @@ Page({
     noData: 1,
     modalOpened:false
   },
-  goMtc(){
-    my.navigateTo({
-      url:'/pages/mtc/recordList/recordList'
-    })
-  },
   onLoad(query) {
     // 页面加载
     this.etcList();
@@ -250,5 +245,10 @@ Page({
     my.navigateTo({
       url: '/pages/wodeETC/etcDetail/etcDetail?cardid='+cardid
     })
+  },
+  goIdentify(e){
+    // 查询是否已经实名，跳转不同页面
+    // app.ajax()
+    app.handleForward(e)
   }
 });

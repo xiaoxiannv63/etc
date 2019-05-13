@@ -1,0 +1,11 @@
+<view class="page">
+  <view class="title">实名认证</view>
+  <view class="tips"><text>您提供的证件信息将收到严格保护，仅用于身份验证，未经您本人许可不会用于其他用途</text></view>
+  <view class="label">真实姓名</view>
+    <view><input type="" placeholder="请输入您的真实姓名" auto-focus  onInput="setName"/></view>
+  <view class="label">身份证号码</view>
+  <view>
+    <input placeholder="请输入您的身份证号码（将加密处理）" onInput="setIdCode"></input>
+  </view>
+  <button type="primary" onTap="sureInfo">确认信息</button>
+</view>

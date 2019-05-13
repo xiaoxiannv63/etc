@@ -1,0 +1,61 @@
+page{
+  background: #fff;
+}
+.page{
+  box-sizing:border-box;
+  position: relative
+}
+.view{
+  margin:0 32rpx;
+}
+.title{
+  font-size:48rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:66rpx;
+}
+.view image{
+  margin-top: 102rpx;
+  width:172rpx;
+  height: 172rpx;
+}
+.tips{
+  text-align: center;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:40rpx
+}
+.tips-title{
+  font-size:30rpx;
+  height:88rpx;
+  line-height:88rpx;
+  color:rgba(51,51,51,1);
+  margin:46rpx 0 30rpx;
+}
+button{
+  position: absolute;
+  bottom: 40rpx;
+  left:32rpx;
+  right:32rpx;
+}
+/* modal 样式 */
+.foot{border-top: solid 1rpx #dadada}
+.buttonCancel{color: #424242; width: 100%; height: 80rpx; line-height: 80rpx;}
+.buttonAccede{background-color: #0f9aff; color:#fff; width: 100%; height: 80rpx; line-height: 80rpx;}
+.imgageDiv{text-align: center; background-color: #0f9aff;}
+.imgageDiv image{height: 160rpx; width: 160rpx;}
+.am-modal-header{background-color: #0f9aff; color: #fff;border-bottom:none 0px;}
+.am-modal-body { margin-top: -2px; overflow: hidden; max-width: 100%; padding: 0px;}
+.am-modal-close{ display: none}
+.bigFont{padding:20rpx 0rpx; font-size: 30rpx; font-weight: bold; border-bottom: solid 1rpx #dadada}
+.heightLine{line-height: 56rpx;}
+.minFont{padding:28rpx; text-align: left}
+.zfbCion{width: 100rpx; height: 100rpx;}
+.textAlign{
+  width:100%;
+  height:100%;
+  border:none;
+}

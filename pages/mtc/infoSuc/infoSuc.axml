@@ -1,0 +1,11 @@
+<view class="page">
+  <view class="view">
+      <view class="icon"><icon type="success" size="50"/> </view>   
+      <view class="tips">
+      <view class="tips-title">实名认证已通过</view>
+      <view class="font-gray"></view>
+      <view class="font-gray"></view>
+    </view>
+    <button type="primary" data-openType="redirectTo" data-url="/pages/index/index" onTap="goIndex">返回首页{{str}}</button>
+  </view>
+</view>

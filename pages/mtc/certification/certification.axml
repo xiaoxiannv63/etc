@@ -1,0 +1,44 @@
+<view class="page">
+  <notice mode="closable" onClick="closableClick" show="{{showTip}}">
+    信息仅用于实名认证，票根保障您的信息安全
+  </notice>
+  <view class="view">
+    <view class="title">实名认证</view>
+    <view class="tips">
+      <image src="/image/lock.png" mode="aspectFit" />
+      <view class="tips-title">当前账号未实名认证</view>
+      <view class="font-gray">为防止冒名虚开发票，需通过实名认证</view>
+    </view>
+    <button type="primary" onTap="start">开始认证</button>
+  </view>
+  <!-- 请求授权获取用户姓名以及身份证号码 -->
+  <modal
+        show="{{modalOpened}}"
+        onModalClose="onModalClick" >
+        <view slot="header">服务授权</view>
+        <view class="imgageDiv">
+          <image src="../../../assets/images/zfbCion.png" mode="aspectFit" />
+        </view>
+        <view class="bigFont">
+          <view class="heightLine">
+            该服务由票根应用提供
+          </view>
+          <view class="heightLine">
+            向其提供以下授权即可继续操作
+          </view>
+        </view>
+        <view class="minFont">
+        <view class="font-gray">
+        </view>
+        <view class="font-gray">
+          获取实名认证信息（姓名、身份证号）
+        </view>
+        </view>
+        <view>
+        <flex class="foot">
+          <flex-item><view class="inline buttonCancel" onTap="cancel">取消</view ></flex-item>
+          <flex-item><view class="inline buttonAccede" onTap="accede">确定</view></flex-item>
+        </flex>
+        </view>
+    </modal>
+</view>

@@ -59,8 +59,15 @@ require('../../pages/iWangTo/recordList/recordList');
 require('../../pages/iWangTo/invAccept/invAccept');
 require('../../pages/routeInvoice/routeInvoice');
 require('../../pages/redChangeStatus/redChangeStatus');
+<<<<<<< HEAD
 require('../../pages/mtc/recordConfirm/recordConfirm');
 require('../../pages/mtc/addLicensePlate/addLicensePlate');
 require('../../pages/mtc/confirmSuccess/confirmSuccess');
+=======
+require('../../pages/mtc/certification/certification');
+require('../../pages/mtc/infoInput/infoInput');
+require('../../pages/mtc/invoiceDetail/invoiceDetail');
+require('../../pages/mtc/infoFail/infoFail');
+>>>>>>> mtc 页面
 }
 self.bootstrapApp ? self.bootstrapApp({ success }) : success();

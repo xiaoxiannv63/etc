@@ -1,0 +1,6 @@
+{
+    "defaultTitle": "人工车道电子发票",
+    "usingComponents": {
+      "notice": "mini-antui/es/notice/index"
+    }
+}

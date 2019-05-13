@@ -53,6 +53,7 @@ App({
     return str
   },
   ajax(json1,type,succ,fail,compl){
+    console.log("app.ajax=-=-=")
     my.showLoading({
       content: 'loading...'
     });
@@ -124,7 +125,6 @@ App({
   getUserInfo() {
     return new Promise((resolve, reject) => {
       // if (this.userInfo) resolve(this.userInfo);
-
       my.getAuthCode({
         scopes: ['auth_user'],
         success: authcode => {
@@ -164,6 +164,7 @@ App({
     })
   },
   globalData: {},
+  canClick: true,
   handleForward(event) {
     let that = this;
     const { url, openType } = event.currentTarget.dataset;
@@ -297,4 +298,13 @@ App({
       path: 'pages/startup/startup'
     };
   },
+  buttonClick(){
+    if(this.canClick){
+      this.canClick = false;
+      setTimeout(()=>{this.canClick = true},600)
+      return true
+    }else{
+      return false
+    }
+  }
 });

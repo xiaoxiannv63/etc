@@ -42,7 +42,13 @@
     "pages/redChangeStatus/redChangeStatus",
     "pages/mtc/recordConfirm/recordConfirm",
     "pages/mtc/addLicensePlate/addLicensePlate",
-    "pages/mtc/confirmSuccess/confirmSuccess"
+    "pages/mtc/confirmSuccess/confirmSuccess",
+    "pages/mtc/certification/certification",
+    "pages/mtc/infoInput/infoInput",
+    "pages/mtc/invoiceDetail/invoiceDetail",
+    "pages/mtc/infoFail/infoFail",
+    "pages/mtc/infoSuc/infoSuc",
+    "pages/mtc/viewInvoice/viewInvoice"
   ],
   "window": {
     "defaultTitle": "票根"

@@ -123,6 +123,13 @@
        </view>
     </view>
   </view>
+  <view class="mtcEntry">
+    <view data-url="/pages/mtc/certification/certification" data-openType='navigateTo' onTap="goIdentify">
+      <view class="title">人工收费车道发票</view>
+      <view class="info">可通过纸质凭证或通行记录开票</view>
+    </view>
+    <view class="u-card-arrow " />
+  </view>
   <view class="modal">
     <modal
       show="{{modalOpened}}"
@@ -144,8 +151,5 @@
       </view>
       <view slot="footer">继续开票</view>
     </modal>
-    
-
-    <view onTap="goMtc">go mtc</view>
   </view>
 </view>
