@@ -21,4 +21,7 @@ Page({
       showTop: false,
     });
   },
+  goAddTaitou(){
+    
+  }
 });

@@ -145,6 +145,7 @@
 }
 .record-main-content{
   padding-top:20rpx;
+  position: relative;
 }
 .no-data{
   margin-top:262rpx;

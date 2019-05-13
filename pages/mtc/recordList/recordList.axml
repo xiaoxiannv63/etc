@@ -36,6 +36,7 @@
             <text class="jiange">北京站</text>
             <text class="jiange">2020-09-09 20:20:20</text>
           </view>
+          <view class="u-card-arrow " />
         </view>
       </view>
 
@@ -65,6 +66,7 @@
             <text class="interval">行程金额</text>
             <text>¥186.00</text>
           </view>      
+           <view class="u-card-arrow " />
         </view>
       </view>
 

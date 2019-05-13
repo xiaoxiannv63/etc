@@ -16,9 +16,9 @@
     抬头信息
   </view>
   <view class="confirm-main">
-    <view class="confirm-item item-top">
+    <view class="confirm-item item-top arrow-position">
       <view>更换抬头</view>
-      <view></view>
+      <view onTap="goAddTaitou" class="arrow"></view>
     </view>
     <view class="confirm-item">
       <view>抬头类型</view>
