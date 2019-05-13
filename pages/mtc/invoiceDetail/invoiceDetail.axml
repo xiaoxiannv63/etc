@@ -26,6 +26,9 @@
   </view>
  
   <view a:if="{{ '审核中' === '审核中' || '审核失败' === '审核失败'}}" class="tip">申请开票时修改车牌错误，将导致开票审核无法通过。</view>
-  <button a:if="{{'1'}}" onTap="view">查看电子发票</button>
-  <button a:else class="" onTap="reInvoice">修改车牌重开</button>
+  <view class="footer">
+    <button a:if="{{'1'}}" onTap="view">查看电子发票</button>
+    <button a:else class="" onTap="reInvoice">修改车牌重开</button>
+  </view>
+  
 </view>

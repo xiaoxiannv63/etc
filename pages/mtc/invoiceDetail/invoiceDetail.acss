@@ -31,18 +31,7 @@ page{
   justify-content: space-between;
   border-bottom: 1rpx solid rgba(233,233,233,1);
 }
-button{
-  position:fixed;
-  bottom:0;
-  left: 30rpx;
-  right: 30rpx;
-  height:92rpx;
-  line-height:92rpx;
-  margin-bottom: 48rpx;
-  border-radius:4rpx;
-  border:2rpx solid rgba(16,142,233,1);
-  color: rgba(16,142,233,1);
-}
+
 .tip{
   padding:30rpx;
   font-size: 28rpx;
@@ -50,4 +39,20 @@ button{
   height:36rpx;
   color: rgba(153,153,153,1);
   font-family:PingFangSC-Regular;
+}
+.footer{
+  background-color: rgba(245,245,245,1);
+  height: 140rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+button{
+  margin:0 30rpx;
+  height: 92rpx;
+  line-height:92rpx;
+  border-radius:4rpx;
+  border:2rpx solid rgba(16,142,233,1);
+  color: rgba(16,142,233,1);
+  background: unset;
 }
