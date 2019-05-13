@@ -1,0 +1,31 @@
+<view class="record-confirm">
+  <view class="header">
+    行程交易
+  </view>
+  <view class="confirm-main">
+    <view class="confirm-item item-top">
+      <view>车牌号</view>
+      <view><text class="confirm-license blue-li">京A 8888888</text></view>
+    </view>
+    <view class="confirm-item">
+      <view>车型</view>
+      <view>客车</view>
+    </view>
+    <view class="confirm-item">
+      <view>金额</view>
+      <view>¥485.00</view>
+    </view>
+    <view class="confirm-item">
+      <view>消费时间</view>
+      <view>2018-01-24 12:24:24</view>
+    </view>
+  </view>
+  <view class="confirm-tips">
+    <view class="tips-header">温馨提示</view>
+    <view class="tips-content">车牌号将在发票上展示，请认真核对。若车牌号有误，请点击[修改车牌号]进行自助修改。</view>
+  </view>
+  <view class="confirm-footer">
+    <button class="confirm-footer1" onTap="goKeyWordpage">修改车牌号</button>
+    <button class="confirm-footer2" type="primary">信息均无误</button>
+  </view>
+</view>

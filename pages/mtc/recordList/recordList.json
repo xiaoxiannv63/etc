@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "人工车道发票",
+  "usingComponents": {
+    "list": "mini-antui/es/list/index",
+    "picker-item": "mini-antui/es/picker-item/index"
+  }
+}

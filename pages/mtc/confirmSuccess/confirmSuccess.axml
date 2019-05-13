@@ -1,0 +1,41 @@
+<view class="confirm-success">
+  <view class="header">
+    行程交易
+  </view>
+  <view class="confirm-main">
+    <view class="confirm-item item-top">
+      <view>订单号</view>
+      <view>2131214483213233</view>
+    </view>
+    <view class="confirm-item">
+      <view>车牌号</view>
+      <view><text class="confirm-license blue-li">京A 8888888</text></view>
+    </view>
+  </view>
+  <view class="header">
+    抬头信息
+  </view>
+  <view class="confirm-main">
+    <view class="confirm-item item-top">
+      <view>更换抬头</view>
+      <view></view>
+    </view>
+    <view class="confirm-item">
+      <view>抬头类型</view>
+      <view>企业</view>
+    </view>
+    <view class="confirm-item">
+      <view>名称</view>
+      <view>刘珊珊</view>
+    </view>
+    <view class="confirm-item">
+      <view>税号</view>
+      <view>1234567890</view>
+    </view>
+  </view>
+  <view class="header">请填写接收邮箱（用于向您发送电子发票）</view>
+  <view><input type="text" class="email" placeholder="请输入邮箱地址" onInput="mailInp" auto-focus/></view>
+  <view class="confirm-footer">
+    <button class="confirm-footer2" type="primary">提交开票</button>
+  </view>
+</view>

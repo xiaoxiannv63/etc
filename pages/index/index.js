@@ -12,6 +12,11 @@ Page({
     noData: 1,
     modalOpened:false
   },
+  goMtc(){
+    my.navigateTo({
+      url:'/pages/mtc/recordList/recordList'
+    })
+  },
   onLoad(query) {
     // 页面加载
     this.etcList();

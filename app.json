@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/startup/startup",
+    "pages/mtc/recordList/recordList",
     "pages/changing/changing",
     "pages/invoiceError/invoiceError",
     "pages/invoiceRecord/invoiceRecord",
@@ -38,7 +39,10 @@
     "pages/iWangTo/recordList/recordList",
     "pages/iWangTo/invAccept/invAccept",
     "pages/routeInvoice/routeInvoice",
-    "pages/redChangeStatus/redChangeStatus"
+    "pages/redChangeStatus/redChangeStatus",
+    "pages/mtc/recordConfirm/recordConfirm",
+    "pages/mtc/addLicensePlate/addLicensePlate",
+    "pages/mtc/confirmSuccess/confirmSuccess"
   ],
   "window": {
     "defaultTitle": "票根"

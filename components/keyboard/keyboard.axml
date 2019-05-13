@@ -1,0 +1,22 @@
+<view class="softKeyboard">
+    <!-- 地址键盘 -->
+    <view class="citykeyboard" a:if="{{isCityKeyboard}}">
+        <view class="btnList" a:for="{{city}}" a:for-index="index" a:key="{{item.index}}">
+            <view class="box" a:for="{{item}}" a:for-item="it" a:key="{{it.key}}">
+                <view  hover-class="active" class="ABC" data-val="ABC"  onTap="_handleToggleClick" a:if="{{ it.name === 'ABC' }}">ABC</view>
+                <view  hover-class="active" class="delete" data-val="delete"  onTap="_handleDeleteClick" a:elif="{{ it.name === 'delete' }}" style="background-image: url(../../image/dele.png);"></view>
+                <view  hover-class="active" a:else data-val="{{ it.name }}" data-disabled="{{ it.dsb }}" class="{{ it.dsb ? 'disabled' : '' }}"  onTap="_handleKeyClick">{{it.name}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 数字字母键盘 -->
+    <view a:else class="letterKeyboard">
+        <view class="btnList" a:for="{{letter}}" a:for-index="index" a:key="{{item.index}}">
+            <view class="box" a:for="{{item}}" a:for-item="it" a:key="{{it.key}}">
+                <view  hover-class="active" class="back" data-val="back"  onTap="_handleToggleClick" a:if="{{ it.name === 'back' }}">返回</view>
+                <view  hover-class="active" class="delete" data-val="delete"  onTap="_handleDeleteClick" a:elif="{{ it.name === 'delete' }}" style="background-image: url(../../image/dele.png);"></view>
+                <view  hover-class="active" a:else data-val="{{ it.name }}"  data-disabled="{{ it.dsb }}" class="{{ it.dsb ? 'disabled' : '' }}"  onTap="_handleKeyClick">{{it.name}}</view>
+            </view>
+        </view>
+    </view>
+</view>

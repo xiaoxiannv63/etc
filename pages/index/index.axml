@@ -144,5 +144,8 @@
       </view>
       <view slot="footer">继续开票</view>
     </modal>
+    
+
+    <view onTap="goMtc">go mtc</view>
   </view>
 </view>

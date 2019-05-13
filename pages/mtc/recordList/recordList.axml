@@ -1,0 +1,78 @@
+<view class="record-list">
+  <view class="record-header">
+    <view class="record-tab">
+      <view class="record-item {{tab == index ? 'blue' : ''}}" a:for="{{tabs}}" data-index="{{index}}" onTap="changeTab">{{item}}</view>
+    </view>
+  </view>
+  <view class="record-main">
+    <view class="record-month">
+      <view><text class="month-font" onTap="selDate">{{month}}</text></view>
+      <view a:if="{{tab == 1}}">
+        <picker-item
+          data-field="status"
+          placeholder="选择开票状态"
+          value="{{status}}"
+          onPickerTap="selStatus"
+        >
+        </picker-item>
+      </view>
+    </view>
+    <scroll-view scroll-y="{{true}}" style="height: 100%">
+
+      <!-- 通行纪录 -->
+      <view class="record-main-item" a:if="{{tab == 0}}" onTap="goMtcConfirm">
+        <view class="record-main-header">
+          <view class="record-money">¥186.00</view>
+          <view class="record-license blue-li">京A 88888</view>
+        </view>
+        <view class="record-main-content">
+          <view class="record-content">
+            <view class="in-icon"><image src="../../../assets/images/inCion.png"/></view>
+            <text class="jiange">北京站</text>
+            <text class="jiange">2020-09-09 20:20:20</text>
+          </view>
+          <view class="record-content">
+            <view class="out-icon"><image src="../../../assets/images/outCion.png"/></view>
+            <text class="jiange">北京站</text>
+            <text class="jiange">2020-09-09 20:20:20</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 开票纪录 -->
+      <view class="record-main-item"  a:if="{{tab == 1}}">
+        <view class="record-main-header2">
+          <view>
+            <text>申请时间：</text>
+            <text>2020-09-09 20:20:20</text>
+          </view>
+          <view>开票中</view>
+        </view>
+        <view class="record-main-content">
+          <view class="record-content">
+            <text class="interval">车牌号码</text>
+            <text>京A 88888</text>
+          </view>
+          <view class="record-content">
+            <text class="interval">抬头名称</text>
+            <text>北京特微智能科技有限公司</text>
+          </view>
+          <view class="record-content">
+            <text class="interval">发票张数</text>
+            <text>1张</text>
+          </view>   
+          <view class="record-content">
+            <text class="interval">行程金额</text>
+            <text>¥186.00</text>
+          </view>      
+        </view>
+      </view>
+
+      <!-- 加载更多 -->
+      <view class="record-main-nomore">
+        <view a:if="{{nomore}}">上滑加载更多</view>
+        <view a:else>已全部加载完毕</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

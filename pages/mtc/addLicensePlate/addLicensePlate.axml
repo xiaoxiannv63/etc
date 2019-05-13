@@ -1,0 +1,41 @@
+<view class="addLicensePlate">
+    <view class="header">修改车牌颜色</view>
+    <view class="colorbox">
+      <view class="color">
+        <view class="color-list">
+          <view class="color-wrap" a:for="{{items}}" a:for-index="idx" data-index="{{idx}}" onTap="clickColor">
+            <view class="color-item {{idx == colorIndex ? 'color-click' : ''}}">{{item.value}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="numBox">
+          <view class="ordinary {{colorIndex == 0 ? 'blueLience' : colorIndex == 1 ? 'yellowLience' : colorIndex == 3 ? 'whiteLience' : colorIndex == 4 ? 'blackLience' : 'blueLience'}}" a:if="{{!isDefault}}">
+              <view class="whiteBorder">
+                  <view class="nums">             
+                      <text a:for="{{numLen}}" a:for-index="index" a:key="{{index}}"  class="item {{index === idx ? 'active' : ''}}">{{ result[index] }}</text>
+                      <text class="point"></text>
+                  </view>
+              </view>
+          </view>
+          <view a:else class="newEnergy">
+              <view class="whiteBorder">
+                  <view class="nums">
+                      <text a:for="{{numLen}}" a:for-index="index" a:key="{{index}}"  class="item {{index === idx ? 'active' : ''}}">{{ result[index] }}</text>
+                      <view class="point"></view>
+                  </view>
+              </view>
+          </view>
+          <view class="tips">车牌号将在发票上展示，请认真核对</view>
+      </view>
+    </view>
+    <button class="confirm" type="primary" onTap="confirmLicense">确认</button>
+    <view class="keyboard">
+        <keyboard 
+            ref="saveRef"
+            onHandleKeyClick="onHandleKeyClick"
+            onHandleDeleteClick="onHandleDeleteClick"
+            onHandleToggleClick="onHandleToggleClick"
+            isCityKeyboard="{{isCityKeyboard}}"
+        ></keyboard>
+    </view>
+</view>

@@ -1,0 +1,148 @@
+.record-list{
+  width:100%;
+}
+.record-header{
+  background: #fff;
+}
+.record-tab{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  height:87rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.record-item{
+  align-items: center;
+  font-size:32rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  justify-content: center;
+}
+.blue{
+  color:rgba(16,142,233,1);
+}
+.record-month{
+  height:44rpx;
+  line-height: 44rpx;
+  padding:22rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: 1rpx solid #ddd;
+}
+.am-picker-content-value{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(66,177,251,1);
+}
+.month-font{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(66,177,251,1);
+}
+.record-main{
+  padding:0 28rpx;
+  margin-top:20rpx;
+  background: #fff;
+}
+.record-main-item{
+  border-bottom: 1rpx solid #ddd;
+  padding-bottom: 28rpx;
+}
+.record-main-header{
+  height:56rpx;
+  line-height:56rpx;
+  padding:20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.record-main-header2{
+  height:56rpx;
+  line-height:56rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: 2rpx solid rgba(233,233,233,1);
+  font-size:30rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:44rpx;
+  padding:20rpx 0;
+}
+.record-main-nomore{
+  text-align: center;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  margin:20rpx 0;
+}
+.in-icon{
+  width:40rpx;
+  height:40rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.in-icon image{
+  width:40rpx;
+  height:40rpx;
+}
+.out-icon{
+  width:40rpx;
+  height:40rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.out-icon image{
+  width:40rpx;
+  height:40rpx;
+}
+.interval{
+  margin-right: 20rpx;
+}
+.record-content{
+  padding:5rpx 0;
+}
+.record-money{
+  font-size:40rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.record-license{
+  border-radius:4rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  padding:0 10rpx;
+}
+.blue-li{
+  color:rgba(16,142,233,1);
+  border:2rpx solid rgba(16,142,233,1);
+}
+.green-li{
+  color:rgba(66,194,55,1);
+  border:2rpx solid rgba(66,194,55,1);
+}
+.yellow-li{
+  color:rgba(255,138,0,1);
+  border:2rpx solid rgba(255,138,0,1);
+}
+.jiange{
+  margin-left:10rpx;
+}
+.record-main-content{
+  padding-top:20rpx;
+}
