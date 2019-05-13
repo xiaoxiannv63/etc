@@ -250,5 +250,10 @@ Page({
     // 查询是否已经实名，跳转不同页面
     // app.ajax()
     app.handleForward(e)
+  },
+  gomtc(){
+    my.navigateTo({
+      url: '/pages/mtc/recordList/recordList'
+    })
   }
 });

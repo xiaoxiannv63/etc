@@ -42,32 +42,55 @@
       </view>
 
       <!-- 开票纪录 -->
-      <view class="record-main-item"  a:if="{{tab == 1 && items.length <= 0}}">
-        <view class="record-main-header2">
-          <view>
-            <text>申请时间：</text>
-            <text>2020-09-09 20:20:20</text>
+      <view a:if="{{tab == 1 && items.length <= 0}}" onTap="goInvoiceDetail">
+        <view class="record-main-item" a:if="{{'开票完成' == '开票完成'}}">
+          <view class="record-main-header2">
+            <view>
+              <text>申请时间：</text>
+              <text>2020-09-09 20:20:20</text>
+            </view>
+            <view>开票完成</view>
           </view>
-          <view>开票中</view>
+          <view class="record-main-content">
+            <view class="record-content">
+              <text class="interval">车牌号码</text>
+              <text>京A 88888</text>
+            </view>
+            <view class="record-content">
+              <text class="interval">抬头名称</text>
+              <text>北京特微智能科技有限公司</text>
+            </view>
+            <view class="record-content">
+              <text class="interval">发票张数</text>
+              <text>1张</text>
+            </view>   
+            <view class="record-content">
+              <text class="interval">行程金额</text>
+              <text>¥186.00</text>
+            </view>      
+            <view class="u-card-arrow " />
+          </view>
         </view>
-        <view class="record-main-content">
-          <view class="record-content">
-            <text class="interval">车牌号码</text>
-            <text>京A 88888</text>
+
+        <view class="record-main-item" a:if="{{'开票中' == '开票中'}}">
+          <view class="record-main-header2">
+            <view>
+              <text>申请时间：</text>
+              <text>2020-09-09 20:20:20</text>
+            </view>
+            <view>开票中</view>
           </view>
-          <view class="record-content">
-            <text class="interval">抬头名称</text>
-            <text>北京特微智能科技有限公司</text>
+          <view class="record-main-content">
+            <view class="record-content">
+              <text class="interval">车牌号码</text>
+              <text>京A 88888</text>
+            </view>
+            <view class="record-content">
+              <text class="interval">抬头名称</text>
+              <text>北京特微智能科技有限公司</text>
+            </view>   
+            <view class="u-card-arrow " />
           </view>
-          <view class="record-content">
-            <text class="interval">发票张数</text>
-            <text>1张</text>
-          </view>   
-          <view class="record-content">
-            <text class="interval">行程金额</text>
-            <text>¥186.00</text>
-          </view>      
-           <view class="u-card-arrow " />
         </view>
       </view>
 

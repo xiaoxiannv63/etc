@@ -123,6 +123,7 @@
        </view>
     </view>
   </view>
+  <view onTap="gomtc">gomtc</view>
   <view class="mtcEntry">
     <view data-url="/pages/mtc/certification/certification" data-openType='navigateTo' onTap="goIdentify">
       <view class="title">人工收费车道发票</view>
@@ -152,4 +153,5 @@
       <view slot="footer">继续开票</view>
     </modal>
   </view>
+
 </view>

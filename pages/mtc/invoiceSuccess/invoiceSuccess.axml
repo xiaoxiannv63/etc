@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="icon-wrap">
+    <icon type="success" size="80" />
+  </view>
+  <view class="m-text">
+    <view class="u-tit">开具申请提交成功</view>
+    <view class="u-des">发票开具申请已受理，请关注票根公众号，留意您的开票结果；</view>
+  </view>
+
+
+  <view class="btn-wrap">
+    <button type="primary" onTap="continue"> 查看发票纪录 </button>
+  </view>
+</view>

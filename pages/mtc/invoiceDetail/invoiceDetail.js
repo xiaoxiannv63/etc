@@ -14,7 +14,7 @@ Page({
     let var1 = {
       currentTarget: {
         dataset: {
-          url: `/pages/mtc/viewinvoice/viewinvoice`,
+          url: `/pages/mtc/viewInvoice/viewInvoice`,
           openType: "redirectTo"
         }
       }

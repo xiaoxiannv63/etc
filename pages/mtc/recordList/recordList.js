@@ -116,5 +116,10 @@ Page({
     my.navigateTo({
       url: '/pages/mtc/recordConfirm/recordConfirm'
     });
+  },
+  goInvoiceDetail(){
+    my.navigateTo({
+      url: '/pages/mtc/invoiceDetail/invoiceDetail'
+    });
   }
 });

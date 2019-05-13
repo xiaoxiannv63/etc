@@ -23,5 +23,10 @@ Page({
   },
   goAddTaitou(){
     
+  },
+  invoiceSuccess(){
+    my.navigateTo({
+      url: "/pages/mtc/invoiceSuccess/invoiceSuccess"
+    });
   }
 });
