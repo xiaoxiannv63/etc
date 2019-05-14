@@ -1,0 +1,6 @@
+{
+    "defaultTitle": "换票成功",
+    "usingComponents": {
+      "notice": "mini-antui/es/notice/index"
+    }
+}

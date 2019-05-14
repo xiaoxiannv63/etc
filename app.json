@@ -50,7 +50,8 @@
     "pages/mtc/infoSuc/infoSuc",
     "pages/mtc/viewInvoice/viewInvoice",
     "pages/mtc/infoConfirm/infoConfirm",
-    "pages/mtc/invoiceSuccess/invoiceSuccess"
+    "pages/mtc/invoiceSuccess/invoiceSuccess",
+    "pages/changeSuccess/changeSuccess"
   ],
   "window": {
     "defaultTitle": "票根"

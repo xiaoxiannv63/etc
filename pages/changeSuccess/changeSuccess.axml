@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="icon-wrap">
+    <icon type="success" size="80" />
+  </view>
+  <view class="m-text">
+    <view class="u-tit">换票申请提交成功</view>
+    <view class="u-des">请耐心等待申请结果，可在发票申请列表进行查看。</view>
+  </view>
+
+
+  <view class="btn-wrap">
+    <button type="primary" data-openType="redirectTo" data-url="/pages/index/index" onTap="goIndex">返回首页{{str}}</button>
+  </view>
+</view>

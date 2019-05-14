@@ -99,7 +99,8 @@ Page({
       let var1 = {
         currentTarget: {
           dataset: {
-            url: `/pages/myInvoice/serInvList/serInvList?cardId=${this.data.cardId}&plateNum=${this.data.plateNum}`,
+            // url: `/pages/myInvoice/serInvList/serInvList?cardId=${this.data.cardId}&plateNum=${this.data.plateNum}`,
+            url: '/pages/changeSuccess/changeSuccess',
             openType: "navigateTo"
           }
         }
