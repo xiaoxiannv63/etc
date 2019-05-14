@@ -25,7 +25,8 @@
   <view class="m-header2">
     <view class="u-header b-bot-e9">
       <view>请选择开票行程</view>
-      <view class="c-0f" onTap="noCurrentList">找不到通行记录？</view>
+      <view class="c-0f" a:if="{{invType == 'cz'}}" onTap="noCurrentList">找不到充值记录？</view>
+      <view class="c-0f" a:else onTap="noCurrentList">找不到通行记录？</view>
     </view>
 
     <view class="s-date b-bot-e9" onTap="selDate">
@@ -131,10 +132,15 @@
     onModalClose="onModalClose2"
   >
     <view slot="header">关于可开票记录的说明</view>
-    <view class="content">
+    <view class="content" a:if="{{invType == 'cz'}}">
       <view class="p">• <text> 自2018年1月1日开始，充值发票可在实际充值24小时后，在平台进行申请开票；</text></view>
       <view class="p">• <text> 由于全国路网信息复杂，存在地域限制，信息传输时间不一致。如果24小时内未看到充值记录，建议您耐心等待，稍后再次查看；</text></view>
       <view class="p">• <text> 2017年12月31日以前产生的充值记录，请您联系ETC发行方处理。</text></view>
+    </view>
+    <view class="content" a:else>
+      <view class="p">• <text> 自2018年1月1日开始，消费发票可在实际通行后的第10个自然日起（遇法定节假日顺延），在平台进行申请开票；</text></view>
+      <view class="p">• <text> 由于全国路网信息复杂，存在地域限制，行程信息传输时间不一致。如果10日内未看到通行记录，建议您耐心等待，稍后再次查看；</text></view>
+      <view class="p">• <text> 2017年12月31日以前产生的行程明细，请您联系ETC发行方处理。</text></view>
     </view>
     <view slot="footer">确定</view>
   </modal>
