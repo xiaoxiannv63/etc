@@ -143,7 +143,7 @@ Page({
     let str = keysArr.join('|');
     const keysReg = new RegExp(str,"igm");
     v = v.replace(reg,"");
-    v = v.replace(keysReg,"")
+
     console.log(v);
     this.setData({
       name: v

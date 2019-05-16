@@ -249,7 +249,32 @@ Page({
   goIdentify(e){
     // 查询是否已经实名，跳转不同页面
     // app.ajax()
-    app.handleForward(e)
+    if(!app.buttonClick())return;
+    let json1 = {
+      ticketId: app.userInfo.ticketId
+    }
+    app.ajax(json1,"MTC_CERTIFICATIONQUERY",(data)=>{
+      if(data.hasRealName){
+        app.handleForward({
+          currentTarget:{
+            dataset:{
+              url: "/pages/mtc/recordList/recordList",
+              openType: "redirectTo"
+            }
+          }
+        })
+      }
+      else{
+        app.handleForward({
+          currentTarget:{
+            dataset:{
+              url: "/pages/mtc/certification/certification",
+              openType: "redirectTo"
+            }
+          }
+        })
+      }
+    })
   },
   gomtc(){
     my.navigateTo({

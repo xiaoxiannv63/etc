@@ -1,28 +1,28 @@
 <view class="page">
   <view class="title">开票信息</view>
   <view class="detail">
-    <view class="space-between"><text>申请时间</text><text>{{}}</text></view>
-    <view class="space-between"><text>开票状态</text><text>{{}}</text></view>
-    <view class="space-between"><text>接收邮箱</text><text>{{}}</text></view>    
+    <view class="space-between"><text>申请时间</text><text>{{item.applyTime}}</text></view>
+    <view class="space-between"><text>开票状态</text><text>{{item.status}}</text></view>
+    <view class="space-between"><text>接收邮箱</text><text>{{item.invoiceMail}}</text></view>    
   </view>
   <view class="title">行程交易信息</view>
   <view class="detail">
-    <view class="space-between"><text>车牌号</text><text>{{}}</text></view>
-    <view class="space-between"><text>车型</text><text>{{}}</text></view>
-    <view class="space-between"><text>行程金额</text><text>{{}}</text></view>
+    <view class="space-between"><text>车牌号</text><text>{{item.plateNum}}</text></view>
+    <view class="space-between"><text>车型</text><text>{{item.vehicleType}}</text></view>
+    <view class="space-between"><text>行程金额</text><text>{{item.sumAmount}}</text></view>
     <view a:if="{{ '开票完成' === '开票完成'}}">
-      <view class="space-between"><text>缴费方式</text><text>{{}}</text></view>
-      <view class="space-between"><text>通行省份</text><text>{{}}</text></view>
-      <view class="space-between"><text>入口收费站</text><text>{{}}</text></view>
-      <view class="space-between"><text>入口时间</text><text>{{}}</text></view>
-      <view class="space-between"><text>出口收费站</text><text>{{}}</text></view>
-      <view class="space-between"><text>出口时间</text><text>{{}}</text></view>
+      <view class="space-between"><text>缴费方式</text><text>{{item.stationType}}</text></view>
+      <view class="space-between"><text>通行省份</text><text>{{item.province}}</text></view>
+      <view class="space-between"><text>入口收费站</text><text>{{item.enStation}}</text></view>
+      <view class="space-between"><text>入口时间</text><text>{{item.enTime}}</text></view>
+      <view class="space-between"><text>出口收费站</text><text>{{item.exStation}}</text></view>
+      <view class="space-between"><text>出口时间</text><text>{{item.exTime}}</text></view>
     </view>
   </view>
   <view class="title">抬头信息</view>
   <view class="detail">
-    <view class="space-between"><text>抬头</text><text>{{}}</text></view>
-    <view class="space-between"><text>税号</text><text>{{}}</text></view>
+    <view class="space-between"><text>抬头</text><text>{{item.title}}</text></view>
+    <view class="space-between"><text>税号</text><text>{{item.buyerTaxpayerCode}}</text></view>
   </view>
  
   <view a:if="{{ '审核中' === '审核中' || '审核失败' === '审核失败'}}" class="tip">申请开票时修改车牌错误，将导致开票审核无法通过。</view>
