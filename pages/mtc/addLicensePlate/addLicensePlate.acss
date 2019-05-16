@@ -35,7 +35,7 @@
 }
 .color-item{
     background: rgb(245, 245, 245);
-    border-radius: 2rpx;
+    border-radius: 4rpx;
     text-align: center;
     padding: 0rpx 20rpx;
     box-sizing: border-box;
@@ -50,21 +50,6 @@
     width: 100%;
     margin-top:50rpx;
 }
-.addLicensePlate .numBox .blueLience{
-    background-color: #4590e1;
-}
-.addLicensePlate .numBox .yellowLience{
-    background-color: #FFCC66;
-}
-.addLicensePlate .numBox .blackLience{
-    background-color: #484848;
-}
-.addLicensePlate .numBox .whiteLience{
-    background-color: #E0E0E0;
-}
-.addLicensePlate .numBox .newEnergy {
-    background-color: #31ddad;
-}
 .addLicensePlate .numBox .newEnergy,
 .addLicensePlate .numBox .ordinary{
     width: 660rpx;
@@ -76,9 +61,9 @@
 }
 .addLicensePlate .numBox .newEnergy .whiteBorder,
 .addLicensePlate .numBox .ordinary .whiteBorder{
-    border: 6rpx solid #ffffff;
+    /* border: 6rpx solid #000; */
     border-radius: 10rpx;
-    padding: 50rpx 0;
+    /* padding: 50rpx 0; */
 }
 .addLicensePlate .numBox .newEnergy .nums,
 .addLicensePlate .numBox .ordinary .nums{
@@ -89,12 +74,12 @@
 }
 .addLicensePlate .numBox .newEnergy .nums .item,
 .addLicensePlate .numBox .ordinary .nums .item{
-    width: 60rpx;
-    height: 60rpx;
+    width: 64rpx;
+    height: 80rpx;
     border-radius: 10rpx;
     text-align: center;
-    line-height: 60rpx;
-    color: #ffffff;
+    line-height: 80rpx;
+    /* color: #ffffff; */
     margin: 0 10rpx;
 }
 
@@ -109,31 +94,22 @@
 
 
 .addLicensePlate .numBox .blueLience .nums .item{
-    background-color: #6fa6e7;
-}
-.addLicensePlate .numBox .yellowLience .nums .item{
-    background-color: #FF9900;
-}
-.addLicensePlate .numBox .blackLience .nums .item{
-    background-color: #282828;
-}
-.addLicensePlate .numBox .whiteLience .nums .item{
-    background-color: #C0C0C0;
+  border:2rpx solid rgba(102,102,102,1)
 }
 .addLicensePlate .numBox .newEnergy .nums .item{
-    background-color: #5ee1bf;
+  border:2rpx solid rgba(102,102,102,1)
 }
 .addLicensePlate .numBox .newEnergy .nums .active ,
 .addLicensePlate .numBox .ordinary .nums .active {
-    border: 4rpx solid #ffffff;
+    border: 2rpx solid rgba(16,142,233,1);
 }
 .addLicensePlate .numBox .newEnergy .nums .point ,
 .addLicensePlate .numBox .ordinary .nums .point{
     width: 10rpx;
     height: 10rpx;
-    background-color: #ffffff;
+    background-color: #000;
     border-radius: 50rpx;
-    margin-top: 25rpx;
+    margin-top: 35rpx;
 }
 .addLicensePlate .numBox .nums .tlPoint,
 .addLicensePlate .numBox .nums .trPoint{
@@ -167,11 +143,11 @@
 }
 .addLicensePlate .numBox .ordinary .nums .point {
     position: absolute;
-    left: 195rpx;
+    left: 185rpx;
 }
 .addLicensePlate .numBox .newEnergy .nums .point{
     position: absolute;
-    left: 160rpx;
+    left: 155rpx;
 }
 .addLicensePlate .numBox .toggle {
     width: 100%;

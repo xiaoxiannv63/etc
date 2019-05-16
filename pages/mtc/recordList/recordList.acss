@@ -14,6 +14,7 @@
   border-bottom: 1rpx solid #ddd;
 }
 .record-item{
+  line-height: 87rpx;
   align-items: center;
   font-size:32rpx;
   font-family:PingFangSC-Medium;
@@ -22,6 +23,10 @@
 }
 .blue{
   color:rgba(16,142,233,1);
+  border-bottom: 2rpx solid rgba(16,142,233,1);
+}
+.pad{
+    padding:0 28rpx;
 }
 .record-month{
   height:44rpx;
@@ -49,9 +54,9 @@
   font-family:PingFangSC-Regular;
   font-weight:400;
   color:rgba(66,177,251,1);
+  margin-right:10rpx;
 }
 .record-main{
-  padding:0 28rpx;
   margin-top:20rpx;
   background: #fff;
 }
@@ -170,4 +175,10 @@
   font-family:PingFangSC-Regular;
   font-weight:400;
   color:rgba(153,153,153,1);
+}
+.scroll{
+  height: 100%;
+}
+.content{
+  padding:0 28rpx;
 }

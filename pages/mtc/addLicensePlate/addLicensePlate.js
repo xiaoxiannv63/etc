@@ -113,8 +113,14 @@ Page({
       }else{
         if(this.data.result.length < 7) return;
       }
-      let licensePlate = this.data.result.join("")
-      console.log(licensePlate)
+      let plateNum = this.data.result.join("")
+      console.log(plateNum)
+      app.licensePlateFlag = true
+      app.licensePlate = {
+        plateNum,
+        color:this.data.colorIndex
+      }
+      my.navigateBack();
     },
     handleCallBack(data) {
       my.alert({

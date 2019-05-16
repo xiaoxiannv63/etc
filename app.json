@@ -51,7 +51,8 @@
     "pages/mtc/viewInvoice/viewInvoice",
     "pages/mtc/infoConfirm/infoConfirm",
     "pages/mtc/invoiceSuccess/invoiceSuccess",
-    "pages/changeSuccess/changeSuccess"
+    "pages/changeSuccess/changeSuccess",
+    "pages/mtc/selTaitou/selTaitou"
   ],
   "window": {
     "defaultTitle": "票根"

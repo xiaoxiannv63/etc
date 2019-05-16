@@ -5,10 +5,14 @@ Page({
     tab:0,
     month:'',//查询月份
     nowMonth:'',//当月月份
-    pageIndex:1,
     statusArr:['开票中','开票完成','审核中','审核完成'],
     status:'',
-    items:[]
+    pageTripIndex:1,
+    pageInvoiceIndex:1,
+    nomoreTrip:false,
+    nomoreInvoice:false,
+    tripArr:[],//行程记录
+    invoiceArr:[],//开票纪录
   },
   onLoad() {
     let date = new Date();
@@ -21,12 +25,13 @@ Page({
     function num2(num){
       return ('0'+num).slice(-2)
     }
-    this.data.tab == 0 ? this.getTripRecord() : this.getInvoiceRecord()
+
+    this.data.tab ? this.getInvoiceRecord() : this.getTripRecord();
   },
   changeTab(e){
     this.setData({
+      month:this.data.nowMonth,
       tab:e.target.dataset.index,
-      month: this.data.nowMonth
     })
   },
   selDate(){
@@ -36,20 +41,29 @@ Page({
     let setMonth = 1
     let setYear = 2018
 
-    let that = this;
     my.datePicker({
       format: 'yyyy-MM',
       startDate: setYear + "-" + setMonth,
       currentDate: this.data.month,
       endDate: nowYear + "-" + nowMonth,
       success: (res) => {
-        // console.log(res);
-        that.setData({
-          month: res.date,
-          pageIndex:1,
-          items:[],
-          nomore:false,
+        this.setData({
+          month: res.date
         })
+        if(this.data.tab){
+          this.setData({
+            pageInvoiceIndex:1,
+            invoiceArr:[],
+            nomoreInvoice:false,
+          })
+        }else{
+          this.setData({
+            pageTripIndex:1,
+            tripArr:[],
+            nomoreTrip:false,
+          })
+        }
+        this.data.tab ? this.getInvoiceRecord() : this.getTripRecord();
       }
     });
   },
@@ -60,62 +74,75 @@ Page({
       success: (res) => {
         this.setData({
           status: this.data.statusArr[res.index],
+          pageInvoiceIndex:1,
+          invoiceArr:[]
         });
+        this.getInvoiceRecord();
       },
     });
   },
   //行程列表
   getTripRecord(){
-    if(this.data.nomore) return;
+    if(this.data.nomoreTrip) return;
     let json1 = {
       month: this.data.month.split("-").join(""),
       ticketId: app.userInfo.ticketId,
-      pageIndex: this.data.pageIndex,
+      pageIndex: this.data.pageTripIndex,
       pageSize: 10
     }
     app.ajax(json1,'MTC_MPRECORDS',(data) => {
-      let nomore = false;
-      console.log("====",nomore)
-      if(data.items.length<10) nomore = true;
-      data.items.forEach((item,index) => {
-        item.applyTime = app.format(item.applyTime)
-        
+      let nomoreTrip = false;
+      console.log('---data----',data)
+      if(data.items.length<10) nomoreTrip = true;
+      this.setData({
+        tripArr: this.data.tripArr.concat(data.items),
+        pageTripIndex: ++this.data.pageTripIndex,
+        nomoreTrip
       })
-      that.setData({
-        items: that.data.items.concat(data.items),
-        pageIndex: ++that.data.pageIndex,
-        nomore: nomore
-      })
+      console.log(this.data.tripArr)
     })
   },
   //开票列表
   getInvoiceRecord(){
-    if(this.data.nomore) return;
+    if(this.data.nomoreInvoice) return;
     let json1 = {
       month: this.data.month.split("-").join(""),
       ticketId: app.userInfo.ticketId,
-      pageIndex: this.data.pageIndex,
+      pageIndex: this.data.pageInvoiceIndex,
+      status:this.data.status,
       pageSize: 10
     }
-    app.ajax(json1,'MTC_MPRECORDS',(data) => {
-      let nomore = false;
-      console.log("====",nomore)
-      if(data.items.length<10) nomore = true;
+    app.ajax(json1,'MTC_SEARCHAPPLY',(data) => {
+      let nomoreInvoice = false;
+      if(data.items.length<10) nomoreInvoice = true;
       data.items.forEach((item,index) => {
         item.applyTime = app.format(item.applyTime)
         
       })
-      that.setData({
-        items: that.data.items.concat(data.items),
-        pageIndex: ++that.data.pageIndex,
-        nomore: nomore
+      this.setData({
+        invoiceArr: this.data.invoiceArr.concat(data.items),
+        pageInvoiceIndex: ++this.data.pageInvoiceIndex,
+        nomoreInvoice
       })
     })
+    return this.data.invoiceArr
   },
-  goMtcConfirm(){
-    my.navigateTo({
-      url: '/pages/mtc/recordConfirm/recordConfirm'
-    });
+  lower() {
+    console.log("到底了xxxx")
+    this.data.tab ? this.getInvoiceRecord() : this.getTripRecord();
+  },
+  goMtcConfirm(e){
+    console.log(e)
+    let detail = JSON.stringify(e.target.dataset.detail)
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: `/pages/mtc/recordConfirm/recordConfirm?detail=${detail}`,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   },
   goInvoiceDetail(){
     my.navigateTo({

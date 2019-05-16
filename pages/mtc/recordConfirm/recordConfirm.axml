@@ -5,19 +5,19 @@
   <view class="confirm-main">
     <view class="confirm-item item-top">
       <view>车牌号</view>
-      <view><text class="confirm-license blue-li">京A 8888888</text></view>
+      <view><text class="confirm-license {{detail.plateColor == 'BLUE' ? 'blue-li' : detail.plateColor == 'YELLOW' ? 'yellow-li' : detail.plateColor == 'GREEN' ? 'green-li' : 'blue-li'}}">{{detail.plateNum}}</text></view>
     </view>
     <view class="confirm-item">
       <view>车型</view>
-      <view>客车</view>
+      <view>{{detail.vehicleType == 'CAR_1' ? '一型客车' : detail.vehicleType == 'CAR_2' ?'二型客车' : detail.vehicleType == 'CAR_3' ? '三型客车' : '四型客车'}}</view>
     </view>
     <view class="confirm-item">
       <view>金额</view>
-      <view>¥485.00</view>
+      <view>￥{{(detail.fee/100).toFixed(2)}}</view>
     </view>
     <view class="confirm-item">
       <view>消费时间</view>
-      <view>2018-01-24 12:24:24</view>
+      <view>{{detail.exTime}}</view>
     </view>
   </view>
   <view class="confirm-tips">

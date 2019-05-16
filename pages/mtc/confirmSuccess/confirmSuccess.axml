@@ -5,32 +5,38 @@
   <view class="confirm-main">
     <view class="confirm-item item-top">
       <view>订单号</view>
-      <view>2131214483213233</view>
+      <view>{{detail.tradeId}}</view>
     </view>
     <view class="confirm-item">
       <view>车牌号</view>
-      <view><text class="confirm-license blue-li">京A 8888888</text></view>
+      <view><text class="confirm-license {{detail.plateColor == 'BLUE' ? 'blue-li' : detail.plateColor == 'YELLOW' ? 'yellow-li' : detail.plateColor == 'GREEN' ? 'green-li' : 'blue-li'}}">{{detail.plateNum}}</text></view>
     </view>
   </view>
   <view class="header">
     抬头信息
   </view>
-  <view class="confirm-main">
-    <view class="confirm-item item-top arrow-position">
+  <view class="confirm-main" a:if="{{showFlag}}">
+    <view class="confirm-item item-top arrow-position" onTap="goAddTaitou">
       <view>更换抬头</view>
-      <view onTap="goAddTaitou" class="arrow"></view>
+      <view class="arrow"></view>
     </view>
     <view class="confirm-item">
       <view>抬头类型</view>
-      <view>企业</view>
+      <view>{{selection.titleType}}</view>
     </view>
     <view class="confirm-item">
       <view>名称</view>
-      <view>刘珊珊</view>
+      <view>{{selection.name}}</view>
     </view>
     <view class="confirm-item">
       <view>税号</view>
-      <view>1234567890</view>
+      <view>{{selection.taxNum}}</view>
+    </view>
+  </view>
+  <view class="confirm-main" a:else>
+    <view class="confirm-item item-top arrow-position" onTap="goAddTaitou">
+      <view>添加抬头</view>
+      <view class="arrow"></view>
     </view>
   </view>
   <view class="header">请填写接收邮箱（用于向您发送电子发票）</view>
@@ -44,19 +50,19 @@
       <view class="confirm-main">
         <view class="confirm-item item-top">
           <view>抬头类型</view>
-          <view>企业</view>
+          <view>{{selection.titleType}}</view>
         </view>
         <view class="confirm-item">
           <view>名称</view>
-          <view>刘珊珊</view>
+          <view>{{selection.name}}</view>
         </view>
         <view class="confirm-item">
           <view>税号</view>
-          <view>1234567890</view>
+          <view>{{selection.taxNum}}</view>
         </view>
         <view class="confirm-item">
           <view>邮箱</view>
-          <view>1234567890@qq.com</view>
+          <view>{{mail}}</view>
         </view>
       </view>
       <view class="pop-tips">

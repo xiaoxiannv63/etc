@@ -38,6 +38,21 @@ Page({
       content: '加载中...',
     });
     app.ajax(json1,'INVOICE_INVOICEDETAIL',(data)=>{
+      data.invoices.forEach((item,index) => {
+        if(item.invoiceMakeTime){
+          item.invoiceMakeTime = app.format(item.invoiceMakeTime);
+        }
+      })
+      data.originInvoices.forEach((item,index) => {
+        if(item.invoiceMakeTime){
+          item.invoiceMakeTime = app.format(item.invoiceMakeTime);
+        }
+      })
+      data.redInvoices.forEach((item,index) => {
+        if(item.invoiceMakeTime){
+          item.invoiceMakeTime = app.format(item.invoiceMakeTime);
+        }
+      })
       this.setData({
         invoices:data.invoices,
         originInvoices:data.originInvoices,

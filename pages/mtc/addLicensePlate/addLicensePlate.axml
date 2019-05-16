@@ -9,7 +9,7 @@
         </view>
       </view>
       <view class="numBox">
-          <view class="ordinary {{colorIndex == 0 ? 'blueLience' : colorIndex == 1 ? 'yellowLience' : colorIndex == 3 ? 'whiteLience' : colorIndex == 4 ? 'blackLience' : 'blueLience'}}" a:if="{{!isDefault}}">
+          <view class="ordinary blueLience" a:if="{{!isDefault}}">
               <view class="whiteBorder">
                   <view class="nums">             
                       <text a:for="{{numLen}}" a:for-index="index" a:key="{{index}}"  class="item {{index === idx ? 'active' : ''}}">{{ result[index] }}</text>

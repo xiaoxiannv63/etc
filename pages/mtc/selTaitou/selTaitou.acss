@@ -1,0 +1,167 @@
+.page {
+  padding: 30rpx;
+}
+.box {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding: 32rpx 30rpx;
+    margin-bottom: 30rpx
+}
+.add-img {
+    width: 90rpx;
+    height: 90rpx;
+    margin: 0 auto;
+    background: url('../../../image/add.png') no-repeat;
+    background-size: contain;
+}
+.add-msg {
+    width: 100%;
+    text-align: center;
+    font-size: 26rpx;
+    color: #666666;
+    margin-top: 18rpx
+}
+.TitList{
+    position: absolute;
+    margin-top: 10rpx;
+    left:0;
+    right: 0;
+    top: 420rpx;
+    bottom: 20rpx;
+    /* overflow-y: scroll; */
+}
+/* .radio-group{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 160rpx;
+    overflow-y: scroll;
+} */
+.radio-group{
+    position: absolute;
+    bottom: 100px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    overflow: scroll;
+}
+ 
+label{
+    position: relative;
+    display: flex;
+    height: 162rpx;
+    background: #fff;
+    padding: 0 40rpx 0 28rpx;
+    align-items: center;
+}
+label + label{
+    margin-top: 20rpx;
+}
+label radio{
+    flex: 0 0 auto;
+}
+label image{
+    flex: 0 0 auto;
+    width: 80rpx;
+    height: 80rpx;
+    margin: 0 12rpx 0 20rpx;
+    border-radius: 50%;
+}
+label .u-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 28rpx;
+    flex: 0 0 auto;
+}
+label view text{
+    word-break: break-all;
+}
+.u-cur{
+    position: absolute;
+    top: 44rpx;
+    right: 40rpx;
+}
+
+/* 确认 */
+.m-confirm-wrap{
+    /* display: none; */
+    position: fixed;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.m-confirm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 10rpx;
+    width: 540rpx;
+}
+.m-confirm .m-main{
+    padding: 22rpx 38rpx 34rpx;
+}
+.m-confirm .m-main .u-tit{
+    font-size: 34rpx;
+    line-height: 78rpx;
+    font-weight: bold;
+    text-align: center;
+}
+.m-confirm .m-main .u-desc{
+    font-size: 26rpx;
+    line-height: 38rpx;
+    margin-bottom: 28rpx;
+}
+.m-confirm .m-main .u-item{
+    font-size: 26rpx;
+    line-height: 40rpx;
+}
+.m-confirm .m-main .u-item + .u-item{
+    margin-top: 5rpx;
+}
+.m-confirm .m-main .u-item .u-key{
+    color: #999;
+}
+
+.m-footer{
+    height: 80rpx;
+    display: flex;
+    border-top: solid 1px #e9eaec;
+}
+.m-footer view{
+    flex: 1 0 auto;
+    text-align: center;
+    line-height: 80rpx;
+}
+.m-footer view:nth-of-type(1){
+    border-right: solid 1px #e9eaec;
+}
+
+.u-btn:active{
+    background: #ddd;
+}
+
+
+.m-notit{
+    padding: 0 40rpx;
+    text-align: center;
+}
+.m-notit image{
+    width: 315rpx;
+    height: 315rpx;
+    margin: 220rpx auto 40rpx;
+}
+.m-notit text{
+    font-size: 33rpx;
+}
+.m-btn{
+    margin-top: 146rpx;
+}
