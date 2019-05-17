@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/startup/startup",
+    "pages/index/index",
     "pages/mtc/recordList/recordList",
     "pages/changing/changing",
     "pages/invoiceError/invoiceError",
     "pages/invoiceRecord/invoiceRecord",
-    "pages/index/index",
     "pages/invoiceStatus/invoiceStatus",
     "pages/invoiceChange/invoiceChange",
     "pages/iWangTo/kpSuccess/kpSuccess",

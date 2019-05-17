@@ -13,6 +13,7 @@ Page({
   },
   onShow(){
     if(app.licensePlateFlag){
+      app.licensePlateFlag = false
       console.log(app.licensePlate)
       this.data.detail.plateNum = app.licensePlate.plateNum
       switch (app.licensePlate.color) {
@@ -35,9 +36,15 @@ Page({
   },
   //修改车牌号
   goKeyWordpage(){
-    my.navigateTo({
-      url: "../addLicensePlate/addLicensePlate"
-    })
+    let var1 = {
+        currentTarget: {
+          dataset: {
+            url: '../addLicensePlate/addLicensePlate',
+            openType: "navigateTo"
+          }
+        }
+      }
+    app.handleForward(var1)
   },
   //信息无误
   goInvoice(){

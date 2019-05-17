@@ -22,7 +22,7 @@
     </view>
     <view class="confirm-item">
       <view>抬头类型</view>
-      <view>{{selection.titleType}}</view>
+      <view>{{selection.titleType == '单位' ? '企业' : '个人/非企业单位'}}</view>
     </view>
     <view class="confirm-item">
       <view>名称</view>
@@ -50,7 +50,7 @@
       <view class="confirm-main">
         <view class="confirm-item item-top">
           <view>抬头类型</view>
-          <view>{{selection.titleType}}</view>
+          <view>{{selection.titleType  == '单位' ? '企业' : '个人/非企业单位'}}</view>
         </view>
         <view class="confirm-item">
           <view>名称</view>

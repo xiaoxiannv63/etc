@@ -49,35 +49,56 @@ Page({
     });
   },
   goAddTaitou(){
-    my.navigateTo({
-      url:'/pages/mtc/selTaitou/selTaitou'
-    });
+    let var1 = {
+        currentTarget: {
+          dataset: {
+            url: '/pages/mtc/selTaitou/selTaitou',
+            openType: "navigateTo"
+          }
+        }
+      }
+    app.handleForward(var1)
   },
   invoiceSuccess(){
-    let json1 = {
-      tradeId: this.data.detail.tradeId,
-      ticketId: app.userInfo.ticketId,
-      plateNum: this.data.detail.plateNum,
-      plateColor: this.data.detail.plateColor,
-      vehicleType: this.data.detail.vehicleType,
-      exTime: this.data.detail.exTime,
-      exLaneId:this.data.detail.exLaneId,
-      fee:this.data.detail.fee,
-      email:this.data.mail,
-      insertWechat:false,
-      name:this.data.selection.name,
-      taxNum:this.data.selection.taxNum,
-      address:this.data.selection.address,
-      tel:this.data.selection.tel,
-      bank:this.data.selection.bank,
-      bankAccount:this.data.selection.bankAccount,
-      titleType:this.data.selection.enTitleType,
-      applySource:"MTC_WXA",
-    }
-    app.ajax(json1,'MTC_INVOICEAPPLY',(data) => {
-      my.navigateTo({
-        url: "/pages/mtc/invoiceSuccess/invoiceSuccess"
-      });
-    })
+    let var1 = {
+        currentTarget: {
+          dataset: {
+            url: '/pages/mtc/invoiceSuccess/invoiceSuccess',
+            openType: "navigateTo"
+          }
+        }
+      }
+    app.handleForward(var1)
+    // let json1 = {
+    //   tradeId: this.data.detail.tradeId,
+    //   ticketId: app.userInfo.ticketId,
+    //   plateNum: this.data.detail.plateNum,
+    //   plateColor: this.data.detail.plateColor,
+    //   vehicleType: this.data.detail.vehicleType,
+    //   exTime: this.data.detail.exTime,
+    //   exLaneId:this.data.detail.exLaneId,
+    //   fee:this.data.detail.fee,
+    //   email:this.data.mail,
+    //   insertWechat:false,
+    //   name:this.data.selection.name,
+    //   taxNum:this.data.selection.taxNum,
+    //   address:this.data.selection.address,
+    //   tel:this.data.selection.tel,
+    //   bank:this.data.selection.bank,
+    //   bankAccount:this.data.selection.bankAccount,
+    //   titleType:this.data.selection.enTitleType,
+    //   applySource:"MTC_WXA",
+    // }
+    // app.ajax(json1,'MTC_INVOICEAPPLY',(data) => {
+    //   let var1 = {
+    //     currentTarget: {
+    //       dataset: {
+    //         url: '/pages/mtc/invoiceSuccess/invoiceSuccess',
+    //         openType: "navigateTo"
+    //       }
+    //     }
+    //   }
+    //   app.handleForward(var1)
+    // })
   },
 });

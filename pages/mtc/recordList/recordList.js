@@ -14,7 +14,12 @@ Page({
     tripArr:[],//行程记录
     invoiceArr:[],//开票纪录
   },
-  onLoad() {
+  onLoad(query) {
+    if(query.tab){
+      this.setData({
+        tab:query.tab
+      })
+    }
     let date = new Date();
     let nowMonth = date.getFullYear()+"-"+num2(date.getMonth() + 1)
     this.setData({

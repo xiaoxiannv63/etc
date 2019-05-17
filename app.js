@@ -187,6 +187,8 @@ App({
         case 'redirect':    // 重定向
           my.redirectTo(forwardObj);
           break;
+        case 'reLaunch':
+          my.reLaunch(forwardObj);
         default:            // 正常跳转
           my.navigateTo(forwardObj);
           break;
