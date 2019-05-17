@@ -15,7 +15,7 @@ Page({
     if(app.licensePlateFlag){
       app.licensePlateFlag = false
       console.log(app.licensePlate)
-      this.data.detail.plateNum = app.licensePlate.plateNum
+      this.data.detail.newPlateNum = app.licensePlate.plateNum
       switch (app.licensePlate.color) {
         case 0:
           this.data.detail.plateColor = "BLUE"
@@ -32,6 +32,8 @@ Page({
       this.setData({
         detail:this.data.detail
       })
+    }else{
+      this.data.detail.newPlateNum = this.data.detail.plateNum
     }
   },
   //修改车牌号

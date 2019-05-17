@@ -3,7 +3,8 @@ Page({
   data: {
     showTop: false,
     showFlag:false,
-    detail:{}
+    detail:{},
+    showMyConf:false
   },
   onLoad(query) {
     console.log('----query-----',query)
@@ -26,10 +27,25 @@ Page({
     let res = my.getStorageSync({ key: 'detail' })
     console.log(res)
     let detail = JSON.parse(res.data)
+    if(detail.newPlateNum){
+      detail.plate = detail.newPlateNum
+    }else{
+      detail.plate = detail.plateNum
+    }
     this.setData({
       detail
     })
     console.log('---this.data----',this.data)
+  },
+  moreInfo(){
+    this.setData({
+      showMyConf:true
+    })
+  },
+  sureHandle(){
+    this.setData({
+      showMyConf:false
+    })
   },
   mailInp(e){
     console.log(e.detail.value)
@@ -66,7 +82,8 @@ Page({
     let json1 = {
       tradeId: this.data.detail.tradeId,
       ticketId: app.userInfo.ticketId,
-      plateNum: this.data.detail.plateNum,
+      plateNum: this.data.detail.newPlateNum,
+      sourcePlateNum: this.data.detail.plateNum,
       plateColor: this.data.detail.plateColor,
       vehicleType: this.data.detail.vehicleType,
       exTime: date,

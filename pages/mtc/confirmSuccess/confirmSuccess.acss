@@ -8,6 +8,25 @@
   color:rgba(51,51,51,1);
   padding:20rpx 30rpx;
 }
+.head-tinfo{
+  padding:20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.head-title{
+  font-size:28rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.head-info{
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(16,142,233,1);
+}
 .confirm-item{
   height:100rpx;
   line-height: 100rpx;
@@ -109,4 +128,61 @@
     top: 50%;
     margin-top: -15rpx;
     visibility: visible;
+}
+
+.m-confirm-wrap{
+    /* display: none; */
+    position: fixed;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.m-confirm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 10rpx;
+    width: 540rpx;
+}
+.m-confirm .m-main{
+    padding: 22rpx 38rpx 34rpx;
+}
+.m-confirm .m-main .u-tit{
+    font-size: 34rpx;
+    line-height: 78rpx;
+    font-weight: bold;
+    text-align: center;
+}
+.m-confirm .m-main .u-desc{
+    font-size: 26rpx;
+    line-height: 38rpx;
+    margin-bottom: 28rpx;
+}
+.m-confirm .m-main .u-item{
+    font-size: 26rpx;
+    line-height: 40rpx;
+}
+.m-confirm .m-main .u-item + .u-item{
+    margin-top: 5rpx;
+}
+.m-confirm .m-main .u-item .u-key{
+    color: #999;
+}
+.m-footer{
+    height: 80rpx;
+    display: flex;
+    border-top: solid 1px #e9eaec;
+}
+.m-footer view{
+    flex: 1 0 auto;
+    text-align: center;
+    line-height: 80rpx;
+}
+.m-footer view:nth-of-type(1){
+    border-right: solid 1px #e9eaec;
 }

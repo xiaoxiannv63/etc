@@ -9,12 +9,54 @@
     </view>
     <view class="confirm-item">
       <view>车牌号</view>
-      <view><text class="confirm-license {{detail.plateColor == 'BLUE' ? 'blue-li' : detail.plateColor == 'YELLOW' ? 'yellow-li' : detail.plateColor == 'GREEN' ? 'green-li' : 'blue-li'}}">{{detail.plateNum}}</text></view>
+      <view><text class="confirm-license {{detail.plateColor == 'BLUE' ? 'blue-li' : detail.plateColor == 'YELLOW' ? 'yellow-li' : detail.plateColor == 'GREEN' ? 'green-li' : 'blue-li'}}">{{detail.plate}}</text></view>
     </view>
   </view>
-  <view class="header">
-    抬头信息
+  <view class="head-tinfo">
+    <view class="head-title">抬头信息</view>
+    <view class="head-info" a:if="{{showFlag}}" onTap="moreInfo">更多信息</view>
   </view>
+
+  <view class="m-confirm-wrap" a:if="{{showMyConf}}">
+    <view class="m-confirm">
+      <view class="m-main">
+        <view class="u-tit">请您确认</view>
+        <view class="u-desc">以下信息为您发票将要显示的信息，请您核对是否正确。</view>
+        <view class="m-tab">
+          <view class="u-item">
+            <view class="u-key">名称：</view>
+            <view class="u-value">{{selection.name}}</view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">纳税人识别号：</view>
+            <view class="u-value">{{selection.taxNum}}</view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">地址：</view>
+            <view class="u-value"><text>{{selection.address}}</text></view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">电话：</view>
+            <view class="u-value"><text>{{selection.tel}}</text></view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">开户行：</view>
+            <view class="u-value"><text>{{selection.bank}}</text></view>
+          </view>
+          <view class="u-item">
+            <view class="u-key">开户账号：</view>
+            <view class="u-value"><text>{{selection.bankAccount}}</text></view>
+          </view>
+        </view>
+      </view>
+
+      <view class="m-footer">
+        <view class="u-btn btn-cancel c-0f" onTap="sureHandle">确认</view>
+      </view>
+    </view>
+  </view>
+
+
   <view class="confirm-main" a:if="{{showFlag}}">
     <view class="confirm-item item-top arrow-position" onTap="goAddTaitou">
       <view>更换抬头</view>
