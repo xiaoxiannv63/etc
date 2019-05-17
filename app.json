@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/loading/home",
     "pages/startup/startup",
     "pages/index/index",
     "pages/mtc/recordList/recordList",

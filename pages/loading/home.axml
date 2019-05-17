@@ -1,0 +1,3 @@
+<view class="pageBox">
+  <image src="../../image/homeLoading.gif" mode="widthFix" />
+</view>
