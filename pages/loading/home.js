@@ -48,7 +48,7 @@ Page({
         }else{
           if(data.code == '702'){
             console.log(702)
-            my.navigateTo({
+            my.redirectTo({
               url:"/pages/login/bind/index",
             })
           }else if(fail && data.msg){
@@ -86,7 +86,7 @@ Page({
       app.userInfo.userId = data.userId;
       console.log(app.userInfo, 'this.userInfo')
       if (!data.ticketId) { //没有ticketId 不做跳转
-          my.navigateTo({
+          my.redirectTo({
             url: "/pages/startup/startup?unregister=true"
           });
       } else {
