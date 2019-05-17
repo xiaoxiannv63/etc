@@ -23,96 +23,96 @@
         </picker-item>
       </view>
     </view>
-    <view class="content">
-      <scroll-view scroll-y="{{true}}" class="scroll" onScrollToLower="lower">
+    <scroll-view scroll-y="{{true}}" class="scroll" onScrollToLower="lower">
+      <view class="content" style="height:{{ (tab == 0 && nomoreTrip) || (tab == 1 && nomoreInvoice) ? 'auto' : '101%' }}">
 
-        <!-- 通行纪录 -->
-        <view class="record-main-item" a:for="{{tripArr}}" a:if="{{tab == 0 && tripArr.length > 0}}" data-detail="{{item}}" onTap="goMtcConfirm">
-          <view class="record-main-header">
-            <view class="record-money">￥{{(item.fee/100).toFixed(2)}}</view>
-            <view class="record-license {{item.plateColor == 'BLUE' ? 'blue-li' : item.plateColor == 'YELLOW' ? 'yellow-li' : item.plateColor == 'GREEN' ? 'green-li' : 'blue-li'}}">{{item.plateNum}}</view>
-          </view>
-          <view class="record-main-content">
-            <view class="record-content">
-              <view class="in-icon"><image src="../../../assets/images/inCion.png"/></view>
-              <text class="jiange">{{item.enStationName}}</text>
-              <!-- <text class="jiange">2020-09-09 20:20:20</text> -->
-            </view>
-            <view class="record-content">
-              <view class="out-icon"><image src="../../../assets/images/outCion.png"/></view>
-              <text class="jiange">{{item.exStationName}}</text>
-              <text class="jiange">{{item.exTime}}</text>
-            </view>
-            <view class="u-card-arrow " />
-          </view>
-        </view>
-
-        <!-- 开票纪录 -->
-        <view a:if="{{tab == 1 && items.length <= 0}}" onTap="goInvoiceDetail">
-          <view class="record-main-item" a:if="{{item.status  == 'INVOICED'}}">
-            <view class="record-main-header2">
-              <view>
-                <text>申请时间：</text>
-                <text>{{item.applyTime}}</text>
-              </view>
-              <view>{{item.status}}</view>
+          <!-- 通行纪录 -->
+          <view class="record-main-item" a:for="{{tripArr}}" a:if="{{tab == 0 && tripArr.length > 0}}" data-detail="{{item}}" onTap="goMtcConfirm">
+            <view class="record-main-header">
+              <view class="record-money">￥{{(item.fee/100).toFixed(2)}}</view>
+              <view class="record-license {{item.plateColor == 'BLUE' ? 'blue-li' : item.plateColor == 'YELLOW' ? 'yellow-li' : item.plateColor == 'GREEN' ? 'green-li' : 'blue-li'}}">{{item.plateNum}}</view>
             </view>
             <view class="record-main-content">
               <view class="record-content">
-                <text class="interval">车牌号码</text>
-                <text>{{item.plateNum}}</text>
+                <view class="in-icon"><image src="../../../assets/images/inCion.png"/></view>
+                <text class="jiange">{{item.enStationName}}</text>
+                <!-- <text class="jiange">2020-09-09 20:20:20</text> -->
               </view>
               <view class="record-content">
-                <text class="interval">抬头名称</text>
-                <text>{{item.buyerName}}</text>
+                <view class="out-icon"><image src="../../../assets/images/outCion.png"/></view>
+                <text class="jiange">{{item.exStationName}}</text>
+                <text class="jiange">{{item.exTime}}</text>
               </view>
-              <view class="record-content">
-                <text class="interval">发票张数</text>
-                <text>{{item.sumInvoice}}</text>
-              </view>   
-              <view class="record-content">
-                <text class="interval">行程金额</text>
-                <text>￥{{(item.sumAmount/100).toFixed(2)}}</text>
-              </view>      
               <view class="u-card-arrow " />
             </view>
           </view>
 
-          <view class="record-main-item" a:else>
-            <view class="record-main-header2">
-              <view>
-                <text>申请时间：</text>
-                <text>{{item.applyTime}}</text>
+          <!-- 开票纪录 -->
+          <view a:if="{{tab == 1 && items.length <= 0}}" onTap="goInvoiceDetail">
+            <view class="record-main-item" a:if="{{item.status  == 'INVOICED'}}">
+              <view class="record-main-header2">
+                <view>
+                  <text>申请时间：</text>
+                  <text>{{item.applyTime}}</text>
+                </view>
+                <view>{{item.status}}</view>
               </view>
-              <view>{{item.status}}</view>
-            </view>
-            <view class="record-main-content">
-              <view class="record-content">
-                <text class="interval">车牌号码</text>
-                <text>{{item.plateNum}}</text>
+              <view class="record-main-content">
+                <view class="record-content">
+                  <text class="interval">车牌号码</text>
+                  <text>{{item.plateNum}}</text>
+                </view>
+                <view class="record-content">
+                  <text class="interval">抬头名称</text>
+                  <text>{{item.buyerName}}</text>
+                </view>
+                <view class="record-content">
+                  <text class="interval">发票张数</text>
+                  <text>{{item.sumInvoice}}</text>
+                </view>   
+                <view class="record-content">
+                  <text class="interval">行程金额</text>
+                  <text>￥{{(item.sumAmount/100).toFixed(2)}}</text>
+                </view>      
+                <view class="u-card-arrow " />
               </view>
-              <view class="record-content">
-                <text class="interval">抬头名称</text>
-                <text>{{item.buyerName}}</text>
-              </view>   
-              <view class="u-card-arrow " />
             </view>
-          </view>
-        </view>
 
-        <!-- 加载更多 -->
-        <view class="record-main-nomore">
-          <view a:if="{{tab == 0 && tripArr.length > 0}}">
-            <view a:if="{{!nomoreTrip}}">上滑加载更多</view>
-            <view a:else>已全部加载完毕</view>
+            <view class="record-main-item" a:else>
+              <view class="record-main-header2">
+                <view>
+                  <text>申请时间：</text>
+                  <text>{{item.applyTime}}</text>
+                </view>
+                <view>{{item.status}}</view>
+              </view>
+              <view class="record-main-content">
+                <view class="record-content">
+                  <text class="interval">车牌号码</text>
+                  <text>{{item.plateNum}}</text>
+                </view>
+                <view class="record-content">
+                  <text class="interval">抬头名称</text>
+                  <text>{{item.buyerName}}</text>
+                </view>   
+                <view class="u-card-arrow " />
+              </view>
+            </view>
           </view>
-          <view a:if="{{tab == 1 && invoiceArr.length > 0}}">
-            <view a:if="{{!nomoreInvoice}}">上滑加载更多</view>
-            <view a:else>已全部加载完毕</view>     
+
+          <!-- 加载更多 -->
+          <view class="record-main-nomore">
+            <view a:if="{{tab == 0 && tripArr.length > 0}}">
+              <view a:if="{{!nomoreTrip}}">上滑加载更多</view>
+              <view a:else>已全部加载完毕</view>
+            </view>
+            <view a:if="{{tab == 1 && invoiceArr.length > 0}}">
+              <view a:if="{{!nomoreInvoice}}">上滑加载更多</view>
+              <view a:else>已全部加载完毕</view>     
+            </view>
           </view>
-        </view>
-      </scroll-view>
-    </view>
+      </view>
+    </scroll-view>
   </view>
   <view class="no-data" a:if="{{(tab == 0 && tripArr.length == 0) || (tab == 1 && invoiceArr.length == 0)}}">
     <view class="imagebox"><image src="../../../image/nodata.png"/></view>

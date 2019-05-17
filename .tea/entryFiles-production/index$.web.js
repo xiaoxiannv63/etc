@@ -17,6 +17,7 @@ require('../../components/keyboard/keyboard');
 require('../../node_modules/mini-antui/es/filter/index');
 require('../../node_modules/mini-antui/es/filter/filter-item/index');
 require('../../node_modules/mini-antui/es/popup/index');
+require('../../pages/loading/home');
 require('../../pages/startup/startup');
 require('../../pages/index/index');
 require('../../pages/mtc/recordList/recordList');

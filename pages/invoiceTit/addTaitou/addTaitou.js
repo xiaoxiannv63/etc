@@ -25,7 +25,7 @@ Page({
     }
     console.log(this.data.etcFlag)
     this.getTitList()
-    console.log(keysArr)
+    // console.log(keysArr)
   },
   onShow() {
     // 小程序显示
