@@ -23,7 +23,7 @@
         </picker-item>
       </view>
     </view>
-    <scroll-view scroll-y="{{true}}" class="scroll" onScrollToLower="lower">
+    <scroll-view scroll-y="{{true}}" trap-scroll="{{true}}" lower-threshold="5" class="scroll" onScrollToLower="lower">
       <view class="content" style="height:{{ (tab == 0 && nomoreTrip) || (tab == 1 && nomoreInvoice) ? 'auto' : '101%' }}">
 
           <!-- 通行纪录 -->
@@ -112,10 +112,10 @@
             </view>
           </view>
       </view>
+      <view class="no-data" a:if="{{(tab == 0 && tripArr.length == 0) || (tab == 1 && invoiceArr.length == 0)}}">
+        <view class="imagebox"><image src="../../../image/nodata.png"/></view>
+        <view class="notext">当月暂无纪录</view>
+      </view>
     </scroll-view>
-  </view>
-  <view class="no-data" a:if="{{(tab == 0 && tripArr.length == 0) || (tab == 1 && invoiceArr.length == 0)}}">
-    <view class="imagebox"><image src="../../../image/nodata.png"/></view>
-    <view class="notext">当月暂无纪录</view>
   </view>
 </view>

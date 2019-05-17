@@ -38,6 +38,11 @@ Page({
       month:this.data.nowMonth,
       tab:e.target.dataset.index,
     })
+    if(this.data.tab && this.data.invoiceArr.length == 0){
+      this.getInvoiceRecord()
+    }else if(!this.data.tab && this.data.tripArr.length == 0){
+      this.getTripRecord();
+    }
   },
   selDate(){
     let d = new Date();

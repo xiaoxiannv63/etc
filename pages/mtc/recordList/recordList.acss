@@ -59,6 +59,7 @@
 .record-main{
   margin-top:20rpx;
   background: #fff;
+  
 }
 .record-main-item{
   border-bottom: 1rpx solid #ddd;
@@ -96,7 +97,7 @@
   font-family:PingFangSC-Regular;
   font-weight:400;
   color:rgba(153,153,153,1);
-  margin:20rpx 0;
+  padding:30rpx 0;
 }
 .in-icon{
   width:40rpx;
@@ -177,7 +178,7 @@
   color:rgba(153,153,153,1);
 }
 .scroll{
-  height: 100%;
+  height: calc( 100vh - 196rpx );
 }
 .content{
   padding:0 28rpx;
