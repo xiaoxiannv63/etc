@@ -154,9 +154,20 @@ Page({
     }
     app.handleForward(var1)
   },
-  goInvoiceDetail(){
-    my.navigateTo({
-      url: '/pages/mtc/invoiceDetail/invoiceDetail'
-    });
+  goInvoiceDetail(e){
+    let invoiceDetail = this.data.invoiceArr[e.target.dataset.index];
+    my.setStorageSync({
+      key: "invoiceDetail",
+      data: invoiceDetail
+    })
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: `/pages/mtc/invoiceDetail/invoiceDetail`,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1)
   }
 });

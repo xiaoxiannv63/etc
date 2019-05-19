@@ -2,26 +2,39 @@ const app = getApp();
 
 Page({
   data:{
-    items:{},
+    item:{},
   },
-  onLoad(){
-
+  status:{
+    'WAIT':'开票中',
+    'INVOICING':'开票中',
+    'INVOICED':'开票完成',
+    'INVOICE_FAIL':'已开纸质发票(包含在开票完成中)',
+    'CHECKING':'审核中',
+    'CHECK_FAILED':'审核失败',
+  },
+  onLoad(query){
+    let invoiceDetail = my.getStorageSync({key: "invoiceDetail"});
+    this.setData({
+      invoiceDetail: invoiceDetail.data
+    })
+    this.getDetail()
   },
   onShow(){
-    // this.getDetail()
   },
   getDetail() {
     let json1 = {
-      applyId: this.data.applyId,
+      applyId: this.data.invoiceDetail.applyId,
       ticketId: app.userInfo.ticketId
     }
     app.ajax(json1,"MTC_APPLYDETAIL",(data)=>{
-      data.applyTime = app.format(data.applyTime);
-      data.enTime = app.format(data.enTime);
-      data.enTime = app.format(data.enTime);
+      data.applyStatus = this.status[data.applyStatus]
       this.setData({
-        items: data
+        item: data
       })
+      my.setStorageSync({
+        key: 'invoices',
+        data: data.invoices
+      });
     })
   },
   view(e){

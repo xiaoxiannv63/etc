@@ -48,7 +48,7 @@
           </view>
 
           <!-- 开票纪录 -->
-          <view a:for="{{invoiceArr}}" a:if="{{tab == 1 && invoiceArr.length > 0}}" onTap="goInvoiceDetail">
+          <view a:for="{{invoiceArr}}" a:if="{{tab == 1 && invoiceArr.length > 0}}" data-index="{{index}}" onTap="goInvoiceDetail">
             <view class="record-main-item" a:if="{{item.status  == 'INVOICED'}}">
               <view class="record-main-header2">
                 <view>
