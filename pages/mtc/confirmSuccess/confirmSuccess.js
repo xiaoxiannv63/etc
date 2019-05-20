@@ -4,7 +4,13 @@ Page({
     showTop: false,
     showFlag:false,
     detail:{},
-    showMyConf:false
+    showMyConf:false,
+    applySC:{
+      "WECHAT": "MTC_MP_WXA_WC",
+      "ZHIFUBAO": "MTC_MP_WXA_ZFB",
+      "UNIONPAY": "MTC_MP_WXA_UP",
+      "PLATEPAY": "MTC_MP_WXA_PP",
+    }
   },
   onLoad(query) {
     console.log('----query-----',query)
@@ -98,7 +104,7 @@ Page({
       bank:this.data.selection.bank,
       bankAccount:this.data.selection.bankAccount,
       titleType:this.data.selection.enTitleType,
-      applySource:"MTC_WXA",
+      applySource:this.data.applySC[this.data.detail.channel],
     }
     app.ajax(json1,'MTC_INVOICEAPPLY',(data) => {
       let var1 = {
