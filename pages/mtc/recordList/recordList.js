@@ -6,6 +6,8 @@ Page({
     month:'',//查询月份
     nowMonth:'',//当月月份
     statusArr:['开票中','开票完成','审核中','审核完成'],
+    statusEn:["INVOICING","INVOICED","CHECKING","CHECK_FAILED"],
+    statusSel:"",
     status:'',
     pageTripIndex:1,
     pageInvoiceIndex:1,
@@ -84,9 +86,12 @@ Page({
       success: (res) => {
         this.setData({
           status: this.data.statusArr[res.index],
+          statusSel: this.data.statusEn[res.index],
           pageInvoiceIndex:1,
-          invoiceArr:[]
+          invoiceArr:[],
+          nomoreInvoice:false
         });
+        console.log(111111)
         this.getInvoiceRecord();
       },
     });
@@ -114,21 +119,19 @@ Page({
   },
   //开票列表
   getInvoiceRecord(){
+    console.log(22222)
     if(this.data.nomoreInvoice) return;
     let json1 = {
       month: this.data.month.split("-").join(""),
       ticketId: app.userInfo.ticketId,
       pageIndex: this.data.pageInvoiceIndex,
-      status:this.data.status,
+      status:this.data.statusSel,
       pageSize: 10
     }
     app.ajax(json1,'MTC_SEARCHAPPLY',(data) => {
       let nomoreInvoice = false;
+      console.log(data)
       if(data.items.length<10) nomoreInvoice = true;
-      data.items.forEach((item,index) => {
-        item.applyTime = app.format(item.applyTime)
-        
-      })
       this.setData({
         invoiceArr: this.data.invoiceArr.concat(data.items),
         pageInvoiceIndex: ++this.data.pageInvoiceIndex,

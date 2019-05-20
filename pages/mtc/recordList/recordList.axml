@@ -49,13 +49,13 @@
 
           <!-- 开票纪录 -->
           <view a:for="{{invoiceArr}}" a:if="{{tab == 1 && invoiceArr.length > 0}}" data-index="{{index}}" onTap="goInvoiceDetail">
-            <view class="record-main-item" a:if="{{item.status  == 'INVOICED'}}">
+            <view class="record-main-item" a:if="{{item.status  == 'INVOICED' || item.status  == 'INVOICE_FAIL'}}">
               <view class="record-main-header2">
                 <view>
                   <text>申请时间：</text>
                   <text>{{item.applyTime}}</text>
                 </view>
-                <view>{{item.status}}</view>
+                <view>{{item.status == "WAIT" ? "开票中" : item.status == "INVOICING" ? "开票中" : item.status == "INVOICED" ? "开票完成" : item.status == "CHECKIN" ? "审核中" : item.status == "CHECK_FAILE" ? "审核失败" : "开票完成"}}</view>
               </view>
               <view class="record-main-content">
                 <view class="record-content">
@@ -84,7 +84,7 @@
                   <text>申请时间：</text>
                   <text>{{item.applyTime}}</text>
                 </view>
-                <view>{{item.status}}</view>
+                <view>{{item.status == "WAIT" ? "开票中" : item.status == "INVOICING" ? "开票中" : item.status == "INVOICED" ? "开票完成" : item.status == "CHECKIN" ? "审核中" : item.status == "CHECK_FAILE" ? "审核失败" : "开票完成"}}</view>
               </view>
               <view class="record-main-content">
                 <view class="record-content">
