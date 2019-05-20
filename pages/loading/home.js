@@ -3,8 +3,11 @@ Page({
   data: {
     
   },
-  onShow() {
-    this.getPermision();
+  onLoad(query) {
+    if(!query.unregister){
+      var that = this;
+      app.getPermision(that);
+    }
   },
   ajax(json1,type,succ,fail,compl){
     console.log("app.ajax=-=-=")

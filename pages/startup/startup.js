@@ -6,10 +6,10 @@ Page({
     canIUseAuthButton: my.canIUse('button.open-type.getAuthorize')
   },
   onLoad(query) {
-    if(!query.unregister){
-      var that = this;
-      app.getPermision(that);
-    }
+    // if(!query.unregister){
+    //   var that = this;
+    //   app.getPermision(that);
+    // }
     // 页面加载
   },
   pgTelLogin() {
