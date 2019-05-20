@@ -4,10 +4,7 @@ Page({
     
   },
   onLoad(query) {
-    if(!query.unregister){
-      var that = this;
-      app.getPermision(that);
-    }
+    this.getPermision();
   },
   ajax(json1,type,succ,fail,compl){
     console.log("app.ajax=-=-=")
