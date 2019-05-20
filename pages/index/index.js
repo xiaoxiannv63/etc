@@ -276,9 +276,4 @@ Page({
       }
     })
   },
-  gomtc(){
-    my.navigateTo({
-      url: '/pages/mtc/recordList/recordList'
-    })
-  }
 });
