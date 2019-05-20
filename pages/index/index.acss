@@ -45,7 +45,7 @@ contact-button{ right: 10rpx; bottom:80rpx;  text-align: center;}
   font-size:34rpx;
   font-family:PingFangSC-Regular;
   font-weight:400;
-  color:rgba(51,51,51,1);
+  color:#999;
   line-height:109rpx;
   padding-left:20rpx;
 }
@@ -103,7 +103,7 @@ display: inline-block;
   font-size:50rpx;
   padding:0;
   line-height: 80rpx;
-  color:orange;
+  color:#108EE9;
   box-shadow:
 }
 .mtcEntry .info{
@@ -115,4 +115,13 @@ display: inline-block;
 }
 .mtcEntry .u-card-arrow{
   right:20rpx;
+}
+.nobox{
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #ccc;
+  display: inline-block;
+  margin-right: 10rpx;
+  border-radius: 50%;
+  vertical-align: middle;
 }

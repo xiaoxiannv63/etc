@@ -63,7 +63,7 @@
 }
 .record-main-item{
   border-bottom: 1rpx solid #ddd;
-  padding-bottom: 28rpx;
+  padding: 0 28rpx 28rpx;
 }
 .record-main-header{
   height:56rpx;
@@ -181,5 +181,5 @@
   height: calc( 100vh - 196rpx );
 }
 .content{
-  padding:0 28rpx;
+  /* padding:0 28rpx; */
 }

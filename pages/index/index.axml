@@ -94,7 +94,7 @@
     </view>
   </view>
   <view class="box" a:else>
-    <view class="nonew">暂无开票信息</view>
+    <view class="nonew"><text class="nobox"></text>暂无开票信息</view>
   </view>
   <view class="title bgWhiteColor position">
     <view class="span">通行/充值发票
