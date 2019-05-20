@@ -11,7 +11,7 @@
     <view class="space-between"><text>车型</text><text>{{item.vehicleType}}</text></view>
     <view class="space-between"><text>行程金额</text><text>{{item.sumAmount}}</text></view>
     <view a:if="{{ '开票完成' === '开票完成'}}">
-      <view class="space-between"><text>缴费方式</text><text>{{invoiceDetail.applySource}}</text></view>
+      <!-- <view class="space-between"><text>缴费方式</text><text>{{invoiceDetail.applySource}}</text></view> -->
       <!-- <view class="space-between"><text>通行省份</text><text>{{item.province}}</text></view> -->
       <view class="space-between"><text>入口收费站</text><text>{{invoiceDetail.enStation}}</text></view>
       <view class="space-between"><text>入口时间</text><text>{{item.enTime}}</text></view>
