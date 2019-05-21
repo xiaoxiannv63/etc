@@ -64,6 +64,11 @@
 .confirm-footer2{
   border-radius:10rpx;
 }
+.confirm-footer3{
+  border-radius:10rpx;
+  background:rgba(204,204,204,1);
+  color:#fff;
+}
 .confirm-license{
   border-radius:4rpx;
   font-size:28rpx;

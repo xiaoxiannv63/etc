@@ -84,7 +84,8 @@
   <view class="header">请填写接收邮箱（用于向您发送电子发票）</view>
   <view><input type="text" class="email" placeholder="请输入邮箱地址" onInput="mailInp" auto-focus/></view>
   <view class="confirm-footer">
-    <button class="confirm-footer2" onTap="onTopBtnTap" type="primary">提交开票</button>
+    <button class="confirm-footer2" a:if="{{showFlag && mail}}" onTap="onTopBtnTap" type="primary">提交开票</button>
+    <button class="confirm-footer3" a:else>提交开票</button>
   </view>
   <popup show="{{showTop}}" position="bottom" onClose="onPopupClose">
     <view class="pop-main">
