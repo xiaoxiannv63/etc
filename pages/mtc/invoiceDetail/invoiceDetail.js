@@ -27,7 +27,8 @@ Page({
       ticketId: app.userInfo.ticketId
     }
     app.ajax(json1,"MTC_APPLYDETAIL",(data)=>{
-      data.applyStatus = this.status[data.applyStatus]
+      data.applyStatus = this.status[data.applyStatus];
+      data.sumAmount = (data.sumAmount/100).toFixed(2);
       this.setData({
         item: data
       })
