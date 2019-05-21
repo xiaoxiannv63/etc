@@ -27,6 +27,11 @@ Page({
     onload(){
         
     },
+    onShow(){
+      this.setData({
+        result:[]
+      })
+    },
     saveRef(ref) {
         // 存储自定义组件实例，方便以后调用
         this.softKeyboard = ref;

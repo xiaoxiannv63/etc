@@ -5,7 +5,7 @@
   <view class="confirm-main">
     <view class="confirm-item item-top">
       <view>车牌号</view>
-      <view><text class="confirm-license {{detail.plateColor == 'BLUE' ? 'blue-li' : detail.plateColor == 'YELLOW' ? 'yellow-li' : detail.plateColor == 'GREEN' ? 'green-li' : 'blue-li'}}">{{detail.plateNum}}</text></view>
+      <view><text class="confirm-license {{detail.plateColor == 'BLUE' ? 'blue-li' : detail.plateColor == 'YELLOW' ? 'yellow-li' : detail.plateColor == 'GREEN' ? 'green-li' : 'blue-li'}}">{{detail.newPlateNum}}</text></view>
     </view>
     <view class="confirm-item">
       <view>车型</view>
