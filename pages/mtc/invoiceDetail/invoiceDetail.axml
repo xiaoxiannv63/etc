@@ -9,7 +9,7 @@
   <view class="detail">
     <view class="space-between"><text>车牌号</text><text>{{item.plateNum}}</text></view>
     <view class="space-between"><text>车型</text><text>{{item.vehicleType}}</text></view>
-    <view class="space-between"><text>行程金额</text><text>{{item.sumAmount}}</text></view>
+    <view class="space-between"><text>行程金额</text><text>¥{{(item.sumAmount/100).toFixed(2)}}</text></view>
     <view a:if="{{ '开票完成' === '开票完成'}}">
       <!-- <view class="space-between"><text>缴费方式</text><text>{{invoiceDetail.applySource}}</text></view> -->
       <!-- <view class="space-between"><text>通行省份</text><text>{{item.province}}</text></view> -->
