@@ -6,10 +6,10 @@ Page({
     detail:{},
     showMyConf:false,
     applySC:{
-      "WECHAT": "MTC_MP_WXA_WC",
-      "ZHIFUBAO": "MTC_MP_WXA_ZFB",
-      "UNIONPAY": "MTC_MP_WXA_UP",
-      "PLATEPAY": "MTC_MP_WXA_PP",
+      "WECHAT": "MTC_MP_ZFB_WC",
+      "ZHIFUBAO": "MTC_MP_ZFB_ZFB",
+      "UNIONPAY": "MTC_MP_ZFB_UP",
+      "PLATEPAY": "MTC_MP_ZFB_PP",
     }
   },
   onLoad(query) {
