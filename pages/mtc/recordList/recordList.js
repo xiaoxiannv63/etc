@@ -3,8 +3,8 @@ Page({
   data: {
     tabs:['通行记录','开票记录'],
     tab:0,
-    month:'',//查询月份
-    nowMonth:'',//当月月份
+    monthLeft:'',//查询月份（通行记录）
+    monthRight:'',//查询月份(开票记录)
     statusArr:['开票中','开票完成','审核中','审核完成'],
     statusEn:["INVOICING","INVOICED","CHECKING","CHECK_FAILED"],
     statusSel:"",
@@ -25,8 +25,8 @@ Page({
     let date = new Date();
     let nowMonth = date.getFullYear()+"-"+num2(date.getMonth() + 1)
     this.setData({
-      month: nowMonth,
-      nowMonth: nowMonth
+      monthRight: nowMonth,
+      monthLeft: nowMonth
     })
     // 日期格式
     function num2(num){
@@ -37,7 +37,6 @@ Page({
   },
   changeTab(e){
     this.setData({
-      month:this.data.nowMonth,
       tab:e.target.dataset.index,
     })
     if(this.data.tab && this.data.invoiceArr.length == 0){
@@ -46,7 +45,7 @@ Page({
       this.getTripRecord();
     }
   },
-  selDate(){
+  selDateLeft(){
     let d = new Date();
     let nowYear = d.getFullYear()
     let nowMonth = d.getMonth() + 1
@@ -60,7 +59,40 @@ Page({
       endDate: nowYear + "-" + nowMonth,
       success: (res) => {
         this.setData({
-          month: res.date
+          monthLeft: res.date
+        })
+        if(this.data.tab){
+          this.setData({
+            pageInvoiceIndex:1,
+            invoiceArr:[],
+            nomoreInvoice:false,
+          })
+        }else{
+          this.setData({
+            pageTripIndex:1,
+            tripArr:[],
+            nomoreTrip:false,
+          })
+        }
+        this.data.tab ? this.getInvoiceRecord() : this.getTripRecord();
+      }
+    });
+  },
+  selDateRight(){
+    let d = new Date();
+    let nowYear = d.getFullYear()
+    let nowMonth = d.getMonth() + 1
+    let setMonth = 1
+    let setYear = 2018
+
+    my.datePicker({
+      format: 'yyyy-MM',
+      startDate: setYear + "-" + setMonth,
+      currentDate: this.data.month,
+      endDate: nowYear + "-" + nowMonth,
+      success: (res) => {
+        this.setData({
+          monthRight: res.date
         })
         if(this.data.tab){
           this.setData({
@@ -84,13 +116,24 @@ Page({
       title: '选择开票状态',
       items: this.data.statusArr,
       success: (res) => {
-        this.setData({
-          status: this.data.statusArr[res.index],
-          statusSel: this.data.statusEn[res.index],
-          pageInvoiceIndex:1,
-          invoiceArr:[],
-          nomoreInvoice:false
-        });
+        console.log(res)
+        if(res.index == -1){
+          this.setData({
+            status: '',
+            statusSel: '',
+            pageInvoiceIndex:1,
+            invoiceArr:[],
+            nomoreInvoice:false
+          });
+        }else{
+          this.setData({
+            status: this.data.statusArr[res.index],
+            statusSel: this.data.statusEn[res.index],
+            pageInvoiceIndex:1,
+            invoiceArr:[],
+            nomoreInvoice:false
+          });
+        }
         console.log(111111)
         this.getInvoiceRecord();
       },
@@ -100,7 +143,7 @@ Page({
   getTripRecord(){
     if(this.data.nomoreTrip) return;
     let json1 = {
-      month: this.data.month.split("-").join(""),
+      month: this.data.monthLeft.split("-").join(""),
       ticketId: app.userInfo.ticketId,
       pageIndex: this.data.pageTripIndex,
       pageSize: 10
@@ -122,7 +165,7 @@ Page({
     console.log(22222)
     if(this.data.nomoreInvoice) return;
     let json1 = {
-      month: this.data.month.split("-").join(""),
+      month: this.data.monthRight.split("-").join(""),
       ticketId: app.userInfo.ticketId,
       pageIndex: this.data.pageInvoiceIndex,
       status:this.data.statusSel,

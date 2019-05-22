@@ -7,12 +7,12 @@
     </view>
   </view>
   <view class="record-main">
-    <view class="record-month">
-      <view onTap="selDate" class="pad">
-        <text class="month-font">{{month}}</text>
+    <view class="record-month"  a:if="{{tab == 1}}">
+      <view onTap="selDateRight" class="pad">
+        <text class="month-font">{{monthRight}}</text>
         <am-icon type="arrow-down" size="{{14}}" color="#333" />
       </view>
-      <view a:if="{{tab == 1}}">
+      <view>
         <picker-item
           className="picker"
           data-field="status"
@@ -21,6 +21,12 @@
           onPickerTap="selStatus"
         >
         </picker-item>
+      </view>
+    </view>
+    <view class="record-month" a:if="{{tab == 0}}">
+      <view onTap="selDateLeft" class="pad">
+        <text class="month-font">{{monthLeft}}</text>
+        <am-icon type="arrow-down" size="{{14}}" color="#333" />
       </view>
     </view>
     <scroll-view scroll-y="{{true}}" trap-scroll="{{true}}" lower-threshold="5" class="scroll" onScrollToLower="lower">
