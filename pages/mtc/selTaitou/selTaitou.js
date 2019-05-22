@@ -12,7 +12,7 @@ Page({
     this.getTitList();
   },
   onShow(){
-      this.getTitList();
+    this.getTitList();
   },
   getTitList(){
     let json1 = {
