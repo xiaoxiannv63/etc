@@ -250,30 +250,32 @@ Page({
     // 查询是否已经实名，跳转不同页面
     // app.ajax()
     if(!app.buttonClick())return;
-    let json1 = {
-      ticketId: app.userInfo.ticketId
-    }
-    app.ajax(json1,"MTC_CERTIFICATIONQUERY",(data)=>{
-      if(data.hasRealName){
-        app.handleForward({
-          currentTarget:{
-            dataset:{
-              url: "/pages/mtc/recordList/recordList",
-              openType: "redirectTo"
-            }
+     my.getAuthCode({
+      scopes: ['auth_user'],
+      success: (res) => {
+        console.log(res)
+        let json1 = {
+          code: res.authCode,
+          channel: 'ZFBPIAOGEN'
+        }
+        app.ajax(json1,"ONLINE",function(data){
+          if(data.hasRealName){
+            app.handleForward({
+              currentTarget:{
+                dataset:{
+                  url: "/pages/mtc/recordList/recordList",
+                  openType: "redirectTo"
+                }
+              }
+            })
           }
-        })
-      }
-      else{
-        app.handleForward({
-          currentTarget:{
-            dataset:{
-              url: "/pages/mtc/certification/certification",
-              openType: "redirectTo"
-            }
+          else{
+            my.alert({
+              content: "如需使用该功能需要您在支付宝中完成实名认证！"
+            })
           }
         })
       }
     })
-  },
+  }
 });
