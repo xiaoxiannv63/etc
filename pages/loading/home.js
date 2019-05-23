@@ -69,7 +69,7 @@ Page({
   },
   getPermision() {
     my.getAuthCode({
-      scopes: 'auth_user', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
+      scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
       success: (res) => {
         app.authCode = res.authCode;
         this.indRes()
