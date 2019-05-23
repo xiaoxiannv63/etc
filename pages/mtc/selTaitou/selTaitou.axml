@@ -1,8 +1,8 @@
 <view class="page">
-    <view class="box" a:if="{{items.length > 0}}">
-      <view class="add-img" onTap="addTaitou"></view>
-      <view class="add-msg">添加发票抬头</view>
-    </view>
+  <view class="box" a:if="{{items.length > 0}}">
+    <view class="add-img" onTap="addTaitou"></view>
+    <view class="add-msg">添加发票抬头</view>
+  </view>
   <view class="TitList" a:if="{{items.length > 0}}">
 
     <radio-group class="radio-group" onChange="radioChange">
@@ -19,7 +19,7 @@
     </radio-group>
     <button type="primary" disabled="{{select==null}}" class="usua-btn" onTap="btnSure"> 确定 </button>
   </view>
-  <view a:else class="m-notit">
+  <view a:if="{{typeof(items) == 'object' && items.length == 0}}" class="m-notit">
     <image src="/image/notit.png" mode="aspectFit" />
     <view>
       <text>暂无抬头信息，请添加发票抬头</text>

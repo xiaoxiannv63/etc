@@ -3,7 +3,7 @@ Page({
   data: {
     //props  cardId
     showMyConf: false,
-    items: [],
+    items: "",
     select: null,
     selection: {},
     etc:false
