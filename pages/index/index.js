@@ -254,11 +254,16 @@ Page({
       scopes: ['auth_user'],
       success: (res) => {
         console.log(res)
-        let json1 = {
-          code: res.authCode,
+        // let json1 = {
+        //   code: res.authCode,
+        //   channel: 'ZFBPIAOGEN'
+        // }
+        let json2 = {
+          userId: app.userInfo.userId,
           channel: 'ZFBPIAOGEN'
         }
-        app.ajax(json1,"ONLINE",function(data){
+        app.ajax(json2, 'LOGIN',  (data)=> {
+        // app.ajax(json1,"ONLINE",function(data){
           if(data.hasRealName){
             app.handleForward({
               currentTarget:{
@@ -271,7 +276,7 @@ Page({
           }
           else{
             my.alert({
-              content: "如需使用该功能需要您在支付宝中完成实名认证！"
+              content: "暂无法使用服务\n您还未在支付宝进行实名认证，请在支付宝首页搜索”实名认证“，完成认证后再次尝试。"
             })
           }
         })
