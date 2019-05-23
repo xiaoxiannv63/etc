@@ -254,10 +254,20 @@ Page({
       scopes: ['auth_user'],
       success: (res) => {
         console.log(res)
-        // let json1 = {
-        //   code: res.authCode,
-        //   channel: 'ZFBPIAOGEN'
-        // }
+        let json1 = {
+          code: res.authCode,
+          channel: 'ZFBPIAOGEN'
+        }
+    ajax(json1, "ONLINE",  (data)=> {
+      console.log(data.userId, 'ONLINE (userId)')
+      app.userInfo.userId = data.userId;
+      console.log(app.userInfo, 'this.userInfo')
+      if (!data.ticketId) { //没有ticketId 不做跳转
+          my.redirectTo({
+            url: "/pages/startup/startup?unregister=true"
+          });
+      } else {
+        console.log("ticket 有效  ")
         let json2 = {
           userId: app.userInfo.userId,
           channel: 'ZFBPIAOGEN'
@@ -279,6 +289,10 @@ Page({
               content: "暂无法使用服务\n您还未在支付宝进行实名认证，请在支付宝首页搜索”实名认证“，完成认证后再次尝试。"
             })
           }
+        },()=>{
+          my.alert({
+            content: "网络错误，请稍后重试！"
+          })
         })
       }
     })
