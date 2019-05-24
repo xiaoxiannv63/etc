@@ -90,7 +90,7 @@
                   <text>申请时间：</text>
                   <text>{{item.applyTime}}</text>
                 </view>
-                <view>{{item.status == "WAIT" ? "开票中" : item.status == "INVOICING" ? "开票中" : item.status == "INVOICED" ? "开票完成" : item.status == "CHECKIN" ? "审核中" : item.status == "CHECK_FAILE" ? "审核失败" : "开票完成"}}</view>
+                <view>{{statusObj[item.status]}}</view>
               </view>
               <view class="record-main-content">
                 <view class="record-content">
