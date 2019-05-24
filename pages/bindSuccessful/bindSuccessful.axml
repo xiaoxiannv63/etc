@@ -52,6 +52,6 @@
         </block>
       </list> -->
       <button class="btnt" type="primary" size="defaultSize" onTap="toAddTitile"> 关联发票抬头 </button>
-      <button class="btnb" type="plain" color="#d4d4d4" size="defaultSize" onTap="toMyEtc" data-openType="redirectTo" data-url="/pages/index/index"> 返回首页 </button>
+      <button class="btnb" type="plain" color="#d4d4d4" size="defaultSize" onTap="toMyEtc" data-openType="switchTab" data-url="/pages/index/index"> 返回首页 </button>
   </view>
 </view>

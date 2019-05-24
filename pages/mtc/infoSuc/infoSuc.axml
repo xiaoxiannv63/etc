@@ -6,6 +6,6 @@
       <view class="font-gray"></view>
       <view class="font-gray"></view>
     </view>
-    <button type="primary" data-openType="redirectTo" data-url="/pages/index/index" onTap="goIndex">返回首页{{str}}</button>
+    <button type="primary" data-openType="switchTab" data-url="/pages/index/index" onTap="goIndex">返回首页{{str}}</button>
   </view>
 </view>
