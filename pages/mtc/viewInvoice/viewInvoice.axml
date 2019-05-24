@@ -30,7 +30,7 @@
         </view>
         <!-- <view class="right" data-url="{{item.invoiceHtmlUrl}}" onTap="lookInvoice">预览发票</view> -->
       </view>
-      <view class="u-tit" onTap="scan">
+      <view class="u-tit" onTap="scan" data-url="{{item.invoiceHtmlUrl}}">
         查看/预览电子发票
       </view>
     </view>

@@ -26,6 +26,7 @@
   </view>
   <view class="confirm-footer">
     <button class="confirm-footer1" onTap="goKeyWordpage">修改车牌号</button>
-    <button class="confirm-footer2" onTap="goInvoice" type="primary">信息均无误</button>
+    <button class="confirm-footer2" a:if="{{!reinvoice}}" onTap="goInvoice" type="primary">信息均无误</button>
+    <button class="confirm-footer2" a:else onTap="sureReinvoice" type="primary">确定重开</button>
   </view>
 </view>

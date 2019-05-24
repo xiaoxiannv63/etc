@@ -6,8 +6,11 @@ Page({
   onLoad(query){
     console.log(query)
     let detail = JSON.parse(query.detail)
+    let reinvoice = false;
+    if(query.reinvoice){reinvoice=true}
     this.setData({
-      detail
+      detail,
+      reinvoice
     })
     console.log(this.data.detail)
   },
@@ -64,5 +67,31 @@ Page({
       }
     }
     app.handleForward(var1)
+  },
+  // 确认重新开票
+  sureReinvoice(){
+    if(!app.buttonClick())return;
+    my.confirm({
+        title: '温馨提示',
+        content: `您本次开票的车牌号已修改为[${this.data.detail.newPlateNum}],请认真核对`,
+        align: 'left',
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        success: (result) => {
+          if(result.confirm){
+            let json1 = {
+              ticketId: app.userInfo.ticketId,
+              applyId: this.data.detail.applyId,
+              plateNum: this.data.detail.newPlateNum
+            }
+            app.ajax(json1,"MTC_REPEATAPPLY",(data)=>{
+              my.navigateTo({
+                url:"/pages/mtc/invoiceSuccess/invoiceSuccess"
+              })
+            })
+          }
+        }
+    })
+ 
   }
 })

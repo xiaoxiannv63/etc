@@ -5,8 +5,16 @@ Page({
     tab:0,
     monthLeft:'',//查询月份（通行记录）
     monthRight:'',//查询月份(开票记录)
-    statusArr:['开票中','开票完成','审核中','审核完成'],
+    statusArr:['开票中','开票完成','审核中','审核失败'],
     statusEn:["INVOICING","INVOICED","CHECKING","CHECK_FAILED"],
+    statusObj:{
+      "WAIT":"开票中",
+      "INVOICING":"开票中",
+      "INVOICED":"开票完成",
+      "CHECKING":"审核中",
+      "CHECK_FAILED":"审核失败",
+      "INVOICE_FAIL":"开票完成"
+    },
     statusSel:"",
     status:'',
     pageTripIndex:1,

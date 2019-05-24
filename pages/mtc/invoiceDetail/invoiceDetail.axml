@@ -25,11 +25,11 @@
     <view class="space-between"><text>税号</text><text>{{item.buyerTaxpayerCode}}</text></view>
   </view>
  
-  <view a:if="{{ item.status === '审核中' || item.status === '审核失败'}}" class="tip">申请开票时修改车牌错误，将导致开票审核无法通过。</view>
-  <view class="footer"  a:if="{{item.status == '开票完成'}}">
+  <view a:if="{{ item.applyStatus === '审核中' || item.applyStatus === '审核失败'}}" class="tip">申请开票时修改车牌错误，将导致开票审核无法通过。</view>
+  <view class="footer"  a:if="{{item.applyStatus == '开票完成'}}">
     <button onTap="view">查看电子发票</button>
   </view>
-  <view class="footer"  a:if="{{item.status == '审核完成'}}">
+  <view class="footer"  a:if="{{item.applyStatus == '审核失败'}}">
     <button class="" onTap="reInvoice">修改车牌重开</button>
   </view>
   

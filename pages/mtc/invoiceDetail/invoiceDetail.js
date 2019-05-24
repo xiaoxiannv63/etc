@@ -3,6 +3,17 @@ const app = getApp();
 Page({
   data:{
     item:{},
+    plateNumType:{
+      "一型客车":"CAR_1",
+      "二型客车":"CAR_2",
+      "三型客车":"CAR_3",
+      "四型客车":"CAR_4",
+      "一型货车":"CAR_4",
+      "二型货车":"CAR_4",
+      "三型货车":"CAR_4",
+      "四型货车":"CAR_4",
+      "五型货车":"CAR_4"
+    },
   },
   status:{
     'WAIT':'开票中',
@@ -44,6 +55,25 @@ Page({
         dataset: {
           url: `/pages/mtc/viewInvoice/viewInvoice`,
           openType: "redirectTo"
+        }
+      }
+    }
+    app.handleForward(var1)
+  },
+  reInvoice(){
+    let json = {
+      "plateNum":this.data.item.plateNum,
+      "vehicleType":this.data.plateNumType[this.data.item.vehicleType],
+      "fee":this.data.item.sumAmount * 100,
+      "exTime":this.data.item.exTime,
+      "applyId":this.data.invoiceDetail.applyId
+      }
+
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: `/pages/mtc/recordConfirm/recordConfirm?detail=${JSON.stringify(json)}&reinvoice=true`,
+          openType: "navigateTo"
         }
       }
     }
