@@ -1,0 +1,11 @@
+<view>
+  <view class="image">
+    <am-icon type="success" color="#118eea" size="{{72}}" color="#333" />
+  </view>
+  <view class="bigFont">自动开票开通成功
+  </view>
+  <view  class="content" a:for="{{contents}}">
+    <text class="nobox"></text>{{item}}
+  </view>
+  <button class="usua-btn" onTap="goUserInfo">进入个人中心</button>
+</view>

@@ -53,7 +53,9 @@
     "pages/mtc/infoConfirm/infoConfirm",
     "pages/mtc/invoiceSuccess/invoiceSuccess",
     "pages/changeSuccess/changeSuccess",
-    "pages/mtc/selTaitou/selTaitou"
+    "pages/mtc/selTaitou/selTaitou",
+    "pages/autoinvoice/open/open",
+    "pages/autoinvoice/openSuc/openSuc"
   ],
   "window": {
     "defaultTitle": "票根"

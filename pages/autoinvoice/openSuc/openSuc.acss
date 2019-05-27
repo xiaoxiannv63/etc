@@ -1,0 +1,15 @@
+.image{text-align: center; padding-top: 60rpx;  padding-bottom: 30rpx; display: block; width: 100%}
+.image image{width: 340rpx; height: 190rpx; background-position: center center; text-align: center}
+.bigFont{text-align: center; font-size: 16px; font-weight: bold; padding-bottom: 60rpx;}
+.content{
+  padding: 0 100rpx;
+}
+.nobox{
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #ccc;
+  display: inline-block;
+  margin-right: 10rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
