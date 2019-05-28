@@ -1,4 +1,4 @@
-.m-info, .m-taitou, .m-notaitou{
+.m-info, .m-taitou, .m-notaitou, .m-autoinv{
     padding: 0 40rpx;
     background: #fff;
 }
@@ -45,8 +45,8 @@
 }
 
 .u-nonetip{
-    height: 260rpx;
-    line-height: 260rpx;
+    height: 160rpx;
+    line-height: 160rpx;
     text-align: center;
     font-size: 28rpx;
 }

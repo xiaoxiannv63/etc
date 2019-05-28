@@ -29,10 +29,11 @@
         <text class="u-val">{{card.bindingTime}}</text>
       </view>
     </view>
-
-    <button class="button1" type="primary" size="defaultSize" onTap="goInvoice"> 去开票 </button>
-    <button class="button2" color="#d4d4d4" type="plain" size="defaultSize" onTap="unbind"> 解绑卡片 </button>
-
+    <view a:if="{{!openStatus}}">
+      <button class="button1" type="primary" size="defaultSize" onTap="goInvoice"> 去开票 </button>
+      <button class="button2" color="#d4d4d4" type="plain" size="defaultSize" onTap="unbind"> 解绑卡片 </button>
+    </view>
+    <button a:else class="button2 stopBut">停止自动开票</button>
 
       <view class="modal">
         <modal
@@ -101,6 +102,12 @@
     <view class="u-nonetip">
       暂未关联抬头，去关联吧
     </view>
+  </view>
+  <view a:if="{{!openStatus}}" class="m-autoinv">
+    <text></text><text></text>
+  </view>
+  <view a:else>
+    <text></text>
   </view>
   
 </view>

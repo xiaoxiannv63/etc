@@ -1,4 +1,4 @@
-const app = getApp();
+// const app = getApp();
 Page({
   data: {
     card:{
@@ -23,7 +23,8 @@ Page({
       titleBindingTime:'',
       bindingTime:'',
       modalOpened: false
-    }
+    },
+    openStatus: false,
   },
   onLoad(query) {
     // console.log(query)
