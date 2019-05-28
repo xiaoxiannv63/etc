@@ -1,7 +1,19 @@
 const app = getApp();
 Page({
   data: {
-    detail:{}
+    detail:{},
+    carType:{
+      "CAR_1":"一型客车",
+      "CAR_2":"二型客车",
+      "CAR_3":"三型客车",
+      "CAR_4":"四型客车",
+      "WEIGHT_CAR_1":"一型货车",
+      "WEIGHT_CAR_2":"二型货车",
+      "WEIGHT_CAR_3":"三型货车",
+      "WEIGHT_CAR_4":"四型货车",
+      "WEIGHT_CAR_5":"五型货车",
+      "UNDETERMINED":"未确定"
+    }
   },
   onLoad(query){
     console.log(query)
@@ -53,6 +65,7 @@ Page({
   },
   //信息无误
   goInvoice(){
+    if(!app.buttonClick())return;
     let detail = JSON.stringify(this.data.detail)
     my.setStorageSync({
       key: 'detail',

@@ -40,6 +40,7 @@ Page({
     }
   },
   sureHandle(){
+    if(!app.buttonClick())return;
     console.log(this.data.selection)
     let selection = JSON.stringify(this.data.selection)
     my.redirectTo({

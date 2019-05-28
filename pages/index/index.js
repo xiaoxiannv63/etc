@@ -279,7 +279,7 @@ Page({
                   currentTarget:{
                     dataset:{
                       url: "/pages/mtc/recordList/recordList",
-                      openType: "redirectTo"
+                      openType: "navigateTo"
                     }
                   }
                 })

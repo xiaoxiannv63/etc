@@ -5,8 +5,8 @@ Page({
     tab:0,
     monthLeft:'',//查询月份（通行记录）
     monthRight:'',//查询月份(开票记录)
-    statusArr:['开票中','开票完成','审核中','审核失败'],
-    statusEn:["INVOICING","INVOICED","CHECKING","CHECK_FAILED"],
+    statusArr:['开票中','开票完成','审核中','审核失败','全部'],
+    statusEn:["INVOICING","INVOICED","CHECKING","CHECK_FAILED",""],
     statusObj:{
       "WAIT":"开票中",
       "INVOICING":"开票中",
@@ -16,13 +16,13 @@ Page({
       "INVOICE_FAIL":"开票完成"
     },
     statusSel:"",
-    status:'',
+    status:'全部',
     pageTripIndex:1,
     pageInvoiceIndex:1,
     nomoreTrip:false,
     nomoreInvoice:false,
     tripArr:[],//行程记录
-    invoiceArr:[],//开票纪录
+    invoiceArr:[],//开票记录
   },
   onLoad(query) {
     if(query.tab){
@@ -127,8 +127,8 @@ Page({
         console.log(res)
         if(res.index == -1){
           this.setData({
-            status: '',
-            statusSel: '',
+            status: this.data.status,
+            statusSel: this.data.statusSel,
             pageInvoiceIndex:1,
             invoiceArr:[],
             nomoreInvoice:false
