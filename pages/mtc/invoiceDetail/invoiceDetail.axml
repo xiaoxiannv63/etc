@@ -13,10 +13,10 @@
     <view a:if="{{ '开票完成' === '开票完成'}}">
       <!-- <view class="space-between"><text>缴费方式</text><text>{{invoiceDetail.applySource}}</text></view> -->
       <!-- <view class="space-between"><text>通行省份</text><text>{{item.province}}</text></view> -->
-      <view class="space-between"><text>入口收费站</text><text>{{invoiceDetail.enStationName}}</text></view>
-      <view class="space-between"><text>入口时间</text><text>{{item.enTime}}</text></view>
-      <view class="space-between"><text>出口收费站</text><text>{{invoiceDetail.exStationName}}</text></view>
-      <view class="space-between"><text>出口时间</text><text>{{item.exTime}}</text></view>
+      <view class="space-between" a:if="{{invoiceDetail.enStationName}}"><text>入口收费站</text><text>{{invoiceDetail.enStationName}}</text></view>
+      <view class="space-between" a:if="{{item.enTime}}"><text>入口时间</text><text>{{item.enTime}}</text></view>
+      <view class="space-between" a:if="{{invoiceDetail.exStationName}}"><text>出口收费站</text><text>{{invoiceDetail.exStationName}}</text></view>
+      <view class="space-between" a:if="{{item.exTime}}"><text>出口时间</text><text>{{item.exTime}}</text></view>
     </view>
   </view>
   <view class="title">抬头信息</view>
