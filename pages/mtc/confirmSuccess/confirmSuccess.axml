@@ -4,8 +4,8 @@
   </view>
   <view class="confirm-main">
     <view class="confirm-item item-top">
-      <view>订单号</view>
-      <view>{{detail.tradeId}}</view>
+      <view class="nowrap">订单号</view>
+      <view class="ellipsis">{{detail.tradeId}}</view>
     </view>
     <view class="confirm-item">
       <view>车牌号</view>
