@@ -103,8 +103,9 @@
       暂未关联抬头，去关联吧
     </view>
   </view>
-  <view a:if="{{!openStatus}}" class="m-autoinv">
-    <text></text><text></text>
+  <view a:if="{{!openStatus}}" class="m-autoinv" onTap="goOpen">
+    <view>未开通自动开票</view>
+    <view>去开通<view class="u-card-arrow"></view></view>
   </view>
   <view a:else>
     <text></text>

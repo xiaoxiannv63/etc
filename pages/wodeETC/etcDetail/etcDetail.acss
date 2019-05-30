@@ -72,3 +72,10 @@
 .modal-content .modal-p{
   font-size:26rpx;
   }
+.m-autoinv{
+  position:relative;
+  display: flex;
+  justify-content:space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+}

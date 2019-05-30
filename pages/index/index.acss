@@ -125,3 +125,9 @@ display: inline-block;
   border-radius: 50%;
   vertical-align: middle;
 }
+.more{
+  position:relative;
+}
+.u-card-arrow{
+  margin-left: 10rpx;
+}

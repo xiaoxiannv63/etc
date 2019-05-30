@@ -2,7 +2,7 @@
   <view class="title bgWhiteColor">
     <view class="span">我的ETC卡
     </view>
-    <view class="more" onTap="tapUrl" data-url="/pages/wodeETC/myetc/myetc" data-openType="navigateTo">全部ETC卡  >        
+    <view class="more" onTap="tapUrl" data-url="/pages/wodeETC/myetc/myetc" data-openType="navigateTo">全部ETC卡  <view class="u-card-arrow"></view>        
     </view>
   </view>
   <view class="scroll_box"> 

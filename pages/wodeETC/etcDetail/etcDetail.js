@@ -1,4 +1,4 @@
-// const app = getApp();
+const app = getApp();
 Page({
   data: {
     card:{
@@ -134,5 +134,14 @@ Page({
       }
     }
     app.handleForward(data)
+  },
+  goOpen(){
+    if(this.data.titleId){
+      console.log("-----点击开通自动开票----")
+    }else{
+      my.alert({
+        content: "自动开票功能需要先关联抬头"
+      })
+    }
   }
 });
