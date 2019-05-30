@@ -39,6 +39,14 @@
 .item-top{
   border-top:1rpx solid #ddd;
 }
+.nowrap{
+  white-space: nowrap;
+}
+.ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .confirm-main{
   background: #fff;
 }

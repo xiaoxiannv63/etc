@@ -8,11 +8,12 @@ Page({
       "二型客车":"CAR_2",
       "三型客车":"CAR_3",
       "四型客车":"CAR_4",
-      "一型货车":"CAR_4",
-      "二型货车":"CAR_4",
-      "三型货车":"CAR_4",
-      "四型货车":"CAR_4",
-      "五型货车":"CAR_4"
+      "一型货车":"WEIGHT_CAR_1",
+      "二型货车":"WEIGHT_CAR_2",
+      "三型货车":"WEIGHT_CAR_3",
+      "四型货车":"WEIGHT_CAR_4",
+      "五型货车":"WEIGHT_CAR_5",
+      "未确定":"UNDETERMINED"
     },
   },
   status:{

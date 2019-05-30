@@ -82,6 +82,7 @@ Page({
     app.handleForward(var1)
   },
   invoiceSuccess(){
+    if(!app.buttonClick())return;
     let strtime = this.data.detail.exTime;
     let date = strtime.replace((/-|:|\s/g), '');
 

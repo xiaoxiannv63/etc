@@ -126,7 +126,7 @@
   <view class="mtcEntry">
     <view data-url="/pages/mtc/certification/certification" data-openType='navigateTo' onTap="goIdentify">
       <view class="title">人工收费车道发票</view>
-      <view class="info">可通过纸质凭证或通行记录开票</view>
+      <view class="info">可通过通行记录开票</view>
     </view>
     <view class="u-card-arrow " />
   </view>

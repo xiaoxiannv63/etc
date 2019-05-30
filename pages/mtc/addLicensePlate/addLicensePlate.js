@@ -113,6 +113,7 @@ Page({
     },
     //点击确认
     confirmLicense(){
+      if(!app.buttonClick())return;
       if(this.data.isDefault){
         if(this.data.result.length < 8) return;
       }else{

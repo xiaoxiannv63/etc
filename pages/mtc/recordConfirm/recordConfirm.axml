@@ -9,7 +9,7 @@
     </view>
     <view class="confirm-item">
       <view>车型</view>
-      <view>{{detail.vehicleType == 'CAR_1' ? '一型客车' : detail.vehicleType == 'CAR_2' ?'二型客车' : detail.vehicleType == 'CAR_3' ? '三型客车' : '四型客车'}}</view>
+      <view>{{carType[detail.vehicleType]}}</view>
     </view>
     <view class="confirm-item">
       <view>金额</view>
