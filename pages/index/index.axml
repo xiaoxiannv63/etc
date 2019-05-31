@@ -2,7 +2,7 @@
   <view class="title bgWhiteColor">
     <view class="span">我的ETC卡
     </view>
-    <view class="more" onTap="tapUrl" data-url="/pages/wodeETC/myetc/myetc" data-openType="navigateTo">全部ETC卡  <view class="u-card-arrow"></view>        
+    <view class="more" onTap="tapUrl" data-url="/pages/wodeETC/myetc/myetc" data-openType="navigateTo">全部ETC卡  <am-icon type="arrow-right" size="{{12}}" color="#CCCCCC"/>       
     </view>
   </view>
   <view class="scroll_box"> 
@@ -72,7 +72,7 @@
   <view class="title bgWhiteColor">
     <view class="span">最新开票
     </view>
-    <view class="more" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/myInvoice/invoiceList/invoiceList">        开票记录     >
+    <view class="more" onTap="tapUrl" data-openType="navigateTo" data-url="/pages/myInvoice/invoiceList/invoiceList"> 开票记录 <am-icon type="arrow-right" size="{{12}}" color="#CCCCCC"/>
     </view>
   </view>
   <view class="ul" a:if="{{news.length > 0}}">

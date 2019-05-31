@@ -136,11 +136,14 @@ Page({
     app.handleForward(data)
   },
   goOpen(){
-    if(this.data.titleId){
-      console.log("-----点击开通自动开票----")
+    if(!app.buttonClick())return;
+    if(this.data.card.titleId){
+      my.navigateTo({
+        url: "/pages/autoinvoice/open/open"
+      })
     }else{
       my.alert({
-        content: "自动开票功能需要先关联抬头"
+        content: "请先关联抬头"
       })
     }
   }

@@ -128,6 +128,6 @@ display: inline-block;
 .more{
   position:relative;
 }
-.u-card-arrow{
+/* .u-card-arrow{
   margin-left: 10rpx;
-}
+} */

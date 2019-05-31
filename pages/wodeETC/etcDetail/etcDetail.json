@@ -1,6 +1,7 @@
 {
     "defaultTitle": "我的ETC",
     "usingComponents": {
-      "modal": "mini-antui/es/modal/index"
+      "modal": "mini-antui/es/modal/index",
+      "am-icon": "mini-antui/es/am-icon/index"
     }
 }

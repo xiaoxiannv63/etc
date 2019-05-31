@@ -1,3 +1,36 @@
-<view>
-  
+<view class="page">
+   <view class="listItemDiv" onTap="tapUrl" data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+item.cardId}}"  data-openType="navigateTo">
+    <view class="info-wrap">
+      <view>
+        <view class="u-key u-double">车<text></text>牌</view>
+        <text class="u-val">{{card.issuerName}}</text>
+      </view>
+      <view>
+        <text class="u-key u-double">卡<text></text>号</text>
+        <text class="u-val">{{card.cardId?card.cardId.substring(0,6)+"**********"+card.cardId.substr(-4):''}}</text>
+      </view>
+      <view>
+        <text class="u-key">卡片类型</text>
+        <text class="u-val">{{card.plateColor}}</text>
+      </view>
+      <view>
+        <text class="u-key">关联抬头</text>
+        <text class="u-val">{{card.cardType}}</text>
+      </view>
+      <view>
+        <text class="u-key">自动开通</text>
+        <text class="u-val">{{card.bindingTime}}</text>
+      </view>
+      <view class="cardsign">{{card.cardType}}</view>
+    </view>
+  </view>
+  <view class="email">
+    <view class="title">发票接收方式</view>
+    <view class="content">
+      <view class="content-tit">接收邮箱</view>
+      <view><input type="text" placeholder="请填写接收邮箱"/></view>
+      <button class="transEmail" onTap="transEmail">更换</button>
+    </view>
+  </view>
+  <button class="footer" type="primary" onTap="defaultTap">确定开通</button>
 </view>
