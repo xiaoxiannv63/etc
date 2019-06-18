@@ -199,5 +199,10 @@ Page({
     this.setData({
       loginType:e.target.dataset.loginType
     })
+  },
+  closableClick(){
+    this.setData({
+      closeShow: false
+    })
   }
 });

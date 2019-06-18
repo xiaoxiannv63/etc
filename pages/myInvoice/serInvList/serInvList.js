@@ -30,10 +30,23 @@ Page({
   },
   selDate(){
     let d = new Date();
+    let nowTime = d.getTime()
+    let nowYear = d.getFullYear()
+    let nowMonth = d.getMonth() + 1
+    let setMonth = 1
+    let setYear = 2018
+    // if(setMonth<=0){
+    //   setMonth += 12
+    //   setYear -= 1
+    // }
+    console.log(nowYear,nowMonth,setYear,setMonth)
+
     let that = this;
     my.datePicker({
       format: 'yyyy-MM',
-      endDate: d.getFullYear()+"-"+(d.getMonth()+1),
+      startDate: setYear + "-" + setMonth,
+      currentDate: this.data.month,
+      endDate: nowYear + "-" + nowMonth,
       success: (res) => {
         // console.log(res);
         that.setData({
@@ -56,6 +69,9 @@ Page({
     this.setData({
       invType:'cz'
     })
+    if(this.data.czArr.length < 10){
+      this.getItems()
+    }
   },
   lower(){//滚动到底部事件
     console.log("到底了")
@@ -88,7 +104,7 @@ Page({
       data.items.forEach((item,index) => {
         if(item.applyType == "充值发票申请"){
           czArr.push(item)
-        }else{
+        }else if(item.applyType == "消费发票申请"){
           xfArr.push(item)
         }
       })

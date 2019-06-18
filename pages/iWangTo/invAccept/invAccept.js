@@ -21,6 +21,16 @@ Page({
         plateNum: app.inv.plateNum,
         titleName: app.inv.titleName
       })
+      if(app.inv.cardType == "记账卡"){
+        this.setData({
+          cardType:1
+        })
+      }else{
+        this.setData({
+          cardType:0
+        }) 
+      }
+      console.log(this.data.plateNum)
     }
   },
   mailInp(e){
@@ -39,7 +49,6 @@ Page({
       })
     }
     let type = this.data.type
-    console.log(type)
     if(type=='xf'){
       json1={
       cardId: this.data.cardId,
@@ -56,7 +65,7 @@ Page({
         my.hideLoading();
         app.recordListRefresh = true;
         app.inv = null;
-        let str = '?cardId='+that.data.cardId+'&month='+that.data.month+'&titleId='+that.data.titleId+"&plateNum="+that.data.plateNum+'&titleName='+that.data.titleName
+        let str = '?cardId='+that.data.cardId+'&month='+that.data.month+'&titleId='+that.data.titleId+"&plateNum="+that.data.plateNum+'&titleName='+that.data.titleName+'&type='+that.data.cardType
         my.redirectTo({
           url: '/pages/iWangTo/kpSuccess/kpSuccess'+str, 
         });
@@ -76,7 +85,7 @@ Page({
         my.hideLoading();
         app.recordListRefresh = true;
         app.inv = null;
-        let str = '?cardId='+that.data.cardId+'&month='+that.data.month+'&titleId='+that.data.titleId+"&plateNum="+that.data.plateNum+'&titleName='+that.data.titleName
+        let str = '?cardId='+that.data.cardId+'&month='+that.data.month+'&titleId='+that.data.titleId+"&plateNum="+that.data.plateNum+'&titleName='+that.data.titleName+'&type=0'
         my.redirectTo({
           url: '/pages/iWangTo/kpSuccess/kpSuccess'+str, 
         });

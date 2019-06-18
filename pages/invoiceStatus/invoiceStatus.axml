@@ -28,12 +28,12 @@
   <view class="between">
     <view class="error">
         <view class="between-left" onTap="invoiceError">发票信息有误</view>
-        <view class="between-b" style="margin: 0 20rpx">|</view>
-        <view class="between-right" onTap="lookQuotation">查看行程</view>
+        <view class="between-b" a:if="{{routeFlag}}" style="margin: 0 20rpx">|</view>
+        <view class="between-right" a:if="{{routeFlag}}" onTap="lookQuotation">查看行程</view>
     </view>
   </view>
-  <view  class="bottom">
-    <view class="bottom-left"><button class="send default" open-type="share"><image class="img" src="../../image/send.png"/><view>分享</view></button></view>
-    <view class="bottom-right"><view class="primary" onTap="lookElectronicInvoice">查看电子发票</view></view>
-  </view>
+  <!-- <view  class="bottom"> -->
+    <!-- <view class="bottom-left"><button class="send default" open-type="share"><image class="img" src="../../image/send.png"/><view>分享</view></button></view> -->
+    <button class="button" type="primary" onTap="lookElectronicInvoice">查看电子发票</button>
+  <!-- </view> -->
 </view>

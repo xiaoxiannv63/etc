@@ -23,10 +23,15 @@ Page({
       content: '加载中...',
     });
     app.ajax(json1,'INVOICE_ROUTEDETAIL',(data)=>{
-      data.items.forEach((item,index)=>{
-        item.enTime = app.format(item.enTime);
-        item.exTime = app.format(item.exTime);
+      data.items.forEach((item,index) => {
+        if(item.enTime){
+          item.enTime = app.format(item.enTime);
+        }
+        if(item.exTime){
+          item.exTime = app.format(item.exTime);
+        }
       })
+      console.log(this)
       this.setData({
         list: data.items
       })
