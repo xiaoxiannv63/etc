@@ -139,7 +139,7 @@ Page({
   },
   setInvName(e){
     let v = e.detail.value;
-    const reg = /[^\u4e00-\u9fa5a-zA-Z0-9]+/g;
+    const reg = /[^\u4e00-\u9fa5a-zA-Z0-9（）()]+/g;
 
     v = v.replace(reg,"");
     console.log(v);
