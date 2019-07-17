@@ -1,6 +1,15 @@
 import CryptoJS  from './util/crypto/crypto-js';
-
+import uma from './uma.min.js'
 App({
+  onLaunch() {
+   uma.init('YOUR_APP_KEY', my);      // 务必填入已注册的appKey，不然将无法统计
+  },
+  onShow() {
+    uma.resume();                    // 请务必引入
+  },
+  onHide() {
+    uma.pause();                  // 请务必引入
+  },
   addTaitouEtcList:[],
   deleteFlag:true,
   todos: [
@@ -163,7 +172,9 @@ App({
       url: `/pages/web/index?url=${url}`
     })
   },
-  globalData: {},
+  globalData: {
+    uma
+  },
   canClick: true,
   handleForward(event) {
     let that = this;

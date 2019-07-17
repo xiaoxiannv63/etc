@@ -40,5 +40,4 @@
   </view>
   <button a:if="{{}}" class="footer" type="primary" onTap="sureOpen">确定开通</button>
   <button a:else class="footer" type="primary" onTap="stop">停止自动开票</button>
-
 </view>
