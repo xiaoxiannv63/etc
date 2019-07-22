@@ -1,4 +1,4 @@
-const app = getApp();
+//const app = getApp();
 Page({
   data: {
     urlQuery: {
@@ -44,13 +44,13 @@ Page({
     });
     app.ajax(json1,'INVOICE_APPLYDETAIL',(data)=>{
       data.applyTime = app.format(data.applyTime);
-      if(data.applyType == "充值发票申请" || data.hasRed == true){
+      if(data.applyType.indexOf("消费发票")>-1 && data.hasRed == false){
         this.setData({
-          routeFlag: false
+          routeFlag: true
         })
       }else{
         this.setData({
-          routeFlag: true
+          routeFlag: false
         })
       }
       console.log(this.data.routeFlag)

@@ -90,6 +90,10 @@
 .bottom-right{
   margin-right: 60rpx;
 }
+.bottom-left,.bottom-right{
+  width:335rpx;
+  text-align: center;
+}
 .primary{
   margin-top:30rpx;
   padding:0 20rpx;
@@ -115,4 +119,10 @@
   line-height:28rpx;
   width:142rpx;
   height:142rpx;
+}
+.button{
+    position: absolute;
+    bottom:58rpx;
+    left: 40rpx;
+    right: 40rpx;
 }

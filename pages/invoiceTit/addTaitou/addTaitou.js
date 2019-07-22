@@ -1,4 +1,4 @@
-import {keysArr} from '/util/key.js'
+// import {keysArr} from '/util/key.js'
 let app = getApp();
 
 
@@ -139,9 +139,9 @@ Page({
   },
   setInvName(e){
     let v = e.detail.value;
-    const reg = /[^\u4e00-\u9fa5a-zA-Z0-9]+/g;
-    let str = keysArr.join('|');
-    const keysReg = new RegExp(str,"igm");
+    const reg = /[^\u4e00-\u9fa5a-zA-Z0-9（()）]+/g;
+    // let str = keysArr.join('|');
+    // const keysReg = new RegExp(str,"igm");
     v = v.replace(reg,"");
 
     console.log(v);
