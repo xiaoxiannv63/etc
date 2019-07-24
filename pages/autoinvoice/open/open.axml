@@ -29,7 +29,7 @@
     <view class="content">
       <view class="content-tit">接收邮箱</view>
       <view><input type="text" onInput="bindEmail" value="{{card.mail}}" focus="{{transEmail}}" disabled="{{!transEmail}}"  placeholder="请填写接收邮箱"/></view>
-      <button class="transEmail" a:if="{{card.mail && !transEmail}}" onTap="transEmail">更换</button>
+      <button class="transEmail" a:if="{{card.mail && !transEmail && !card.autoInvoice}}" onTap="transEmail">更换</button>
     </view>
   </view>
   <view class="tips" a:if="{{true}}">

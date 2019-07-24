@@ -58,5 +58,10 @@ Page({
       key: 'noMoreTip', // 缓存数据的key
       data: e.detail.value, // 要缓存的数据
     });
-  }
+  },
+  onModalClose() {
+    this.setData({
+      autoInvModal: false
+    });
+  },
 });
