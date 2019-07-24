@@ -39,7 +39,7 @@
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">银行账号：</view>
-        <input type="number" class="u-dd" placeholder="请输入银行账号" value="{{bankAccount}}" onBlur="setInvAcc" />
+        <input type="number" class="u-dd" placeholder="请输入银行账号" value="{{bankAccount}}" onInput="setInvAcc" />
       </view>
 
   </view>

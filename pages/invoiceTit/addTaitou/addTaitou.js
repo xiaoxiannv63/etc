@@ -169,6 +169,7 @@ Page({
     })
   },
   setInvAcc(e){
+    console.warn(e.detail.value)
     this.setData({
       bankAccount: e.detail.value
     })
