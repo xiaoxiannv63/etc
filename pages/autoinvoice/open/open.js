@@ -3,9 +3,15 @@ Page({
   data:{
     email: "develop@dev.com",
     transEmail: false,
+    card: {}
   },
   onLoad(){
-
+    let cardDetail = my.getStorageSync({key:'cardDetail'}).data;
+    console.log(cardDetail)
+    this.setData({
+      card: cardDetail,
+      transEmail: !cardDetail.mail
+    })
   },
   transEmail(){
     if(this.data.transEmail)return;
@@ -13,7 +19,15 @@ Page({
       transEmail: true
     })
   },
+  bindEmail(e){
+    let card = this.data.card;
+    card.mail = e.detail.value;
+    this.setData({
+      card: card
+    })
+  },
   sureOpen(){
+    let that = this;
     if(!app.buttonClick())return;
     my.confirm({
       title: '温馨提示',
@@ -22,19 +36,36 @@ Page({
       cancelButtonText: '取消',
       success: (result) => {
         if(result.confirm){
-          // my.alert({
-          //   content: "点击确认开通"
-          // }
-          // app.ajax()
-          my.navigateTo({
-            url:"/pages/autoinvoice/openSuc/openSuc"
-          });
+          let json1 = {
+            cardId: that.data.card.cardId,
+            ticketId:app.userInfo.ticketId,
+            mail: that.data.card.mail
+          }
+          app.ajax(json1,'AUTO_OPEN',(data)=>{
+            my.navigateTo({
+              url:`/pages/autoinvoice/openSuc/openSuc?cardId=${that.data.card.cardId}&plateNum=${that.data.card.plateNum}`
+            });
+          })
         }
       },
     });
   },
   stop(){
     if(!app.buttonClick())return;
-
+    let that = this;
+    let json1 = {
+      cardId: that.data.card.cardId,
+      ticketId:app.userInfo.ticketId
+    }
+    app.ajax(json1,'AUTO_OFF',(data)=>{
+      my.alert({
+        title: '自动开票功能已关闭',
+          success: () => {
+            my.navigateTo({
+              url: '/pages/wodeETC/etcDetail/etcDetail?cardid='+that.data.card.cardId
+            })
+          },
+      });
+    })
   }
 })

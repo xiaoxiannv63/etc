@@ -29,11 +29,11 @@
         <text class="u-val">{{card.bindingTime}}</text>
       </view>
     </view>
-    <view a:if="{{!openStatus}}">
+    <view a:if="{{!card.autoInvoice}}">
       <button class="button1" type="primary" size="defaultSize" onTap="goInvoice"> 去开票 </button>
       <button class="button2" color="#d4d4d4" type="plain" size="defaultSize" onTap="unbind"> 解绑卡片 </button>
     </view>
-    <button a:else class="button2 stopBut">停止自动开票</button>
+    <button a:else type='primary' class="button2 stopBut" onTap="goStop">已开通自动开票</button>
 
       <view class="modal">
         <modal
@@ -103,12 +103,12 @@
       暂未关联抬头，去关联吧
     </view>
   </view>
-  <view a:if="{{!openStatus}}" class="m-autoinv" onTap="goOpen">
+  <view a:if="{{!card.autoInvoice}}" class="m-autoinv" onTap="goOpen">
     <view>未开通自动开票</view>
-    <view>去开通<am-icon type="arrow-right" size="{{14}}" color="#CCCCCC"/></view>
+    <view onTap="goOpen">去开通<am-icon type="arrow-right" size="{{14}}" color="#CCCCCC"/></view>
   </view>
-  <view a:else>
+  <!-- <view a:else>
     <text>已开通自动开票</text>
-  </view>
+  </view> -->
   
 </view>

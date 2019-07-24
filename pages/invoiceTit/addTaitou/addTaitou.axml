@@ -14,6 +14,7 @@
     <view class="u-item">
       <view class="u-dt"><text class="c-e7">*</text>抬头名称：</view>
       <input class="u-dd" placeholder="请输入抬头名称" value="{{name}}" onInput="setInvName"/>
+      <view class="selTitle" onTap="selTitle">选择抬头</view>
     </view>
 
       <view class="u-item">
@@ -38,7 +39,7 @@
       </view>
       <view class="u-item">
         <view class="u-dt s-larg-int">银行账号：</view>
-        <input type="number" class="u-dd" placeholder="请输入银行账号" value="{{acc}}" onBlur="setInvAcc" />
+        <input type="number" class="u-dd" placeholder="请输入银行账号" value="{{bankAccount}}" onBlur="setInvAcc" />
       </view>
 
   </view>

@@ -1,7 +1,6 @@
 // import {keysArr} from '/util/key.js'
 let app = getApp();
 
-
 Page({
   data: {
       titleType:"UNIT",
@@ -190,5 +189,36 @@ Page({
         // noData: noData
       })
     })
+  },
+  selTitle(){
+    let that = this;
+    my.chooseInvoiceTitle({
+      success: (res) => {
+        console.log(res)
+          // 这里可以拿到 dynamicCode
+          // 将 dynamicCode 传给服务端，服务端再调用openapi 获取真实的发票抬头
+          let json1 = {
+            ticketId: app.userInfo.ticketId,
+            barCode: res.result.dynamicCode
+          }
+          app.ajax(json1,'TITLE_GET',(data)=>{
+            that.setData({
+              name: data.name || '',
+              titleType: data.titleType || '',
+              taxNum: data.taxNum || '',
+              bank: data.bank || '',
+              bankAccount: data.bankAccount || '',
+              tel: data.tel || '',
+              address: data.address || ''
+            })
+          })
+      },
+      fail: (res) => {
+        my.alert({
+          title: 'fail', // alert 框的标题
+          content: JSON.stringify(res),
+        });
+      },
+    });
   }
 });

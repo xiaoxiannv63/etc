@@ -92,3 +92,14 @@
     visibility: visible;
     vertical-align: bottom;
 }
+/* 抬头选择 */
+.selTitle{
+  position: absolute;
+  right:60rpx;
+  min-width: 74rpx;
+  padding: 0rpx 6rpx;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  color:rgb(16, 142, 233);
+  border:1rpx solid rgb(16, 142, 233);
+}

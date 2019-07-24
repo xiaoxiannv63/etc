@@ -121,15 +121,22 @@
           <view><image class="tabImage" src="../../assets/images/indexCion4.png" mode="aspectFit" /></view>
           <view>抬头管理</view>
        </view>
+       <view class="tabItem" onTap="autoOpen" data-flag="{{false}}" data-openType="navigateTo" data-url="/pages/iWangTo/cardList/cardList">
+          <view style="position:relative">
+            <image class="tabImage" src="../../assets/images/autoInvoice.png" mode="aspectFit" />
+            <image class="hotImage" src="../../assets/images/hot.png" mode="aspectFit" />
+          </view>
+          <view>自动开票</view>
+       </view>
     </view>
   </view>
-  <view class="mtcEntry">
+  <!-- <view class="mtcEntry">
     <view data-url="/pages/mtc/certification/certification" data-openType='navigateTo' onTap="goIdentify">
       <view class="title">人工收费车道发票</view>
       <view class="info">可通过通行记录开票</view>
     </view>
     <view class="u-card-arrow " />
-  </view>
+  </view> -->
   <view class="modal">
     <modal
       show="{{modalOpened}}"
@@ -151,6 +158,31 @@
       </view>
       <view slot="footer">继续开票</view>
     </modal>
+  </view>
+  
+  <view class='modal'>
+     <modal
+      show="{{autoInvModal}}"
+      advice="true"
+      onModalClose="onModalClose"
+    >
+        <view slot="header">功能介绍</view>
+        <view class="modal-content">
+          <view class="modal-p">• <text>功能开通后，使用ETC卡通行后，将在10个自然日内自动为您开具当次通行发票</text></view>
+          <view class="modal-p">• <text>发票将发送至您指定的邮箱</text></view>
+          <view class="modal-p">• <text>自动开票暂时仅支持开具通行发票，不支持充值发票开具</text></view>
+          <view class="modal-p">• <text>功能开通前产生的通行记录，仍需您手动开具相应发票</text></view>
+        </view>
+        <view class="modal-footer">
+          <view onTap="iknow" data-openType="navigateTo" data-url="/pages/iWangTo/cardList/cardList">我知道了</view>
+          <view class='noMoreTip'> 
+            <checkbox class='checkbox' value="{{noMoreTip}}" checked="{{noMoreTip}}" onChange="noMoreTip"/>
+            <text style='display:inline-block'>不再提示</text>
+          </view>
+        </view>
+
+      </modal>
+    </view>
   </view>
 
 </view>

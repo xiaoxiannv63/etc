@@ -10,7 +10,8 @@ Page({
     etcList_COMPANY: [],
     news:[],
     noData: 1,
-    modalOpened:false
+    modalOpened:false,
+    autoInvModal: false
   },
   onLoad(query) {
     // 页面加载
@@ -34,6 +35,7 @@ Page({
   onModalClose() {
     this.setData({
       modalOpened: false,
+      autoInvModal: false
     });
   },
   etcList(){ //全部获取ETC
@@ -298,5 +300,29 @@ Page({
         })
       }
     })
+  },
+  autoOpen(e){
+    let noMoreTip = my.getStorageSync({
+      key: 'noMoreTip', // 缓存数据的key
+    }).data;
+    if(!noMoreTip){
+      this.setData({
+        autoInvModal: true
+      })
+    }else{
+      app.handleForward(e)
+    }
+  },
+  iknow(e){
+    this.setData({
+      autoInvModal: false
+    })
+    app.handleForward(e)
+  },
+  noMoreTip(e){
+    my.setStorageSync({
+      key: 'noMoreTip', // 缓存数据的key
+      data: e.detail.value, // 要缓存的数据
+    });
   }
 })

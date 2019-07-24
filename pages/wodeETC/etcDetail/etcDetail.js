@@ -22,9 +22,10 @@ Page({
       bankAccount:'',
       titleBindingTime:'',
       bindingTime:'',
-      modalOpened: false
+      modalOpened: false,
+      autoInvoice: false,
+      mail: ''
     },
-    openStatus: false,
   },
   onLoad(query) {
     // console.log(query)
@@ -39,7 +40,7 @@ Page({
     }
   },
   onModalClick() {
-    let str = "?cardId=" + this.data.cardid+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType+"&plateNum="+this.data.card.plateNum;
+    let str = "?cardId=" + this.data.card.cardId+"&titleId="+this.data.card.titleId+"&titleName="+this.data.card.titleName+"&type="+this.data.card.cardType+"&plateNum="+this.data.card.plateNum;
     let var1 = {
       currentTarget: {
         dataset: {
@@ -65,6 +66,10 @@ Page({
     }
     let that = this;
     app.ajax(json1,'CARD_DETAIL',function(data){
+      my.setStorageSync({
+        key: 'cardDetail', // 缓存数据的key
+        data: data, // 要缓存的数据
+      });
       data.bindingTime = app.format(data.bindingTime);
       that.setData({
         card: data
@@ -146,5 +151,10 @@ Page({
         content: "请先关联抬头"
       })
     }
+  },
+  goStop(){
+    my.navigateTo({
+      url: "/pages/autoinvoice/open/open"
+    })
   }
 });
