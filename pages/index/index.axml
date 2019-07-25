@@ -174,11 +174,11 @@
           <view class="modal-p">• <text>功能开通前产生的通行记录，仍需您手动开具相应发票</text></view>
         </view>
         <view class="modal-footer">
-          <view class='iknow' onTap="iknow" data-openType="navigateTo" data-url="/pages/iWangTo/cardList/cardList">我知道了</view>
-          <view class='noMoreTip'> 
+          <view class='iknow' onTap="iknow" data-openType="navigateTo" data-url="/pages/wodeETC/myetc/myetc">我知道了</view>
+          <!-- <view class='noMoreTip'> 
             <checkbox class='checkbox' value="{{noMoreTip}}" checked="{{noMoreTip}}" onChange="noMoreTip"/>
             <text style='display:inline-block'>不再提示</text>
-          </view>
+          </view> -->
         </view>
 
       </modal>

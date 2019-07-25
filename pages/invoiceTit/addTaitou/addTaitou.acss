@@ -14,6 +14,10 @@
 .m-unitinfo{
     border-top: solid 1px #e9eaec;
 }
+.u-selTit{
+  display: flex;
+  justify-content: space-between;
+}
 .u-dt{
     flex: 0 0 auto;
     width: 215rpx;
@@ -94,11 +98,10 @@
 }
 /* 抬头选择 */
 .selTitle{
-  position: absolute;
-  right:60rpx;
-  min-width: 74rpx;
-  padding: 0rpx 6rpx;
+  width:180rpx;
+  text-align: center;
   font-size: 28rpx;
+  height: 42rpx;
   line-height: 42rpx;
   color:rgb(16, 142, 233);
   border:1rpx solid rgb(16, 142, 233);

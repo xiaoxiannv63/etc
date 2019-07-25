@@ -12,7 +12,7 @@
       </view>
     </view>
     <view class="u-item">
-      <view class="u-dt"><text class="c-e7">*</text>抬头名称：</view>
+      <view class="u-dt u-selTit"><text class="c-e7">*</text>抬头名称：</view>
       <input class="u-dd" placeholder="请输入抬头名称" value="{{name}}" onInput="setInvName"/>
       <view class="selTitle" onTap="selTitle">选择抬头</view>
     </view>

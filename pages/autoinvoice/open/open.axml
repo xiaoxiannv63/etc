@@ -28,14 +28,22 @@
     <view class="title">发票接收方式</view>
     <view class="content">
       <view class="content-tit">接收邮箱</view>
-      <view><input type="text" onInput="bindEmail" value="{{card.mail}}" focus="{{transEmail}}" disabled="{{!transEmail}}"  placeholder="请填写接收邮箱"/></view>
-      <button class="transEmail" a:if="{{card.mail && !transEmail && !card.autoInvoice}}" onTap="transEmail">更换</button>
+      <view><input type="text" onInput="bindEmail" value="{{card.mail}}" focus="{{!card.mail || transEmail}}" disabled="{{card.mail&&!transEmail}}"  placeholder="请填写接收邮箱"/></view>
+      <button class="transEmail" a:if="{{card.mail!=null || card.mail!= ''}}" onTap="transEmail">{{transEmail? '确认': '更换'}}</button>
     </view>
   </view>
   <view class="tips" a:if="{{true}}">
     <view class="tips-title">温馨提示：</view>
     <view class="tips-content">
-      换票申请提交后，系统将在三个工作日内处理您的申请，原有发票将作废无法继续使用，系统将开出红字发票作为原发票的作废凭证，并以本次选择更换的抬头开具发票。
+      <view>
+        ● 根据国税要求，通行前需预设发票抬头。
+      </view>
+      <view>
+        ● 一旦交易完成，本次发票抬头不可更改。
+      </view>
+      <view>
+        ● 故建议您在每次通行前确认发票抬头，以免产生错误发票。
+      </view>
     </view>
   </view>
   <button a:if="{{!card.autoInvoice}}" class="footer" type="primary" onTap="sureOpen">确定开通</button>
