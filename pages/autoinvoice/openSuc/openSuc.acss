@@ -14,3 +14,27 @@
   border-radius: 50%;
   vertical-align: middle;
 }
+.footer-btns{
+  position: absolute;
+  bottom: 50rpx;
+  left: 40rpx;
+  right: 40rpx;
+  text-align: center;
+}
+.envoice-btn{
+  background:rgb(16, 142, 233);
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+.continue-btn{
+  border: 1rpx solid rgb(16, 142, 233);
+  background: #fff;
+  color: rgb(16, 142, 233);
+  margin-bottom: 20rpx;
+}
+.back-btn{
+  background: unset;
+  border:none;
+  display: inline-block;
+  text-decoration: underline;
+}

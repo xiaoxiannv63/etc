@@ -34,6 +34,10 @@ Page({
       userType: query.userType
     })
     this.getDet()
+    my.setStorageSync({
+      key:'showBackEnvoice',
+      data: true
+    })
   },
   onShow(){
     if(app.needRefresh){

@@ -80,8 +80,9 @@ Page({
             mail: that.data.card.mail
           }
           app.ajax(json1,'AUTO_OPEN',(data)=>{
+            let str = "?cardId=" + that.data.card.cardId+"&titleId="+that.data.card.titleId+"&titleName="+that.data.card.titleName+"&type="+that.data.card.cardType+"&plateNum="+that.data.card.plateNum;
             my.navigateTo({
-              url:`/pages/autoinvoice/openSuc/openSuc?cardId=${that.data.card.cardId}&plateNum=${that.data.card.plateNum}`
+              url:`/pages/autoinvoice/openSuc/openSuc${str}`
             });
           })
         }

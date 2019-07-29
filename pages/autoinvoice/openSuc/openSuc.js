@@ -9,21 +9,19 @@ Page({
     plateNum: ''
   },
   onLoad(query){
+    let cardsAmount = my.getStorageSync({
+      key: 'cardsAmount', // 缓存数据的key
+    }).data;
+    let showBackEnvoice = my.getStorageSync({key: 'showBackEnvoice'}).data;
     this.setData({
       cardId: query.cardId,
-      plateNum: query.plateNum
+      titleId: query.titleId,
+      titleName: query.titleName,
+      type: query.type,
+      plateNum: query.plateNum,
+      cardsAmount: cardsAmount,
+      showBackEnvoice: showBackEnvoice,
     })
-  },
-  goInvoices(){
-    let var1 = {
-      currentTarget: {
-        dataset: {
-          url: `/pages/myInvoice/serInvList/serInvList?cardId=${this.data.cardId}&plateNum=${this.data.plateNum}`,
-          openType: "navigateTo"
-        }
-      }
-    }
-    app.handleForward(var1) 
   },
   goUserInfo(){
     let var1 = {
@@ -35,5 +33,27 @@ Page({
       }
     }
     app.handleForward(var1)  
+  },
+  goInvoices(e){
+    app.handleForward(e)
+  },
+ goRoutes(){
+    let str = "?cardId=" + this.data.cardId+"&titleId="+this.data.titleId+"&titleName="+this.data.titleName+"&type="+this.data.cardType+"&plateNum="+this.data.plateNum;
+
+    let var1 = {
+      currentTarget: {
+        dataset: {
+          url: `/pages/iWangTo/recodList/recodList${str}`,
+          openType: "navigateTo"
+        }
+      }
+    }
+    app.handleForward(var1) 
+  },
+  continue(e){
+    app.handleForward(e)
+  },
+  goIndex(e){
+    app.handleForward(e)
   }
 })

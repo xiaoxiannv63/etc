@@ -69,6 +69,10 @@ Page({
     app.ajax(js1, 'CARD_LIST', (data) => {
       let arr = []
       my.hideLoading();
+      my.setStorageSync({
+        key: 'cardsAmount', // 缓存数据的key
+        data: data.items.length, // 要缓存的数据
+      });
       if (data.items.length > 0) {
         data.items.forEach(item => {
         let name = item.issuerName

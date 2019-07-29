@@ -12,6 +12,10 @@ Page({
       plateNum: query.plateNum,
       type:query.type,
     })
+    my.setStorageSync({
+      key:'showBackEnvoice',
+      data: false
+    })
   },
   toMyInv(e){
     let cardId = this.data.cardId
