@@ -16,7 +16,7 @@
 }
 .u-selTit{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .u-dt{
     flex: 0 0 auto;

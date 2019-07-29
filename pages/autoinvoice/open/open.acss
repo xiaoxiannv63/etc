@@ -11,7 +11,7 @@
 }
 .info-wrap{
   padding: 14rpx 0;
-  margin-bottom: 20rpx;
+  /* margin-bottom: 20rpx; */
 }
 .info-wrap view{
   display: flex;

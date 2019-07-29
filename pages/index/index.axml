@@ -9,7 +9,7 @@
     <scroll-view class="scroll-view_H" scroll-x="{{true}}"  >
     <!-- <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;"> -->
       <view class="item_list" a:for="{{etcList_PERSONAL}}">
-         <view class="listItemDiv" onTap="tapUrl" data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+item.cardId}}"  data-openType="navigateTo">
+         <view class="listItemDiv" onTap="tapUrl" data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+item.cardId+'&userType='+item.userType}}"  data-openType="navigateTo">
           <view class="listItemDiv_title">
             <view class="left">{{item.issuerName}}
             </view>
@@ -30,7 +30,7 @@
         </view>
       </view>
        <view class="item_list" a:for="{{etcList_COMPANY}}">
-         <view class="listItemDiv" onTap="tapUrl" data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+item.cardId}}"  data-openType="navigateTo">
+         <view class="listItemDiv" onTap="tapUrl" data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+item.cardId+'&userType='+item.userType}}"  data-openType="navigateTo">
           <view class="listItemDiv_title">
             <view class="left">{{item.issuerName}}
             </view>

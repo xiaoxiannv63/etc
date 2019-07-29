@@ -30,7 +30,8 @@ Page({
   onLoad(query) {
     // console.log(query)
     this.setData({
-      cardid: query.cardid
+      cardid: query.cardid,
+      userType: query.userType
     })
     this.getDet()
   },
@@ -144,7 +145,7 @@ Page({
     if(!app.buttonClick())return;
     if(this.data.card.titleId){
       my.navigateTo({
-        url: "/pages/autoinvoice/open/open"
+        url: "/pages/autoinvoice/open/open?userType="+this.data.userType
       })
     }else{
       my.alert({
@@ -154,7 +155,7 @@ Page({
   },
   goStop(){
     my.navigateTo({
-      url: "/pages/autoinvoice/open/open"
+      url: "/pages/autoinvoice/open/open?userType="+this.data.userType
     })
   }
 });

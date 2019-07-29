@@ -34,7 +34,7 @@
                 onTap="toDet"
                 data-card="{{card.cardId}}"
                 data-openType="navigateTo"
-                data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+card.cardId}}">
+                data-url="{{'/pages/wodeETC/etcDetail/etcDetail?cardid='+card.cardId+'&userType='+userType}}">
             <view class="u-chepai u-info">{{card.plateNum}}</view>
             <view class="u-info"><text>{{card.cardType}} :</text><text>{{card.cardId?card.cardId.substring(0,6)+"**********"+card.cardId.substr(-4):''}}</text></view>
             <view class="u-info"><text>关联抬头 :</text><text a:if="{{card.titleId}}">{{card.titleName}}</text></view>

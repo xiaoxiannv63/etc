@@ -3,7 +3,7 @@
     <view class="info-wrap">
       <view>
         <view class="u-key u-double">车<text></text>牌</view>
-        <text class="u-val">{{card.issuerName}}{{card.plateNum}}</text>
+        <text class="u-val">{{card.plateNum}}</text>
       </view>
       <view>
         <text class="u-key u-double">卡<text></text>号</text>
@@ -11,7 +11,7 @@
       </view>
       <view>
         <text class="u-key">卡片类型</text>
-        <text class="u-val">{{card.plateColor}}</text>
+        <text class="u-val">{{userType}}</text>
       </view>
       <view>
         <text class="u-key">关联抬头</text>
@@ -19,7 +19,7 @@
       </view>
       <view>
         <text class="u-key">自动开票</text>
-        <text class="u-val">{{card.bindingTime}}</text>
+        <text class="u-val">{{card.autoInvoice?'已开通':'未开通'}}</text>
       </view>
       <view class="cardsign">{{card.cardType}}</view>
     </view>
@@ -28,8 +28,8 @@
     <view class="title">发票接收方式</view>
     <view class="content">
       <view class="content-tit">接收邮箱</view>
-      <view><input type="text" onInput="bindEmail" value="{{card.mail}}" focus="{{!card.mail || transEmail}}" disabled="{{card.mail&&!transEmail}}"  placeholder="请填写接收邮箱"/></view>
-      <button class="transEmail" a:if="{{card.mail!=null || card.mail!= ''}}" onTap="transEmail">{{transEmail? '确认': '更换'}}</button>
+      <view><input type="email" onInput="bindEmail" value="{{card.mail}}" focus="{{!card.mail || transEmail}}" disabled="{{hasBindEmail&&!transEmail}}"  placeholder="请填写接收邮箱"/></view>
+      <button class="transEmail" a:if="{{hasBindEmail}}" onTap="transEmail">{{ transEmail? '确认': '更换'}}</button>
     </view>
   </view>
   <view class="tips" a:if="{{true}}">
