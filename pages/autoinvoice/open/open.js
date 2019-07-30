@@ -100,7 +100,7 @@ Page({
           }
           app.ajax(json1,'AUTO_OPEN',(data)=>{
             let str = "?cardId=" + that.data.card.cardId+"&titleId="+that.data.card.titleId+"&titleName="+that.data.card.titleName+"&type="+that.data.card.cardType+"&plateNum="+that.data.card.plateNum;
-            my.navigateTo({
+            my.reLaunch({
               url:`/pages/autoinvoice/openSuc/openSuc${str}`
             });
           })
