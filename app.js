@@ -17,8 +17,8 @@ App({
     { text: 'Learning ES2016', completed: true },
     { text: 'Learning 支付宝小程序', completed: false },
   ],
-  // ajaxRoot: 'https://pss.txffp.com/pss/app/common/zfbapi',//正式
-  ajaxRoot:'https://testpss.txffp.com/pss/app/common/zfbapi',
+  ajaxRoot: 'https://pss.txffp.com/pss/app/common/zfbapi',//正式
+  // ajaxRoot:'https://testpss.txffp.com/pss/app/common/zfbapi',
   ajaxRoot2:'http://172.30.5.13:8080/nuonuo/invoice/client/returnEncryptKpInfoToSource.action',
   // ajaxRoot2:'https://piaogen.jss.com.cn/nuonuo/invoice/client/returnEncryptKpInfoToSource.action',
   AESencrypt (plaintText) {

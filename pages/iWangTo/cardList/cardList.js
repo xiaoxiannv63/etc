@@ -80,7 +80,19 @@ Page({
       key: 'userType', // 缓存数据的key
       data: this.data.userType, // 要缓存的数据
     });
+    my.setStorageSync({
+      key: 'userName', // 缓存数据的key
+      data: this.data.userType == 'PERSONAL'? '个人卡':'单位卡', // 要缓存的数据
+    });
     let cardid = e.currentTarget.dataset.card;
+    for(let item of this.data.items){
+      if(item.cards[0].cardId == cardid){
+        my.setStorageSync({
+          key:'cardDetail',
+          data: item.cards[0]
+        })
+      }
+    }
     if(!e.currentTarget.dataset.tit){
       my.confirm({
         title: '提示',
