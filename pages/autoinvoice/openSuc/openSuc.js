@@ -38,12 +38,12 @@ Page({
     app.handleForward(e)
   },
  goRoutes(){
-    let str = "?cardId=" + this.data.cardId+"&titleId="+this.data.titleId+"&titleName="+this.data.titleName+"&type="+this.data.cardType+"&plateNum="+this.data.plateNum;
+    let str = "?cardId=" + this.data.cardId+"&titleId="+this.data.titleId+"&titleName="+this.data.titleName+"&type="+this.data.type+"&plateNum="+this.data.plateNum;
 
     let var1 = {
       currentTarget: {
         dataset: {
-          url: `/pages/iWangTo/recodList/recodList${str}`,
+          url: `/pages/iWangTo/recordList/recordList${str}`,
           openType: "navigateTo"
         }
       }

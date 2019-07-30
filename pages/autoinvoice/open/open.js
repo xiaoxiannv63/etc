@@ -13,10 +13,29 @@ Page({
   onLoad(options){
     
     let cardDetail = my.getStorageSync({key:'cardDetail'}).data;
+    let typeKey = my.getStorageSync({key:'userType'}).data;
+    let userName = my.getStorageSync({
+      key: 'userName', // 缓存数据的key
+    }).data;
+    let userType = '';
+    if(!userName){
+      if(options.userType){
+        userType = cardtypes[options.userType]?cardtypes[options.userType]:options.userType
+      }else{
+        userType = cardDetail[typeKey]
+      }
+      userName = userType;
+    }else{
+      userType = userName;
+    }
+    my.setStorageSync({
+      key: 'userName', // 缓存数据的key
+      data: userName, // 要缓存的数据
+    });
     console.log(cardDetail)
     this.setData({
       card: cardDetail,
-      userType: cardtypes[options.userType]?cardtypes[options.userType]:options.userType,
+      userType: userType,
       hasBindEmail: cardDetail.mail?true:false
     })
   },

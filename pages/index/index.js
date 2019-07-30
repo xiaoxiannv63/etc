@@ -62,6 +62,7 @@ Page({
     })
   },
   getCardUrl(type) {
+    let that = this;
     let js1 = {
       userType: type,
       ticketId: app.userInfo ? app.userInfo.ticketId : ''
@@ -71,7 +72,7 @@ Page({
       my.hideLoading();
       my.setStorageSync({
         key: 'cardsAmount', // 缓存数据的key
-        data: data.items.length, // 要缓存的数据
+        data: that.data.etcList_PERSONAL.length + that.data.etcList_COMPANY.length, // 要缓存的数据
       });
       if (data.items.length > 0) {
         data.items.forEach(item => {

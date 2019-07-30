@@ -11,7 +11,7 @@
 
 
   <view class="btn-wrap">
-    <button type="primary" onTap="autoOpen" data-flag="{{false}}" data-openType="navigateTo" data-url="/pages/iWangTo/cardList/cardList"> 开通自动开票 </button>
+    <button type="primary" onTap="autoOpen" data-flag="{{false}}" data-openType="navigateTo" data-url="/pages/wodeETC/myetc/myetc"> 开通自动开票 </button>
     <button type="primary" onTap="continue"> 继续开票 </button>
     <button type="primary" onTap="backToFirst"> 返回首页 </button>
   </view>

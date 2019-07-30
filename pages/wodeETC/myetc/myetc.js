@@ -42,10 +42,7 @@ Page({
     app.ajax(js1,'CARD_LIST',(data)=>{
       my.hideLoading();
       let noData = data.items.length == 0?1:0;
-      my.setStorageSync({
-        key: 'cardsAmount', // 缓存数据的key
-        data: data.items.length, // 要缓存的数据
-      });
+
       if(this.data.userType == 'PERSONAL'){
         this.setData({
           personItems: data.items,

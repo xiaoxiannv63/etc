@@ -76,6 +76,10 @@ Page({
   //   })
   // },
   toInvoice(e) {
+    my.setStorageSync({
+      key: 'userType', // 缓存数据的key
+      data: this.data.userType, // 要缓存的数据
+    });
     let cardid = e.currentTarget.dataset.card;
     if(!e.currentTarget.dataset.tit){
       my.confirm({

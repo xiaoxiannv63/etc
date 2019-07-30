@@ -8,12 +8,12 @@
     <text class="nobox"></text>{{item}}
   </view>
   <view class="content">
-    <text class="nobox"></text>后续的发票请留意邮箱信息，也可以进入<text style="color:blue" data-url='/pages/myInvoice/invoiceList/invoiceList' data-openType='navigateTo' onTap="goInvoices">【开票记录】</text>查看
+    <text class="nobox"></text>后续的发票请留意邮箱信息，也可以进入<text style="color:blue" data-url='/pages/myInvoice/invoiceList/invoiceList' data-openType='reLaunch' onTap="goInvoices">【开票记录】</text>查看
   </view>
   <view style="height: 400rpx;"></view>
   <view class="footer-btns">
     <button class="envoice-btn" a:if="{{showBackEnvoice}}" onTap="goRoutes">返回开票</button>
-    <button class="continue-btn" a:if="{{cardsAmount>1}}" data-url="/pages/wodeETC/myetc/myetc" data-openType='navigateTo' onTap="continue">继续开通</button>
-    <button class="back-btn" data-url="/pages/index/index" data-openType="redirectTo" onTap="goIndex">返回首页</button>
+    <button class="continue-btn" a:if="{{cardsAmount>1}}" data-url="/pages/wodeETC/myetc/myetc" data-openType='reLaunch' onTap="continue">继续开通</button>
+    <button class="back-btn" data-url="/pages/index/index" data-openType="reLaunch" onTap="goIndex">返回首页</button>
   </view>
 </view>

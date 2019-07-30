@@ -28,7 +28,7 @@
     <view class="title">发票接收方式</view>
     <view class="content">
       <view class="content-tit">接收邮箱</view>
-      <view><input type="email" onInput="bindEmail" value="{{card.mail}}" focus="{{!card.mail || transEmail}}" disabled="{{hasBindEmail&&!transEmail}}"  placeholder="请填写接收邮箱"/></view>
+      <view><input type="text" onInput="bindEmail" value="{{card.mail}}" focus="{{!card.mail || transEmail}}" disabled="{{hasBindEmail&&!transEmail}}"  placeholder="请填写接收邮箱"/></view>
       <button class="transEmail" a:if="{{hasBindEmail}}" onTap="transEmail">{{ transEmail? '确认': '更换'}}</button>
     </view>
   </view>
