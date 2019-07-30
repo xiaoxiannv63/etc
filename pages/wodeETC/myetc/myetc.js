@@ -65,6 +65,10 @@ Page({
       items: this.data.personItems,
       noData: noData
     })
+    my.setStorageSync({
+      key: 'userName', // 缓存数据的key
+      data: '个人卡', // 要缓存的数据
+    });
     //刷新时判断显示单位卡还是个人卡
     app.myEtcRefreshUserType = 'PERSONAL'
   },
@@ -85,6 +89,10 @@ Page({
       })
     }
     //刷新时判断显示单位卡还是个人卡
+    my.setStorageSync({
+      key: 'userName', // 缓存数据的key
+      data: '单位卡', // 要缓存的数据
+    });
     app.myEtcRefreshUserType = 'COMPANY'
   },
   toDet(e){//进入详情

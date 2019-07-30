@@ -38,6 +38,10 @@ Page({
       key:'showBackEnvoice',
       data: true
     })
+    my.setStorageSync({
+      key:'userName',
+      data: query.userType
+    })
   },
   onShow(){
     if(app.needRefresh){

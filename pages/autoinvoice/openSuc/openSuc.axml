@@ -14,6 +14,6 @@
   <view class="footer-btns">
     <button class="envoice-btn" a:if="{{showBackEnvoice}}" onTap="goRoutes">返回开票</button>
     <button class="continue-btn" a:if="{{cardsAmount>1}}" data-url="/pages/wodeETC/myetc/myetc" data-openType='navigateTo' onTap="continue">继续开通</button>
-    <button class="back-btn" data-url="/pages/index/index" data-openType="navigateTo" onTap="goIndex">返回首页</button>
+    <button class="back-btn" data-url="/pages/index/index" data-openType="switchTab" onTap="goIndex">返回首页</button>
   </view>
 </view>

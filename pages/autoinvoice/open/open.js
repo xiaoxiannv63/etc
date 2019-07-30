@@ -26,11 +26,11 @@ Page({
       }
       userName = userType;
     }else{
-      userType = userName;
+      userType = cardtypes[userName]?cardtypes[userName]:userName;
     }
     my.setStorageSync({
       key: 'userName', // 缓存数据的key
-      data: userName, // 要缓存的数据
+      data: userType, // 要缓存的数据
     });
     console.log(cardDetail)
     this.setData({
