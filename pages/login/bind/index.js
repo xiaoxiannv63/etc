@@ -13,7 +13,7 @@ Page({
     interval: null,
     modalOpened: false,
     loginType:"tel",
-    showTip:true
+    showTip:false
   },
   onLoad() {
     console.log(app,'app')

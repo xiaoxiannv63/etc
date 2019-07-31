@@ -5,7 +5,7 @@
 .u-item{
     display: flex;
     height: 90rpx;
-    font-size: 30rpx;
+    font-size: 28rpx;
     align-items: center;
 }
 .u-item + .u-item{
@@ -15,26 +15,41 @@
     border-top: solid 1px #e9eaec;
 }
 .u-selTit{
-  display: flex;
+  /* display: flex; */
   /* justify-content: space-between; */
 }
 .u-dt{
     flex: 0 0 auto;
-    width: 215rpx;
-    letter-spacing: 5rpx;
+    display: inline-block;
+    text-align: justify;
+    text-align-last: justify;
+    /* width: 150rpx; */
+    margin-right:5rpx;
+    vertical-align: middle;
+    /* letter-spacing: 3rpx; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+
+}
+.u-dd{
+    padding: 0;
+    font-size: 28rpx;
+    flex-grow: 1;
+    vertical-align: middle;
 }
 .s-larg-int{
-    letter-spacing: 10rpx;
+    letter-spacing: 3rpx;
 }
 .u-gerenkuan{
     width: 15rpx;
 }
 .u-db{
-    display: flex;
+    /* display: flex; */
 }
 .u-double{
+  display: inline-block;
     width: 2em;
-    padding: 0 5rpx;
+    /* padding: 0 5rpx; */
 }
 
 .m-wxts{
@@ -98,7 +113,8 @@
 }
 /* 抬头选择 */
 .selTitle{
-  width:180rpx;
+  width:160rpx;
+  margin-left: 20rpx;
   text-align: center;
   font-size: 28rpx;
   height: 42rpx;

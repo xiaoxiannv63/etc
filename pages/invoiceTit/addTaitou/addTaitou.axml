@@ -1,7 +1,7 @@
 <view class="page">
   <view class="m-items">
     <view class="u-item">
-      <view class="u-dt s-larg-int">抬头类型：</view>
+      <view class="u-dt s-larg-int">抬头类型:</view>
       <view a:if="{{titleType=='UNIT'}}" class="my-radio">
         <view class="u-sel selected">企业</view>
         <view class="u-sel" onTap="selPer">个人/非企业单位</view>
@@ -12,7 +12,7 @@
       </view>
     </view>
     <view class="u-item">
-      <view class="u-dt u-selTit"><text class="c-e7">*</text>抬头名称：</view>
+      <view class="u-dt u-selTit"><text class="c-e7">*</text>抬头名称:</view>
       <input class="u-dd" placeholder="请输入抬头名称" value="{{name}}" onInput="setInvName"/>
       <view class="selTitle" onTap="selTitle">选择抬头</view>
     </view>
@@ -21,24 +21,24 @@
         <view class="u-dt u-db">
           <text a:if="{{titleType == 'UNIT'}}" class="c-e7">*</text>
           <text a:else class="u-gerenkuan"></text>
-          税<text class="u-double"></text>号：
+          税<text class="u-double"></text>号:
         </view>
         <input class="u-dd" placeholder="请输入税号" value="{{taxNum}}" onBlur="setInvTax" />
       </view>
       <view class="u-item">
-        <view class="u-dt s-larg-int">单位地址：</view>
+        <view class="u-dt s-larg-int">单位地址:</view>
         <input class="u-dd" placeholder="请输入单位地址" value="{{address}}" onBlur="setInvAdd" />
       </view>
       <view class="u-item">
-        <view class="u-dt s-larg-int">电话号码：</view>
+        <view class="u-dt s-larg-int">电话号码:</view>
         <input class="u-dd" placeholder="请输入电话号码" value="{{tel}}" onBlur="setInvTel" />
       </view>
       <view class="u-item">
-        <view class="u-dt s-larg-int">开户银行：</view>
+        <view class="u-dt s-larg-int">开户银行:</view>
         <input class="u-dd" placeholder="请输入开户银行" value="{{bank}}" onBlur="setInvBank" />
       </view>
       <view class="u-item">
-        <view class="u-dt s-larg-int">银行账号：</view>
+        <view class="u-dt s-larg-int">银行账号:</view>
         <input type="number" class="u-dd" placeholder="请输入银行账号" value="{{bankAccount}}" onInput="setInvAcc" />
       </view>
 

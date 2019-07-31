@@ -37,9 +37,9 @@
    
     <view class="queding">
       <view class="padding-bottom font-gray">使用其他登录方式</view>
-      <button class="textAlign" open-type="getAuthorize" onGetAuthorize="accede" scope='phoneNumber'>
+      <button class="textAlign" hover-class="tapbtn" open-type="getAuthorize" onGetAuthorize="accede" scope='phoneNumber'>
           <image class="zfbCion" src="../../../assets/images/zfbCion2.png" mode="aspectFit" />
-          <view>支付宝授权登录</view>
+          <view style="height:80rpx;line-height:50rpx;">支付宝授权登录</view>
       </button>
     </view>
     <!-- <modal

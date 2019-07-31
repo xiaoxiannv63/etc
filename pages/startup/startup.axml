@@ -62,7 +62,7 @@
         <!-- <button type="primary" onTap="zfbLogin"  scope='phoneNumber'>支付宝授权登录          
           </button> -->
         <view class="paddint-top">
-          <button type="primary" onTap="pgTelLogin">登录                
+          <button type="primary" onTap="pgTelLogin">手机号验证登录                
           </button>
         </view>
       </view>
