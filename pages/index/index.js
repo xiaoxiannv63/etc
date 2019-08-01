@@ -307,16 +307,11 @@ Page({
     })
   },
   autoOpen(e){
-    let noMoreTip = my.getStorageSync({
-      key: 'noMoreTip', // 缓存数据的key
-    }).data;
-    if(!noMoreTip){
+ 
       this.setData({
         autoInvModal: true
       })
-    }else{
-      app.handleForward(e)
-    }
+
   },
   iknow(e){
     this.setData({

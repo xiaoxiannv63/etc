@@ -2,6 +2,7 @@ import CryptoJS  from './util/crypto/crypto-js';
 // import uma from './uma.min.js'
 App({
   onLaunch() {
+    my.clearStorage();
   //  uma.init('YOUR_APP_KEY', my);      // 务必填入已注册的appKey，不然将无法统计
   },
   onShow() {

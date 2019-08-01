@@ -121,7 +121,7 @@
           <view><image class="tabImage" src="../../assets/images/indexCion4.png" mode="aspectFit" /></view>
           <view>抬头管理</view>
        </view>
-       <view class="tabItem" onTap="autoOpen" data-flag="{{false}}" data-openType="navigateTo" data-url="/pages/iWangTo/cardList/cardList">
+       <view class="tabItem" onTap="autoOpen" data-flag="{{false}}">
           <view style="position:relative">
             <image class="tabImage" src="../../assets/images/autoInvoice.png" mode="aspectFit" />
             <image class="hotImage" src="../../assets/images/hot.png" mode="aspectFit" />

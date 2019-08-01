@@ -33,8 +33,11 @@
       <button class="button1" type="primary" size="defaultSize" onTap="goInvoice"> 去开票 </button>
       <button class="button2" color="#d4d4d4" type="plain" size="defaultSize" onTap="unbind"> 解绑卡片 </button>
     </view>
-    <button a:else type='primary' class="button2 stopBut" onTap="goStop">已开通自动开票</button>
-
+    <view a:else>
+      <button class="button1" type="primary" size="defaultSize" onTap="goInvoice"> 去开票 </button>
+      <button type='primary' class="button2 stopBut" onTap="goStop">已开通自动开票</button>
+    </view>
+    
       <view class="modal">
         <modal
           show="{{modalOpened}}"

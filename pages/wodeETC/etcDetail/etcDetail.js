@@ -36,7 +36,7 @@ Page({
     this.getDet()
     my.setStorageSync({
       key:'showBackEnvoice',
-      data: true
+      data: false
     })
     my.setStorageSync({
       key:'userName',

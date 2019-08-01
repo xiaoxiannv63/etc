@@ -14,7 +14,7 @@ Page({
     })
     my.setStorageSync({
       key:'showBackEnvoice',
-      data: false
+      data: true
     })
   },
   toMyInv(e){
