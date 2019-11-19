@@ -34,7 +34,7 @@ Page({
     };
     console.log('---请求参数----',data);
     let md5Text = app.md5Code(urlData.substring(0,urlData.length-1));
-    my.httpRequest({
+    my.request({
       url: app.ajaxRoot,
       headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','Request-Headers':md5Text},
       method: 'POST',

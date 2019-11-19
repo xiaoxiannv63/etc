@@ -18,8 +18,8 @@ App({
     { text: 'Learning ES2016', completed: true },
     { text: 'Learning 支付宝小程序', completed: false },
   ],
-  // ajaxRoot: 'https://pss.txffp.com/pss/app/common/zfbapi',//正式
-  ajaxRoot:'https://testpss.txffp.com/pss/app/common/zfbapi',
+  ajaxRoot: 'https://pss.txffp.com/pss/app/common/zfbapi',//正式
+  // ajaxRoot:'https://testpss.txffp.com/pss/app/common/zfbapi',
   ajaxRoot2:'http://172.30.5.13:8080/nuonuo/invoice/client/returnEncryptKpInfoToSource.action',
   // ajaxRoot2:'https://piaogen.jss.com.cn/nuonuo/invoice/client/returnEncryptKpInfoToSource.action',
   AESencrypt (plaintText) {
@@ -93,7 +93,7 @@ App({
     };
     console.log('---请求参数----',data);
     let md5Text = this.md5Code(urlData.substring(0,urlData.length-1));
-    my.httpRequest({
+    my.request({
       url: this.ajaxRoot,
       headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','Request-Headers':md5Text},
       method: 'POST',
