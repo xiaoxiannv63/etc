@@ -85,7 +85,7 @@ Page({
     }
     // console.log(data)
     let aesData = app.AESencrypt(data);
-    my.httpRequest({
+    my.request({
       url: app.ajaxRoot2,
       headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'},
       method: 'POST',
@@ -132,7 +132,7 @@ Page({
     var r = invH5Url.split("?")[1].match(reg);  // 匹配目标参数
     let param = unescape(r[2]);//'ZnBkbT0wMTEwMDE3MDAxMTImZnBobT0wOTk4NjUzMQ=='
     console.time("getInfo");
-    my.httpRequest({
+    my.request({
       url: 'https://kp.txffp.com/openInvoice/api/service/getInvoice',
       headers: {'Content-Type': 'application/json;charset=utf-8'},
       method: 'POST',
@@ -143,7 +143,7 @@ Page({
           let data = {
             invoiceID: res.data.data.invoiceID
           }
-          my.httpRequest({
+          my.request({
             url: 'https://kp.txffp.com/openInvoice/api/service/getPdfUrl',
             headers: {'Content-Type': 'application/json;charset=utf-8'},
             method: 'POST',

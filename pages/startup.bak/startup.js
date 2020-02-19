@@ -72,7 +72,7 @@ Page({
     // // urlData=urlData.substring(0,urlData.Length-1)
     // // console.log(app.md5Code(JSON.stringify(data))) 
     // let md5Text = app.md5Code(urlData);
-    // my.httpRequest({
+    // my.request({
     //   url: app.ajaxRoot,
     //   headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','Request-Headers':md5Text},
     //   method: 'POST',
