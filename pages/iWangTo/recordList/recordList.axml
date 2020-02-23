@@ -45,17 +45,33 @@
                    onScrollToLower="lower">
       <checkbox-group onChange="listChange" class="m-check">
         <label class="checkbox" a:for="{{Items}}">
-          <checkbox value="{{item.tradeId}}" checked="{{selAllOnOff}}"  />
+          <checkbox value="{{item.tradeId}}" checked="{{selAllOnOff}}" />
           <view class="u-info" a:if={{invType=='xf'}}>
             <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
             <view>
-              <text class="c-0f u-sym">入</text>
-              <text class="c-99 u-add">{{item.enStationName}}</text>
+              <text class="c-99">入口收费站：</text>
+              <text class=" u-add">{{item.enStationName}}</text>
             </view>
             <view>
-              <text class="c-0f u-sym">出</text>
-              <text class="c-99 u-add">{{item.exStationName}}</text>
-              <text class="c-99">{{item.exTime}}</text>
+              <!-- <text class="c-0f u-sym">出</text>
+              <text class="c-99 u-add">{{item.exStationName}}</text> -->
+              <text class="c-99">驶入高速时间：</text>
+              <text class="">{{item.enTime}}</text>
+            </view>
+            <view class="record-detail">
+              <view class="">通行{{item.splitCount}}个路段</view>
+              <view class="" data-index="{{index}}" data-tradeId="{{item.tradeId}}" catchTap="showMoreOrNo">
+                路段明细
+                <image class="record-image" mode="aspectFit" src="/image/down.png" a:if="{{item.isShow}}"/>
+                <image class="record-image" mode="aspectFit" src="/image/right.png" a:else />
+              </view>
+            </view>
+            <view a:if="{{item.isShow}}">
+              <view class="split-line"></view>
+              <view class="record-split"  a:for="{{item.details}}">
+                <text>{{item.sectionName}}</text>
+                <text>{{(item.fee/100).toFixed(2)}}元</text>
+              </view>
             </view>
           </view>
           <view class="u-info"  a:if={{invType=='cz'}}>
@@ -70,7 +86,7 @@
               <text class="c-99">{{item.exTime}}</text>
             </view>
           </view>
-          <view class="u-pro"><text class="c-99" a:if={{invType=='xf'}}>{{item.provinceType}}通行交易</text></view>
+          <!-- <view class="u-pro"><text class="c-99" a:if={{invType=='xf'}}>{{item.provinceType}}通行交易</text></view> -->
         </label>
       </checkbox-group>
 
@@ -127,6 +143,22 @@
       <view class="p">• <text> 2017年12月31日以前产生的充值记录，请您联系ETC发行方处理。</text></view>
     </view>
     <view slot="footer">确定</view>
+  </modal>
+  <modal
+    show="{{modalTip}}"
+    onModalClose="onTipModalClose"
+  >
+    <view slot="header">温馨提示</view>
+    <view class="content">
+      <view class="p-indent">由于同一行程的数据会出现分时多地上传的情况，故您可能会看到同一行程出现多条交易记录，这与您ETC每次扣款的日期和金额相一致。</view>
+      <view class="p-indent">建议您开票前先确认交易金额与实际扣款金额是否一致，如不一致请您耐心等待隔天再试。</view>
+    </view>
+    <view slot="footer">
+      <view class="foot-btns">
+        <button size="default" type="normal" onTap="doNoTip">不再提示</button>
+        <button size="default" type="primary" onTap="onTipModalClose">我知道了</button>
+      </view>
+    </view>
   </modal>
   </view>
 </view>

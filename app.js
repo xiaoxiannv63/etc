@@ -107,7 +107,13 @@ App({
       fail: function(res) {
         console.log(res);
         my.hideLoading();
-        !!fail&&fail(res.data);
+        if(res.status===500){
+          my.alert({
+            content: '网络异常，稍后重试！！'
+          })
+        }else{
+          !!fail&&fail(res.data);
+        }
       },
       complete: function(res) {
         my.hideLoading();

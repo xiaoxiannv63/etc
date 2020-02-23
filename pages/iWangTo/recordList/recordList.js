@@ -29,7 +29,8 @@ Page({
     showAmount: true,
     invType: 'xf',
     modalOpened: false ,
-    modalOpened2: false 
+    modalOpened2: false,
+    modalTip: false,
   },
   onLoad(query) {
     let d = new Date();
@@ -49,6 +50,10 @@ Page({
     this.getTransList();
   },
   onShow() {
+    let res = my.getStorageSync({
+      key: 'noMoreTip', // 缓存数据的key
+    });
+    console.log(!res.data)
     if (app.recordListRefresh) {//判断是佛需要刷新
       app.recordListRefresh = false;
       this.setData({
@@ -61,10 +66,15 @@ Page({
         hasMore_cz: true,
         selAllOnOff: false,
         bindCardList: [],
-        total: 0
+        total: 0,
+        modalTip: !res.data
       })
       this.getAmount();
       this.getTransList();
+    }else{
+      this.setData({
+        modalTip: !res.data
+      })
     }
   },
   lower() {
@@ -128,6 +138,7 @@ Page({
         let hasMore_xf = data.items.length < 10 ? false : true;
         for (let i in data.items) {
           data.items[i].exTime = app.format(data.items[i].exTime)
+          data.items[i].isShow = false
         }
         if (data.items.length > 0) {
           this.data.Items_xf = this.data.Items_xf.concat(data.items)
@@ -364,5 +375,45 @@ Page({
     this.setData({
       modalOpened2: false
     })
-  }
+  },
+  onTipModalClose(){
+    this.setData({
+      modalTip: false
+    })
+  },
+  doNoTip(){
+    my.setStorageSync({
+      key: 'noMoreTip', // 缓存数据的key
+      data: true, // 要缓存的数据
+    });
+    this.setData({
+      modalTip: false
+    })
+  },
+  showMoreOrNo(e){
+    let index = e.currentTarget.dataset.index
+    console.log(index, this.data.Items[index].isShow)
+    if(this.data.Items[index].isShow){
+      this.data.Items[index].isShow = false
+      this.setData({
+        Items: this.data.Items
+      })
+    }else{
+      let reqJson = {
+        cardId: this.data.cardId,
+        ticketId: app.userInfo.ticketId,
+        tradeId: e.currentTarget.dataset.tradeId
+      }
+      console.log(reqJson)
+      app.ajax(reqJson, 'INVOICE_SPLITLIST', (data)=>{
+        console.log(data)
+        this.data.Items[index].isShow = true
+        this.data.Items[index].details = data.details
+        this.setData({
+          Items: this.data.Items,
+
+        })
+      })
+    }
+  },
 });
