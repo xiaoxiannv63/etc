@@ -3,6 +3,7 @@ import CryptoJS  from './util/crypto/crypto-js';
 App({
   addTaitouEtcList:[],
   deleteFlag:true,
+  isAlert: false,
   // ajaxRoot: 'https://pss.txffp.com/pss/app/common/zfbapi',//正式
   ajaxRoot:'https://testpss.txffp.com/pss/app/common/zfbapi',
   ajaxRoot2:'http://172.30.5.13:8080/nuonuo/invoice/client/returnEncryptKpInfoToSource.action',
@@ -77,6 +78,7 @@ App({
     };
     console.log('---请求参数----',data);
     let md5Text = this.md5Code(urlData.substring(0,urlData.length-1));
+    let that = this;
     my.request({
       url: this.ajaxRoot,
       headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','Request-Headers':md5Text},
@@ -105,12 +107,18 @@ App({
         }
       },
       fail: function(res) {
-        console.log(res);
+        console.log(res)
         my.hideLoading();
         if(res.status===500){
-          my.alert({
-            content: '网络异常，稍后重试！！'
-          })
+          if(!that.isAlert){
+            that.isAlert = true
+            my.alert({
+              content: '网络异常，稍后重试！！',
+              success: () => {
+                that.isAlert = false
+              }
+            })
+          }
         }else{
           !!fail&&fail(res.data);
         }
