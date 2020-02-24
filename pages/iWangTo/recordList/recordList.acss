@@ -139,7 +139,7 @@ checkbox{
     margin-bottom: 15rpx;
 }
 .u-info{
-    width: 560rpx
+    width: 660rpx
 }
 .u-info view:nth-of-type(2){
     margin-bottom: 10rpx;
