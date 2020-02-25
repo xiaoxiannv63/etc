@@ -130,7 +130,7 @@ label + label{
 }
 checkbox{
     border-radius:50%;
-    transform: scale(0.8);
+    transform: scale(0.85);
     margin-right:20rpx;
 }
 .check-wrap label .u-price{

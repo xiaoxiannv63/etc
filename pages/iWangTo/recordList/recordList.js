@@ -138,6 +138,7 @@ Page({
         let hasMore_xf = data.items.length < 10 ? false : true;
         for (let i in data.items) {
           data.items[i].exTime = app.format(data.items[i].exTime)
+          data.items[i].enTime = app.format(data.items[i].enTime)
           data.items[i].isShow = false
         }
         if (data.items.length > 0) {

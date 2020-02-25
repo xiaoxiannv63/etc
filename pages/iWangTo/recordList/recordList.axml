@@ -43,7 +43,37 @@
       <scroll-view scroll-y="{{true}}"
                    class="m-scr"
                    onScrollToLower="lower">
-      <checkbox-group onChange="listChange" class="m-check">
+      <checkbox-group onChange="listChange" class="m-check" a:if="{{month < '2020-01'}}">
+        <label class="checkbox" a:for="{{Items}}">
+          <checkbox value="{{item.tradeId}}" checked="{{selAllOnOff}}"  />
+          <view class="u-info" a:if={{invType=='xf'}}>
+            <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
+            <view>
+              <text class="c-0f u-sym">入</text>
+              <text class="c-99 u-add">{{item.enStationName}}</text>
+            </view>
+            <view>
+              <text class="c-0f u-sym">出</text>
+              <text class="c-99 u-add">{{item.exStationName}}</text>
+              <text class="c-99">{{item.exTime}}</text>
+            </view>
+          </view>
+          <view class="u-info"  a:if={{invType=='cz'}}>
+            <view class="u-price c-e7">￥{{(item.fee/100).toFixed(2)}}</view>
+            <view>
+              <text class="">充值方式：</text>
+              <text class="c-99 u-add">{{item.channelType}}</text>
+            </view>
+            <view>
+              <text class="">充值时间：</text>
+              <text class="c-99 u-add">{{item.time}}</text>
+              <text class="c-99">{{item.exTime}}</text>
+            </view>
+          </view>
+          <view class="u-pro"><text class="c-99" a:if={{invType=='xf'}}>{{item.provinceType}}通行交易</text></view>
+        </label>
+      </checkbox-group>             
+      <checkbox-group onChange="listChange" class="m-check" a:else>
         <label class="checkbox" a:for="{{Items}}">
           <checkbox value="{{item.tradeId}}" checked="{{selAllOnOff}}" />
           <view class="u-info" a:if={{invType=='xf'}}>
